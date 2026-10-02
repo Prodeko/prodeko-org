@@ -6,47 +6,71 @@ members:
     role: Puheenjohtaja
     roleEn: President
     photo: images/board/2026/aaron-katainen.jpg
+    telegram: "@prodeko"
+    email: puheenjohtaja@prodeko.org
   - name: Kalle Kinnala
     role: Varapuheenjohtaja
     roleEn: Vice President
     photo: images/board/2026/kalle-kinnala.jpg
+    telegram: "@prodekoveijari"
+    email: varapuheenjohtaja@prodeko.org
   - name: Arttu Kaitila
     role: Rahastonhoitaja
     roleEn: Treasurer
     photo: images/board/2026/arttu-kaitila.jpg
+    telegram: "@rahamies"
+    email: rahastonhoitaja@prodeko.org
   - name: Emilia Schmidt
     role: Excumestari
     roleEn: Excursion Manager
     photo: images/board/2026/emilia-schmidt.jpg
+    telegram: "@MsExcursion"
+    email: excumestari@prodeko.org
   - name: Tuomas Ylimäki
     role: Yrityssuhdevastaava
     roleEn: Corporate Relations Manager
     photo: images/board/2026/tuomas-ylimaki.jpg
+    telegram: "@yrityssuhteet"
+    email: yrityssuhteet@prodeko.org
   - name: Touko Heinilä
     role: Maisteri- ja KV-kapteeni
     roleEn: Master’s and International Captain
     photo: images/board/2026/touko-heinila.jpg
+    telegram: "@toukoheinila"
+    email: maisterikvkapteeni@prodeko.org
   - name: Elina Lauri
     role: Fuksikapteeni
     roleEn: Fuksi Captain
     photo: images/board/2026/elina-lauri.jpg
+    telegram: "@fuksikapteeni"
+    email: fuksikapteeni@prodeko.org
   - name: Aida Sinkkonen
     role: Sisä- ja kulttuuriministeri
     roleEn: Minister of Internal and Cultural Affairs
     photo: images/board/2026/aida-sinkkonen.jpg
+    telegram: "@emaentae"
+    email: sisakumi@prodeko.org
   - name: Helmi Halinen
     role: Isäntä
     roleEn: Host
     photo: images/board/2026/helmi-halinen.jpg
+    telegram: "@isaentae"
+    email: isanta@prodeko.org
   - name: Joona Isosaari
     role: Ulkoministeri
     roleEn: Minister of Foreign Affairs
     photo: images/board/2026/joona-isosaari.jpg
+    telegram: "@ulkoministeri"
+    email: ulkoministeri@prodeko.org
   - name: Lauri Pörsti
     role: Opintovastaava
     roleEn: Minister of Studies
     photo: images/board/2026/lauri-porsti.jpg
+    telegram: "@lauriporsti"
+    email: opintovastaava@prodeko.org
   - name: Daniel Nikkar
     role: Mediakeisari
     roleEn: Emperor of Media
     photo: images/board/2026/daniel-nikkar.jpg
+    telegram: "@mediakeisari"
+    email: mediakeisari@prodeko.org
