@@ -1,0 +1,59 @@
+# Officials of 2008, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2008"
+sortKey: 2008
+members:
+  - { name: "Tuomo Vepsäläinen", role: "Toimittaja" }
+  - { name: "Lauri Tolvas", role: "Toimittaja" }
+  - { name: "Atso Takala", role: "Taittaja" }
+  - { name: "Tuomo Pesonen", role: "Toimittaja" }
+  - { name: "Outi Martikainen", role: "Toimittaja" }
+  - { name: "Nelli Lähteenmäki", role: "Toimittaja" }
+  - { name: "Iiris Kolu", role: "Toimittaja" }
+  - { name: "Ilkka Heiskanen", role: "Toimittaja" }
+  - { name: "Terhen Heikkilä", role: "Päätoimittaja" }
+  - { name: "Jaakko Taskinen", role: "Opintojaosto" }
+  - { name: "Jussi Valtonen", role: "Opintojaosto" }
+  - { name: "Lauri Tolvas", role: "Opintojaosto" }
+  - { name: "Olli Tiainen", role: "Opintojaosto" }
+  - { name: "Mikko Sjöberg", role: "Opintojaosto" }
+  - { name: "Tuomo Pesonen", role: "Opintojaosto" }
+  - { name: "Juha Martikainen", role: "Opintojaosto" }
+  - { name: "Marko Mälkiä", role: "Opintojaosto" }
+  - { name: "Tuuli Mäkinen", role: "Opintojaosto" }
+  - { name: "Jarno Lappalainen", role: "Opintojaosto" }
+  - { name: "Nelli Lähteenmäki", role: "Opintojaosto" }
+  - { name: "Antti Koulumies", role: "Opintojaosto" }
+  - { name: "Elina Happonen", role: "Opintojaosto" }
+  - { name: "Paavo Häppölä", role: "Opintojaosto" }
+  - { name: "Linda Alanen", role: "Opintojaosto" }
+  - { name: "Nelli Lähteenmäki", role: "Lukkari" }
+  - { name: "Atso Takala", role: "Lukkari" }
+  - { name: "Kitty Saikkonen", role: "Namutäti" }
+  - { name: "Janus Timperi", role: "AD" }
+  - { name: "Henri Valkonen", role: "Talonmies" }
+  - { name: "Timo Tervola", role: "Talonmies" }
+  - { name: "Katja Ahtiainen", role: "Talonmies" }
+  - { name: "Tuomas Oijala", role: "Punttisvastaava" }
+  - { name: "Tero Jaakkola", role: "Punttisvastaava" }
+  - { name: "Tuomo Vepsäläinen", role: "Webmaster" }
+  - { name: "Tommi Rantanen", role: "Webmaster" }
+  - { name: "Heikki Arbelius", role: "Webmaster" }
+  - { name: "Tuomo Vepsäläinen", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Jussi Lehtinen", role: "Punttisvastaava" }
+  - { name: "Elina Happonen", role: "Maitotyttö" }
+  - { name: "Lauri Tolvas", role: "Dokumentoija" }
+  - { name: "Tuure Parkkinen", role: "Dokumentoija" }
+  - { name: "Heini Lehtonen", role: "Dokumentoija" }
+  - { name: "Iiro Kulvik", role: "Reimari" }
+  - { name: "Jasu Koponen", role: "Kulttuuripersoona" }
+  - { name: "Anna Cajanus", role: "Kulttuuripersoona" }
+  - { name: "Jenni Räihä", role: "Juomanlaskija" }
+  - { name: "Juhana Nurmio", role: "Juomanlaskija" }
+  - { name: "Salli Hukkinen", role: "Juomanlaskija" }
+  - { name: "Anna Cajanus", role: "ISOvastaava" }
+  - { name: "Antti Mattila", role: "Ulkojaos" }
+  - { name: "Henri Koponen", role: "Ulkojaos" }
+  - { name: "Jasu Koponen", role: "Ulkojaos" }
+  - { name: "Tomi Alen", role: "Ulkojaos" }

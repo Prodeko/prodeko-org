@@ -5,13 +5,20 @@ translationKey: home
 description: Prodeko ry on Aalto-yliopiston tuotantotalouden opiskelijoiden kilta
   ja ainejärjestö.
 heroTitle: Tervetuloa opiskelemaan Aallon tutalle
+values: true
+social:
+  title: Seuraa meitä
+  text: Katso, mitä killassa tapahtuu juuri nyt – sitsejä, excursioita, wappua ja arkea kiltiksellä.
+  accounts:
+    - { service: instagram, name: Instagram, handle: "@prodeko", url: "https://www.instagram.com/prodeko/", label: Seuraa Instagramissa }
+    - { service: tiktok, name: TikTok, handle: "@prodekolife", url: "https://www.tiktok.com/@prodekolife", label: Katso TikTokissa }
 aside:
   - title: Jäsenyys
     text: Jäsenyys maksaa 8 € lukuvuodessa.
     button: { label: Hae jäseneksi, url: "https://membership.prodeko.org/apply" }
 ---
 
-## Yhdistämässä tutalaisia jo vuodesta 1866
+## Yhdistämässä tutalaisia jo vuodesta 1966
 
 Tuotantotalouden kilta Prodeko ry on Aalto-yliopiston ylioppilaskunnan
 yhteydessä toimiva tuotantotalouden opiskelijoiden ainejärjestö. Olemme
@@ -48,29 +55,3 @@ prodekolaisuudesta kiinnostunut. Voit hakea Prodekon jäseneksi
 ## Prodekon arvot
 
 Määritetty vuonna 2017. Viisi arvoa, viisi haalarin väriä.
-
-### Think big
-
-Be bold. Trust yourself and your skills. Take risks, but not blindly — do so
-with entrepreneurial responsibility, ownership and humility.
-
-### Get things done
-
-Take initiative. Have a can-do attitude. Value results, not working hours. Be
-efficient, but above all be effective — what you do and don’t do are equally
-important.
-
-### Learn and grow
-
-Be curious. Keep learning. Embrace imperfection. Know that your qualities
-aren’t fixed — you can grow and develop throughout life.
-
-### Give back
-
-Support. Collaborate. Value your community. Don’t ask what others can do for
-you, ask what you can do for others.
-
-### Be a good person
-
-Act with integrity. Be worthy of trust. Meet others with kindness. Remember
-that who you are is more important than what you do.

@@ -1,0 +1,58 @@
+# Officials of 2013, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2013"
+sortKey: 2013
+members:
+  - { name: "Arttu Anttonen", role: "Arkistonhoitajat" }
+  - { name: "Ilari Alén", role: "Arkistonhoitajat" }
+  - { name: "Riku Mäkelä", role: "Killan setä" }
+  - { name: "Juha Murtoaro", role: "Killan äiti" }
+  - { name: "Kristian Sjölund", role: "Prolekon toimitussihteeri" }
+  - { name: "Matilda Säde", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Lotta Lundell", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Jukka Kujala", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Tino Kantola", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Ilari Alén", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Martyna Kosmala", role: "Vaihtarivastaava" }
+  - { name: "Paavo Pere", role: "Bilisvastaavat" }
+  - { name: "Ville Huovinen", role: "Bilisvastaavat" }
+  - { name: "Valtter Vihervuori", role: "Webmasterit" }
+  - { name: "Matti Vesikivi", role: "Webmasterit" }
+  - { name: "Kristian Sjölund", role: "Webmasterit" }
+  - { name: "Antti Laukkanen", role: "Webmasterit" }
+  - { name: "Lari Haataja", role: "Webmasterit" }
+  - { name: "Teemu Karppinen", role: "Prolekon taittaja" }
+  - { name: "Valtter Vihervuori", role: "Prolekon toimittajat" }
+  - { name: "Matti Vesikivi", role: "Prolekon toimittajat" }
+  - { name: "Niko Snirvi", role: "Prolekon toimittajat" }
+  - { name: "Laura Korhonen", role: "Prolekon toimittajat" }
+  - { name: "Ilari Alén", role: "Prolekon toimittajat" }
+  - { name: "Kristian Sjölund", role: "Toiminnantarkastajat" }
+  - { name: "Ilari Alén", role: "Toiminnantarkastajat" }
+  - { name: "Jukka Kujala", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Antti Kaivola", role: "Punttisvastaava" }
+  - { name: "Katriina Suojala", role: "Maitotyttö" }
+  - { name: "Laura Wirtavuori", role: "Dokumentoijat" }
+  - { name: "Pauli Nikkanen", role: "Dokumentoijat" }
+  - { name: "Pyry Huhtanen", role: "Reimari" }
+  - { name: "Tuure Parkkinen", role: "Lukkarit" }
+  - { name: "Matti Fouchault-Airasmaa", role: "Lukkarit" }
+  - { name: "Roberto Cacciatore", role: "Lukkarit" }
+  - { name: "Lauri Mikkola", role: "YS-toimarit" }
+  - { name: "Lasse Linnavirta", role: "YS-toimarit" }
+  - { name: "Heta Ruikka", role: "Juomanlaskija" }
+  - { name: "Iina Lappalainen", role: "Juomanlaskija" }
+  - { name: "Saana Kivimaa", role: "Juomanlaskija" }
+  - { name: "Miika Kangas", role: "Juomanlaskija" }
+  - { name: "Antti Kaivola", role: "Juomanlaskija" }
+  - { name: "Miikka Ahonen", role: "Prolekon päätoimittaja" }
+  - { name: "Mikko Rajala", role: "ISOvastaava" }
+  - { name: "Auri Väljä", role: "Abivastaava" }
+  - { name: "Lotta Lundell", role: "Abivastaava" }
+  - { name: "Auri Väljä", role: "Ulkojaos" }
+  - { name: "Arttu Toivonen", role: "Ulkojaos" }
+  - { name: "Matilda Säde", role: "Ulkojaos" }
+  - { name: "Eero Pakarinen", role: "Kulttuurijaos" }
+  - { name: "Simo Hellgrén", role: "Kulttuurijaos" }
+  - { name: "Roberto Cacciatore", role: "Kulttuurijaos" }

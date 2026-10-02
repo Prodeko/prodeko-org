@@ -40,6 +40,8 @@ fi:
           url: /fi/guild/hallitus-ja-toimihenkilot/toimihenkilot/
         - label: Toimarien toiminta
           url: /fi/guild/hallitus-ja-toimihenkilot/toimarien-toiminta/
+        - label: Edelliset toimihenkilöt
+          url: /fi/guild/hallitus-ja-toimihenkilot/edelliset-toimihenkilot/
     - title: Opinnot
       links:
         - label: Keneen otan yhteyttä
@@ -69,34 +71,42 @@ fi:
           url: https://gallery.prodeko.org
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
-        - label: Kiltiskamera
-          url: https://kiltiskamera.prodeko.org
         - label: Proleko
           url: https://old.prodeko.org/en/services/proleko/
         - label: Prodeko rahasto
           url: /fi/palvelut/prodeko-fund/
-        - label: Store
-          url: https://store.prodeko.org
-        - label: ESTIEM LG Helsinki
-          url: /fi/estiem-lg-helsinki/
+        - label: PTER
+          url: /fi/palvelut/pter/
+        - label: Brändi ja materiaalit
+          url: /fi/palvelut/materiaalit/
   prospective:
     - title: Abeille
       links:
         - label: Moikka abi!
           url: /fi/abit/
+        - label: Abipäivä 2026
+          url: /fi/abipaiva-2026/
+        - label: Abimentorointi
+          url: /fi/abit/abimentorointi/
+        - label: Opiskelijoiden polkuja tutalle
+          url: /fi/abit/opiskelijoiden-polkuja-tutalle/
+        - label: Menestyneet tutalaiset
+          url: /fi/abit/menestyneet-tutalaiset/
         - label: Opinnot
           url: /fi/opinnot/
         - label: Tärkeitä linkkejä
           url: /fi/opinnot/tarkeita-linkkeja/
+        - label: Abimateriaalit ja lukiovierailut
+          url: /fi/palvelut/materiaalit/
     - title: Kielet
       links:
+        - label: På svenska
+          url: /sv/
         - label: In English
           url: /en/prospective-students/
   corporate:
     - title: Yrityksille
       links:
-        - label: Yrityssuhteet
-          url: /fi/yrityssuhteet/
         - label: Tietoa yrityksille
           url: /fi/yrityssuhteet/yrityksille/
         - label: Yritysvierailut
@@ -109,6 +119,10 @@ fi:
           url: /fi/yrityssuhteet/atalent/
         - label: Laskutustiedot
           url: /fi/yrityssuhteet/laskutustiedot/
+        # The section page itself, named like "Kaikki palvelut" so the label
+        # promises the overview it leads to and not a page of its own.
+        - label: Kaikki yrityksille
+          url: /fi/yrityssuhteet/
     - title: Yhteystiedot
       links:
         - label: yrityssuhteet@prodeko.org
@@ -196,6 +210,8 @@ en:
           url: /en/guild/board-and-officials/officials/
         - label: What the officials do
           url: /en/guild/board-and-officials/what-the-officials-do/
+        - label: Previous officials
+          url: /en/guild/board-and-officials/previous-officials/
     - title: Studies
       links:
         - label: Who to contact
@@ -225,16 +241,14 @@ en:
           url: https://gallery.prodeko.org
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
-        - label: Guild room camera
-          url: https://kiltiskamera.prodeko.org
         - label: Proleko
           url: https://old.prodeko.org/en/services/proleko/
         - label: Prodeko Fund
           url: /en/services/prodeko-fund/
-        - label: Store
-          url: https://store.prodeko.org
-        - label: ESTIEM LG Helsinki
-          url: /en/estiem-lg-helsinki/
+        - label: PTER
+          url: /en/services/pter/
+        - label: Brand and materials
+          url: /en/services/materials/
   prospective:
     - title: Prospective students
       links:
@@ -251,8 +265,6 @@ en:
   corporate:
     - title: For companies
       links:
-        - label: Corporate relations
-          url: /en/yrityssuhteet/
         - label: About corporate relations
           url: /en/yrityssuhteet/about/
         - label: Company visits
@@ -265,6 +277,8 @@ en:
           url: /en/yrityssuhteet/atalent/
         - label: Billing information
           url: /en/yrityssuhteet/billing/
+        - label: All for companies
+          url: /en/yrityssuhteet/
     - title: Contact
       links:
         - label: yrityssuhteet@prodeko.org

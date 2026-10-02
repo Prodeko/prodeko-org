@@ -1,0 +1,40 @@
+# Officials of 2005, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2005"
+sortKey: 2005
+members:
+  - { name: "Lauri Tolvas", role: "ESTIEM-toimihenkilö" }
+  - { name: "Kimi Arima", role: "Diskonttaus 40 -vastaava" }
+  - { name: "Jani Starczewski", role: "Tenttikokoelmavastaava" }
+  - { name: "Olli Vitie", role: "Proleko?n toimittajat" }
+  - { name: "Heidi Sivula", role: "Proleko?n toimittajat" }
+  - { name: "Mikko Ronkko", role: "Proleko?n toimittajat" }
+  - { name: "Heidi Sivula", role: "Proleko?n taittaja" }
+  - { name: "Antti Suorsa", role: "Proleko?n päätoimittaja" }
+  - { name: "Tuomo Vierros", role: "TEK-yhdyshenkilö" }
+  - { name: "Janne Kalliomaki", role: "Webmaster" }
+  - { name: "Ilkka Heiskanen", role: "Webmaster" }
+  - { name: "Paavo Happola", role: "Riipparivastaava" }
+  - { name: "Timo Vuori", role: "Opintojaosto" }
+  - { name: "Laura Virkki", role: "Opintojaosto" }
+  - { name: "Mailiina Turanlahti", role: "Opintojaosto" }
+  - { name: "Jani Starczewski", role: "Opintojaosto" }
+  - { name: "Maria Routti", role: "Opintojaosto" }
+  - { name: "Johanna Pynna", role: "Opintojaosto" }
+  - { name: "Aino Makisalo", role: "Opintojaosto" }
+  - { name: "Tommi Kemppainen", role: "Opintojaosto" }
+  - { name: "Riikka Jahkonen", role: "Opintojaosto" }
+  - { name: "Lotta Haakana", role: "Opintojaosto" }
+  - { name: "Heidi Sivula", role: "Kulttuurivastaava" }
+  - { name: "Antti Suorsa", role: "Talonmiehet" }
+  - { name: "Saara Kujala", role: "Talonmiehet" }
+  - { name: "Heidi Hynynen", role: "Talonmiehet" }
+  - { name: "Ville Heikkila", role: "Talonmiehet" }
+  - { name: "Antti Suorsa", role: "Lukkarit" }
+  - { name: "Ville Heikkila", role: "Lukkarit" }
+  - { name: "Petri Valkama", role: "Juomanlaskija" }
+  - { name: "Lauri Tolvas", role: "Juomanlaskija" }
+  - { name: "Jussi Tarvainen", role: "Juomanlaskija" }
+  - { name: "Paavo Happola", role: "Juomanlaskija" }
+  - { name: "Julia Venesmaa", role: "ISOvastaava" }

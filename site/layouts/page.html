@@ -1,3 +1,9 @@
 {{ define "main" }}
-  {{ partial "page-shell.html" (dict "page" . "body" .Content) }}
+  {{/* A page that sets `values: true` gets the five guild values as cards
+       under its own text, the same cards the front page shows. */}}
+  {{ $body := .Content }}
+  {{ if .Params.values }}
+    {{ $body = printf "%s%s" (string $body) (string (partial "values-cards.html" .)) | safeHTML }}
+  {{ end }}
+  {{ partial "page-shell.html" (dict "page" . "body" $body) }}
 {{ end }}

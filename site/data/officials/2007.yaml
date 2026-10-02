@@ -1,0 +1,63 @@
+# Officials of 2007, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2007"
+sortKey: 2007
+members:
+  - { name: "Mikko Sjöberg", role: "Varatilintarkastajat" }
+  - { name: "Niki Kotilainen", role: "Varatilintarkastajat" }
+  - { name: "Outi Herkepeus", role: "Namutädit" }
+  - { name: "Anna Cajanus", role: "Namutädit" }
+  - { name: "Juha Martikainen", role: "Riipparivastaava" }
+  - { name: "Henri Valkonen", role: "Kuntosalivastaavat" }
+  - { name: "Hannes Jouhikainen", role: "Kuntosalivastaavat" }
+  - { name: "Tero Forsberg", role: "Kuntosalivastaavat" }
+  - { name: "Jussi Valtonen", role: "Tilintarkastajat" }
+  - { name: "Tuukka Eloranta", role: "Tilintarkastajat" }
+  - { name: "Jussi Valtonen", role: "Opintojaosto" }
+  - { name: "Petri Valkama", role: "Opintojaosto" }
+  - { name: "Lauri Tolvas", role: "Opintojaosto" }
+  - { name: "Olli Tiainen", role: "Opintojaosto" }
+  - { name: "Atso Takala", role: "Opintojaosto" }
+  - { name: "Mikko Sjöberg", role: "Opintojaosto" }
+  - { name: "Nora Rosendahl", role: "Opintojaosto" }
+  - { name: "Esa Mononen", role: "Opintojaosto" }
+  - { name: "Juha Martikainen", role: "Opintojaosto" }
+  - { name: "Tuomas Koivunen", role: "Opintojaosto" }
+  - { name: "Sebastian Knight", role: "Opintojaosto" }
+  - { name: "Tommi Kemppainen", role: "Opintojaosto" }
+  - { name: "Paavo Häppölä", role: "Opintojaosto" }
+  - { name: "Linda Alanen", role: "Opintojaosto" }
+  - { name: "Tuomo Vierros", role: "Talonmiehet" }
+  - { name: "Tuukka Eloranta", role: "Talonmiehet" }
+  - { name: "Petri Valkama", role: "Proleko?:n toimittajat" }
+  - { name: "Lauri Tolvas", role: "Proleko?:n toimittajat" }
+  - { name: "Mikko Sjöberg", role: "Proleko?:n toimittajat" }
+  - { name: "Reeta Kukkola", role: "Proleko?:n toimittajat" }
+  - { name: "Antti Koulumies", role: "Proleko?:n toimittajat" }
+  - { name: "Ilkka Heiskanen", role: "Proleko?:n toimittajat" }
+  - { name: "Paavo Häppölä", role: "Proleko?:n toimittajat" }
+  - { name: "Outi Martikainen", role: "Proleko?:n päätoimittaja" }
+  - { name: "Petri Valkama", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Ville Poikolainen", role: "Webbitiimi" }
+  - { name: "Jarno Lappalainen", role: "Webbitiimi" }
+  - { name: "Ilkka Heiskanen", role: "Webbitiimi" }
+  - { name: "Johan-Eerik Haataja", role: "Webbitiimi" }
+  - { name: "Taneli Hirvola", role: "Reimari" }
+  - { name: "Outi Herkepeus", role: "Kulttuuripersoonat" }
+  - { name: "Anna Cajanus", role: "Kulttuuripersoonat" }
+  - { name: "Sebastian Knight", role: "Lukkarit" }
+  - { name: "Tuukka Eloranta", role: "Lukkarit" }
+  - { name: "Tatu Virtanen", role: "Juomanlaskija" }
+  - { name: "Tommi Rantanen", role: "Juomanlaskija" }
+  - { name: "Outi Martikainen", role: "Juomanlaskija" }
+  - { name: "Arjo Laukia", role: "Juomanlaskija" }
+  - { name: "Reeta Kukkola", role: "Juomanlaskija" }
+  - { name: "Ville Poikolainen", role: "ISOvastaava" }
+  - { name: "Kitty Saikkonen", role: "Ulkojaos" }
+  - { name: "Lauri Potka", role: "Ulkojaos" }
+  - { name: "Eero Pekkanen", role: "Ulkojaos" }
+  - { name: "Jarno Lappalainen", role: "Ulkojaos" }
+  - { name: "Reeta Kukkola", role: "Ulkojaos" }
+  - { name: "Antti Koulumies", role: "Ulkojaos" }
+  - { name: "Johan-Eerik Haataja", role: "Ulkojaos" }

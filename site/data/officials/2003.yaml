@@ -1,0 +1,41 @@
+# Officials of 2003, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2003"
+sortKey: 2003
+members:
+  - { name: "Antti Suorsa", role: "WWW-toimikunta" }
+  - { name: "Mikko Laine", role: "WWW-toimikunta" }
+  - { name: "Eveliina Koski", role: "WWW-toimikunta" }
+  - { name: "Heikki Henttu", role: "WWW-toimikunta" }
+  - { name: "Maria Routti", role: "Abi-infotoimikunta" }
+  - { name: "Taija Rajala", role: "Abi-infotoimikunta" }
+  - { name: "Pasi Kuusela", role: "Abi-infotoimikunta" }
+  - { name: "Anni Kauranen", role: "Abi-infotoimikunta" }
+  - { name: "Antti Suorsa", role: "Opintotyöryhmä" }
+  - { name: "Liina Saarinen", role: "Opintotyöryhmä" }
+  - { name: "Merja Nurminen", role: "Opintotyöryhmä" }
+  - { name: "Anni Kauranen", role: "Opintotyöryhmä" }
+  - { name: "Riikka Jahkonen", role: "Opintotyöryhmä" }
+  - { name: "Teppo Rinta-Filppula", role: "Talonmies" }
+  - { name: "Mikko Lauerma", role: "Jäsenrekisterivastaava" }
+  - { name: "Risto Pietila", role: "Yrittäjyyskoordinaattori" }
+  - { name: "Antti Parnanen", role: "Ranzuroopet" }
+  - { name: "Lauri Leino", role: "Ranzuroopet" }
+  - { name: "Heikki Henttu", role: "Ranzuroopet" }
+  - { name: "Mikko Laine", role: "Tenttikokoelmavastaava" }
+  - { name: "Mikko Valtonen", role: "Proleko?n toimittajat" }
+  - { name: "Sakke Turunen", role: "Proleko?n toimittajat" }
+  - { name: "Mikko Ronkko", role: "Proleko?n toimittajat" }
+  - { name: "Marja Ollila", role: "Proleko?n toimittajat" }
+  - { name: "Anni Kauranen", role: "Proleko?n toimittajat" }
+  - { name: "Juho Juopperi", role: "Proleko?n toimittajat" }
+  - { name: "Anne-Mari Laiho", role: "Proleko?n päätoimittaja" }
+  - { name: "Juuso Seppala", role: "Lukkarit" }
+  - { name: "Merja Nurminen", role: "Lukkarit" }
+  - { name: "Olli Lehtonen", role: "Lukkarit" }
+  - { name: "Liisa Ikonen", role: "Lukkarit" }
+  - { name: "Maria Routti", role: "Juomanlaskija" }
+  - { name: "Eveliina Koski", role: "Juomanlaskija" }
+  - { name: "Petteri Kauppinen", role: "Juomanlaskija" }
+  - { name: "Pekka Helkio", role: "ISOvastaava" }

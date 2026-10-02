@@ -1,0 +1,34 @@
+# Officials of 2001, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2001"
+sortKey: 2001
+members:
+  - { name: "Marko Mälkiä", role: "Toimittaja" }
+  - { name: "Jonatan Hongisto", role: "Killan talonmies" }
+  - { name: "Maija Hellman", role: "Puhelinluettelon päivittäjä" }
+  - { name: "Juuso Seppälä", role: "Rantzuroopet" }
+  - { name: "Anni Kauranen", role: "Rantzuroopet" }
+  - { name: "Olli Aura", role: "Rantzuroopet" }
+  - { name: "Timo Saloranta", role: "WWW-toimikunta" }
+  - { name: "Mika Rahko", role: "WWW-toimikunta" }
+  - { name: "Tero Mäkinen", role: "WWW-toimikunta" }
+  - { name: "Mikko Laine", role: "WWW-toimikunta" }
+  - { name: "Heikki Laamanen", role: "WWW-toimikunta" }
+  - { name: "Risto Pietilä", role: "Abi-infotoimikunta" }
+  - { name: "Markus Mäkelä", role: "Abi-infotoimikunta" }
+  - { name: "Liina Saarinen", role: "Opintotyöryhmä" }
+  - { name: "Santeri Korri", role: "Opintotyöryhmä" }
+  - { name: "Sampo Korppi-Tommola", role: "Opintotyöryhmä" }
+  - { name: "Niklas Kari", role: "Opintotyöryhmä" }
+  - { name: "Antti Bergholm", role: "Opintotyöryhmä" }
+  - { name: "Janne Väänänen", role: "Tenttikokoelmavastaava" }
+  - { name: "Anni Kauranen", role: "Riipparivastaava" }
+  - { name: "Janne Väänänen", role: "Proleko?:n toimittajat" }
+  - { name: "Juho Juopperi", role: "Proleko?:n toimittajat" }
+  - { name: "Esko Eerola", role: "Proleko?:n toimittajat" }
+  - { name: "Jaakko Tuomainen", role: "Lukkarit" }
+  - { name: "Teppo Rinta-Filppula", role: "Lukkarit" }
+  - { name: "Mikko Rönkkö", role: "Juomanlaskija" }
+  - { name: "Liisa Ikonen", role: "Juomanlaskija" }
+  - { name: "Kaisa Fonsell", role: "Juomanlaskija" }

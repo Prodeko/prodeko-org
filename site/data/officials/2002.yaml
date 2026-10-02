@@ -1,0 +1,40 @@
+# Officials of 2002, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2002"
+sortKey: 2002
+members:
+  - { name: "Timo Saloranta", role: "WWW-toimikunta" }
+  - { name: "Petri Lievonen", role: "WWW-toimikunta" }
+  - { name: "Heikki Laamanen", role: "WWW-toimikunta" }
+  - { name: "Niklas Kolster", role: "WWW-toimikunta" }
+  - { name: "Antti Halonen", role: "WWW-toimikunta" }
+  - { name: "Rasmus Ahvenniemi", role: "WWW-toimikunta" }
+  - { name: "Antti Liinakoski", role: "Abi-infotoimikunta" }
+  - { name: "Pasi Kuusela", role: "Abi-infotoimikunta" }
+  - { name: "Ville Karttunen", role: "Abi-infotoimikunta" }
+  - { name: "Sami Jauhiainen", role: "Abi-infotoimikunta" }
+  - { name: "Anu Vilén", role: "Opintotyöryhmä" }
+  - { name: "Liina Saarinen", role: "Opintotyöryhmä" }
+  - { name: "Veli-Pekka Pulkkinen", role: "Opintotyöryhmä" }
+  - { name: "Ville Karttunen", role: "Opintotyöryhmä" }
+  - { name: "Niklas Kari", role: "Opintotyöryhmä" }
+  - { name: "Antti Bergholm", role: "Opintotyöryhmä" }
+  - { name: "Henrik Dahl", role: "Talonmies" }
+  - { name: "Niklas Kolster", role: "Jäsenrekisterivastaava" }
+  - { name: "Risto Pietilä", role: "Yrittäjyyskoordinaattori" }
+  - { name: "Sanna Lindeman", role: "Ranzuroopet" }
+  - { name: "Ville Karttunen", role: "Ranzuroopet" }
+  - { name: "Jonas Alam", role: "Ranzuroopet" }
+  - { name: "Marko Pelkonen", role: "Tenttikokoelmavastaava" }
+  - { name: "Helena Lakervi", role: "Proleko?n toimittajat" }
+  - { name: "Kai Kuikkaniemi", role: "Proleko?n toimittajat" }
+  - { name: "Petri Kortelainen", role: "Proleko?n toimittajat" }
+  - { name: "Juho Juopperi", role: "Proleko?n toimittajat" }
+  - { name: "Pasi Kuusela", role: "Riipparivastaava" }
+  - { name: "Teppo Rinta-Filppula", role: "Lukkarit" }
+  - { name: "Antti Bergholm", role: "Lukkarit" }
+  - { name: "Mailiina Turanlahti", role: "Juomanlaskija" }
+  - { name: "Antti Suorsa", role: "Juomanlaskija" }
+  - { name: "Heli Kinnunen", role: "Juomanlaskija" }
+  - { name: "Lotta Haakana", role: "Juomanlaskija" }

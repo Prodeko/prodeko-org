@@ -1,0 +1,52 @@
+# Officials of 2011, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2011"
+sortKey: 2011
+members:
+  - { name: "Riku Mäkelä", role: "Maito-/kahvivastaava" }
+  - { name: "Mikko Valjus", role: "Talonmiehet" }
+  - { name: "Mikko Savola", role: "Talonmiehet" }
+  - { name: "Ilari Alén", role: "Talonmiehet" }
+  - { name: "Mikko Savola", role: "Proleko?:n toimittajat" }
+  - { name: "Iida Myllymäki", role: "Proleko?:n toimittajat" }
+  - { name: "Ida Martela", role: "Proleko?:n toimittajat" }
+  - { name: "Laura Korhonen", role: "Proleko?:n toimittajat" }
+  - { name: "Henri Koponen", role: "Proleko?:n toimittajat" }
+  - { name: "Toni Kaario", role: "Proleko?:n toimittajat" }
+  - { name: "Lauri Ikonen", role: "Proleko?:n toimittajat" }
+  - { name: "Salli Hukkinen", role: "Proleko?:n toimittajat" }
+  - { name: "Johan Haataja", role: "Proleko?:n toimittajat" }
+  - { name: "Mia Eriksson", role: "Proleko?:n toimittajat" }
+  - { name: "Ida Martela", role: "Proleko?:n päätoimittaja" }
+  - { name: "Karli Kalpala", role: "Vuosijuhlavastaava" }
+  - { name: "Aleksi Taipale", role: "Punttisvastaavat" }
+  - { name: "Lotta Kujala", role: "Punttisvastaavat" }
+  - { name: "Elisa Terho", role: "Kulttuurikeskipiste" }
+  - { name: "Simo Hellgrén", role: "Kulttuuripersoona" }
+  - { name: "Roberto Cacciatore", role: "ISO-vastaava" }
+  - { name: "Kristian Sjölund", role: "Webmasterit" }
+  - { name: "Albert Nazander", role: "Webmasterit" }
+  - { name: "Antti Laukkanen", role: "Webmasterit" }
+  - { name: "Matti Fouchault-Airasmaa", role: "KV-vastaava" }
+  - { name: "Ville Poikolainen", role: "Toiminnantarkastajat" }
+  - { name: "Juhana Nurmio", role: "Toiminnantarkastajat" }
+  - { name: "Iida Myllymäki", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Riko Nyberg", role: "Dokumentoijat" }
+  - { name: "Inari Natri", role: "Dokumentoijat" }
+  - { name: "Juha Murtoaro", role: "Reimari" }
+  - { name: "Tuure ”Two-Ray” Parkkinen Parkkinen", role: "Lukkarit" }
+  - { name: "Kristian Sjölund", role: "Lukkarit" }
+  - { name: "Matti Fouchault-Airasmaa", role: "Lukkarit" }
+  - { name: "Tuisku Suomala", role: "YS-toimarit" }
+  - { name: "Eero Pakarinen", role: "YS-toimarit" }
+  - { name: "Miikka Uosukainen", role: "Juomanlaskija" }
+  - { name: "Riko Nyberg", role: "Juomanlaskija" }
+  - { name: "Ida Martela", role: "Juomanlaskija" }
+  - { name: "Salli Antila", role: "Juomanlaskija" }
+  - { name: "Niko-Petteri Ahonen", role: "Juomanlaskijat" }
+  - { name: "Lotta Walden", role: "Abivastaava" }
+  - { name: "Niko Snirvi", role: "Ulkojaos" }
+  - { name: "Laura Korhonen", role: "Ulkojaos" }
+  - { name: "Heikki Koponen", role: "Ulkojaos" }
+  - { name: "Toni Kaario", role: "Ulkojaos" }

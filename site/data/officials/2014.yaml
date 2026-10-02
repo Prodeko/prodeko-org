@@ -1,0 +1,80 @@
+# Officials of 2014, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2014"
+sortKey: 2014
+members:
+  - { name: "Simo Hellgrén", role: "Arkistonhoitaja" }
+  - { name: "Marianne Vikkula", role: "Tutapäivätoimikunta" }
+  - { name: "Niko Snirvi", role: "Tutapäivätoimikunta" }
+  - { name: "Juha Murtoaro", role: "Tutapäivätoimikunta" }
+  - { name: "Roberto Cacciatore", role: "Tutapäivätoimikunta" }
+  - { name: "Jukka Kujala", role: "Laulukirjatoimikunta" }
+  - { name: "Heikki Koponen", role: "Laulukirjatoimikunta" }
+  - { name: "Simo Hellgrén", role: "Laulukirjatoimikunta" }
+  - { name: "Roberto Cacciatore", role: "Laulukirjatoimikunta" }
+  - { name: "Teemu Laurikainen", role: "Bilisvastaava" }
+  - { name: "Laura Levänen", role: "Vaihtarivastaava" }
+  - { name: "Arttu Toivonen", role: "Talotaikurit" }
+  - { name: "Henrik Säilä", role: "Talotaikurit" }
+  - { name: "Markus Mäkynen", role: "Talotaikurit" }
+  - { name: "Miika Kangas", role: "Talotaikurit" }
+  - { name: "Valtter Vihervuori", role: "Webmasterit" }
+  - { name: "Matti Vesikivi", role: "Webmasterit" }
+  - { name: "Kristian Sjölund", role: "Webmasterit" }
+  - { name: "Pasi Lohi", role: "Webmasterit" }
+  - { name: "Antti Laukkanen", role: "Webmasterit" }
+  - { name: "Veikko Kovanen", role: "Webmasterit" }
+  - { name: "Ilari Alén", role: "Webmasterit" }
+  - { name: "Johan Kondratjeff", role: "Prolekon taittaja" }
+  - { name: "Valtter Vihervuori", role: "Prolekon toimittajat" }
+  - { name: "Susanna Tulokas", role: "Prolekon toimittajat" }
+  - { name: "Tuisku Suomala", role: "Prolekon toimittajat" }
+  - { name: "Marko Sommarberg", role: "Prolekon toimittajat" }
+  - { name: "Kristian Sjölund", role: "Prolekon toimittajat" }
+  - { name: "Pauli Nikkanen", role: "Prolekon toimittajat" }
+  - { name: "Laura Korhonen", role: "Prolekon toimittajat" }
+  - { name: "Heikki Koponen", role: "Prolekon toimittajat" }
+  - { name: "Oskari Hyvärinen", role: "Prolekon toimittajat" }
+  - { name: "Ilari Alén", role: "Prolekon toimittajat" }
+  - { name: "Robin Norrbäck", role: "Abivastaavat" }
+  - { name: "Olli Matilainen", role: "Abivastaavat" }
+  - { name: "Inari Natri", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Iina Lappalainen", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Saana Kivimaa", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Niko Ahonen", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Julius Säilä", role: "Toiminnantarkastajat" }
+  - { name: "Oskari Hyvärinen", role: "Toiminnantarkastajat" }
+  - { name: "Tuisku Suomala", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Valtter Vihervuori", role: "Pääainevastaavat" }
+  - { name: "Toni Kaario", role: "Pääainevastaavat" }
+  - { name: "Ville Hartikka", role: "Pääainevastaavat" }
+  - { name: "Ilari Alén", role: "Pääainevastaavat" }
+  - { name: "Aleksi Hämäläinen", role: "Punttisvastaava" }
+  - { name: "Pyry Huhtanen", role: "Maitotyttö" }
+  - { name: "Iina Lappalainen", role: "Dokumentoijat" }
+  - { name: "Johan Kondratjeff", role: "Dokumentoijat" }
+  - { name: "Otto Bergius", role: "Reimari" }
+  - { name: "Paavo Pere", role: "Lukkarit" }
+  - { name: "Christine Korjus", role: "Lukkarit" }
+  - { name: "Simo Hellgrén", role: "Lukkarit" }
+  - { name: "Santeri Vilos", role: "YS-toimarit" }
+  - { name: "Henri Hämäläinen", role: "YS-toimarit" }
+  - { name: "Henni Turunen", role: "Juomanlaskija" }
+  - { name: "Jane Seppälä", role: "Juomanlaskija" }
+  - { name: "Antti Luiro", role: "Juomanlaskija" }
+  - { name: "Konsta Huuki", role: "Juomanlaskija" }
+  - { name: "Henri Hämäläinen", role: "Juomanlaskija" }
+  - { name: "Anni-Emilia Pesonen", role: "Prolekon päätoimittaja" }
+  - { name: "Merit Morikawa", role: "ISOvastaava" }
+  - { name: "Janne Vikelä", role: "Ulkojaos" }
+  - { name: "Liina Mikola", role: "Ulkojaos" }
+  - { name: "Jaakko Laiho", role: "Ulkojaos" }
+  - { name: "Henri Jarrett", role: "Ulkojaos" }
+  - { name: "Susanna Tulokas", role: "Vuosijuhlatoimikunta" }
+  - { name: "Anni Rissanen", role: "Vuosijuhlatoimikunta" }
+  - { name: "Inari Natri", role: "Vuosijuhlatoimikunta" }
+  - { name: "Iina Lappalainen", role: "Vuosijuhlatoimikunta" }
+  - { name: "Saana Kivimaa", role: "Vuosijuhlatoimikunta" }
+  - { name: "Julius Luukkanen", role: "Kulttuurijaos" }
+  - { name: "Ukko Kilpinen", role: "Kulttuurijaos" }

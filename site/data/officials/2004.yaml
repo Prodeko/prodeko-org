@@ -1,0 +1,43 @@
+# Officials of 2004, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2004"
+sortKey: 2004
+members:
+  - { name: "Antti Vassinen", role: "Tietotekniikkajaosto" }
+  - { name: "Antti Suorsa", role: "Tietotekniikkajaosto" }
+  - { name: "Jenni Stenman", role: "Tietotekniikkajaosto" }
+  - { name: "Mikko Laine", role: "Tietotekniikkajaosto" }
+  - { name: "Janne Kalliomäki", role: "Tietotekniikkajaosto" }
+  - { name: "Mailiina Turanlahti", role: "Opintotoimikunta" }
+  - { name: "Johanna Pynnä", role: "Opintotoimikunta" }
+  - { name: "Tuomo Pesonen", role: "Opintotoimikunta" }
+  - { name: "Aino Mäkisalo", role: "Opintotoimikunta" }
+  - { name: "Mikko Lauerma", role: "Opintotoimikunta" }
+  - { name: "Ville Karttunen", role: "Opintotoimikunta" }
+  - { name: "Tuukka Eloranta", role: "Opintotoimikunta" }
+  - { name: "Antti Vassinen", role: "Kiltahuonejaosto" }
+  - { name: "Johanna Pynnä", role: "Kiltahuonejaosto" }
+  - { name: "Heikki Henttu", role: "Kiltahuonejaosto" }
+  - { name: "Tuija Heinonen", role: "Kiltahuonejaosto" }
+  - { name: "Henrik Dahl", role: "Kiltahuonejaosto" }
+  - { name: "Tuomo Pesonen", role: "Tenttikokoelmavastaava" }
+  - { name: "Heidi Sivula", role: "Proleko?n toimittajat" }
+  - { name: "Olli Pakarinen", role: "Proleko?n toimittajat" }
+  - { name: "Marja Ollila", role: "Proleko?n toimittajat" }
+  - { name: "Anne-Mari Laiho", role: "Proleko?n toimittajat" }
+  - { name: "Anni Kauranen", role: "Proleko?n toimittajat" }
+  - { name: "Carlos Canto", role: "Proleko?n toimittajat" }
+  - { name: "Jenni Stenman", role: "Proleko?n päätoimittaja" }
+  - { name: "Riikka Jahkonen", role: "TEK-yhdyshenkilö" }
+  - { name: "Hanna-Kaisa Sävelkoski", role: "Opintojaosto" }
+  - { name: "Markus Mäkelä", role: "Opintojaosto" }
+  - { name: "Maija Kaukonen", role: "Opintojaosto" }
+  - { name: "Lotta Haakana", role: "Opintojaosto" }
+  - { name: "Antti Vassinen", role: "Kulttuurivastaava" }
+  - { name: "Mailiina Turanlahti", role: "Lukkarit" }
+  - { name: "Sanna Lindeman", role: "Lukkarit" }
+  - { name: "Teija Seitola", role: "Juomanlaskija" }
+  - { name: "Heidi Hynynen", role: "Juomanlaskija" }
+  - { name: "Satu Alikoski", role: "Juomanlaskija" }
+  - { name: "Jenni Stenman", role: "ISOvastaava" }

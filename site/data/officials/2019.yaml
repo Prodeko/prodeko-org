@@ -1,0 +1,146 @@
+# Officials of 2019, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2019"
+sortKey: 2019
+members:
+  - { name: "Henna Pirskanen", role: "Häirintäyhdyshenkilö" }
+  - { name: "Oona Kallela", role: "Häirintäyhdyshenkilö" }
+  - { name: "Risto Ilomäki", role: "Häirintäyhdyshenkilö" }
+  - { name: "Elena Pitkänen", role: "Historoitsijat" }
+  - { name: "Eemil Oikari", role: "Historoitsijat" }
+  - { name: "Olli Kiikkilä", role: "Toiminnantarkastajat" }
+  - { name: "Eeva Jokinen", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Reko Vaherkoski", role: "Pääainevastaavat" }
+  - { name: "Eemil Oikari", role: "Pääainevastaavat" }
+  - { name: "Ossi Hakulinen", role: "Pääainevastaavat" }
+  - { name: "Niilo Pirttijärvi", role: "Punttisvastaava" }
+  - { name: "Reko Penttilä", role: "Biljardivastaava" }
+  - { name: "Anni Halko", role: "Namusetä" }
+  - { name: "Rontti ”Antti”", role: "Maitotyttö" }
+  - { name: "Essi Tuomala", role: "Kiltis MacGyver" }
+  - { name: "Suvi Rinkineva", role: "Dokumentoijat" }
+  - { name: "Veera Mäntylä", role: "Dokumentoijat" }
+  - { name: "Kalle Hiltunen", role: "Dokumentoijat" }
+  - { name: "Timo Riski", role: "Viestintävelhot" }
+  - { name: "Lotta Oksala", role: "Viestintävelhot" }
+  - { name: "Santeri Kiviniemi", role: "Viestintävelhot" }
+  - { name: "Jaakko Jäkärä", role: "Viestintävelhot" }
+  - { name: "Jaakko Hyppönen", role: "Viestintävelhot" }
+  - { name: "Petrus Holm", role: "Viestintävelhot" }
+  - { name: "Teemu Salminen", role: "Abitiimi" }
+  - { name: "Johannes Rantala", role: "Abitiimi" }
+  - { name: "Miki Lehto", role: "Abitiimi" }
+  - { name: "Ilari Jokinen", role: "Abitiimi" }
+  - { name: "Eeva Jokinen", role: "Abitiimi" }
+  - { name: "Jaakko Hyppönen", role: "Abitiimi" }
+  - { name: "Aarni Huuskonen", role: "Abitiimi" }
+  - { name: "Aaro Hämeri", role: "Abitiimi" }
+  - { name: "Heidi Fontell", role: "Abitiimi" }
+  - { name: "Jusa Annevirta", role: "Abitiimi" }
+  - { name: "Elias Tuomi", role: "Webbitiimi" }
+  - { name: "Timo Riski", role: "Webbitiimi" }
+  - { name: "Henrik Pikka", role: "Webbitiimi" }
+  - { name: "Aleksi Pauna", role: "Webbitiimi" }
+  - { name: "Kasimir Palmula", role: "Webbitiimi" }
+  - { name: "Taavi Mustajoki", role: "Webbitiimi" }
+  - { name: "Jan Lundström", role: "Webbitiimi" }
+  - { name: "Samuli Laakko", role: "Webbitiimi" }
+  - { name: "Aaro Korhonen", role: "Webbitiimi" }
+  - { name: "Santeri Kivinen", role: "Webbitiimi" }
+  - { name: "Olli Kiikkilä", role: "Webbitiimi" }
+  - { name: "Julius Jaskari", role: "Webbitiimi" }
+  - { name: "Aarni Huuskonen", role: "Webbitiimi" }
+  - { name: "Erik Husgafvel", role: "Webbitiimi" }
+  - { name: "Petrus Holm", role: "Webbitiimi" }
+  - { name: "Otso Hellman", role: "Webbitiimi" }
+  - { name: "Tony Hämmäinen", role: "Webbitiimi" }
+  - { name: "Aaro Hämeri", role: "Webbitiimi" }
+  - { name: "Tuomas Haapalehto", role: "Webbitiimi" }
+  - { name: "Leo Drosdek", role: "Webbitiimi" }
+  - { name: "Amos Altio", role: "Webbitiimi" }
+  - { name: "Henrik Aarnio", role: "Webbitiimi" }
+  - { name: "Tua Videman", role: "Prolekon toimitus" }
+  - { name: "Jaakko Väkevä", role: "Prolekon toimitus" }
+  - { name: "Susanna Tamminen", role: "Prolekon toimitus" }
+  - { name: "Riku Suonsivu", role: "Prolekon toimitus" }
+  - { name: "Otto Saaranto", role: "Prolekon toimitus" }
+  - { name: "Niko Pronin", role: "Prolekon toimitus" }
+  - { name: "Merit Morikawa", role: "Prolekon toimitus" }
+  - { name: "Mikko Mäntylä", role: "Prolekon toimitus" }
+  - { name: "Veera Mäntylä", role: "Prolekon toimitus" }
+  - { name: "Julius Luukkanen", role: "Prolekon toimitus" }
+  - { name: "Henri Lencioni", role: "Prolekon toimitus" }
+  - { name: "Miki Lehto", role: "Prolekon toimitus" }
+  - { name: "Santeri Kiviniemi", role: "Prolekon toimitus" }
+  - { name: "Niko Kinnunen", role: "Prolekon toimitus" }
+  - { name: "Olli Kiikkilä", role: "Prolekon toimitus" }
+  - { name: "Olli Kesseli", role: "Prolekon toimitus" }
+  - { name: "Joel Kauppi", role: "Prolekon toimitus" }
+  - { name: "Rontti Ihalainen", role: "Prolekon toimitus" }
+  - { name: "Jaakko Hyppönen", role: "Prolekon toimitus" }
+  - { name: "Matias Hynönen", role: "Prolekon toimitus" }
+  - { name: "Severi Huuki", role: "Prolekon toimitus" }
+  - { name: "Aaro Hämeri", role: "Prolekon toimitus" }
+  - { name: "Heikki Saarenhovi", role: "Reimari" }
+  - { name: "Johanna Tavia", role: "Kulttuuripersoonat" }
+  - { name: "Tommi Salmi", role: "Kulttuuripersoonat" }
+  - { name: "Antti ”Rontti”", role: "Kulttuuripersoonat" }
+  - { name: "Sameli Reinilä", role: "Kulttuuripersoonat" }
+  - { name: "Lotta Pyykönen", role: "Kulttuuripersoonat" }
+  - { name: "Kaisa Korhonen", role: "Kulttuuripersoonat" }
+  - { name: "Suvi Rinkineva", role: "Lukkarikisällit" }
+  - { name: "Julius Luukkanen", role: "Lukkarikisällit" }
+  - { name: "Niko Laukkanen", role: "Lukkarikisällit" }
+  - { name: "Lauri Lahtinen", role: "Lukkarikisällit" }
+  - { name: "Elias Takala", role: "Lukkarit" }
+  - { name: "Miki Lehto", role: "Lukkarit" }
+  - { name: "Olli Kesseli", role: "Lukkarit" }
+  - { name: "Oona Kallela", role: "Lukkarit" }
+  - { name: "Elena Pitkänen", role: "Tutapäivätoimarit" }
+  - { name: "Konsta Huuki", role: "Tutapäivätoimarit" }
+  - { name: "Niilo Pirttijärvi", role: "Mentorointimanageri" }
+  - { name: "Essi Tuomala", role: "YS-toimari" }
+  - { name: "Lauri Lahtinen", role: "YS-toimari" }
+  - { name: "Severi Sinkko", role: "Ulkotoimari" }
+  - { name: "Reko Penttilä", role: "Ulkotoimari" }
+  - { name: "Ilari Jokinen", role: "Ulkotoimari" }
+  - { name: "Tiu Soimakallio", role: "Juomanlaskija" }
+  - { name: "Tommi Salmi", role: "Juomanlaskija" }
+  - { name: "Otto Rouhelo", role: "Juomanlaskija" }
+  - { name: "Veera Mäntylä", role: "Juomanlaskija" }
+  - { name: "Valeria Koshevaya", role: "Juomanlaskija" }
+  - { name: "Kaisa Korhonen", role: "Juomanlaskija" }
+  - { name: "Meri Kalke", role: "Juomanlaskija" }
+  - { name: "Eeva Jokinen", role: "Juomanlaskija" }
+  - { name: "Heidi Fontell", role: "Juomanlaskija" }
+  - { name: "Jusa Annevirta", role: "Juomanlaskija" }
+  - { name: "Timo Moilanen", role: "Seminaaritsaari" }
+  - { name: "Kirsikka Mannerkoski", role: "Prolekon päätoimittaja" }
+  - { name: "Elias Nordman", role: "ISOvastaava" }
+  - { name: "Konsta Kouzmitchev", role: "ESTIEM-vastaava" }
+  - { name: "Lotta Oksala", role: "Abivastaava" }
+  - { name: "Kalle Hiltunen", role: "CTO" }
+  - { name: "Rita Myllymäki", role: "Diskonttaustirehtöörit" }
+  - { name: "Miki Lehto", role: "Diskonttaustirehtöörit" }
+  - { name: "Henna Pirskanen", role: "Vuosijuhlatoimikunta" }
+  - { name: "Karoliina Pellinen", role: "Vuosijuhlatoimikunta" }
+  - { name: "Elias Nordman", role: "Vuosijuhlatoimikunta" }
+  - { name: "Tua Videman", role: "Seminaaritoimari" }
+  - { name: "Timo Moilanen", role: "Seminaaritoimari" }
+  - { name: "Sara Ikonen", role: "Seminaaritoimari" }
+  - { name: "Matias Hynönen", role: "Seminaaritoimari" }
+  - { name: "Maria Haukka", role: "Seminaaritoimari" }
+  - { name: "Reko Vaherkoski", role: "PJ" }
+  - { name: "Susanna Tamminen", role: "ISOvastaava" }
+  - { name: "Mikko Sippola", role: "IE" }
+  - { name: "Eemil Oikari", role: "Rahis, Sedinaaritsaari" }
+  - { name: "Merit Morikawa", role: "Opintovastaava, Prolekon päätoimittaja" }
+  - { name: "Olli Kiikkilä", role: "Mediakeisari, CTO" }
+  - { name: "Joel Kauppi", role: "KV/Maisteri" }
+  - { name: "Joonas Kaijala", role: "UM, Estiem-vastaava" }
+  - { name: "Sara Ikonen", role: "Abivastaava" }
+  - { name: "Ville Huovinen", role: "Diskotirehtööri" }
+  - { name: "Pyry Huhtanen", role: "XQM" }
+  - { name: "Tony Hämmäinen", role: "VPJ" }
+  - { name: "Henri Hämäläinen", role: "YSV" }

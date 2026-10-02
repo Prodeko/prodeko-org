@@ -19,7 +19,7 @@ fi:
   - title: Kilta
     url: /fi/guild/
     menuKey: guild
-    owns: [/fi/guild/, /fi/opinnot/, /fi/palvelut/, /fi/estiem-lg-helsinki/]
+    owns: [/fi/guild/, /fi/opinnot/, /fi/palvelut/]
     mobileChildren:
       - { label: Kilta, url: /fi/guild/ }
       - { label: Hallitus ja toimarit, url: /fi/guild/hallitus-ja-toimihenkilot/ }
@@ -38,12 +38,17 @@ fi:
   - title: Fukseille
     url: /fi/new-students/
     menuKey: fuksit
+  # ESTIEM LG Helsinki is a community of its own rather than one of the
+  # guild's services, so it has a bar item instead of a row under Palvelut.
+  - title: ESTIEM
+    url: /fi/estiem-lg-helsinki/
+    owns: [/fi/estiem-lg-helsinki/]
 
 en:
   - title: Guild
     url: /en/guild/
     menuKey: guild
-    owns: [/en/guild/, /en/studies/, /en/services/, /en/estiem-lg-helsinki/]
+    owns: [/en/guild/, /en/studies/, /en/services/]
     mobileChildren:
       - { label: Guild, url: /en/guild/ }
       - { label: Board and officials, url: /en/guild/board-and-officials/ }
@@ -61,3 +66,6 @@ en:
   - title: New students
     url: /en/new-students/
     menuKey: fuksit
+  - title: ESTIEM
+    url: /en/estiem-lg-helsinki/
+    owns: [/en/estiem-lg-helsinki/]

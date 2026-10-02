@@ -1,0 +1,107 @@
+# Officials of 2015, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2015"
+sortKey: 2015
+members:
+  - { name: "Lauri Mikkola", role: "Casevastaava" }
+  - { name: "Tuukka Yrttimaa", role: "Projektimöröt" }
+  - { name: "Andreas Saari", role: "Projektimöröt" }
+  - { name: "Laura Levänen", role: "Projektimöröt" }
+  - { name: "Henrik Säilä", role: "Bilisvastaavat" }
+  - { name: "Miika Kangas", role: "Bilisvastaavat" }
+  - { name: "Reko Vaherkoski", role: "Namusedät" }
+  - { name: "Juha Murtoaro", role: "Namusedät" }
+  - { name: "Katriina Suojala", role: "Talotaikurit" }
+  - { name: "Heta Ruikka", role: "Talotaikurit" }
+  - { name: "Oskari Hyvärinen", role: "Talotaikurit" }
+  - { name: "Valtter Vihervuori", role: "Webmasterit" }
+  - { name: "Matti Vesikivi", role: "Webmasterit" }
+  - { name: "Timo Moilanen", role: "Webmasterit" }
+  - { name: "Pasi Lohi", role: "Webmasterit" }
+  - { name: "Antti Laukkanen", role: "Webmasterit" }
+  - { name: "Tony Hämmäinen", role: "Webmasterit" }
+  - { name: "Ilari Alén", role: "Webmasterit" }
+  - { name: "Henrik Aarnio", role: "Webmasterit" }
+  - { name: "Auri Väljä", role: "Prolekon taittaja" }
+  - { name: "Katriina Suojala", role: "Prolekon toimittajat" }
+  - { name: "Matilda Säde", role: "Prolekon toimittajat" }
+  - { name: "Heta Ruikka", role: "Prolekon toimittajat" }
+  - { name: "Christine Korjus", role: "Prolekon toimittajat" }
+  - { name: "Laura Korhonen", role: "Prolekon toimittajat" }
+  - { name: "Antti Kaivola", role: "Prolekon toimittajat" }
+  - { name: "Markus Junkkari", role: "Prolekon toimittajat" }
+  - { name: "Konsta Huuki", role: "Prolekon toimittajat" }
+  - { name: "Pyry Huhtanen", role: "Prolekon toimittajat" }
+  - { name: "Simo Hellgrén", role: "Prolekon toimittajat" }
+  - { name: "Tony Hämmäinen", role: "Prolekon toimittajat" }
+  - { name: "Olli Halminen", role: "Prolekon toimittajat" }
+  - { name: "Leo Bergman", role: "Prolekon toimittajat" }
+  - { name: "Elena Pitkänen", role: "Abivastaavat" }
+  - { name: "Olli Kesseli", role: "Abivastaavat" }
+  - { name: "Teemu Laurikainen", role: "Prodeko-50 yrityssuhdevastaavat" }
+  - { name: "Tino Kantola", role: "Prodeko-50 yrityssuhdevastaavat" }
+  - { name: "Iina Lappalainen", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Saana Kivimaa", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Markus Junkkari", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Ville Huovinen", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Tommi Huoponen", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Pyry Huhtanen", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Henri Hämäläinen", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Matti Fouchault-Airasmaa", role: "Disko-50 valmistelutoimikunta" }
+  - { name: "Jyri Yli-Villamo", role: "Disko-49 vuosijuhlatoimikunta" }
+  - { name: "Susanna Tamminen", role: "Disko-49 vuosijuhlatoimikunta" }
+  - { name: "Merit Morikawa", role: "Disko-49 vuosijuhlatoimikunta" }
+  - { name: "Karliina Kyhälä", role: "Disko-49 vuosijuhlatoimikunta" }
+  - { name: "Martyna Kosmala", role: "Disko-49 vuosijuhlatoimikunta" }
+  - { name: "Jyri Yli-Villamo", role: "Hallopedit" }
+  - { name: "Merit Morikawa", role: "Hallopedit" }
+  - { name: "Ville Huovinen", role: "Hallopedit" }
+  - { name: "Olli Halminen", role: "Hallopedit" }
+  - { name: "Ossi Hakulinen", role: "Hallopedit" }
+  - { name: "Auri Väljä", role: "Arkistovastaavat" }
+  - { name: "Matilda Säde", role: "Arkistovastaavat" }
+  - { name: "Heikki Koponen", role: "Toiminnantarkastajat" }
+  - { name: "Markus Junkkari", role: "Toiminnantarkastajat" }
+  - { name: "Olli Halminen", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Antti Mauno", role: "Punttisvastaava" }
+  - { name: "Jukka Kujala", role: "Maitotyttö" }
+  - { name: "Lauri Tegel", role: "Dokumentoijat" }
+  - { name: "Merit Morikawa", role: "Dokumentoijat" }
+  - { name: "Johan Kondratjeff", role: "Dokumentoijat" }
+  - { name: "Henri Saksi", role: "Reimari" }
+  - { name: "Joonas Kaijala", role: "Lukkarikisällit" }
+  - { name: "Jani Jokivuori", role: "Lukkarikisällit" }
+  - { name: "Peter Ivanov", role: "Lukkarikisällit" }
+  - { name: "Pyry Huhtanen", role: "Lukkarikisällit" }
+  - { name: "Paavo Pere", role: "Lukkarit" }
+  - { name: "Christine Korjus", role: "Lukkarit" }
+  - { name: "Simo Hellgrén", role: "Lukkarit" }
+  - { name: "Janne Vikelä", role: "YS-toimarit" }
+  - { name: "Eero Vartiainen", role: "YS-toimarit" }
+  - { name: "Jane Seppälä", role: "YS-toimarit" }
+  - { name: "Antti Luiro", role: "YS-toimarit" }
+  - { name: "Tommi Huoponen", role: "YS-toimarit" }
+  - { name: "Mikko Sippola", role: "Juomanlaskija" }
+  - { name: "Jani Saranpää", role: "Juomanlaskija" }
+  - { name: "Elena Pitkänen", role: "Juomanlaskija" }
+  - { name: "Annemari Kirppu", role: "Juomanlaskija" }
+  - { name: "Olli Kiikkilä", role: "Juomanlaskija" }
+  - { name: "Olli Kesseli", role: "Juomanlaskija" }
+  - { name: "Merit Morikawa", role: "Prolekon päätoimittaja" }
+  - { name: "Susanna Tamminen", role: "ISOvastaava" }
+  - { name: "Janne Vikelä", role: "Ulkojaos" }
+  - { name: "Lauri Tegel", role: "Ulkojaos" }
+  - { name: "Tuomo Tanila", role: "Ulkojaos" }
+  - { name: "Viktor Lunetta", role: "Ulkojaos" }
+  - { name: "Joonas Kaijala", role: "Ulkojaos" }
+  - { name: "Henni Turunen", role: "Kulttuurijaos" }
+  - { name: "Liina Mikola", role: "Kulttuurijaos" }
+  - { name: "Tuisku Suomala", role: "Jatkuvuustoimikunta" }
+  - { name: "Emma Nermes", role: "Jatkuvuustoimikunta" }
+  - { name: "Jarno Lappalainen", role: "Jatkuvuustoimikunta" }
+  - { name: "Markus Junkkari", role: "Jatkuvuustoimikunta" }
+  - { name: "Salli Hukkinen", role: "Jatkuvuustoimikunta" }
+  - { name: "Juho Hoikka", role: "Jatkuvuustoimikunta" }
+  - { name: "Terhen Heikkilä", role: "Jatkuvuustoimikunta" }
+  - { name: "Tuukka Eloranta", role: "Jatkuvuustoimikunta" }

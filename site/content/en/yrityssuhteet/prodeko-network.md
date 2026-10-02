@@ -25,11 +25,9 @@ Our Head of Corporate Relations is happy to answer all your questions regarding 
 
 [Vaisala](https://www.vaisala.fi/) (since 2010)
 
-[Neste](https://www.neste.fi/) (since 2012)
-
 [ABB](https://www.abb.com/fi) (since 2016)
 
-[KONE](https://www.google.fi/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiq4NnjrPTRAhVkP5oKHeY3DzwQFggZMAA&url=http%3A%2F%2Fwww.kone.fi%2F&usg=AFQjCNFB0yaE6eohJ_UnOkp6SvdhTJKWng&sig2=BdhPdPGu6rgFN1jAPs61Sg) (since 2016)
+[KONE](https://www.kone.fi/) (since 2016)
 
 [Nordea](https://www.nordea.fi/) (since 2018)
 
@@ -38,3 +36,5 @@ Our Head of Corporate Relations is happy to answer all your questions regarding 
 [RELEX](https://www.relexsolutions.com/eu/fi/) (since 2019)
 
 [Visma](https://www.visma.fi/) (since 2021)
+
+[Vuono Group](https://www.vuonogroup.com) (since 2026)

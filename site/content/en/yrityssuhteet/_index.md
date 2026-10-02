@@ -28,7 +28,7 @@ runs 40+ company events a year.
 
 ### [Excursion](/en/yrityssuhteet/excursions/)
 
-We bring 20–40 students to your office. You provide an introduction, a conversation and something to eat.
+Prodeko organises excursions, or company visits, every week. We bring 20–40 students to your office. You provide an introduction, a conversation and something to eat. Book a company visit: [excumestari@prodeko.org](mailto:excumestari@prodeko.org).
 
 ### Case evening
 

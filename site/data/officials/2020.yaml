@@ -1,0 +1,144 @@
+# Officials of 2020, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2020"
+sortKey: 2020
+members:
+  - { name: "Reko Vaherkoski", role: "Halloped" }
+  - { name: "Reko Vaherkoski", role: "Pääainevastaava: Organization Design and Leadeship" }
+  - { name: "Matias Ståhlström", role: "Pääainevastaava: Operations and Service Management" }
+  - { name: "Teemu Salminen", role: "Halloped" }
+  - { name: "Ilona Raimas", role: "Mentorointimanageri" }
+  - { name: "Rasmus Pekkarinen", role: "Halloped" }
+  - { name: "Hilda Palva", role: "Halloped" }
+  - { name: "Santeri Kivinen", role: "Halloped" }
+  - { name: "Santeri Kivinen", role: "Pääainevastaava: Strategy and Venturing" }
+  - { name: "Elina Karjalainen", role: "Halloped" }
+  - { name: "Antti Kaivola", role: "Halloped" }
+  - { name: "Olli Halminen", role: "Halloped" }
+  - { name: "Mikko Välisalmi", role: "Ulkotoimari" }
+  - { name: "Roosa Toivakka", role: "Ulkotoimari" }
+  - { name: "Jaakko Lehtonen", role: "Ulkotoimari" }
+  - { name: "Mika Siirilä", role: "YS-toimari" }
+  - { name: "Oskari Leppä", role: "Reimari" }
+  - { name: "Sini Hänninen", role: "YS-toimari" }
+  - { name: "Mika Vänskä", role: "Vuosijuhlatoimari" }
+  - { name: "Otto Rouhelo", role: "Vuosijuhlatoimari" }
+  - { name: "Kaisa Korhonen", role: "Vuosijuhlatoimari" }
+  - { name: "Julia Tuuri", role: "Seminaaritoimari" }
+  - { name: "Essi Tuomala", role: "Seminaaritoimari" }
+  - { name: "Ilona Raimas", role: "Seminaaritoimari" }
+  - { name: "Oskari Heinonen", role: "Seminaaritoimari" }
+  - { name: "Maria Haukka", role: "Seminaaritoimari" }
+  - { name: "Akseli Sutinen", role: "Kulttuuripersoona" }
+  - { name: "Lotta Pyykönen", role: "Kulttuuripersoona" }
+  - { name: "Henna Pirskanen", role: "Kulttuuripersoona" }
+  - { name: "Kirsikka Mannerkoski", role: "Kulttuuripersoona" }
+  - { name: "Aaro Koski", role: "Kulttuuripersoona" }
+  - { name: "Essi Tuomala", role: "Kiltis McGyver" }
+  - { name: "Mika Siirilä", role: "Biljardivastaava" }
+  - { name: "Jaakko Lehtonen", role: "Punttisvastaava" }
+  - { name: "Niko Kinnunen", role: "Namu Oy:n toimitusjohtaja" }
+  - { name: "Niko Kinnunen", role: "Hyvinvointiritari" }
+  - { name: "Ilari Kankare", role: "Maitotyttö" }
+  - { name: "Sara Ikonen", role: "Vastuullisuuskonsuli" }
+  - { name: "Tua Videman", role: "Prolekon taittaja" }
+  - { name: "Jani Vepsäläinen", role: "Webbitiimin jäsen" }
+  - { name: "Mikko Välisalmi", role: "Webbitiimin jäsen" }
+  - { name: "Jaakko Väkevä", role: "Prolekon toimittaja" }
+  - { name: "Otso Väärämäki", role: "Abitiimin jäsen" }
+  - { name: "Pekka Urvas", role: "Abitiimin jäsen" }
+  - { name: "Elias Takala", role: "Prolekon toimittaja" }
+  - { name: "Elias Takala", role: "Viestintävelho" }
+  - { name: "Riku Suonsivu", role: "Prolekon toimittaja" }
+  - { name: "Matias Ståhlström", role: "Prolekon toimittaja" }
+  - { name: "Severi Sinkko", role: "Prolekon toimittaja" }
+  - { name: "Julia Sandelin", role: "Dokumentoija" }
+  - { name: "Julia Sandelin", role: "Viestintävelho" }
+  - { name: "Julia Sandelin", role: "Abitiimin jäsen" }
+  - { name: "Joona Salo", role: "Abitiimin jäsen" }
+  - { name: "Otto Saaranto", role: "Prolekon toimittaja" }
+  - { name: "Timo Riski", role: "Webbitiimin jäsen" }
+  - { name: "Suvi Rinkineva", role: "Prolekon toimittaja" }
+  - { name: "Ilona Raimas", role: "Abitiimin jäsen" }
+  - { name: "Ilona Raimas", role: "Prolekon toimittaja" }
+  - { name: "Joonas Räikkönen", role: "Webbitiimin jäsen" }
+  - { name: "Joonas Räikkönen", role: "Abitiimin jäsen" }
+  - { name: "Niko Pronin", role: "Prolekon toimittaja" }
+  - { name: "Henrik Pikka", role: "Webbitiimin jäsen" }
+  - { name: "Kaarle Piipponen", role: "Abitiimin jäsen" }
+  - { name: "Rasmus Pekkarinen", role: "Abitiimin jäsen" }
+  - { name: "Hilda Palva", role: "Abitiimin jäsen" }
+  - { name: "Rita Myllymäki", role: "Prolekon toimittaja" }
+  - { name: "Anton Mikkonen", role: "Abitiimin jäsen" }
+  - { name: "Veera Mäntylä", role: "Prolekon toimittaja" }
+  - { name: "Kirsikka Mannerkoski", role: "Prolekon toimittaja" }
+  - { name: "Rami Luhtala", role: "Prolekon toimittaja" }
+  - { name: "Oskari Leppä", role: "Dokumentoija" }
+  - { name: "Henri Lencioni", role: "Prolekon toimittaja" }
+  - { name: "Miki Lehto", role: "Prolekon toimittaja" }
+  - { name: "Erik Kymäläinen", role: "Webbitiimin jäsen" }
+  - { name: "Aaro Koski", role: "Prolekon toimittaja" }
+  - { name: "Aaro Korhonen", role: "Webbitiimin jäsen" }
+  - { name: "Santeri Kiviniemi", role: "Prolekon taittaja" }
+  - { name: "Santeri Kivinen", role: "Webbitiimin jäsen" }
+  - { name: "Niko Kinnunen", role: "Prolekon taittaja" }
+  - { name: "Olli Kiikkilä", role: "Webbitiimin jäsen" }
+  - { name: "Ilari Kankare", role: "Viestintävelho" }
+  - { name: "Oona Kallela", role: "Prolekon toimittaja" }
+  - { name: "Meri Kalke", role: "Prolekon toimittaja" }
+  - { name: "Julius Jaskari", role: "Webbitiimin jäsen" }
+  - { name: "Antti Ihalainen", role: "Prolekon toimittaja" }
+  - { name: "Sanni Hyytinen", role: "Viestintävelho" }
+  - { name: "Sanni Hyytinen", role: "Abitiimin jäsen" }
+  - { name: "Jaakko Hyppönen", role: "Prolekon toimittaja" }
+  - { name: "Matias Hynönen", role: "Prolekon toimittaja" }
+  - { name: "Severi Huuki", role: "Prolekon toimittaja" }
+  - { name: "Kalle Hiltunen", role: "Webbitiimin jäsen" }
+  - { name: "Otso Hellman", role: "Webbitiimin jäsen" }
+  - { name: "Aaro Hämeri", role: "Webbitiimin jäsen" }
+  - { name: "Kusti Hämäläinen", role: "Abitiimin jäsen" }
+  - { name: "Kusti Hämäläinen", role: "Webbitiimin jäsen" }
+  - { name: "Tiina Ahva", role: "Viestintävelho" }
+  - { name: "Mikko Välisalmi", role: "Juomanlaskija" }
+  - { name: "Pekka Urvas", role: "Lukkarikisälli" }
+  - { name: "Eero Turkki", role: "Juomanlaskija" }
+  - { name: "Roosa Toivakka", role: "Juomanlaskija" }
+  - { name: "Elias Takala", role: "Lukkari" }
+  - { name: "Severi Sinkko", role: "Lukkarikisälli" }
+  - { name: "Suvi Rinkineva", role: "Lukkarikisälli" }
+  - { name: "Joonas Räikkönen", role: "Juomanlaskija" }
+  - { name: "Anton Mikkonen", role: "Juomanlaskija" }
+  - { name: "Mauno Malmivaara", role: "Lukkari" }
+  - { name: "Miki Lehto", role: "Lukkari" }
+  - { name: "Jonas Kuusela", role: "Juomanlaskija" }
+  - { name: "Oona Kallela", role: "Lukkarikisälli" }
+  - { name: "Niina Ikonen", role: "Juomanlaskija" }
+  - { name: "Sanni Hyytinen", role: "Juomanlaskija" }
+  - { name: "Otto Saaranto", role: "Toiminnantarkastaja" }
+  - { name: "Rita Myllymäki", role: "TEK-yhdyshenkilö" }
+  - { name: "Juuso Heikkilä", role: "Toiminnantarkastaja" }
+  - { name: "Eero Vartiainen", role: "Yrityssuhdevastaavan pari" }
+  - { name: "Johanna Tavia", role: "Semmatsaarin pari" }
+  - { name: "Matias Ståhlström", role: "Prolekon päätoimittajan pari" }
+  - { name: "Mikko Sippola", role: "Puheenjohtajan pari" }
+  - { name: "Otto Saaranto", role: "Rahastonhoitajan pari" }
+  - { name: "Elena Pitkänen", role: "ISOvastaavan pari" }
+  - { name: "Eemil Oikari", role: "Varapuheenjohtajan pari" }
+  - { name: "Rita Myllymäki", role: "SisäKuMin ja Diskonttaustirehtöörien pari" }
+  - { name: "Merit Morikawa", role: "Opintovastaavan pari" }
+  - { name: "Julius Luukkanen", role: "Fuksikapteenin pari" }
+  - { name: "Niko Kinnunen", role: "Isännän pari" }
+  - { name: "Olli Kiikkilä", role: "Mediakeisarin ja CTO:n pari" }
+  - { name: "Joel Kauppi", role: "KV- ja maisterikapteenin pari" }
+  - { name: "Joonas Kaijala", role: "Ulkoministerin ja ESTIEM-vastaavan pari" }
+  - { name: "Sara Ikonen", role: "Opintovastaajan ja abivastaavan pari" }
+  - { name: "Jaakko Hyppönen", role: "Excumestarin pari" }
+  - { name: "Eero Turkki", role: "CTO" }
+  - { name: "Teemu Salminen", role: "Abivastaava" }
+  - { name: "Matleena Rinnekangas", role: "ESTIEM-vastaava" }
+  - { name: "Elias Lohilahti", role: "Seminaaritsaari" }
+  - { name: "Laura Lähteenmäki", role: "Diskonttaustirehtööri" }
+  - { name: "Olli Kiikkilä", role: "Prolekon päätoimittaja" }
+  - { name: "Elina Karjalainen", role: "Diskonttaustirehtööri" }
+  - { name: "Niina Ikonen", role: "ISOvastaava" }

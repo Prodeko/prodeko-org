@@ -30,7 +30,7 @@ Kilta on perustettu vuonna 1966 ja siinä on 900 jäsentä. Prodeko Network
 
 ### [Yritysvierailut](/fi/yrityssuhteet/yritysvierailut/)
 
-Fuksiexcursio ja excursiot läpi vuoden. Hyvän työnantajamielikuvan luominen kannattaa aloittaa jo ensimmäisestä vuosikurssista alkaen. Yhteys: [excumestari@prodeko.org](mailto:excumestari@prodeko.org).
+Prodekolla järjestetään excursioita eli yritysvierailuja viikoittain. Varaa yritysvierailu: [excumestari@prodeko.org](mailto:excumestari@prodeko.org).
 
 ### [Sponsorointi](/fi/yrityssuhteet/yrityksille/#luo-hyvä-kuva-ja-ylläpidä-sitä)
 

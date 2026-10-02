@@ -1,0 +1,59 @@
+# Officials of 2009, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2009"
+sortKey: 2009
+members:
+  - { name: "Sanna Mutka", role: "Tilintarkastajat" }
+  - { name: "Satu Alikoski", role: "Tilintarkastajat" }
+  - { name: "Riku Erkkola", role: "Namutäti" }
+  - { name: "Elisa Terho", role: "AD" }
+  - { name: "Miikka Ahonen", role: "Proleko?:n taittaja" }
+  - { name: "Antero Vanhala", role: "Opintojaosto" }
+  - { name: "Lauri Tolvas", role: "Opintojaosto" }
+  - { name: "Olli Tiainen", role: "Opintojaosto" }
+  - { name: "Timo Tervola", role: "Opintojaosto" }
+  - { name: "Tuure Parkkinen", role: "Opintojaosto" }
+  - { name: "Juha Martikainen", role: "Opintojaosto" }
+  - { name: "Arjo Laukia", role: "Opintojaosto" }
+  - { name: "Antti Koulumies", role: "Opintojaosto" }
+  - { name: "Taneli Hirvola", role: "Opintojaosto" }
+  - { name: "Toni Hellsten", role: "Opintojaosto" }
+  - { name: "Johan Haataja", role: "Opintojaosto" }
+  - { name: "Mia Eriksson", role: "Fuksikapteenin adjutantti" }
+  - { name: "Timo Tervola", role: "Talonmiehet" }
+  - { name: "Lauri Tolvas", role: "Proleko?:n toimittajat" }
+  - { name: "Kitty Saikkonen", role: "Proleko?:n toimittajat" }
+  - { name: "Eero Palomäki", role: "Proleko?:n toimittajat" }
+  - { name: "Arjo Laukia", role: "Proleko?:n toimittajat" }
+  - { name: "Jarno Lappalainen", role: "Proleko?:n toimittajat" }
+  - { name: "Nelli Lähteenmäki", role: "Proleko?:n toimittajat" }
+  - { name: "Antti Koulumies", role: "Proleko?:n toimittajat" }
+  - { name: "Iiris Kolu", role: "Proleko?:n toimittajat" }
+  - { name: "Markus Klimschevskij", role: "Proleko?:n toimittajat" }
+  - { name: "Ilkka Heiskanen", role: "Proleko?:n toimittajat" }
+  - { name: "Terhen Heikkilä", role: "Proleko?:n toimittajat" }
+  - { name: "Anna Cajanus", role: "Proleko?:n päätoimittaja" }
+  - { name: "Tatu Virtanen", role: "Punttisvastaavat" }
+  - { name: "Antti Turpeinen", role: "Punttisvastaavat" }
+  - { name: "Toni Hellsten", role: "Webmasterit" }
+  - { name: "Miikka Ahonen", role: "Webmasterit" }
+  - { name: "Sebastian Knight", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Mia Eriksson", role: "Maitotyttö" }
+  - { name: "Martti Heikkilä", role: "Dokumentoijat" }
+  - { name: "Toni Männistö", role: "Reimari" }
+  - { name: "Albert Nazander", role: "Kulttuuripersoonat" }
+  - { name: "Joonas Kykkänen", role: "Kulttuuripersoonat" }
+  - { name: "Terhen Heikkilä", role: "Kulttuuripersoonat" }
+  - { name: "Sebastian Knight", role: "Lukkarit" }
+  - { name: "Tuukka Eloranta", role: "Lukkarit" }
+  - { name: "Mikko Valjus", role: "Juomanlaskija" }
+  - { name: "Iida Myllymäki", role: "Juomanlaskija" }
+  - { name: "Liisa Karjalainen", role: "Juomanlaskija" }
+  - { name: "Lauri Ikonen", role: "Juomanlaskija" }
+  - { name: "Nicolas Svetkow", role: "Ulkojaos" }
+  - { name: "Outi Salonen", role: "Ulkojaos" }
+  - { name: "Kitty Saikkonen", role: "Ulkojaos" }
+  - { name: "Antti Mattila", role: "Ulkojaos" }
+  - { name: "Tero Jaakkola", role: "Ulkojaos" }
+  - { name: "Joona Forss", role: "Ulkojaos" }

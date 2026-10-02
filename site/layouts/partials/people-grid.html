@@ -1,6 +1,7 @@
-{{/* Renders a list of {name, role, roleEn, photo} entries. Shared by the
-     "people" and "archive" layouts so both draw from the same markup and
-     styling.
+{{/* Renders a list of {name, role, roleEn, photo, email, telegram, group,
+     groupEn} entries. Shared by the "people" and "archive" layouts so both
+     draw from the same markup and styling; each person is drawn by
+     people-grid-person.html.
 
      roleEn is used on an English page where the entry has one. The historical
      archive has only Finnish titles: those were the offices' names at the
@@ -12,37 +13,46 @@
 
      photo is optional and names a path under assets; the portrait is cropped
      square from it. An entry without one keeps its place in the grid as name
-     and role alone, so a set can be filled in a face at a time. */}}
-{{ $isFi := eq page.Language.Lang "fi" }}
-{{ with . }}
-  <ul class="people-grid">
-    {{ range . }}
-      {{ $name := .name }}
-      {{ $role := .role }}
-      {{ if and (not $isFi) .roleEn }}{{ $role = .roleEn }}{{ end }}
-      <li class="person">
-        {{ with .photo }}
-          {{ $img := resources.Get . }}
-          {{ if $img }}
-            {{ $img = $img.Fill "400x400 q80" }}
-            {{/* The name is right below the picture, so alt is empty: a
-                 screen reader that read both would say it twice.
+     and role alone, so a set can be filled in a face at a time.
 
-                 No width and height attributes: they are a presentational
-                 hint the stylesheet cannot outrank, and a fixed 400px height
-                 would win over the square the grid asks for. The cell's
-                 aspect-ratio reserves the space instead. */}}
-            <img src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
-          {{ else }}
-            {{/* A person names their portrait by asset path, and a typo in
-                 that path is silent: the picture simply disappears. Stopping
-                 the build is the only way the mistake is ever seen. */}}
-            {{ errorf "photo %q not found for %s" . $name }}
-          {{ end }}
-        {{ end }}
-        <span class="person-name">{{ .name }}</span>
-        {{ with $role }}<span class="person-role">{{ . }}</span>{{ end }}
-      </li>
+     email and telegram are optional too: the board is reached by them, and a
+     telegram handle is written without its @.
+
+     group is optional. When the entries carry one, as the full officials list
+     does, each group gets a heading and a grid of its own, in the order the
+     groups first appear in the data. groupEn, given on a group's first entry,
+     names it on an English page. A group with no portraits at all is drawn
+     as a compact grid: two hundred empty squares would only push the names
+     apart. */}}
+{{ $isFi := eq page.Language.Lang "fi" }}
+{{ $members := . }}
+{{ $groups := slice }}
+{{ $groupEn := dict }}
+{{ range $members }}
+  {{ with .group }}
+    {{ if not (in $groups .) }}{{ $groups = $groups | append . }}{{ end }}
+  {{ end }}
+  {{ if and .group .groupEn }}{{ $groupEn = merge $groupEn (dict .group .groupEn) }}{{ end }}
+{{ end }}
+{{ with $members }}
+  {{ if $groups }}
+    {{ range $groups }}
+      {{ $group := . }}
+      {{ $title := $group }}
+      {{ if and (not $isFi) (index $groupEn $group) }}{{ $title = index $groupEn $group }}{{ end }}
+      {{ $inGroup := where $members "group" $group }}
+      {{ $hasPhoto := false }}
+      {{ range $inGroup }}{{ if .photo }}{{ $hasPhoto = true }}{{ end }}{{ end }}
+      <section class="people-group">
+        <h2 id="{{ $title | urlize }}">{{ $title }}</h2>
+        <ul class="people-grid{{ if not $hasPhoto }} people-grid--compact{{ end }}">
+          {{ range $inGroup }}{{ partial "people-grid-person.html" . }}{{ end }}
+        </ul>
+      </section>
     {{ end }}
-  </ul>
+  {{ else }}
+    <ul class="people-grid">
+      {{ range . }}{{ partial "people-grid-person.html" . }}{{ end }}
+    </ul>
+  {{ end }}
 {{ end }}
