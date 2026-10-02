@@ -11,7 +11,7 @@
 
 backend:
   name: github
-  repo: prodeko/prodeko-hack
+  repo: prodeko/prodeko-org
   branch: main
 
   # The editor login proxy, not GitHub. base_url must be a bare origin: Decap

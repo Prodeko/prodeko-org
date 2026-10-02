@@ -25,7 +25,7 @@ const PageHTML = `<!doctype html>
 <p>JPEG tai PNG, enintään 5 Mt. Linkki toimii kerran ja vanhenee 15 minuutissa.</p>
 <div id="drop">Pudota kuva tähän tai napauta valitaksesi<input id="file" type="file" accept="image/jpeg,image/png"></div>
 <div id="tokenrow" hidden>
-  <label>Liitä latauslinkki keskustelusta: <input id="link" placeholder="https://edit.prodeko.org/upload?token=..."></label>
+  <label>Liitä latauslinkki keskustelusta: <input id="link" placeholder="https://mcp.prodeko.org/upload?token=..."></label>
 </div>
 <p id="out"></p>
 <script>

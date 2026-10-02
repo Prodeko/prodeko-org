@@ -147,8 +147,12 @@ func (m *Manager) api(ctx context.Context, method, path string, body, out any) e
 	req.Header.Set("Accept", "application/vnd.github+json")
 	req.Header.Set("X-GitHub-Api-Version", githubAPIVersion)
 	req.Header.Set("User-Agent", githubUserAgent)
-	if m.cfg.GitHubToken != "" {
-		req.Header.Set("Authorization", "Bearer "+m.cfg.GitHubToken)
+	if m.cfg.GitHubCredential != nil {
+		token, err := m.cfg.GitHubCredential.Token(ctx)
+		if err != nil {
+			return fmt.Errorf("workdir: no GitHub credential for %s %s: %w", method, path, err)
+		}
+		req.Header.Set("Authorization", "Bearer "+token)
 	}
 	if body != nil {
 		req.Header.Set("Content-Type", "application/json")

@@ -146,7 +146,7 @@ func testKeycloakClient(t *testing.T, idp *fakeIdP) *KeycloakClient {
 		Issuer:       idp.issuer(),
 		ClientID:     testKeycloakClientID,
 		ClientSecret: "s3cret",
-		RedirectURI:  "https://edit.prodeko.org/oauth/callback",
+		RedirectURI:  "https://mcp.prodeko.org/oauth/callback",
 		HTTPClient:   idp.srv.Client(),
 	})
 	if err != nil {
@@ -200,7 +200,7 @@ func TestKeycloakAuthCodeURL(t *testing.T) {
 		"response_type":         "code",
 		"state":                 "the-state",
 		"nonce":                 "the-nonce",
-		"redirect_uri":          "https://edit.prodeko.org/oauth/callback",
+		"redirect_uri":          "https://mcp.prodeko.org/oauth/callback",
 		"code_challenge":        challengeFor(testVerifier),
 		"code_challenge_method": "S256",
 	} {
@@ -228,7 +228,7 @@ func TestKeycloakAuthCodeURLIsEmptyWhenKeycloakIsUnreachable(t *testing.T) {
 	k, err := NewKeycloak(context.Background(), KeycloakConfig{
 		Issuer:      dead.URL,
 		ClientID:    testKeycloakClientID,
-		RedirectURI: "https://edit.prodeko.org/oauth/callback",
+		RedirectURI: "https://mcp.prodeko.org/oauth/callback",
 	})
 	if err != nil {
 		t.Fatalf("NewKeycloak did network I/O it should have deferred: %v", err)
@@ -276,7 +276,7 @@ func TestKeycloakExchange(t *testing.T) {
 	if form.Get("client_secret") != "s3cret" {
 		t.Errorf("client_secret = %q", form.Get("client_secret"))
 	}
-	if form.Get("redirect_uri") != "https://edit.prodeko.org/oauth/callback" {
+	if form.Get("redirect_uri") != "https://mcp.prodeko.org/oauth/callback" {
 		t.Errorf("redirect_uri = %q", form.Get("redirect_uri"))
 	}
 }
