@@ -9,7 +9,7 @@
 // server here keeps the role conjunction where it is already written and
 // tested, and lets registration be as permissive as a connector needs.
 //
-// The access token is an [github.com/prodeko/prodeko-hack/proxy/internal/session]
+// The access token is an [github.com/prodeko/prodeko-org/proxy/internal/session]
 // sealed blob carrying the verified Keycloak identity. It is self-contained,
 // so it survives a restart of the container; the client registry and the
 // in-flight authorization codes are in memory and do not.
@@ -31,11 +31,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // The routes this package owns. The two well-known documents are what lets a
-// client that was handed nothing but https://edit.prodeko.org/mcp find its way
+// client that was handed nothing but https://mcp.prodeko.org/mcp find its way
 // in (RFC 8414 and RFC 9728).
 const (
 	MetadataPath         = "/.well-known/oauth-authorization-server"
@@ -111,7 +111,7 @@ type Keycloak interface {
 
 type Config struct {
 	// PublicURL is the bare origin this server is reached at, e.g.
-	// https://edit.prodeko.org. It is the issuer identifier in the metadata
+	// https://mcp.prodeko.org. It is the issuer identifier in the metadata
 	// and the base of every URL in it.
 	PublicURL string
 
@@ -157,7 +157,7 @@ type Server struct {
 func New(cfg Config) (*Server, error) {
 	origin, err := parseOrigin(cfg.PublicURL)
 	if err != nil {
-		return nil, fmt.Errorf("oauthas: PUBLIC_URL %q must be a bare origin such as https://edit.prodeko.org: %w", cfg.PublicURL, err)
+		return nil, fmt.Errorf("oauthas: PUBLIC_URL %q must be a bare origin such as https://mcp.prodeko.org: %w", cfg.PublicURL, err)
 	}
 	cfg.PublicURL = origin
 

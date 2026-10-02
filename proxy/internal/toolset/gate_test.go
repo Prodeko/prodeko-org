@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 // The gate, in the states a session actually reaches. The times are stamps on

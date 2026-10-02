@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 // The guardrail on submit: the edit loop, enforced.

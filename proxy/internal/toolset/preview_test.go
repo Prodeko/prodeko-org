@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/preview"
+	"github.com/prodeko/prodeko-org/proxy/internal/preview"
 )
 
 func TestRenderPageQuotesTheBuiltHTML(t *testing.T) {

@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/mcpserver"
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 // pekka is the second editor: what one person's change does must be invisible
@@ -165,7 +165,7 @@ func writeFixtureFile(t *testing.T, path, body string) {
 }
 
 // fixtureRepo is the repository the fake GitHub answers for, as owner/repo.
-const fixtureRepo = "prodeko/prodeko-hack"
+const fixtureRepo = "prodeko/prodeko-org"
 
 // fakePR is one pull request the fake serves, keyed by the branch it heads.
 type fakePR struct {

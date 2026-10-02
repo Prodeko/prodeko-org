@@ -6,7 +6,7 @@
 # written to, which is confusing to debug.
 backend:
   name: github
-  repo: rvirtaha/prodeko-hack
+  repo: prodeko/prodeko-org
 
   # A throwaway branch, never main. Saving here writes real commits and opens
   # real pull requests, and the proxy refuses any ref other than the one it is
