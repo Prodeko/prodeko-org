@@ -25,6 +25,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/prodeko/prodeko-org/proxy/internal/ghauth"
 	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
@@ -82,7 +83,11 @@ type Config struct {
 	Owner  string // GITHUB_OWNER, substituted into every forwarded path
 	Repo   string // GITHUB_REPO
 	Branch string // GITHUB_BRANCH, the only ref writable outside cms/*
-	Token  string // GITHUB_TOKEN, never sent to the browser
+	Token  string // GITHUB_TOKEN; ignored when Credential is set
+
+	// Credential supplies the token for each upstream call. Nil means
+	// ghauth.Static(Token). Whatever it returns is never sent to the browser.
+	Credential ghauth.Source
 
 	// EditorRoles are the realm roles from EDITOR_ROLES, all of which are
 	// re-checked on every forwarded request. At least one is required.
@@ -104,7 +109,7 @@ type Handler struct {
 	owner       string
 	repo        string
 	branch      string
-	token       string
+	credential  ghauth.Source
 	editorRoles []string
 	committer   Author
 
@@ -126,7 +131,6 @@ func New(cfg Config) (*Handler, error) {
 		"Owner":  cfg.Owner,
 		"Repo":   cfg.Repo,
 		"Branch": cfg.Branch,
-		"Token":  cfg.Token,
 	} {
 		if strings.TrimSpace(value) == "" {
 			missing = append(missing, name)
@@ -145,6 +149,13 @@ func New(cfg Config) (*Handler, error) {
 	}
 	if !cfg.Committer.valid() {
 		missing = append(missing, "Committer")
+	}
+	credential := cfg.Credential
+	if credential == nil && strings.TrimSpace(cfg.Token) != "" {
+		credential = ghauth.Static(cfg.Token)
+	}
+	if credential == nil {
+		missing = append(missing, "Token or Credential")
 	}
 	if len(missing) > 0 {
 		return nil, fmt.Errorf("forward: missing required config: %s", strings.Join(missing, ", "))
@@ -194,7 +205,7 @@ func New(cfg Config) (*Handler, error) {
 		owner:       cfg.Owner,
 		repo:        cfg.Repo,
 		branch:      cfg.Branch,
-		token:       cfg.Token,
+		credential:  credential,
 		editorRoles: editorRoles,
 		committer:   cfg.Committer,
 		apiRoot:     apiRoot,
@@ -347,7 +358,13 @@ func (h *Handler) proxy(w http.ResponseWriter, r *http.Request, identity session
 
 	// Rule 4: our credential goes on here, and the caller's Authorization is
 	// dropped on the floor rather than forwarded.
-	out.Header.Set("Authorization", "Bearer "+h.token)
+	token, err := h.credential.Token(r.Context())
+	if err != nil {
+		h.log.Error("forward: no GitHub credential", "error", err)
+		h.fail(w, r, http.StatusBadGateway, "the editor could not authenticate to GitHub; tell the IT team")
+		return
+	}
+	out.Header.Set("Authorization", "Bearer "+token)
 	out.Header.Set("Accept", "application/vnd.github+json")
 	out.Header.Set("X-GitHub-Api-Version", githubAPIVersion)
 	out.Header.Set("User-Agent", userAgent)

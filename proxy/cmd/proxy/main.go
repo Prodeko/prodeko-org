@@ -30,6 +30,7 @@ import (
 	"github.com/prodeko/prodeko-org/proxy/internal/auth"
 	"github.com/prodeko/prodeko-org/proxy/internal/config"
 	"github.com/prodeko/prodeko-org/proxy/internal/forward"
+	"github.com/prodeko/prodeko-org/proxy/internal/ghauth"
 	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
@@ -128,11 +129,19 @@ func run(cfg *config.Config, log *slog.Logger) error {
 		return fmt.Errorf("%s: %w", config.EnvPublicURL, err)
 	}
 
+	credential, err := githubCredential(cfg.GitHub)
+	if err != nil {
+		return err
+	}
+	if cfg.GitHub.UsesApp() {
+		log.Info("authenticating to GitHub as an App", "app_id", cfg.GitHub.AppID)
+	}
+
 	github, err := forward.New(forward.Config{
 		Owner:       cfg.GitHub.Owner,
 		Repo:        cfg.GitHub.Repo,
 		Branch:      cfg.GitHub.Branch,
-		Token:       cfg.GitHub.Token,
+		Credential:  credential,
 		EditorRoles: cfg.Keycloak.EditorRoles,
 		Committer: forward.Author{
 			Name:  cfg.GitHub.CommitterName,
@@ -321,4 +330,19 @@ func serve(ctx context.Context, srv *http.Server, log *slog.Logger) error {
 	}
 	log.Info("stopped")
 	return <-errs
+}
+
+// githubCredential is the App when one is configured and the personal access
+// token otherwise; config.Load has already made sure it is exactly one.
+func githubCredential(g config.GitHub) (ghauth.Source, error) {
+	if !g.UsesApp() {
+		return ghauth.Static(g.Token), nil
+	}
+	return ghauth.NewApp(ghauth.AppConfig{
+		AppID:      g.AppID,
+		PrivateKey: g.AppKey,
+		Owner:      g.Owner,
+		Repo:       g.Repo,
+		APIRoot:    g.APIRoot,
+	})
 }
