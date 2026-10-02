@@ -94,8 +94,14 @@ Required:
 - `KEYCLOAK_ISSUER`, `KEYCLOAK_CLIENT_ID`, `KEYCLOAK_CLIENT_SECRET`
 - `EDITOR_ROLES`, comma-separated, the realm roles required to edit. All of
   them are required and at least one must be named
-- `GITHUB_TOKEN`, a fine-grained token on a bot account, scoped to one
-  repository with contents, pull request and issue write access
+- The GitHub credential, one of:
+  - `GITHUB_APP_ID` and `GITHUB_APP_PRIVATE_KEY`, a GitHub App installed on
+    the repository with contents, pull request and issue write and commit
+    status read. The key is the App's `.pem`, as is or base64-encoded. The
+    installation is looked up from the repository, and the hour-long
+    installation token is renewed five minutes before it expires.
+  - `GITHUB_TOKEN`, a fine-grained token scoped to one repository with
+    contents, pull request and issue write access. Local development uses this.
 - `GITHUB_OWNER`, `GITHUB_REPO`, `GITHUB_BRANCH`
 - `SESSION_SECRET`, at least 32 bytes
 - `PUBLIC_URL`, the address this service is reachable at, as a bare origin

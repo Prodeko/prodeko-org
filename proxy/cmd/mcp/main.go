@@ -22,6 +22,7 @@ package main
 
 import (
 	"context"
+	"crypto/rsa"
 	"errors"
 	"fmt"
 	"log/slog"
@@ -33,6 +34,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/prodeko/prodeko-org/proxy/internal/ghauth"
 	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
 	"github.com/prodeko/prodeko-org/proxy/internal/oauthas"
 	"github.com/prodeko/prodeko-org/proxy/internal/preview"
@@ -126,19 +128,27 @@ func run(cfg *env, log *slog.Logger) error {
 		return err
 	}
 
+	credential, err := githubCredential(cfg)
+	if err != nil {
+		return err
+	}
+	if cfg.GitHubAppKey != nil {
+		log.Info("authenticating to GitHub as an App", "app_id", cfg.GitHubAppID)
+	}
+
 	work, err := workdir.New(workdir.Config{
-		RepoPath:    cfg.RepoPath,
-		StateDir:    cfg.StateDir,
-		Committer:   workdir.Author{Name: cfg.CommitterName, Email: cfg.CommitterEmail},
-		GitHubToken: cfg.GitHubToken,
-		GitHubRepo:  cfg.GitHubRepo,
-		Logger:      log.With("component", "workdir"),
+		RepoPath:         cfg.RepoPath,
+		StateDir:         cfg.StateDir,
+		Committer:        workdir.Author{Name: cfg.CommitterName, Email: cfg.CommitterEmail},
+		GitHubCredential: credential,
+		GitHubRepo:       cfg.GitHubRepo,
+		Logger:           log.With("component", "workdir"),
 	})
 	if err != nil {
 		return err
 	}
 	if work.DryRun() {
-		log.Warn("GITHUB_TOKEN or GITHUB_REPO is unset: submit will push to the local origin only and open no pull request")
+		log.Warn("no GitHub credential or GITHUB_REPO is unset: submit will push to the local origin only and open no pull request")
 	}
 
 	// The upload tokens sign with the session secret: one secret, one
@@ -328,6 +338,10 @@ type env struct {
 	GitHubToken string
 	GitHubRepo  string
 
+	// GitHubAppID and GitHubAppKey replace GitHubToken with a GitHub App.
+	GitHubAppID  string
+	GitHubAppKey *rsa.PrivateKey
+
 	CommitterName  string
 	CommitterEmail string
 }
@@ -350,6 +364,8 @@ const (
 	envAccessContact  = "MCP_ACCESS_CONTACT"
 	envSessionSecret  = "SESSION_SECRET"
 	envGitHubToken    = "GITHUB_TOKEN"
+	envGitHubAppID    = "GITHUB_APP_ID"
+	envGitHubAppKey   = "GITHUB_APP_PRIVATE_KEY"
 	envGitHubRepo     = "GITHUB_REPO"
 	envCommitterName  = "GIT_COMMITTER_NAME"
 	envCommitterEmail = "GIT_COMMITTER_EMAIL"
@@ -429,6 +445,31 @@ func loadEnv(lookup func(string) (string, bool)) (*env, error) {
 		fail(envGitHubRepo, "must be owner/repo")
 	}
 
+	// A token, an App, or neither for a dry run; never both, because which one
+	// is in use would then depend on code nobody reads while editing .env.
+	appID, rawKey := get(envGitHubAppID), get(envGitHubAppKey)
+	switch {
+	case appID == "" && rawKey == "":
+	case cfg.GitHubToken != "":
+		fail(envGitHubToken, "is set alongside "+envGitHubAppID+"/"+envGitHubAppKey+"; set the token or the App, not both")
+	case appID == "":
+		fail(envGitHubAppID, "is required when "+envGitHubAppKey+" is set")
+	case rawKey == "":
+		fail(envGitHubAppKey, "is required when "+envGitHubAppID+" is set")
+	case strings.Trim(appID, "0123456789") != "":
+		fail(envGitHubAppID, fmt.Sprintf("must be the numeric App ID from the App's settings page (got %q)", appID))
+	case cfg.GitHubRepo == "":
+		fail(envGitHubRepo, "is required when "+envGitHubAppID+" is set")
+	default:
+		// The parse error describes the shape, never the value.
+		key, err := ghauth.ParsePrivateKey(rawKey)
+		if err != nil {
+			fail(envGitHubAppKey, err.Error()+"; it must be the App's .pem, as is or base64-encoded")
+			break
+		}
+		cfg.GitHubAppID, cfg.GitHubAppKey = appID, key
+	}
+
 	cfg.RequiredRoles = splitRoles(get(envRequiredRoles))
 	if len(cfg.RequiredRoles) == 0 {
 		cfg.RequiredRoles = defaultRequiredRoles
@@ -496,8 +537,27 @@ func (e *env) String() string {
 		"  dev_bearer     " + secret(e.DevBearer),
 		"  github_repo    " + orUnset(e.GitHubRepo),
 		"  github_token   " + secret(e.GitHubToken),
+		"  github_app_id  " + orUnset(e.GitHubAppID),
 		"  committer      " + e.CommitterName + " <" + e.CommitterEmail + ">",
 	}, "\n")
+}
+
+// githubCredential is the App when one is configured, the token when that is,
+// and nil for a dry run.
+func githubCredential(e *env) (ghauth.Source, error) {
+	switch {
+	case e.GitHubAppKey != nil:
+		owner, repo, _ := strings.Cut(e.GitHubRepo, "/")
+		return ghauth.NewApp(ghauth.AppConfig{
+			AppID:      e.GitHubAppID,
+			PrivateKey: e.GitHubAppKey,
+			Owner:      owner,
+			Repo:       repo,
+		})
+	case e.GitHubToken != "":
+		return ghauth.Static(e.GitHubToken), nil
+	}
+	return nil, nil
 }
 
 func orUnset(v string) string {

@@ -907,7 +907,7 @@ func TestSubmitDryRunCommitsAuthoredByTheEditorAndPushesToOrigin(t *testing.T) {
 	if !res.DryRun {
 		t.Error("Submit did not report a dry run without a GitHub token")
 	}
-	if !strings.Contains(res.Note, "no GITHUB_TOKEN") {
+	if !strings.Contains(res.Note, "no GitHub credential") {
 		t.Errorf("Note = %q, want it to say the run was dry", res.Note)
 	}
 	if res.PRNumber != 0 || res.PRURL != "" {
