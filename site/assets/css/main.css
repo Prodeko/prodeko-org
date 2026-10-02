@@ -126,7 +126,11 @@ img{display:block;max-width:100%}
 /* The small-print row wraps: five links and a copyright line are wider than a
    phone, and an unwrapped row scrolls the whole document sideways. */
 .footer-bottom ul{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-5);list-style:none;margin:0;padding:0}
-@media (max-width:800px){.footer-grid{grid-template-columns:1fr}}
+/* minmax(0,1fr), not 1fr: a plain 1fr track is as wide as its longest word,
+   and on a 320px phone Häirintäyhdyshenkilöt alone pushed the footer past
+   the edge of the screen. The links may break inside a word as a last resort. */
+@media (max-width:800px){.footer-grid{grid-template-columns:minmax(0,1fr)}}
+.footer-links li{overflow-wrap:anywhere;hyphens:auto}
 
 /* Page grid */
 .page-layout{display:grid;grid-template-columns:minmax(0,var(--content-w)) var(--aside-w);gap:var(--space-8);justify-content:center;align-items:start;max-width:var(--page-max);margin:0 auto;padding:var(--space-8) var(--space-6) var(--space-24)}
@@ -382,7 +386,13 @@ img{display:block;max-width:100%}
 .year-fold.faq-item,.year-fold.faq-item:first-of-type{flex:0 0 auto;border:1px solid var(--border-subtle)}
 .year-fold.faq-item summary{padding:6px 12px;gap:var(--space-2);font-size:var(--size-sm);font-variant-numeric:tabular-nums}
 .year-fold.faq-item summary:hover{background:var(--surface-sunken)}
-.year-fold[open]{flex-basis:100%;border-color:var(--border-strong)}
+.year-fold[open]{flex-basis:100%;width:100%;max-width:100%;min-width:0;box-sizing:border-box;border-color:var(--border-strong)}
+.year-fold[open] .def-list{min-width:0}
+.year-fold[open] .def-list .row{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
+@media (max-width:600px){.year-fold[open] .def-list .row{grid-template-columns:minmax(0,1fr)}}
+/* An opened year on a phone: long Finnish office names break rather than
+   widen the row past the screen. */
+.year-fold .def-list dt,.year-fold .def-list dd{min-width:0;overflow-wrap:anywhere;hyphens:auto}
 .year-fold[open] summary{background:var(--pd-blue);color:var(--text-on-brand)}
 .year-fold[open] summary::after{color:var(--text-on-brand)}
 .year-fold .def-list{margin:0;padding:0 var(--space-4);border-top:0}
