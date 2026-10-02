@@ -11,7 +11,7 @@ aside:
     button: { label: Hae jäseneksi, url: "https://membership.prodeko.org/apply" }
 ---
 
-## Yhdistämässä tutalaisia jo vuodesta 1866
+## TEST
 
 Tuotantotalouden kilta Prodeko ry on Aalto-yliopiston ylioppilaskunnan
 yhteydessä toimiva tuotantotalouden opiskelijoiden ainejärjestö. Olemme
