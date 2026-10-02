@@ -14,7 +14,7 @@ import (
 	"github.com/coreos/go-oidc/v3/oidc"
 	"golang.org/x/oauth2"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // KeycloakConfig is the upstream login. The values mirror the ones

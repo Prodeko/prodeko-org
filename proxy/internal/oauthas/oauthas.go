@@ -9,7 +9,7 @@
 // server here keeps the role conjunction where it is already written and
 // tested, and lets registration be as permissive as a connector needs.
 //
-// The access token is an [github.com/prodeko/prodeko-hack/proxy/internal/session]
+// The access token is an [github.com/prodeko/prodeko-org/proxy/internal/session]
 // sealed blob carrying the verified Keycloak identity. It is self-contained,
 // so it survives a restart of the container; the client registry and the
 // in-flight authorization codes are in memory and do not.
@@ -31,7 +31,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // The routes this package owns. The two well-known documents are what lets a

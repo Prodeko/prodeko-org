@@ -33,13 +33,13 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/mcpserver"
-	"github.com/prodeko/prodeko-hack/proxy/internal/oauthas"
-	"github.com/prodeko/prodeko-hack/proxy/internal/preview"
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
-	"github.com/prodeko/prodeko-hack/proxy/internal/toolset"
-	"github.com/prodeko/prodeko-hack/proxy/internal/upload"
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
+	"github.com/prodeko/prodeko-org/proxy/internal/oauthas"
+	"github.com/prodeko/prodeko-org/proxy/internal/preview"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/toolset"
+	"github.com/prodeko/prodeko-org/proxy/internal/upload"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 // Exit codes. 2 means "your environment is wrong", which is worth telling

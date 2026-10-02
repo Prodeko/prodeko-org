@@ -234,7 +234,7 @@ fine-grained token into the vault; branch protection on `main` requiring
 one approving review — accepted, together with the review step it adds to
 Decap publishing.
 
-In prodeko-hack: `cmd/mcp/` beside `cmd/proxy/` with `config`, `session`
+In prodeko-org: `cmd/mcp/` beside `cmd/proxy/` with `config`, `session`
 and the Keycloak half of `auth` factored into shared packages; the
 `[security]` block in `hugo.toml`; the `media` PR label.
 

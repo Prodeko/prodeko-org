@@ -28,8 +28,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
-	"github.com/prodeko/prodeko-hack/proxy/internal/lint"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/lint"
 )
 
 // BranchPrefix is the namespace every change lives in. A branch name that does

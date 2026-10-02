@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 const (
@@ -69,7 +69,7 @@ func newProxy(t *testing.T, upstream http.HandlerFunc) (*Handler, *capture, *htt
 	}
 	h, err := New(Config{
 		Owner:       "prodeko",
-		Repo:        "prodeko-hack",
+		Repo:        "prodeko-org",
 		Branch:      testBranch,
 		Token:       testToken,
 		EditorRoles: testRoles,
@@ -143,7 +143,7 @@ func TestRequiresASessionAndEveryEditorRole(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			w := request(t, h, tc.identity, "GET", "/github/repos/prodeko/prodeko-hack/branches/main", "")
+			w := request(t, h, tc.identity, "GET", "/github/repos/prodeko/prodeko-org/branches/main", "")
 			if w.Code != tc.want {
 				t.Fatalf("status = %d, want %d (%s)", w.Code, tc.want, w.Body.String())
 			}
@@ -155,7 +155,7 @@ func TestRequiresASessionAndEveryEditorRole(t *testing.T) {
 func TestRolesAreCheckedOnWrites(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
 	id := session.Identity{Subject: "x", Name: "Ossi", Email: "ossi@prodeko.org", Roles: []string{"membership"}}
-	w := request(t, h, &id, "POST", "/github/repos/prodeko/prodeko-hack/git/commits",
+	w := request(t, h, &id, "POST", "/github/repos/prodeko/prodeko-org/git/commits",
 		`{"message":"m","tree":"t","parents":[]}`)
 	if w.Code != http.StatusForbidden {
 		t.Fatalf("status = %d, want 403", w.Code)
@@ -188,7 +188,7 @@ func TestCommitAuthorIsTheKeycloakIdentity(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			h, seen, _ := newProxy(t, nil)
 			w := request(t, h, &editorIdentity,
-				"POST", "/github/repos/prodeko/prodeko-hack/git/commits", tc.body)
+				"POST", "/github/repos/prodeko/prodeko-org/git/commits", tc.body)
 			if w.Code != http.StatusOK {
 				t.Fatalf("status = %d, want 200 (%s)", w.Code, w.Body.String())
 			}
@@ -224,7 +224,7 @@ func TestCommitAuthorIsTheKeycloakIdentity(t *testing.T) {
 func TestCommitWithoutAnEmailIsRefused(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
 	id := session.Identity{Subject: "x", Name: "Aino", Username: "aino", Roles: testRoles}
-	w := request(t, h, &id, "POST", "/github/repos/prodeko/prodeko-hack/git/commits",
+	w := request(t, h, &id, "POST", "/github/repos/prodeko/prodeko-org/git/commits",
 		`{"message":"m","tree":"t","parents":[]}`)
 	if w.Code != http.StatusBadRequest {
 		t.Fatalf("status = %d, want 400 (%s)", w.Code, w.Body.String())
@@ -245,21 +245,21 @@ func TestRepositoryIsPinned(t *testing.T) {
 	}{
 		{
 			"the configured repository",
-			"/github/repos/prodeko/prodeko-hack/git/blobs",
+			"/github/repos/prodeko/prodeko-org/git/blobs",
 			http.StatusOK,
-			"/repos/prodeko/prodeko-hack/git/blobs",
+			"/repos/prodeko/prodeko-org/git/blobs",
 		},
 		{
 			"somebody else's repository is rewritten to ours",
 			"/github/repos/attacker/evil/git/blobs",
 			http.StatusOK,
-			"/repos/prodeko/prodeko-hack/git/blobs",
+			"/repos/prodeko/prodeko-org/git/blobs",
 		},
 		{
 			"a different case for the same repository",
-			"/github/repos/ProDeko/Prodeko-Hack/git/blobs",
+			"/github/repos/ProDeko/Prodeko-Org/git/blobs",
 			http.StatusOK,
-			"/repos/prodeko/prodeko-hack/git/blobs",
+			"/repos/prodeko/prodeko-org/git/blobs",
 		},
 	}
 
@@ -289,7 +289,7 @@ func TestPathsOutsideTheRepositoryAreRefused(t *testing.T) {
 		{"the org", "/github/orgs/prodeko", http.StatusForbidden},
 		{"a bare repos path", "/github/repos", http.StatusForbidden},
 		{"repos with only an owner", "/github/repos/prodeko", http.StatusForbidden},
-		{"outside the prefix", "/elsewhere/repos/prodeko/prodeko-hack", http.StatusNotFound},
+		{"outside the prefix", "/elsewhere/repos/prodeko/prodeko-org", http.StatusNotFound},
 	}
 
 	for _, tc := range tests {
@@ -309,7 +309,7 @@ func TestPathsOutsideTheRepositoryAreRefused(t *testing.T) {
 // Rule 4: the bot credential goes on here and the caller's token never does.
 func TestCredentialHandling(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
-	r := httptest.NewRequest("GET", "/github/repos/prodeko/prodeko-hack/branches/main", nil)
+	r := httptest.NewRequest("GET", "/github/repos/prodeko/prodeko-org/branches/main", nil)
 	r.Header.Set("Authorization", "Bearer our-session-token")
 	r.Header.Set("Cookie", "session=abc")
 	r = r.WithContext(session.NewContext(r.Context(), editorIdentity))
@@ -338,23 +338,23 @@ func TestEncodedPathIsForwardedEncoded(t *testing.T) {
 		{
 			"an encoded ref name",
 			"PATCH",
-			"/github/repos/prodeko/prodeko-hack/git/refs/heads/cms%2Fpages%2Fslug",
+			"/github/repos/prodeko/prodeko-org/git/refs/heads/cms%2Fpages%2Fslug",
 			`{"sha":"abc","force":true}`,
-			"/repos/prodeko/prodeko-hack/git/refs/heads/cms%2Fpages%2Fslug",
+			"/repos/prodeko/prodeko-org/git/refs/heads/cms%2Fpages%2Fslug",
 		},
 		{
 			"an encoded tree directory",
 			"GET",
-			"/github/repos/prodeko/prodeko-hack/git/trees/main:site%2Fcontent",
+			"/github/repos/prodeko/prodeko-org/git/trees/main:site%2Fcontent",
 			"",
-			"/repos/prodeko/prodeko-hack/git/trees/main:site%2Fcontent",
+			"/repos/prodeko/prodeko-org/git/trees/main:site%2Fcontent",
 		},
 		{
 			"an unencoded tree directory stays unencoded",
 			"GET",
-			"/github/repos/prodeko/prodeko-hack/git/trees/main:site/content",
+			"/github/repos/prodeko/prodeko-org/git/trees/main:site/content",
 			"",
-			"/repos/prodeko/prodeko-hack/git/trees/main:site/content",
+			"/repos/prodeko/prodeko-org/git/trees/main:site/content",
 		},
 	}
 
@@ -375,7 +375,7 @@ func TestEncodedPathIsForwardedEncoded(t *testing.T) {
 func TestQueryIsForwarded(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
 	request(t, h, &editorIdentity, "GET",
-		"/github/repos/prodeko/prodeko-hack/pulls?state=open&head=prodeko%3Acms%2Fpages%2Fslug", "")
+		"/github/repos/prodeko/prodeko-org/pulls?state=open&head=prodeko%3Acms%2Fpages%2Fslug", "")
 	if seen.rawQuery != "state=open&head=prodeko%3Acms%2Fpages%2Fslug" {
 		t.Fatalf("forwarded query = %q", seen.rawQuery)
 	}
@@ -388,12 +388,12 @@ func TestRepositoryResponseReportsPushAccess(t *testing.T) {
 	h, _, _ := newProxy(t, func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("ETag", `W/"abc123"`)
-		_, _ = w.Write([]byte(`{"id":1,"name":"prodeko-hack",` +
+		_, _ = w.Write([]byte(`{"id":1,"name":"prodeko-org",` +
 			`"owner":{"login":"ProDeko","id":42},` +
 			`"default_branch":"main","permissions":{"admin":false,"push":false,"pull":true}}`))
 	})
 
-	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-hack", "")
+	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-org", "")
 	if w.Code != http.StatusOK {
 		t.Fatalf("status = %d, want 200", w.Code)
 	}
@@ -420,7 +420,7 @@ func TestRepositoryResponseReportsPushAccess(t *testing.T) {
 	if got.Owner.Login != "ProDeko" {
 		t.Errorf("owner.login = %q, want it preserved", got.Owner.Login)
 	}
-	if got.Name != "prodeko-hack" || got.DefaultBranch != "main" {
+	if got.Name != "prodeko-org" || got.DefaultBranch != "main" {
 		t.Errorf("other fields were lost: %s", w.Body.String())
 	}
 	// A cached 304 would skip the rewrite entirely.
@@ -436,7 +436,7 @@ func TestRepositoryRequestDoesNotRevalidate(t *testing.T) {
 		w.Header().Set("Content-Type", "application/json")
 		_, _ = w.Write([]byte(`{"owner":{"login":"prodeko"}}`))
 	})
-	r := httptest.NewRequest("GET", "/github/repos/prodeko/prodeko-hack", nil)
+	r := httptest.NewRequest("GET", "/github/repos/prodeko/prodeko-org", nil)
 	r.Header.Set("If-None-Match", `W/"abc"`)
 	r = r.WithContext(session.NewContext(r.Context(), editorIdentity))
 	h.ServeHTTP(httptest.NewRecorder(), r)
@@ -459,14 +459,14 @@ func TestDenialsAreJSONWithASafeMessage(t *testing.T) {
 		target string
 		id     *session.Identity
 	}{
-		{"no session", "GET", "/github/repos/prodeko/prodeko-hack", nil},
-		{"no role", "GET", "/github/repos/prodeko/prodeko-hack",
+		{"no session", "GET", "/github/repos/prodeko/prodeko-org", nil},
+		{"no role", "GET", "/github/repos/prodeko/prodeko-org",
 			&session.Identity{Subject: "x", Roles: []string{"membership"}}},
-		{"denied path", "GET", "/github/repos/prodeko/prodeko-hack/hooks", &editorIdentity},
+		{"denied path", "GET", "/github/repos/prodeko/prodeko-org/hooks", &editorIdentity},
 		{"denied path with the rate limit phrase in it", "GET",
-			"/github/repos/prodeko/prodeko-hack/API%20rate%20limit%20exceeded", &editorIdentity},
+			"/github/repos/prodeko/prodeko-org/API%20rate%20limit%20exceeded", &editorIdentity},
 		{"denied ref write", "DELETE",
-			"/github/repos/prodeko/prodeko-hack/git/refs/heads/main", &editorIdentity},
+			"/github/repos/prodeko/prodeko-org/git/refs/heads/main", &editorIdentity},
 	}
 
 	for _, tc := range tests {
@@ -566,7 +566,7 @@ func TestLoginFor(t *testing.T) {
 func TestForcePushOverTheDefaultBranchIsRefused(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
 	w := request(t, h, &editorIdentity, "PATCH",
-		"/github/repos/prodeko/prodeko-hack/git/refs/heads/main", `{"sha":"deadbeef","force":true}`)
+		"/github/repos/prodeko/prodeko-org/git/refs/heads/main", `{"sha":"deadbeef","force":true}`)
 	if w.Code != http.StatusForbidden {
 		t.Fatalf("status = %d, want 403 (%s)", w.Code, w.Body.String())
 	}
@@ -578,7 +578,7 @@ func TestForcePushOverTheDefaultBranchIsRefused(t *testing.T) {
 func TestFastForwardOfTheDefaultBranchIsAllowed(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
 	w := request(t, h, &editorIdentity, "PATCH",
-		"/github/repos/prodeko/prodeko-hack/git/refs/heads/main", `{"sha":"deadbeef","force":false}`)
+		"/github/repos/prodeko/prodeko-org/git/refs/heads/main", `{"sha":"deadbeef","force":false}`)
 	if w.Code != http.StatusOK {
 		t.Fatalf("status = %d, want 200 (%s)", w.Code, w.Body.String())
 	}
@@ -591,7 +591,7 @@ func TestFastForwardOfTheDefaultBranchIsAllowed(t *testing.T) {
 func TestBlobBodyIsForwardedUntouched(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
 	body := `{"content":"aGVsbG8=","encoding":"base64"}`
-	w := request(t, h, &editorIdentity, "POST", "/github/repos/prodeko/prodeko-hack/git/blobs", body)
+	w := request(t, h, &editorIdentity, "POST", "/github/repos/prodeko/prodeko-org/git/blobs", body)
 	if w.Code != http.StatusOK {
 		t.Fatalf("status = %d, want 200", w.Code)
 	}
@@ -603,7 +603,7 @@ func TestBlobBodyIsForwardedUntouched(t *testing.T) {
 func TestOversizedBodyIsRefused(t *testing.T) {
 	h, seen, _ := newProxy(t, nil)
 	h.maxBody = 16
-	w := request(t, h, &editorIdentity, "POST", "/github/repos/prodeko/prodeko-hack/git/commits",
+	w := request(t, h, &editorIdentity, "POST", "/github/repos/prodeko/prodeko-org/git/commits",
 		`{"message":"`+strings.Repeat("x", 200)+`","tree":"t","parents":[]}`)
 	if w.Code != http.StatusRequestEntityTooLarge {
 		t.Fatalf("status = %d, want 413", w.Code)
@@ -622,13 +622,13 @@ func TestResponseHeadersAreFiltered(t *testing.T) {
 		w.Header().Set("X-RateLimit-Remaining", "4999")
 		w.Header().Set("X-OAuth-Scopes", "repo, admin:org")
 		w.Header().Set("X-GitHub-Request-Id", "ABCD:1234")
-		w.Header().Set("Location", "https://api.github.com/repos/prodeko/prodeko-hack/git/refs/heads/x")
+		w.Header().Set("Location", "https://api.github.com/repos/prodeko/prodeko-org/git/refs/heads/x")
 		w.Header().Set("Set-Cookie", "logged_in=no")
 		w.Header().Set("Link", `<`+r.Host+`/x>; rel="next"`)
 		_, _ = w.Write([]byte(`{"ok":true}`))
 	})
 
-	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-hack/pulls", "")
+	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-org/pulls", "")
 
 	for _, name := range []string{"ETag", "X-RateLimit-Remaining", "Content-Type"} {
 		if w.Header().Get(name) == "" {
@@ -650,7 +650,7 @@ func TestLinkHeaderNeverPointsAtGitHub(t *testing.T) {
 		w.Header().Set("Link", `<https://api.github.com/repositories/29514104/pulls?page=2>; rel="next"`)
 		_, _ = w.Write([]byte(`[]`))
 	})
-	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-hack/pulls", "")
+	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-org/pulls", "")
 	if link := w.Header().Get("Link"); strings.Contains(link, "api.github.com") {
 		t.Fatalf("Link = %q, want it rewritten or dropped", link)
 	}
@@ -658,7 +658,7 @@ func TestLinkHeaderNeverPointsAtGitHub(t *testing.T) {
 
 func TestPreflightIsNotRefused(t *testing.T) {
 	h, _, _ := newProxy(t, nil)
-	if w := request(t, h, nil, "OPTIONS", "/github/repos/prodeko/prodeko-hack/git/commits", ""); w.Code != http.StatusNoContent {
+	if w := request(t, h, nil, "OPTIONS", "/github/repos/prodeko/prodeko-org/git/commits", ""); w.Code != http.StatusNoContent {
 		t.Fatalf("status = %d, want 204; a 401 here breaks every request", w.Code)
 	}
 }
@@ -666,7 +666,7 @@ func TestPreflightIsNotRefused(t *testing.T) {
 func TestUpstreamFailureIsABadGateway(t *testing.T) {
 	h, _, server := newProxy(t, nil)
 	server.Close()
-	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-hack/pulls", "")
+	w := request(t, h, &editorIdentity, "GET", "/github/repos/prodeko/prodeko-org/pulls", "")
 	if w.Code != http.StatusBadGateway {
 		t.Fatalf("status = %d, want 502", w.Code)
 	}
@@ -677,7 +677,7 @@ func TestUpstreamFailureIsABadGateway(t *testing.T) {
 
 func TestNewValidatesConfig(t *testing.T) {
 	valid := Config{
-		Owner: "prodeko", Repo: "prodeko-hack", Branch: "main",
+		Owner: "prodeko", Repo: "prodeko-org", Branch: "main",
 		Token: "t", EditorRoles: testRoles, Committer: testCommitter,
 	}
 	tests := []struct {

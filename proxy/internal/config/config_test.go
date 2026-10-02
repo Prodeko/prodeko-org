@@ -20,7 +20,7 @@ func validEnv() map[string]string {
 		EnvEditorRoles:  "membership,prodeko-org-admin",
 		EnvGitHubToken:  "github_pat_11ABCDEFG",
 		EnvGitHubOwner:  "prodeko",
-		EnvGitHubRepo:   "prodeko-hack",
+		EnvGitHubRepo:   "prodeko-org",
 		EnvGitHubBranch: "main",
 		EnvSessionKey:   "0123456789abcdef0123456789abcdef",
 	}
@@ -79,7 +79,7 @@ func TestLoadValid(t *testing.T) {
 	if got, want := cfg.Keycloak.RedirectURL, "https://cms.prodeko.org/callback"; got != want {
 		t.Errorf("RedirectURL = %q, want %q", got, want)
 	}
-	if got, want := cfg.GitHub.Slug(), "prodeko/prodeko-hack"; got != want {
+	if got, want := cfg.GitHub.Slug(), "prodeko/prodeko-org"; got != want {
 		t.Errorf("Slug() = %q, want %q", got, want)
 	}
 	if got, want := strings.Join(cfg.Keycloak.Scopes, " "), "openid profile email"; got != want {
@@ -208,7 +208,7 @@ func TestGitHubOwnerAndRepo(t *testing.T) {
 		ok   bool
 	}{
 		{"simple", "prodeko", true},
-		{"with dash", "prodeko-hack", true},
+		{"with dash", "prodeko-org", true},
 		{"with dot", "prodeko.org", true},
 		{"with underscore", "prodeko_hack", true},
 		{"digits", "2026", true},
@@ -684,7 +684,7 @@ func TestStringRedactsSecrets(t *testing.T) {
 			t.Errorf("String() leaks %q:\n%s", secret, s)
 		}
 	}
-	for _, want := range []string{"prodeko/prodeko-hack", "https://cms.prodeko.org", redacted} {
+	for _, want := range []string{"prodeko/prodeko-org", "https://cms.prodeko.org", redacted} {
 		if !strings.Contains(s, want) {
 			t.Errorf("String() missing %q:\n%s", want, s)
 		}
