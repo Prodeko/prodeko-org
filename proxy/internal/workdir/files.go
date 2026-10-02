@@ -13,7 +13,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
 )
 
 // File operations on a change. Each one asks the fence first and opens only

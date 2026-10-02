@@ -15,19 +15,19 @@ func TestFeedbackReadsTheReviewsAndComments(t *testing.T) {
 	f := newFixture(t)
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch {
-		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls":
+		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-org/pulls":
 			if got := r.URL.Query().Get("state"); got != "all" {
 				t.Errorf("state = %q, want all: a merged pull request is an answer too", got)
 			}
-			w.Write([]byte(`[{"number":47,"html_url":"https://github.com/prodeko/prodeko-hack/pull/47","state":"open","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}]`))
-		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls/47/reviews":
+			w.Write([]byte(`[{"number":47,"html_url":"https://github.com/prodeko/prodeko-org/pull/47","state":"open","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}]`))
+		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-org/pulls/47/reviews":
 			w.Write([]byte(`[
 				{"user":{"login":"maintainer"},"state":"CHANGES_REQUESTED","body":"Otsikko on nyt liian tumma.","submitted_at":"2026-09-20T10:00:00Z"},
 				{"user":{"login":"maintainer"},"state":"COMMENTED","body":"","submitted_at":"2026-09-20T10:01:00Z"}
 			]`))
-		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-hack/issues/47/comments":
+		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-org/issues/47/comments":
 			w.Write([]byte(`[{"user":{"login":"github-actions"},"body":"Esikatselu: https://pr-47.preview.prodeko.org/","created_at":"2026-09-20T09:00:00Z"}]`))
-		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls/47/comments":
+		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-org/pulls/47/comments":
 			w.Write([]byte(`[{"user":{"login":"maintainer"},"body":"Tämä rivi kovakoodaa värin.","path":"site/assets/css/main.css","line":12,"created_at":"2026-09-20T10:02:00Z"}]`))
 		case r.Method == http.MethodGet && strings.HasSuffix(r.URL.Path, "/status"):
 			w.Write([]byte(`{"state":"success"}`))
@@ -40,7 +40,7 @@ func TestFeedbackReadsTheReviewsAndComments(t *testing.T) {
 
 	cfg := f.config(t)
 	cfg.GitHubToken = "ghp_test"
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	cfg.APIRoot = srv.URL
 	m, err := New(cfg)
 	if err != nil {
@@ -73,7 +73,7 @@ func TestFeedbackReadsTheReviewsAndComments(t *testing.T) {
 func TestFeedbackMarksAMergedPullRequestMerged(t *testing.T) {
 	f := newFixture(t)
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path == "/repos/prodeko/prodeko-hack/pulls" {
+		if r.URL.Path == "/repos/prodeko/prodeko-org/pulls" {
 			w.Write([]byte(`[{"number":47,"html_url":"u","state":"closed","merged_at":"2026-09-20T11:00:00Z","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}]`))
 			return
 		}
@@ -83,7 +83,7 @@ func TestFeedbackMarksAMergedPullRequestMerged(t *testing.T) {
 
 	cfg := f.config(t)
 	cfg.GitHubToken = "ghp_test"
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	cfg.APIRoot = srv.URL
 	m, _ := New(cfg)
 	fb, err := m.Feedback(t.Context(), openChange(t, m))
@@ -104,7 +104,7 @@ func TestFeedbackOfAnUnsubmittedChange(t *testing.T) {
 
 	cfg := f.config(t)
 	cfg.GitHubToken = "ghp_test"
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	cfg.APIRoot = srv.URL
 	m, _ := New(cfg)
 	_, err := m.Feedback(t.Context(), openChange(t, m))
@@ -120,9 +120,9 @@ func TestAbandonClosesThePullRequestAndRemovesEverything(t *testing.T) {
 	var closed, deletedRef bool
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch {
-		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls":
+		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-org/pulls":
 			w.Write([]byte(`[{"number":47,"html_url":"u","state":"open","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}]`))
-		case r.Method == http.MethodPatch && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls/47":
+		case r.Method == http.MethodPatch && r.URL.Path == "/repos/prodeko/prodeko-org/pulls/47":
 			body := make([]byte, 64)
 			n, _ := r.Body.Read(body)
 			if !strings.Contains(string(body[:n]), `"closed"`) {
@@ -130,7 +130,7 @@ func TestAbandonClosesThePullRequestAndRemovesEverything(t *testing.T) {
 			}
 			closed = true
 			w.Write([]byte(`{}`))
-		case r.Method == http.MethodDelete && r.URL.Path == "/repos/prodeko/prodeko-hack/git/refs/heads/media/maija/sininen-otsikko":
+		case r.Method == http.MethodDelete && r.URL.Path == "/repos/prodeko/prodeko-org/git/refs/heads/media/maija/sininen-otsikko":
 			deletedRef = true
 			w.WriteHeader(http.StatusNoContent)
 		default:
@@ -142,7 +142,7 @@ func TestAbandonClosesThePullRequestAndRemovesEverything(t *testing.T) {
 
 	cfg := f.config(t)
 	cfg.GitHubToken = "ghp_test"
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	cfg.APIRoot = srv.URL
 	m, err := New(cfg)
 	if err != nil {

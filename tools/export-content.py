@@ -43,7 +43,7 @@ from bs4 import BeautifulSoup
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONTENT_ROOT = REPO_ROOT / "site" / "content"
 SITEMAP_URL = "https://prodeko.org/sitemap.xml"
-USER_AGENT = "prodeko-hack-content-export/0.1 (+https://github.com/prodeko/prodeko-hack)"
+USER_AGENT = "prodeko-org-content-export/0.1 (+https://github.com/prodeko/prodeko-org)"
 
 SKIP_PATHS = {
     "/fi/",

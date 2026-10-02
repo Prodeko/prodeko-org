@@ -421,17 +421,17 @@ Only three change at the switch.
 
 | Where | Why it stays |
 |---|---|
-| `prodeko-hack: site/hugo.toml:1` | `baseURL = "https://prodeko.org/"` is already the apex; CI overrides it |
-| `prodeko-hack: .github/workflows/build.yml:32` | `HUGO_BASEURL` stays at uusi so the switch and the revert need no CI round-trip. See *Canonical links* |
-| `prodeko-hack: .github/workflows/build.yml:165`, `proxy.yml:159` | the SSH deploy targets are already `…@prodeko.org`, pinned by `.github/known_hosts` |
+| `prodeko-org: site/hugo.toml:1` | `baseURL = "https://prodeko.org/"` is already the apex; CI overrides it |
+| `prodeko-org: .github/workflows/build.yml:32` | `HUGO_BASEURL` stays at uusi so the switch and the revert need no CI round-trip. See *Canonical links* |
+| `prodeko-org: .github/workflows/build.yml:165`, `proxy.yml:159` | the SSH deploy targets are already `…@prodeko.org`, pinned by `.github/known_hosts` |
 | `infra-prodeko: ansible/roles/prodeko_site/defaults/main.yml:20` | `prodeko_site_hostname` stays `uusi.prodeko.org`; uusi keeps serving and `publish.sh` keeps health-checking it |
 | `infra-prodeko: ansible/roles/prodeko_site/templates/publish.sh.j2:76-78` | rendered from the above; deploys keep working through the demo and the revert |
 | `infra-prodeko: ansible/roles/cms_auth_proxy/defaults/main.yml:31` | `cms.prodeko.org` is permanent by design; the Keycloak redirect URI is registered against it |
-| `prodeko-hack: site/static/admin/config.yml:20,22` | `base_url` and `api_root` name `cms.prodeko.org`, which does not move |
+| `prodeko-org: site/static/admin/config.yml:20,22` | `base_url` and `api_root` name `cms.prodeko.org`, which does not move |
 | `infra-prodeko: ansible/roles/member_gate/tasks/assert.yml:36`, `templates/env.j2:19` | the redirect-URI shape assert stays in force, because the shipped mode keeps a fixed absolute URI. Both would have to change for derived-host mode |
 | `infra-prodeko: ansible/vars/prodeko_vm.yml:62-98` | the uusi and member-gate gatus checks stay green; the member-gate one asserts a 302 Caddy issues locally |
 | `infra-prodeko: terraform/main.tf:40-101` | every A record, including the apex and its TTL |
-| `prodeko-hack: site/data/embeds.yaml`, `megamenu.yaml`, `footer.yaml` | every service hostname they name is a separate vhost, untouched |
+| `prodeko-org: site/data/embeds.yaml`, `megamenu.yaml`, `footer.yaml` | every service hostname they name is a separate vhost, untouched |
 
 ### The three most forgettable
 

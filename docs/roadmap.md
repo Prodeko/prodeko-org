@@ -12,7 +12,7 @@ reached without a login.
 
 Three places:
 
-- This repository, prodeko-hack, holding the website. `site/` is the Hugo site
+- This repository, prodeko-org, holding the website. `site/` is the Hugo site
   and the Decap configuration, `proxy/` is the editor login service and its
   container, `tools/` is one-off scripts, and `docs/` is the written work.
 - infra-prodeko, for anything that configures a machine: an Ansible role that
