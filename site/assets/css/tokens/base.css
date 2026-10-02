@@ -9,5 +9,5 @@ a{color:var(--text-link);text-decoration:none;transition:var(--transition-ui)}
 a:hover{color:var(--text-link-hover);text-decoration:underline}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
 strong{font-weight:var(--weight-bold)}
-::selection{background:var(--pd-rainbow-yellow);color:var(--pd-black)}
+::selection{background:var(--pd-blue-dark);color:var(--text-on-brand)}
 @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}

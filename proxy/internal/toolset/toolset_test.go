@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
-	"github.com/prodeko/prodeko-hack/proxy/internal/lint"
-	"github.com/prodeko/prodeko-hack/proxy/internal/mcpserver"
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/lint"
+	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 func testToolset(t *testing.T) *Toolset {
@@ -634,7 +634,7 @@ func TestRenderSubmit(t *testing.T) {
 		Commit:     "0f1c2d3",
 		Files:      []string{"site/content/fi/tapahtumat.md"},
 		PRNumber:   47,
-		PRURL:      "https://github.com/prodeko/prodeko-hack/pull/47",
+		PRURL:      "https://github.com/prodeko/prodeko-org/pull/47",
 		PreviewURL: workdir.PreviewURL(47),
 	})
 	for _, want := range []string{"#47", "https://pr-47.preview.prodeko.org/", "media/maija/tapahtumat", "site/content/fi/tapahtumat.md", "about a minute"} {
@@ -675,7 +675,7 @@ func TestRenderChanges(t *testing.T) {
 		Files:      []string{"site/content/fi/tapahtumat.md"},
 		Dirty:      true,
 		PRNumber:   47,
-		PRURL:      "https://github.com/prodeko/prodeko-hack/pull/47",
+		PRURL:      "https://github.com/prodeko/prodeko-org/pull/47",
 		PreviewURL: workdir.PreviewURL(47),
 		CIState:    "success",
 	}})

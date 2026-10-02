@@ -1,6 +1,11 @@
 package config
 
 import (
+	"crypto/rand"
+	"crypto/rsa"
+	"crypto/x509"
+	"encoding/base64"
+	"encoding/pem"
 	"errors"
 	"log/slog"
 	"strings"
@@ -20,7 +25,7 @@ func validEnv() map[string]string {
 		EnvEditorRoles:  "membership,prodeko-org-admin",
 		EnvGitHubToken:  "github_pat_11ABCDEFG",
 		EnvGitHubOwner:  "prodeko",
-		EnvGitHubRepo:   "prodeko-hack",
+		EnvGitHubRepo:   "prodeko-org",
 		EnvGitHubBranch: "main",
 		EnvSessionKey:   "0123456789abcdef0123456789abcdef",
 	}
@@ -79,7 +84,7 @@ func TestLoadValid(t *testing.T) {
 	if got, want := cfg.Keycloak.RedirectURL, "https://cms.prodeko.org/callback"; got != want {
 		t.Errorf("RedirectURL = %q, want %q", got, want)
 	}
-	if got, want := cfg.GitHub.Slug(), "prodeko/prodeko-hack"; got != want {
+	if got, want := cfg.GitHub.Slug(), "prodeko/prodeko-org"; got != want {
 		t.Errorf("Slug() = %q, want %q", got, want)
 	}
 	if got, want := strings.Join(cfg.Keycloak.Scopes, " "), "openid profile email"; got != want {
@@ -208,7 +213,7 @@ func TestGitHubOwnerAndRepo(t *testing.T) {
 		ok   bool
 	}{
 		{"simple", "prodeko", true},
-		{"with dash", "prodeko-hack", true},
+		{"with dash", "prodeko-org", true},
 		{"with dot", "prodeko.org", true},
 		{"with underscore", "prodeko_hack", true},
 		{"digits", "2026", true},
@@ -513,6 +518,58 @@ func TestEditorRoles(t *testing.T) {
 	}
 }
 
+// appKeyPEM is a throwaway key, generated once per test run.
+var appKeyPEM = func() string {
+	key, err := rsa.GenerateKey(rand.Reader, 2048)
+	if err != nil {
+		panic(err)
+	}
+	return string(pem.EncodeToMemory(&pem.Block{Type: "RSA PRIVATE KEY", Bytes: x509.MarshalPKCS1PrivateKey(key)}))
+}()
+
+func TestGitHubApp(t *testing.T) {
+	b64 := base64.StdEncoding.EncodeToString([]byte(appKeyPEM))
+	tests := []struct {
+		name    string
+		env     map[string]*string
+		badVars []string // nil means accepted as an App
+	}{
+		{"pem", map[string]*string{EnvGitHubToken: nil, EnvGitHubAppID: set("5161689"), EnvGitHubAppKey: set(appKeyPEM)}, nil},
+		{"base64 pem", map[string]*string{EnvGitHubToken: nil, EnvGitHubAppID: set("5161689"), EnvGitHubAppKey: set(b64)}, nil},
+		{"token and app", map[string]*string{EnvGitHubAppID: set("5161689"), EnvGitHubAppKey: set(appKeyPEM)}, []string{EnvGitHubToken}},
+		{"id without key", map[string]*string{EnvGitHubToken: nil, EnvGitHubAppID: set("5161689")}, []string{EnvGitHubAppKey}},
+		{"key without id", map[string]*string{EnvGitHubToken: nil, EnvGitHubAppKey: set(appKeyPEM)}, []string{EnvGitHubAppID}},
+		{"client id instead of app id", map[string]*string{EnvGitHubToken: nil, EnvGitHubAppID: set("Iv23lihR81Qx6Izlemoz"), EnvGitHubAppKey: set(appKeyPEM)}, []string{EnvGitHubAppID}},
+		{"not a key", map[string]*string{EnvGitHubToken: nil, EnvGitHubAppID: set("5161689"), EnvGitHubAppKey: set("hunter2")}, []string{EnvGitHubAppKey}},
+	}
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			cfg, err := loadWith(t, tc.env)
+			if tc.badVars == nil {
+				if err != nil {
+					t.Fatalf("rejected: %v", err)
+				}
+				if !cfg.GitHub.UsesApp() || cfg.GitHub.AppID != "5161689" || cfg.GitHub.Token != "" {
+					t.Fatalf("GitHub = %+v, want the App and no token", cfg.GitHub)
+				}
+				if s := cfg.String(); strings.Contains(s, "PRIVATE KEY") || strings.Contains(s, b64[:40]) {
+					t.Errorf("String() leaks the key:\n%s", s)
+				}
+				return
+			}
+			if err == nil {
+				t.Fatal("accepted, want rejected")
+			}
+			if got := errVars(t, err); strings.Join(got, ",") != strings.Join(tc.badVars, ",") {
+				t.Errorf("offending vars = %v, want %v", got, tc.badVars)
+			}
+			if strings.Contains(err.Error(), "PRIVATE KEY") || strings.Contains(err.Error(), "hunter2") {
+				t.Errorf("error leaks the key: %v", err)
+			}
+		})
+	}
+}
+
 func TestRequiredStrings(t *testing.T) {
 	for _, name := range []string{EnvClientID, EnvClientSecret, EnvGitHubToken} {
 		for _, val := range []*string{nil, set(""), set("   ")} {
@@ -684,7 +741,7 @@ func TestStringRedactsSecrets(t *testing.T) {
 			t.Errorf("String() leaks %q:\n%s", secret, s)
 		}
 	}
-	for _, want := range []string{"prodeko/prodeko-hack", "https://cms.prodeko.org", redacted} {
+	for _, want := range []string{"prodeko/prodeko-org", "https://cms.prodeko.org", redacted} {
 		if !strings.Contains(s, want) {
 			t.Errorf("String() missing %q:\n%s", want, s)
 		}

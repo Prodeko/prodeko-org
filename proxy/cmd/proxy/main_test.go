@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/config"
-	"github.com/prodeko/prodeko-hack/proxy/internal/forward"
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/config"
+	"github.com/prodeko/prodeko-org/proxy/internal/forward"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 const (
@@ -71,7 +71,7 @@ func routesFor(t *testing.T, store *session.Store, roles []string) (http.Handler
 	publicBase, _ := url.Parse(cfg.PublicURL)
 	github, err := forward.New(forward.Config{
 		Owner:       "prodeko",
-		Repo:        "prodeko-hack",
+		Repo:        "prodeko-org",
 		Branch:      "main",
 		Token:       "ghp_not-a-real-token",
 		EditorRoles: roles,

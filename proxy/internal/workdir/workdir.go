@@ -28,8 +28,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
-	"github.com/prodeko/prodeko-hack/proxy/internal/lint"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/ghauth"
+	"github.com/prodeko/prodeko-org/proxy/internal/lint"
 )
 
 // BranchPrefix is the namespace every change lives in. A branch name that does
@@ -76,11 +77,13 @@ type Config struct {
 	// Committer is GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL.
 	Committer Author
 
-	// GitHubToken and GitHubRepo ("owner/repo") turn submit into a real push
+	// A credential and GitHubRepo ("owner/repo") turn submit into a real push
 	// and a draft pull request. With either absent, submit is a dry run that
-	// pushes nothing to GitHub and says so.
-	GitHubToken string
-	GitHubRepo  string
+	// pushes nothing to GitHub and says so. The credential is GitHubCredential
+	// when set, and GitHubToken as a fixed token otherwise.
+	GitHubCredential ghauth.Source
+	GitHubToken      string
+	GitHubRepo       string
 
 	// GitBin and HugoBin default to "git" and "hugo" on PATH.
 	GitBin  string
@@ -240,13 +243,16 @@ func New(cfg Config) (*Manager, error) {
 	if cfg.Logger == nil {
 		cfg.Logger = slog.Default()
 	}
+	if cfg.GitHubCredential == nil && cfg.GitHubToken != "" {
+		cfg.GitHubCredential = ghauth.Static(cfg.GitHubToken)
+	}
 	return &Manager{cfg: cfg, log: cfg.Logger, changes: make(map[string]*Change)}, nil
 }
 
 // DryRun reports whether submit will stop short of GitHub. It is true whenever
-// either of GITHUB_TOKEN and GITHUB_REPO is absent.
+// either the GitHub credential or GITHUB_REPO is absent.
 func (m *Manager) DryRun() bool {
-	return m.cfg.GitHubToken == "" || m.cfg.GitHubRepo == ""
+	return m.cfg.GitHubCredential == nil || m.cfg.GitHubRepo == ""
 }
 
 // userPattern and slugPattern are what may appear in a branch name. They are
@@ -617,7 +623,7 @@ func (m *Manager) Build(ctx context.Context, c *Change) (Result, error) {
 // Submit stages the change's allowlisted paths, commits them authored by the
 // signed-in editor, and pushes.
 //
-// With GITHUB_TOKEN and GITHUB_REPO set it pushes the branch to origin and
+// With a GitHub credential and GITHUB_REPO set it pushes the branch to origin and
 // opens a draft pull request labelled media, returning its number and the
 // preview URL. Without them it pushes to the local origin only and returns the
 // branch and a diffstat, marked as a dry run.
@@ -699,13 +705,13 @@ func (m *Manager) Submit(ctx context.Context, c *Change, author Author, title, d
 		// A dry run has no credential and may well have no reachable origin.
 		// The commit is real and worth reporting; the failure travels with it
 		// rather than being swallowed.
-		res.Note = "Dry run: with no GITHUB_TOKEN the change is committed on " + c.Branch +
+		res.Note = "Dry run: with no GitHub credential the change is committed on " + c.Branch +
 			" but could not be pushed to origin: " + pushErr.Error()
 		return res, nil
 	}
 
 	if res.DryRun {
-		res.Note = "Dry run: with no GITHUB_TOKEN the branch was pushed to this server's origin only, and no pull request was opened."
+		res.Note = "Dry run: with no GitHub credential the branch was pushed to this server's origin only, and no pull request was opened."
 		return res, nil
 	}
 
@@ -886,7 +892,11 @@ func (m *Manager) push(ctx context.Context, c *Change) error {
 	refspec := "refs/heads/" + c.Branch + ":refs/heads/" + c.Branch
 
 	remote := "origin"
-	if url, ok := m.credentialedRemote(ctx, c); ok {
+	url, ok, err := m.credentialedRemote(ctx, c)
+	if err != nil {
+		return err
+	}
+	if ok {
 		remote = url
 	}
 	out, err := m.git(ctx, c.Dir, "push", remote, refspec)
@@ -908,19 +918,23 @@ func (m *Manager) push(ctx context.Context, c *Change) error {
 // The token travels in argv rather than in a config file: this process is
 // alone on its host and its state volume holds nothing secret, and a token
 // written to .git/config outlives the push.
-func (m *Manager) credentialedRemote(ctx context.Context, c *Change) (string, bool) {
-	if m.cfg.GitHubToken == "" || m.cfg.GitHubRepo == "" {
-		return "", false
+func (m *Manager) credentialedRemote(ctx context.Context, c *Change) (string, bool, error) {
+	if m.DryRun() {
+		return "", false, nil
 	}
 	out, err := m.git(ctx, c.Dir, "remote", "get-url", "origin")
 	if err != nil {
-		return "", false
+		return "", false, nil
 	}
 	origin := strings.TrimSpace(out)
 	if !strings.HasPrefix(origin, "https://github.com/") {
-		return "", false
+		return "", false, nil
 	}
-	return "https://x-access-token:" + m.cfg.GitHubToken + "@github.com/" + m.cfg.GitHubRepo + ".git", true
+	token, err := m.cfg.GitHubCredential.Token(ctx)
+	if err != nil {
+		return "", false, fmt.Errorf("workdir: no GitHub credential to push with: %w", err)
+	}
+	return "https://x-access-token:" + token + "@github.com/" + m.cfg.GitHubRepo + ".git", true, nil
 }
 
 // rejected recognises the push failures that mean the branch moved underneath
@@ -935,12 +949,22 @@ func rejected(out string) bool {
 	return false
 }
 
+// credentialPattern matches every form a GitHub token takes, and the userinfo
+// of a credentialed push URL. An App's installation token changes every hour,
+// so there is no single value to search for.
+var credentialPattern = regexp.MustCompile(`x-access-token:[^@\s]*@|\bgh[pousr]_[A-Za-z0-9_]+|\bgithub_pat_[A-Za-z0-9_]+`)
+
 // redact keeps the push credential out of anything returned or logged.
 func (m *Manager) redact(s string) string {
-	if m.cfg.GitHubToken == "" {
-		return s
+	if m.cfg.GitHubToken != "" {
+		s = strings.ReplaceAll(s, m.cfg.GitHubToken, "[redacted]")
 	}
-	return strings.ReplaceAll(s, m.cfg.GitHubToken, "[redacted]")
+	return credentialPattern.ReplaceAllStringFunc(s, func(match string) string {
+		if strings.HasPrefix(match, "x-access-token:") {
+			return "x-access-token:[redacted]@"
+		}
+		return "[redacted]"
+	})
 }
 
 func firstLine(s string) string {

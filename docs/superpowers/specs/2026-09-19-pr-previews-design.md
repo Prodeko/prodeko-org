@@ -363,7 +363,7 @@ Configuration:
   closed.
 - `roles/member_gate/README.md` is corrected. See the last section.
 
-## Changes in prodeko-hack
+## Changes in prodeko-org
 
 - `.github/workflows/preview.yml` is new. It triggers on `pull_request` with
   types `opened`, `synchronize`, `reopened` and `closed`. The publish job runs
@@ -435,7 +435,7 @@ What remains, in dependency order:
    the opposite of the editor login proxy.
 2. Generate the deploy key pair, commit the public half to
    `roles/prodeko_preview/files/`, and add the private half to the
-   prodeko-hack repository as the repository secret
+   prodeko-org repository as the repository secret
    `PRODEKO_PREVIEW_DEPLOY_KEY`. It is deliberately not an environment secret:
    same-repository pull requests must be able to use it.
 3. Run the play at a watched moment. Replacing the Caddy binary affects every

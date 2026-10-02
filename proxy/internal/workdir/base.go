@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
 )
 
 // The shared read-only view of the origin default branch. Reads that belong to
