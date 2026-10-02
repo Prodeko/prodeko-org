@@ -5,6 +5,7 @@ translationKey: guild-arvot
 sourceURL: https://prodeko.org/fi/guild/arvot/
 reviewed: 2026-09-18
 owner: hallitus
+values: true
 ---
 
 Prodeko on tuotantotalouden opiskelijoiden kilta Aalto-yliopistossa.
@@ -18,4 +19,6 @@ yhteisöllisyys, kaverin auttaminen, erilaisuuden kunnioittaminen ja
 epätäydellisyyden hyväksyminen.
 
 Työn tuloksena syntyi viisi arvoa: Think Big, Get Things Done, Learn and
-Grow, Give Back ja Be a Good Person.
+Grow, Give Back ja Be a Good Person. Viisi arvoa, viisi haalarin väriä.
+
+## Prodekon arvot

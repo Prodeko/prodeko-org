@@ -1,16 +1,68 @@
 {{/* A section index without a `layout` param is an ordinary page: its own
      words in the frame, and below them its children as a link list. The list
      is the design system's LinkList, the same row the asides and the mega
-     panel use, so a section hub carries no component of its own. */}}
+     panel use, so a section hub carries no component of its own.
+
+     Two front-matter switches turn a section into one page instead of a
+     doorway to several:
+
+       documents: [rules, guidelines, decrees]
+         The named child pages, in that order, are printed in full on the
+         section page under a row of links that jumps between them. Their own
+         headings move one level down so each document sits under its title.
+         The child pages keep their addresses for anyone linking to one.
+
+       overview: true
+         The board and officials hub: this year's board as portraits, this
+         year's officials as a chart of their committees, and every earlier
+         board and set of officials folded away year by year. `links` names
+         the child pages still listed under it, the ones that explain what
+         the positions do.
+
+     Section children not named by either list are still listed as links. */}}
 {{ define "main" }}
+  {{ $page := . }}
+  {{ $isFi := eq .Language.Lang "fi" }}
+  {{ $body := slice (string .Content) }}
+  {{ $shown := slice }}
+
+  {{ with .Params.documents }}
+    {{ $docs := slice }}
+    {{ range . }}
+      {{ with $page.GetPage . }}{{ $docs = $docs | append . }}{{ end }}
+    {{ end }}
+    {{ $jumps := slice }}
+    {{ range $docs }}
+      {{ $jumps = $jumps | append (printf `<a href="#%s">%s</a>` .File.ContentBaseName .Title) }}
+    {{ end }}
+    {{ $body = $body | append (printf `<nav class="doc-nav" aria-label="%s">%s</nav>` $page.Title (delimit $jumps "")) }}
+    {{ range $docs }}
+      {{ $shown = $shown | append .RelPermalink }}
+      {{/* Deepest level first, so a heading is moved down exactly once. */}}
+      {{ $html := string .Content }}
+      {{ range slice 5 4 3 2 }}
+        {{ $html = replaceRE (printf `<(/?)h%d([ >])` .) (printf `<${1}h%d${2}` (add . 1)) $html }}
+      {{ end }}
+      {{ $body = $body | append (printf `<section class="doc-section"><h2 id="%s">%s</h2>%s</section>` .File.ContentBaseName .Title $html) }}
+    {{ end }}
+  {{ end }}
+
+  {{ if .Params.overview }}
+    {{ $body = $body | append (partial "board-overview.html" $page) }}
+    {{ range .Pages }}
+      {{ if not (in $page.Params.links .File.ContentBaseName) }}{{ $shown = $shown | append .RelPermalink }}{{ end }}
+    {{ end }}
+  {{ end }}
+
   {{ $rows := slice }}
   {{ range .Pages }}
-    {{ $desc := "" }}
-    {{ with .Description }}{{ $desc = . }}{{ else }}{{ $desc = .Summary | plainify | truncate 140 }}{{ end }}
-    {{ $label := printf `<span class="label"><span class="name">%s</span>%s</span>` .Title (cond (eq $desc "") "" (printf `<span class="desc">%s</span>` $desc)) }}
-    {{ $rows = $rows | append (printf `<li><a href="%s">%s<span class="arrow" aria-hidden="true">→</span></a></li>` .RelPermalink $label) }}
+    {{ if not (in $shown .RelPermalink) }}
+      {{ $desc := "" }}
+      {{ with .Description }}{{ $desc = . }}{{ else }}{{ $desc = .Summary | plainify | truncate 140 }}{{ end }}
+      {{ $label := printf `<span class="label"><span class="name">%s</span>%s</span>` .Title (cond (eq $desc "") "" (printf `<span class="desc">%s</span>` $desc)) }}
+      {{ $rows = $rows | append (printf `<li><a href="%s">%s<span class="arrow" aria-hidden="true">→</span></a></li>` .RelPermalink $label) }}
+    {{ end }}
   {{ end }}
-  {{ $body := slice (string .Content) }}
   {{ if $rows }}
     {{ $body = $body | append (printf `<ul class="link-list">%s</ul>` (delimit $rows "")) }}
   {{ end }}
