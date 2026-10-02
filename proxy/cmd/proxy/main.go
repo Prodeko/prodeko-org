@@ -27,10 +27,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/auth"
-	"github.com/prodeko/prodeko-hack/proxy/internal/config"
-	"github.com/prodeko/prodeko-hack/proxy/internal/forward"
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/auth"
+	"github.com/prodeko/prodeko-org/proxy/internal/config"
+	"github.com/prodeko/prodeko-org/proxy/internal/forward"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // Exit codes. 2 means "your environment is wrong", which is worth telling

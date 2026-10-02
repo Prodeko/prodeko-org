@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/mcpserver"
-	"github.com/prodeko/prodeko-hack/proxy/internal/upload"
+	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
+	"github.com/prodeko/prodeko-org/proxy/internal/upload"
 )
 
 // The tool side of the image upload. The bytes never come through here: this

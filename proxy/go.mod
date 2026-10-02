@@ -1,4 +1,4 @@
-module github.com/prodeko/prodeko-hack/proxy
+module github.com/prodeko/prodeko-org/proxy
 
 go 1.27
 

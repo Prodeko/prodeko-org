@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // fakeKeycloak stands in for the upstream login. Everything this package owns

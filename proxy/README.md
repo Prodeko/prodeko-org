@@ -120,7 +120,7 @@ In the Decap configuration under `site/`:
 ```yaml
 backend:
   name: github
-  repo: prodeko/prodeko-hack
+  repo: prodeko/prodeko-org
   branch: main
   base_url: https://cms.prodeko.org
   auth_endpoint: auth
