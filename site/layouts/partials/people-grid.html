@@ -21,9 +21,9 @@
      group is optional. When the entries carry one, as the full officials list
      does, each group gets a heading and a grid of its own, in the order the
      groups first appear in the data. groupEn, given on a group's first entry,
-     names it on an English page. A group with no portraits at all is drawn
-     as a compact grid: two hundred empty squares would only push the names
-     apart. */}}
+     names it on an English page. In a grouped list everyone gets a square:
+     an official whose portrait is missing is drawn with the placeholder, so
+     the grid stays even while the photos are filled in a face at a time. */}}
 {{ $isFi := eq page.Language.Lang "fi" }}
 {{ $members := . }}
 {{ $groups := slice }}
@@ -41,12 +41,10 @@
       {{ $title := $group }}
       {{ if and (not $isFi) (index $groupEn $group) }}{{ $title = index $groupEn $group }}{{ end }}
       {{ $inGroup := where $members "group" $group }}
-      {{ $hasPhoto := false }}
-      {{ range $inGroup }}{{ if .photo }}{{ $hasPhoto = true }}{{ end }}{{ end }}
       <section class="people-group">
         <h2 id="{{ $title | urlize }}">{{ $title }}</h2>
-        <ul class="people-grid{{ if not $hasPhoto }} people-grid--compact{{ end }}">
-          {{ range $inGroup }}{{ partial "people-grid-person.html" . }}{{ end }}
+        <ul class="people-grid">
+          {{ range $inGroup }}{{ partial "people-grid-person.html" (merge . (dict "placeholder" true)) }}{{ end }}
         </ul>
       </section>
     {{ end }}

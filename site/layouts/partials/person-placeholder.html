@@ -1,0 +1,8 @@
+{{/* The stand-in for a missing portrait: a square in the sunken surface with
+     the guild emblem faded into it. Takes the class to give it, so the people
+     grid and the org chart can size it their own way. Decorative, like the
+     portraits it stands in for: the name is printed right beside it. */}}
+{{ $class := . }}
+{{ with resources.Get "images/brand/emblem-blue.svg" }}
+  <span class="{{ $class }} is-placeholder" aria-hidden="true"><img src="{{ .RelPermalink }}" alt="" loading="lazy" /></span>
+{{ end }}

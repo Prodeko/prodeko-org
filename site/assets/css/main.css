@@ -276,16 +276,19 @@ img{display:block;max-width:100%}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--space-6);list-style:none;margin:0 0 var(--space-8);padding:0}
 .person{display:flex;flex-direction:column;gap:2px;margin:0}
 .person img{width:100%;aspect-ratio:1;object-fit:cover;margin-bottom:var(--space-2)}
+/* The stand-in for a missing portrait (partials/person-placeholder.html):
+   the guild emblem, faded, on the sunken surface. */
+.is-placeholder{display:flex;align-items:center;justify-content:center;background:var(--surface-sunken)}
+.is-placeholder img{width:40%;height:auto;aspect-ratio:auto;margin:0;opacity:.18}
+.person-placeholder{width:100%;aspect-ratio:1;margin-bottom:var(--space-2)}
 .person-name{font-size:15px;font-weight:var(--weight-bold);line-height:1.3;color:var(--pd-black)}
 .person-role{font-size:14px;line-height:1.35;color:var(--text-muted)}
 /* Email and Telegram under the office. The template offers a break before
    the @; anywhere is only the fallback for an address that still does not
    fit, so it never pushes the grid column wider. */
 .person-contact{display:flex;flex-direction:column;gap:2px;margin-top:var(--space-1);font-size:13px;line-height:1.35;overflow-wrap:anywhere}
-/* The full officials list: a heading per committee, and for a committee
-   with no portraits a denser grid of name and office alone. */
+/* The full officials list: a heading per committee above its grid. */
 .people-group h2{scroll-margin-top:88px}
-.people-grid--compact{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--space-3) var(--space-6)}
 
 /* Values cards (partials/values-cards.html) — five values, five colours on
    the overalls. The colour is a band across the top and a square behind the
@@ -349,7 +352,11 @@ img{display:block;max-width:100%}
 .org-count::after{content:" +";color:var(--pd-blue)}
 .org-group[open] .org-count::after{content:" \2013"}
 .prose .org-members{list-style:none;margin:0;padding:0 var(--space-4) var(--space-4);display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-2) var(--space-4)}
-.prose .org-members li{margin:0;display:flex;flex-direction:column;font-size:var(--size-sm);line-height:var(--leading-snug)}
+.prose .org-members li{margin:0;display:flex;align-items:center;gap:var(--space-3);font-size:var(--size-sm);line-height:var(--leading-snug)}
+.org-face{flex:none;width:40px;height:40px;object-fit:cover;border-radius:var(--radius-circle)}
+.org-face.is-placeholder{background:var(--surface-page)}
+.org-face.is-placeholder img{width:55%;opacity:.25}
+.org-text{display:flex;flex-direction:column;min-width:0}
 .org-name{font-weight:var(--weight-semibold);color:var(--pd-black)}
 .org-role{color:var(--text-muted)}
 /* Sixty years of boards as a wrapping row of year buttons; the year that is
