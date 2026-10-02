@@ -52,5 +52,6 @@
   --status-info:var(--pd-blue-light);
   /* Signature gradients (hard-stop, five equal bands) */
   --rainbow-gradient:linear-gradient(90deg,var(--pd-rainbow-red) 0 20%,var(--pd-rainbow-orange) 20% 40%,var(--pd-rainbow-yellow) 40% 60%,var(--pd-rainbow-green) 60% 80%,var(--pd-rainbow-blue) 80% 100%);
+  --rainbow-gradient-vertical:linear-gradient(180deg,var(--pd-rainbow-red) 0 20%,var(--pd-rainbow-orange) 20% 40%,var(--pd-rainbow-yellow) 40% 60%,var(--pd-rainbow-green) 60% 80%,var(--pd-rainbow-blue) 80% 100%);
   --rainbow-gradient-fabric:linear-gradient(90deg,var(--pd-fabric-red) 0 20%,var(--pd-fabric-orange) 20% 40%,var(--pd-fabric-yellow) 40% 60%,var(--pd-fabric-green) 60% 80%,var(--pd-fabric-blue) 80% 100%);
 }
