@@ -1,17 +1,20 @@
 ---
 title: Prodeko
-source: raw-website design export, Prodeko-site.dc.html
 translationKey: home
-description: Prodeko ry on Aalto-yliopiston tuotantotalouden opiskelijoiden kilta
-  ja ainejärjestö.
-heroTitle: Tervetuloa opiskelemaan Aallon tutalle
+reviewed: 2026-10-02
+owner: asdfasdf
 aside:
   - title: Jäsenyys
     text: Jäsenyys maksaa 8 € lukuvuodessa.
-    button: { label: Hae jäseneksi, url: "https://membership.prodeko.org/apply" }
+    button:
+      label: Hae jäseneksi
+      url: https://membership.prodeko.org/apply
+source: raw-website design export, Prodeko-site.dc.html
+description: Prodeko ry on Aalto-yliopiston tuotantotalouden opiskelijoiden
+  kilta ja ainejärjestö.
+heroTitle: Tervetuloa opiskelemaan Aallon tutalle
 ---
-
-## Yhdistämässä tutalaisia jo vuodesta 1866
+## TOIMIIKSTÄÄ?!
 
 Tuotantotalouden kilta Prodeko ry on Aalto-yliopiston ylioppilaskunnan
 yhteydessä toimiva tuotantotalouden opiskelijoiden ainejärjestö. Olemme
