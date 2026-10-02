@@ -23,11 +23,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
-	"github.com/prodeko/prodeko-hack/proxy/internal/mcpserver"
-	"github.com/prodeko/prodeko-hack/proxy/internal/preview"
-	"github.com/prodeko/prodeko-hack/proxy/internal/upload"
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
+	"github.com/prodeko/prodeko-org/proxy/internal/preview"
+	"github.com/prodeko/prodeko-org/proxy/internal/upload"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 type Config struct {

@@ -1,7 +1,7 @@
 # Content editor MCP server
 
 The media team connects the Claude they already use — claude.ai, Claude
-Desktop, or Claude Code — to `https://edit.prodeko.org/mcp`, signs in with
+Desktop, or Claude Code — to `https://mcp.prodeko.org/mcp`, signs in with
 their Prodeko account, and asks for site changes in plain language: markdown,
 data files, CSS. Every change lands as a draft pull request under their own
 name, with a preview link at `pr-<N>.preview.prodeko.org` they can click.
@@ -138,7 +138,7 @@ A faster inner loop — the server publishing `draft-<id>.preview.prodeko.org`
 in ~3 s by building only the public tree and reusing the wildcard cert, the
 gate, the forced command and the GC that previews already have — is the first
 follow-on, not part of the MVP. What stays rejected in every version: serving
-previews from `edit.prodeko.org` itself, which would put author-controlled
+previews from `mcp.prodeko.org` itself, which would put author-controlled
 HTML on the OAuth origin.
 
 ## The fence
@@ -207,7 +207,7 @@ two components honestly named beat one doing two jobs. Not Node: a second
 language and supply chain on the VM, for an SDK advantage that evaporates
 given the server shells out to `hugo` and `git` either way.
 
-Streamable HTTP MCP at `https://edit.prodeko.org/mcp`, behind Caddy, one
+Streamable HTTP MCP at `https://mcp.prodeko.org/mcp`, behind Caddy, one
 replica, deployed by a new `prodeko_mcp` Ansible role modelled on the
 proxy's. One property the proxy never had: state. Clones and worktrees live
 on a volume with a disk quota and worktree garbage collection. Nothing needs
@@ -222,7 +222,7 @@ In infra-prodeko: the `edit` A record in Terraform; the `prodeko_mcp`
 Ansible role (compose file, rendered `.env` with the Keycloak client
 secret, session secret and GitHub token from the vault, image pinned by
 digest, the worktree volume with a disk quota); a Caddy site block
-`edit.prodeko.org → 127.0.0.1:8093` with no forward_auth, because the MCP
+`mcp.prodeko.org → 127.0.0.1:8093` with no forward_auth, because the MCP
 server is the authentication there; the preview gate's required role
 widened to a list accepting `prodeko-org-admin` or `prodeko-org-media`
 (oauth2-proxy treats the list as any-of); a gatus check on `/healthz`; the
@@ -234,7 +234,7 @@ fine-grained token into the vault; branch protection on `main` requiring
 one approving review — accepted, together with the review step it adds to
 Decap publishing.
 
-In prodeko-hack: `cmd/mcp/` beside `cmd/proxy/` with `config`, `session`
+In prodeko-org: `cmd/mcp/` beside `cmd/proxy/` with `config`, `session`
 and the Keycloak half of `auth` factored into shared packages; the
 `[security]` block in `hugo.toml`; the `media` PR label.
 
@@ -243,7 +243,7 @@ and the Keycloak half of `auth` factored into shared packages; the
 ```mermaid
 sequenceDiagram
     participant C as claude.ai connector
-    participant M as edit.prodeko.org
+    participant M as mcp.prodeko.org
     participant K as id.prodeko.org
     C->>M: GET /.well-known/oauth-authorization-server
     C->>M: POST /register (DCR, permissive)
@@ -289,7 +289,7 @@ Where it breaks down, honestly:
 
 - **Images.** The model has no file bytes to give `write_file`. The MVP
   defers images to Decap, which handles them today. The planned answer is a
-  one-page upload form on `edit.prodeko.org` reusing the same session,
+  one-page upload form on `mcp.prodeko.org` reusing the same session,
   returning a path to paste into chat — sidestepping the model entirely,
   because models are bad at binary. Not a URL-fetch tool; that is SSRF with
   an allowlist bolted on.
@@ -316,7 +316,7 @@ Where it breaks down, honestly:
 
 ## MVP and follow-ons
 
-The MVP is the server at `edit.prodeko.org/mcp` with OAuth and the role
+The MVP is the server at `mcp.prodeko.org/mcp` with OAuth and the role
 conjunction, the nine tools, the fence, `media/<user>/<slug>` draft PRs with
 Keycloak-authored commits, preview links from the unchanged PR pipeline, and
 the `[security]` block. Four things do not get cut even for a demo, because

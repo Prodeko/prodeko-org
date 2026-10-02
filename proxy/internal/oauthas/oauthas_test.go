@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // fakeKeycloak stands in for the upstream login. Everything this package owns
@@ -93,7 +93,7 @@ func testServer(t *testing.T) (*Server, *session.Store) {
 	t.Helper()
 	store := testStore(t)
 	s, err := New(Config{
-		PublicURL:     "https://edit.prodeko.org",
+		PublicURL:     "https://mcp.prodeko.org",
 		Keycloak:      &fakeKeycloak{id: mediaIdentity()},
 		Sessions:      store,
 		Tokens:        store,
@@ -109,7 +109,7 @@ func testServer(t *testing.T) (*Server, *session.Store) {
 func TestNewValidatesTheConfiguration(t *testing.T) {
 	store := testStore(t)
 	base := Config{
-		PublicURL:     "https://edit.prodeko.org",
+		PublicURL:     "https://mcp.prodeko.org",
 		Keycloak:      &fakeKeycloak{},
 		Sessions:      store,
 		Tokens:        store,
@@ -119,7 +119,7 @@ func TestNewValidatesTheConfiguration(t *testing.T) {
 		name string
 		edit func(*Config)
 	}{
-		{"public URL with a path", func(c *Config) { c.PublicURL = "https://edit.prodeko.org/mcp" }},
+		{"public URL with a path", func(c *Config) { c.PublicURL = "https://mcp.prodeko.org/mcp" }},
 		{"no public URL", func(c *Config) { c.PublicURL = "" }},
 		{"no keycloak", func(c *Config) { c.Keycloak = nil }},
 		{"no sessions", func(c *Config) { c.Sessions = nil }},
@@ -151,16 +151,16 @@ func TestMetadataDocument(t *testing.T) {
 	if err := json.Unmarshal(rec.Body.Bytes(), &doc); err != nil {
 		t.Fatalf("metadata is not JSON: %v", err)
 	}
-	if doc.Issuer != "https://edit.prodeko.org" {
+	if doc.Issuer != "https://mcp.prodeko.org" {
 		t.Errorf("issuer = %q", doc.Issuer)
 	}
-	if doc.AuthorizationEndpoint != "https://edit.prodeko.org/authorize" {
+	if doc.AuthorizationEndpoint != "https://mcp.prodeko.org/authorize" {
 		t.Errorf("authorization_endpoint = %q", doc.AuthorizationEndpoint)
 	}
-	if doc.TokenEndpoint != "https://edit.prodeko.org/token" {
+	if doc.TokenEndpoint != "https://mcp.prodeko.org/token" {
 		t.Errorf("token_endpoint = %q", doc.TokenEndpoint)
 	}
-	if doc.RegistrationEndpoint != "https://edit.prodeko.org/register" {
+	if doc.RegistrationEndpoint != "https://mcp.prodeko.org/register" {
 		t.Errorf("registration_endpoint = %q", doc.RegistrationEndpoint)
 	}
 	// S256 only: plain would bind a code issued to an open-registration public
@@ -191,16 +191,16 @@ func TestResourceMetadataDocument(t *testing.T) {
 	if err := json.Unmarshal(rec.Body.Bytes(), &doc); err != nil {
 		t.Fatalf("metadata is not JSON: %v", err)
 	}
-	if doc.Resource != "https://edit.prodeko.org/mcp" {
+	if doc.Resource != "https://mcp.prodeko.org/mcp" {
 		t.Errorf("resource = %q", doc.Resource)
 	}
-	if strings.Join(doc.AuthorizationServers, ",") != "https://edit.prodeko.org" {
+	if strings.Join(doc.AuthorizationServers, ",") != "https://mcp.prodeko.org" {
 		t.Errorf("authorization_servers = %v", doc.AuthorizationServers)
 	}
-	if s.ResourceMetadataURL() != "https://edit.prodeko.org"+ResourceMetadataPath {
+	if s.ResourceMetadataURL() != "https://mcp.prodeko.org"+ResourceMetadataPath {
 		t.Errorf("ResourceMetadataURL = %q", s.ResourceMetadataURL())
 	}
-	if s.RedirectURI() != "https://edit.prodeko.org/oauth/callback" {
+	if s.RedirectURI() != "https://mcp.prodeko.org/oauth/callback" {
 		t.Errorf("RedirectURI = %q", s.RedirectURI())
 	}
 }
@@ -244,7 +244,7 @@ func TestNewKeycloakValidatesItsConfiguration(t *testing.T) {
 	base := KeycloakConfig{
 		Issuer:      "https://id.prodeko.org/realms/membership-registry",
 		ClientID:    "prodeko-mcp",
-		RedirectURI: "https://edit.prodeko.org/oauth/callback",
+		RedirectURI: "https://mcp.prodeko.org/oauth/callback",
 	}
 	if _, err := NewKeycloak(ctx, base); err != nil {
 		t.Fatalf("NewKeycloak: %v", err)
@@ -348,7 +348,7 @@ func authParams(clientID, redirectURI, state string) url.Values {
 		"code_challenge":        {challengeFor(testVerifier)},
 		"code_challenge_method": {"S256"},
 		"scope":                 {Scope},
-		"resource":              {"https://edit.prodeko.org/mcp"},
+		"resource":              {"https://mcp.prodeko.org/mcp"},
 	}
 }
 
@@ -557,7 +557,7 @@ func TestAuthorizationCodeExpires(t *testing.T) {
 	now := time.Now()
 	kc := &fakeKeycloak{id: mediaIdentity()}
 	s, err := New(Config{
-		PublicURL:     "https://edit.prodeko.org",
+		PublicURL:     "https://mcp.prodeko.org",
 		Keycloak:      kc,
 		Sessions:      store,
 		Tokens:        store,

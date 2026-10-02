@@ -6,14 +6,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/mcpserver"
-	"github.com/prodeko/prodeko-hack/proxy/internal/oauthas"
-	"github.com/prodeko/prodeko-hack/proxy/internal/upload"
+	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
+	"github.com/prodeko/prodeko-org/proxy/internal/oauthas"
+	"github.com/prodeko/prodeko-org/proxy/internal/upload"
 )
 
 func completeEnv() map[string]string {
 	return map[string]string{
-		"PUBLIC_URL":             "https://edit.prodeko.org",
+		"PUBLIC_URL":             "https://mcp.prodeko.org",
 		"MCP_REPO_PATH":          "/srv/mcp/repo",
 		"MCP_STATE_DIR":          "/srv/mcp/state",
 		"KEYCLOAK_ISSUER":        "https://id.prodeko.org/realms/membership-registry",
@@ -116,8 +116,8 @@ func TestLoadEnvRejectsBadValues(t *testing.T) {
 		names string
 	}{
 		{"short secret", func(m map[string]string) { m["SESSION_SECRET"] = "too-short" }, "SESSION_SECRET"},
-		{"public url without a scheme", func(m map[string]string) { m["PUBLIC_URL"] = "edit.prodeko.org" }, "PUBLIC_URL"},
-		{"github repo without an owner", func(m map[string]string) { m["GITHUB_REPO"] = "prodeko-hack" }, "GITHUB_REPO"},
+		{"public url without a scheme", func(m map[string]string) { m["PUBLIC_URL"] = "mcp.prodeko.org" }, "PUBLIC_URL"},
+		{"github repo without an owner", func(m map[string]string) { m["GITHUB_REPO"] = "prodeko-org" }, "GITHUB_REPO"},
 		{"unknown log level", func(m map[string]string) { m["LOG_LEVEL"] = "chatty" }, "LOG_LEVEL"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {

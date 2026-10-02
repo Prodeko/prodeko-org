@@ -66,7 +66,7 @@ func (m *Manager) Feedback(ctx context.Context, c *Change) (Feedback, error) {
 		return Feedback{}, ErrBaseView
 	}
 	if m.DryRun() {
-		return Feedback{}, errors.New("workdir: with no GITHUB_TOKEN there is no pull request to read feedback from")
+		return Feedback{}, errors.New("workdir: with no GitHub credential there is no pull request to read feedback from")
 	}
 
 	pr, ok, err := m.pullRequestForBranchState(ctx, c.Branch, "all")

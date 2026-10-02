@@ -9,7 +9,7 @@ func testHandler(t *testing.T, publicBase string) *Handler {
 	t.Helper()
 	cfg := Config{
 		Owner:       "prodeko",
-		Repo:        "prodeko-hack",
+		Repo:        "prodeko-org",
 		Branch:      testBranch,
 		Token:       "ghp_secret",
 		EditorRoles: testRoles,
@@ -45,12 +45,12 @@ func TestRewriteLink(t *testing.T) {
 			// /repos/{owner}/{repo} would leave this pointing at GitHub.
 			name: "numeric repository form",
 			in:   `<https://api.github.com/repositories/29514104/pulls?state=all&per_page=2&page=2>; rel="next", <https://api.github.com/repositories/29514104/pulls?state=all&per_page=2&page=2204>; rel="last"`,
-			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-hack/pulls?state=all&per_page=2&page=2>; rel="next", <https://cms.prodeko.org/github/repos/prodeko/prodeko-hack/pulls?state=all&per_page=2&page=2204>; rel="last"`,
+			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-org/pulls?state=all&per_page=2&page=2>; rel="next", <https://cms.prodeko.org/github/repos/prodeko/prodeko-org/pulls?state=all&per_page=2&page=2204>; rel="last"`,
 		},
 		{
 			name: "named repository form",
-			in:   `<https://api.github.com/repos/prodeko/prodeko-hack/pulls?page=2>; rel="next"`,
-			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-hack/pulls?page=2>; rel="next"`,
+			in:   `<https://api.github.com/repos/prodeko/prodeko-org/pulls?page=2>; rel="next"`,
+			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-org/pulls?page=2>; rel="next"`,
 		},
 		{
 			name: "a link somewhere else is dropped",
@@ -65,17 +65,17 @@ func TestRewriteLink(t *testing.T) {
 		{
 			name: "the survivors of a mixed header",
 			in:   `<https://evil.example.com/a>; rel="prev", <https://api.github.com/repositories/1/pulls?page=2>; rel="next"`,
-			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-hack/pulls?page=2>; rel="next"`,
+			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-org/pulls?page=2>; rel="next"`,
 		},
 		{
 			name: "an encoded segment survives unchanged",
-			in:   `<https://api.github.com/repos/prodeko/prodeko-hack/git/refs/heads/cms%2Fpages%2Fslug?page=2>; rel="next"`,
-			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-hack/git/refs/heads/cms%2Fpages%2Fslug?page=2>; rel="next"`,
+			in:   `<https://api.github.com/repos/prodeko/prodeko-org/git/refs/heads/cms%2Fpages%2Fslug?page=2>; rel="next"`,
+			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-org/git/refs/heads/cms%2Fpages%2Fslug?page=2>; rel="next"`,
 		},
 		{
 			name: "a comma inside a query value does not split the entry",
 			in:   `<https://api.github.com/repositories/1/issues?labels=a,b&page=2>; rel="next"`,
-			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-hack/issues?labels=a,b&page=2>; rel="next"`,
+			want: `<https://cms.prodeko.org/github/repos/prodeko/prodeko-org/issues?labels=a,b&page=2>; rel="next"`,
 		},
 		{"empty", ``, ``},
 	}

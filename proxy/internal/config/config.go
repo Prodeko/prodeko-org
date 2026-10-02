@@ -9,6 +9,7 @@
 package config
 
 import (
+	"crypto/rsa"
 	"fmt"
 	"log/slog"
 	"net/url"
@@ -17,6 +18,8 @@ import (
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/prodeko/prodeko-org/proxy/internal/ghauth"
 )
 
 // Environment variable names, in one place so error messages and the
@@ -33,6 +36,8 @@ const (
 	EnvEditorRoles  = "EDITOR_ROLES"
 	EnvOAuthScope   = "OAUTH_SCOPE"
 	EnvGitHubToken  = "GITHUB_TOKEN"
+	EnvGitHubAppID  = "GITHUB_APP_ID"
+	EnvGitHubAppKey = "GITHUB_APP_PRIVATE_KEY"
 	EnvGitHubOwner  = "GITHUB_OWNER"
 	EnvGitHubRepo   = "GITHUB_REPO"
 	EnvGitHubBranch = "GITHUB_BRANCH"
@@ -141,19 +146,26 @@ type Keycloak struct {
 	RedirectURL string
 }
 
-// GitHub pins the one repository this proxy may write to.
+// GitHub pins the one repository this proxy may write to, and holds the
+// credential for it: either Token, or AppID and AppKey. Exactly one is set.
 type GitHub struct {
-	Token   string // GITHUB_TOKEN
-	Owner   string // GITHUB_OWNER, single path segment
-	Repo    string // GITHUB_REPO, single path segment
-	Branch  string // GITHUB_BRANCH
-	APIRoot string // GITHUB_API_ROOT, default "https://api.github.com", no trailing slash
+	Token   string          // GITHUB_TOKEN
+	AppID   string          // GITHUB_APP_ID
+	AppKey  *rsa.PrivateKey // GITHUB_APP_PRIVATE_KEY
+	Owner   string          // GITHUB_OWNER, single path segment
+	Repo    string          // GITHUB_REPO, single path segment
+	Branch  string          // GITHUB_BRANCH
+	APIRoot string          // GITHUB_API_ROOT, default "https://api.github.com", no trailing slash
 
 	// CommitterName and CommitterEmail are the git committer written onto
 	// every commit. The author is the editor and comes from Keycloak.
 	CommitterName  string // GITHUB_COMMITTER_NAME
 	CommitterEmail string // GITHUB_COMMITTER_EMAIL
 }
+
+// UsesApp reports whether the proxy authenticates as a GitHub App rather than
+// with a personal access token.
+func (g GitHub) UsesApp() bool { return g.AppKey != nil }
 
 // Slug returns "owner/repo" for substitution into forwarded GitHub paths.
 func (g GitHub) Slug() string { return g.Owner + "/" + g.Repo }
@@ -195,7 +207,12 @@ func (c *Config) String() string {
 	line("github_branch", c.GitHub.Branch)
 	line("github_api_root", c.GitHub.APIRoot)
 	line("github_committer", c.GitHub.CommitterName+" <"+c.GitHub.CommitterEmail+">")
-	line("github_token", redacted)
+	if c.GitHub.UsesApp() {
+		line("github_app_id", c.GitHub.AppID)
+		line("github_app_private_key", redacted)
+	} else {
+		line("github_token", redacted)
+	}
 	line("session_secret", redacted)
 	line("session_ttl", c.Session.TTL.String())
 	return strings.TrimRight(b.String(), "\n")
@@ -271,7 +288,6 @@ func LoadFrom(lookup func(string) (string, bool)) (*Config, error) {
 	}
 
 	cfg.GitHub = GitHub{
-		Token:          l.githubToken(),
 		Owner:          l.segment(EnvGitHubOwner),
 		Repo:           l.segment(EnvGitHubRepo),
 		Branch:         l.branch(),
@@ -279,6 +295,7 @@ func LoadFrom(lookup func(string) (string, bool)) (*Config, error) {
 		CommitterName:  l.committerName(),
 		CommitterEmail: l.committerEmail(),
 	}
+	cfg.GitHub.Token, cfg.GitHub.AppID, cfg.GitHub.AppKey = l.githubCredential()
 
 	cfg.Session = Session{
 		Secret: l.sessionSecret(cfg.PublicURL),
@@ -587,17 +604,67 @@ func (l *loader) committerEmail() string {
 	return DefaultCommitterEmail
 }
 
-func (l *loader) githubToken() string {
-	v, ok := l.get(EnvGitHubToken)
+// githubCredential reads either a personal access token or a GitHub App. One
+// of the two, never both: with both set, which one is in use would depend on
+// code nobody reads while editing the env file.
+func (l *loader) githubCredential() (token, appID string, appKey *rsa.PrivateKey) {
+	token, hasToken := l.get(EnvGitHubToken)
+	appID, hasID := l.get(EnvGitHubAppID)
+	rawKey, hasKey := l.get(EnvGitHubAppKey)
+
+	switch {
+	case hasToken && (hasID || hasKey):
+		l.fail(EnvGitHubToken, fmt.Sprintf("is set alongside %s/%s; set the token or the App, not both",
+			EnvGitHubAppID, EnvGitHubAppKey))
+		return "", "", nil
+
+	case hasToken:
+		if !strings.HasPrefix(token, "github_pat_") && !strings.HasPrefix(token, "ghp_") {
+			l.warn("%s does not start with github_pat_ (fine-grained) or ghp_ (classic); "+
+				"check it is a GitHub token and not something else", EnvGitHubToken)
+		}
+		return token, "", nil
+
+	case !hasID && !hasKey:
+		l.fail(EnvGitHubToken, fmt.Sprintf("is required but not set, unless %s and %s are",
+			EnvGitHubAppID, EnvGitHubAppKey))
+		return "", "", nil
+	}
+
+	ok := true
+	if !hasID {
+		l.fail(EnvGitHubAppID, fmt.Sprintf("is required when %s is set", EnvGitHubAppKey))
+		ok = false
+	} else if !isDigits(appID) {
+		l.fail(EnvGitHubAppID, fmt.Sprintf("must be the numeric App ID from the App's settings page (got %q)", appID))
+		ok = false
+	}
+	if !hasKey {
+		l.fail(EnvGitHubAppKey, fmt.Sprintf("is required when %s is set", EnvGitHubAppID))
+		return "", "", nil
+	}
+	// The parse error describes the shape, never the value.
+	key, err := ghauth.ParsePrivateKey(rawKey)
+	if err != nil {
+		l.fail(EnvGitHubAppKey, err.Error()+"; it must be the App's .pem, as is or base64-encoded")
+		return "", "", nil
+	}
 	if !ok {
-		l.fail(EnvGitHubToken, "is required but not set")
-		return ""
+		return "", "", nil
 	}
-	if !strings.HasPrefix(v, "github_pat_") && !strings.HasPrefix(v, "ghp_") {
-		l.warn("%s does not start with github_pat_ (fine-grained) or ghp_ (classic); "+
-			"check it is a GitHub token and not something else", EnvGitHubToken)
+	return "", appID, key
+}
+
+func isDigits(s string) bool {
+	if s == "" {
+		return false
 	}
-	return v
+	for _, r := range s {
+		if r < '0' || r > '9' {
+			return false
+		}
+	}
+	return true
 }
 
 func (l *loader) sessionSecret(publicURL string) []byte {

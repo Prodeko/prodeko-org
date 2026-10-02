@@ -139,7 +139,7 @@ with a `https://pr-<N>.preview.prodeko.org/` link.
 
 ```
 GITHUB_TOKEN=<fine-grained token>
-GITHUB_REPO=rvirtaha/prodeko-hack
+GITHUB_REPO=prodeko/prodeko-org
 ```
 
 The token wants Contents and Pull requests, read and write, on that repository

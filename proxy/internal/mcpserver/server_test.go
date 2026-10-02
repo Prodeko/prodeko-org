@@ -47,7 +47,7 @@ func testServer(t *testing.T, tools ...Tool) *Server {
 		Version:             "test",
 		Tools:               tools,
 		Authenticate:        StaticBearer("secret", devIdentity),
-		ResourceMetadataURL: "https://edit.prodeko.org/.well-known/oauth-protected-resource",
+		ResourceMetadataURL: "https://mcp.prodeko.org/.well-known/oauth-protected-resource",
 		Logger:              quiet(),
 	})
 	if err != nil {
@@ -107,7 +107,7 @@ func TestMissingBearerIsRefusedWithDiscovery(t *testing.T) {
 	if !strings.HasPrefix(challenge, "Bearer ") {
 		t.Fatalf("WWW-Authenticate = %q, want a Bearer challenge", challenge)
 	}
-	if !strings.Contains(challenge, `resource_metadata="https://edit.prodeko.org/.well-known/oauth-protected-resource"`) {
+	if !strings.Contains(challenge, `resource_metadata="https://mcp.prodeko.org/.well-known/oauth-protected-resource"`) {
 		t.Fatalf("WWW-Authenticate = %q, want it to point at the resource metadata", challenge)
 	}
 }
