@@ -2,6 +2,9 @@
 title: Joining Prodeko
 description: Who can join Prodeko as an actual, old, outside or supporting member, and how to apply.
 translationKey: guild-jaseneksi
+photo:
+  src: images/pages/page-guild-crop.png
+  alt: Guild members on the stairs of the TUAS building
 sourceURL: https://prodeko.org/en/guild/joining-guild/
 ---
 

@@ -1,5 +1,7 @@
 ---
 title: ESTIEM LG Helsinki
+hero: true
+cards: true
 translationKey: estiem
 description: Prodeko's ESTIEM local group and its European events.
 photo:

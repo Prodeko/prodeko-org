@@ -19,7 +19,11 @@
          the child pages still listed under it, the ones that explain what
          the positions do.
 
-     Section children not named by either list are still listed as links. */}}
+     Section children not named by either list are still listed as links.
+
+       cards: true
+         The children as a grid of cards instead of rows, each opened by a
+         band of the overalls rainbow: the audience hubs use it. */}}
 {{ define "main" }}
   {{ $page := . }}
   {{ $isFi := eq .Language.Lang "fi" }}
@@ -64,7 +68,7 @@
     {{ end }}
   {{ end }}
   {{ if $rows }}
-    {{ $body = $body | append (printf `<ul class="link-list">%s</ul>` (delimit $rows "")) }}
+    {{ $body = $body | append (printf `<ul class="%s">%s</ul>` (cond (.Params.cards | default false) "link-cards" "link-list") (delimit $rows "")) }}
   {{ end }}
   {{ partial "page-shell.html" (dict "page" . "body" (delimit $body "" | safeHTML)) }}
 {{ end }}

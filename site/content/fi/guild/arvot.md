@@ -2,6 +2,9 @@
 title: Arvot
 description: Prodekon viisi yhteistä arvoa ja arvotyö, jolla ne määriteltiin killan 50-vuotisjuhlavuoden kunniaksi 2016–2017.
 translationKey: guild-arvot
+photo:
+  src: images/pages/hero-wappu-flag.jpg
+  alt: Prodekolaisia wappukulkueessa killan lipun kanssa
 sourceURL: https://prodeko.org/fi/guild/arvot/
 reviewed: 2026-09-18
 owner: hallitus

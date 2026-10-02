@@ -1,5 +1,7 @@
 ---
 title: Fukseille
+hero: true
+cards: true
 translationKey: new-students
 description: Kaikki mitä uuden tutalaisen kannattaa tietää ensimmäisestä vuodestaan.
 photo:
