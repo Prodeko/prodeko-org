@@ -27,7 +27,7 @@ func extServer(t *testing.T) *Server {
 			Name:     "Image upload",
 			MimeType: "text/html",
 			Text:     "<!doctype html><title>upload</title>",
-			Meta:     json.RawMessage(`{"ui":{"csp":{"connectDomains":["https://edit.prodeko.org"]}}}`),
+			Meta:     json.RawMessage(`{"ui":{"csp":{"connectDomains":["https://mcp.prodeko.org"]}}}`),
 		}},
 		Logger: quiet(),
 	})

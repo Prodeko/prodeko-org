@@ -439,7 +439,7 @@ func loadEnv(lookup func(string) (string, bool)) (*env, error) {
 		fail(envSessionSecret, fmt.Sprintf("must be at least %d bytes, got %d", session.MinSecretLen, n))
 	}
 	if cfg.PublicURL != "" && !strings.HasPrefix(cfg.PublicURL, "https://") && !strings.HasPrefix(cfg.PublicURL, "http://") {
-		fail(envPublicURL, "must be an absolute http(s) origin such as https://edit.prodeko.org")
+		fail(envPublicURL, "must be an absolute http(s) origin such as https://mcp.prodeko.org")
 	}
 	if cfg.GitHubRepo != "" && strings.Count(cfg.GitHubRepo, "/") != 1 {
 		fail(envGitHubRepo, "must be owner/repo")
