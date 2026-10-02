@@ -307,29 +307,27 @@ img{display:block;max-width:100%}
 /* The full officials list: a heading per committee above its grid. */
 .people-group h2{scroll-margin-top:88px}
 
-/* Values cards (partials/values-cards.html) — five values, five colours on
-   the overalls. The colour is a band across the top and a square behind the
-   number; the text stays black on the card, since yellow and orange are too
-   light to carry words. */
-.prose .values-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:var(--space-4);list-style:none;margin:var(--space-6) 0 var(--space-8);padding:0}
+/* Values (partials/values-cards.html) — five bands, one per value, each
+   filled with its colour of the overalls rainbow, after the old site's values
+   page. The rainbow is darkened so white words stay readable on yellow and
+   orange; the title is set wide in capitals, the text centred under it. */
+.prose .values-cards{display:flex;flex-direction:column;gap:var(--space-3);list-style:none;margin:var(--space-6) 0 var(--space-8);padding:0}
 .prose .values-cards>li{margin:0}
-.value-card{--value:var(--pd-blue);position:relative;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-5);background:var(--surface-sunken);border-top:6px solid var(--value)}
-.value-red{--value:var(--pd-rainbow-red)}
-.value-orange{--value:var(--pd-rainbow-orange)}
-.value-yellow{--value:var(--pd-rainbow-yellow)}
-.value-green{--value:var(--pd-rainbow-green)}
-.value-blue{--value:var(--pd-rainbow-blue)}
-.value-number{display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;background:var(--value);color:var(--pd-black);font-size:var(--size-lg);font-weight:var(--weight-bold);line-height:var(--leading-flat)}
-.prose .value-card h3{margin:var(--space-1) 0 0;font-size:var(--size-lg);text-transform:uppercase;letter-spacing:var(--track-display)}
-.prose .value-card p{margin:0;font-size:var(--size-sm);line-height:var(--leading-normal)}
+.value-card{--value:var(--pd-blue);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-3);min-height:180px;padding:var(--space-8) var(--space-6);background:var(--value);color:#fff;text-align:center}
+.value-red{--value:oklch(from var(--pd-rainbow-red) calc(l - 0.24) calc(c * 0.75) h)}
+.value-orange{--value:oklch(from var(--pd-rainbow-orange) calc(l - 0.2) c h)}
+.value-yellow{--value:oklch(from var(--pd-rainbow-yellow) calc(l - 0.3) calc(c * 1.1) calc(h - 22))}
+.value-green{--value:oklch(from var(--pd-rainbow-green) calc(l - 0.08) c h)}
+.value-blue{--value:var(--pd-blue-dark)}
+.prose .value-card h3{margin:0;font-size:clamp(var(--size-xl),4vw,var(--size-3xl));font-weight:var(--weight-bold);text-transform:uppercase;letter-spacing:var(--track-caps);line-height:var(--leading-tight);color:#fff}
+.prose .value-card p{max-width:34em;margin:0;font-size:var(--size-sm);line-height:var(--leading-normal);color:rgb(255 255 255 / 0.9)}
 
 /* Social cards (home.html) — the guild's Instagram and TikTok as two large
-   link cards in the brand blue and black, each closed with the overalls
-   rainbow. Links out only; nothing from the platforms is loaded here. */
+   link cards in the brand blue and black. Links out only; nothing from the platforms is loaded here. */
 .social-section{margin-top:var(--space-12)}
 .prose .social-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space-4);list-style:none;margin:var(--space-6) 0 var(--space-8);padding:0}
 .prose .social-cards>li{margin:0}
-.prose .social-card{display:flex;flex-direction:column;gap:var(--space-1);height:100%;padding:var(--space-6) var(--space-6) calc(var(--space-6) + 6px);color:var(--text-on-brand);text-decoration:none;background:var(--surface-brand) var(--rainbow-gradient) bottom/100% 6px no-repeat;transition:var(--transition-ui)}
+.prose .social-card{display:flex;flex-direction:column;gap:var(--space-1);height:100%;padding:var(--space-6);color:var(--text-on-brand);text-decoration:none;background:var(--surface-brand);transition:var(--transition-ui)}
 .prose .social-tiktok{background-color:var(--surface-inverse)}
 .prose .social-card:hover{background-color:var(--pd-blue-hover)}
 .prose .social-tiktok:hover{background-color:var(--pd-blue-dark)}
