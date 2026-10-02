@@ -13,7 +13,7 @@ import (
 
 func completeEnv() map[string]string {
 	return map[string]string{
-		"PUBLIC_URL":             "https://edit.prodeko.org",
+		"PUBLIC_URL":             "https://mcp.prodeko.org",
 		"MCP_REPO_PATH":          "/srv/mcp/repo",
 		"MCP_STATE_DIR":          "/srv/mcp/state",
 		"KEYCLOAK_ISSUER":        "https://id.prodeko.org/realms/membership-registry",
@@ -116,7 +116,7 @@ func TestLoadEnvRejectsBadValues(t *testing.T) {
 		names string
 	}{
 		{"short secret", func(m map[string]string) { m["SESSION_SECRET"] = "too-short" }, "SESSION_SECRET"},
-		{"public url without a scheme", func(m map[string]string) { m["PUBLIC_URL"] = "edit.prodeko.org" }, "PUBLIC_URL"},
+		{"public url without a scheme", func(m map[string]string) { m["PUBLIC_URL"] = "mcp.prodeko.org" }, "PUBLIC_URL"},
 		{"github repo without an owner", func(m map[string]string) { m["GITHUB_REPO"] = "prodeko-org" }, "GITHUB_REPO"},
 		{"unknown log level", func(m map[string]string) { m["LOG_LEVEL"] = "chatty" }, "LOG_LEVEL"},
 	} {
