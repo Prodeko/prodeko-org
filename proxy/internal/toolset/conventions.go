@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
 )
 
 // conventionsHead is the first half of what get_conventions returns and what

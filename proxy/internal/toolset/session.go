@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/mcpserver"
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/mcpserver"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 // A session is one working stretch: the change being edited, if any, and when

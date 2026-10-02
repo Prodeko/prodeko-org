@@ -21,7 +21,7 @@ import (
 	"github.com/coreos/go-oidc/v3/oidc"
 	"golang.org/x/oauth2"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // DefaultStateTTL bounds how long a sign-in may sit half-finished.

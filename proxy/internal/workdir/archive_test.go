@@ -28,7 +28,7 @@ func (p pr) json() string {
 	if p.merged {
 		mergedAt = "2026-09-22T10:00:00Z"
 	}
-	return fmt.Sprintf(`{"number":%d,"html_url":"https://github.com/prodeko/prodeko-hack/pull/%d",`+
+	return fmt.Sprintf(`{"number":%d,"html_url":"https://github.com/prodeko/prodeko-org/pull/%d",`+
 		`"state":%q,"merged_at":%q,"head":{"ref":%q,"sha":"sha%d"}}`,
 		p.number, p.number, p.state, mergedAt, p.branch, p.number)
 }
@@ -50,7 +50,7 @@ func (g *githubFake) start(t *testing.T) string {
 		g.methods = append(g.methods, r.Method)
 		g.mu.Unlock()
 
-		const list = "/repos/prodeko/prodeko-hack/pulls"
+		const list = "/repos/prodeko/prodeko-org/pulls"
 		switch {
 		case r.URL.Path == list:
 			head := strings.TrimPrefix(r.URL.Query().Get("head"), "prodeko:")
@@ -103,7 +103,7 @@ func (f *fixture) githubManager(t *testing.T, apiRoot string) *Manager {
 	t.Helper()
 	cfg := f.config(t)
 	cfg.GitHubToken = "ghp_test"
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	cfg.APIRoot = apiRoot
 	m, err := New(cfg)
 	if err != nil {

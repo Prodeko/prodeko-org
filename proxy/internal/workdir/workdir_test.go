@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/fence"
+	"github.com/prodeko/prodeko-org/proxy/internal/fence"
 )
 
 func testConfig(t *testing.T) Config {
@@ -74,7 +74,7 @@ func TestDryRunWithoutBothGitHubVariables(t *testing.T) {
 		t.Error("DryRun = false with GITHUB_REPO missing")
 	}
 
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	m, err = New(cfg)
 	if err != nil {
 		t.Fatalf("New: %v", err)
@@ -907,7 +907,7 @@ func TestSubmitDryRunCommitsAuthoredByTheEditorAndPushesToOrigin(t *testing.T) {
 	if !res.DryRun {
 		t.Error("Submit did not report a dry run without a GitHub token")
 	}
-	if !strings.Contains(res.Note, "no GITHUB_TOKEN") {
+	if !strings.Contains(res.Note, "no GitHub credential") {
 		t.Errorf("Note = %q, want it to say the run was dry", res.Note)
 	}
 	if res.PRNumber != 0 || res.PRURL != "" {
@@ -1123,19 +1123,19 @@ func TestSubmitOpensADraftPullRequestAndLabelsIt(t *testing.T) {
 			t.Errorf("Authorization = %q", got)
 		}
 		switch {
-		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls":
+		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-org/pulls":
 			listCalls++
 			if got := r.URL.Query().Get("head"); got != "prodeko:media/maija/sininen-otsikko" {
 				t.Errorf("head = %q", got)
 			}
 			w.Write([]byte(`[]`))
-		case r.Method == http.MethodPost && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls":
+		case r.Method == http.MethodPost && r.URL.Path == "/repos/prodeko/prodeko-org/pulls":
 			if err := json.NewDecoder(r.Body).Decode(&opened); err != nil {
 				t.Errorf("decoding the pull request: %v", err)
 			}
 			w.WriteHeader(http.StatusCreated)
-			w.Write([]byte(`{"number":47,"html_url":"https://github.com/prodeko/prodeko-hack/pull/47","draft":true,"state":"open","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}`))
-		case r.Method == http.MethodPost && r.URL.Path == "/repos/prodeko/prodeko-hack/issues/47/labels":
+			w.Write([]byte(`{"number":47,"html_url":"https://github.com/prodeko/prodeko-org/pull/47","draft":true,"state":"open","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}`))
+		case r.Method == http.MethodPost && r.URL.Path == "/repos/prodeko/prodeko-org/issues/47/labels":
 			var body struct {
 				Labels []string `json:"labels"`
 			}
@@ -1151,7 +1151,7 @@ func TestSubmitOpensADraftPullRequestAndLabelsIt(t *testing.T) {
 
 	cfg := f.config(t)
 	cfg.GitHubToken = "ghp_test"
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	cfg.APIRoot = srv.URL
 	m, err := New(cfg)
 	if err != nil {
@@ -1170,7 +1170,7 @@ func TestSubmitOpensADraftPullRequestAndLabelsIt(t *testing.T) {
 	if res.DryRun {
 		t.Error("Submit reported a dry run with both GitHub variables set")
 	}
-	if res.PRNumber != 47 || res.PRURL != "https://github.com/prodeko/prodeko-hack/pull/47" {
+	if res.PRNumber != 47 || res.PRURL != "https://github.com/prodeko/prodeko-org/pull/47" {
 		t.Errorf("pull request = %d %q", res.PRNumber, res.PRURL)
 	}
 	if res.PreviewURL != "https://pr-47.preview.prodeko.org/" {
@@ -1203,8 +1203,8 @@ func TestSubmitReusesTheOpenPullRequest(t *testing.T) {
 	posts := 0
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch {
-		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-hack/pulls":
-			w.Write([]byte(`[{"number":47,"html_url":"https://github.com/prodeko/prodeko-hack/pull/47","draft":true,"state":"open","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}]`))
+		case r.Method == http.MethodGet && r.URL.Path == "/repos/prodeko/prodeko-org/pulls":
+			w.Write([]byte(`[{"number":47,"html_url":"https://github.com/prodeko/prodeko-org/pull/47","draft":true,"state":"open","head":{"ref":"media/maija/sininen-otsikko","sha":"deadbeef"}}]`))
 		case r.Method == http.MethodPost && strings.HasSuffix(r.URL.Path, "/pulls"):
 			posts++
 			w.WriteHeader(http.StatusUnprocessableEntity)
@@ -1217,7 +1217,7 @@ func TestSubmitReusesTheOpenPullRequest(t *testing.T) {
 
 	cfg := f.config(t)
 	cfg.GitHubToken = "ghp_test"
-	cfg.GitHubRepo = "prodeko/prodeko-hack"
+	cfg.GitHubRepo = "prodeko/prodeko-org"
 	cfg.APIRoot = srv.URL
 	m, err := New(cfg)
 	if err != nil {

@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/session"
+	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
 // githubUser is the shape Decap reads from GET /user. It uses name, login and

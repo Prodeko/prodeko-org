@@ -6,9 +6,9 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/prodeko/prodeko-hack/proxy/internal/lint"
-	"github.com/prodeko/prodeko-hack/proxy/internal/preview"
-	"github.com/prodeko/prodeko-hack/proxy/internal/workdir"
+	"github.com/prodeko/prodeko-org/proxy/internal/lint"
+	"github.com/prodeko/prodeko-org/proxy/internal/preview"
+	"github.com/prodeko/prodeko-org/proxy/internal/workdir"
 )
 
 // What a tool returns is prose the model reads, so it is written for that
