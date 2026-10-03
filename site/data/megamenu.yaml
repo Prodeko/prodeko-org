@@ -94,6 +94,19 @@ fi:
         # The magazine archive still lives on the old site, open to everyone.
         - label: Proleko?-arkisto
           url: https://old.prodeko.org/fi/palvelut/proleko/
+  events:
+    - title: Tapahtumat
+      links:
+        - label: Killan tapahtumat
+          url: /fi/tapahtumat/
+        - label: Ilmoittaudu tapahtumiin
+          url: https://ilmo.prodeko.org
+        - label: Tapahtumakalenteri
+          url: https://calendar.google.com/calendar/u/0?cid=amdxZjV1MTYyaGVvN3Zna2dkZHE5MGQ2OHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+        - label: Prodeko-seminaari
+          url: https://seminar.prodeko.org
+        - label: Tiedotuskanavat
+          url: /fi/palvelut/tiedotuskanavat/
   prospective:
     - title: Abeille
       links:
@@ -271,6 +284,19 @@ en:
           signedIn: true
         - label: Proleko? archive
           url: https://old.prodeko.org/en/services/proleko/
+  events:
+    - title: Events
+      links:
+        - label: Guild events
+          url: /en/events/
+        - label: Sign up for events
+          url: https://ilmo.prodeko.org
+        - label: Event calendar
+          url: https://calendar.google.com/calendar/u/0?cid=amdxZjV1MTYyaGVvN3Zna2dkZHE5MGQ2OHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+        - label: Prodeko Seminar
+          url: https://seminar.prodeko.org
+        - label: Communication channels
+          url: /en/services/communication-channels/
   prospective:
     - title: Prospective students
       links:

@@ -14,8 +14,6 @@ aside:
 
 PTER on killan budjettiin vuosittain kuuluva pääoma, jonka tarkoituksena on tukea prodekolaisten projekteja, tapahtumia, hankintoja sekä muuta toimintaa sen kaikissa muodoissa. PTER:stä voit hakea rahaa esimerkiksi kiltalaisille suunnatun tapahtuman järjestämiseen, kiltikseltä puuttuvien tavaroiden hankkimiseen tai ehdottaa vaikka jotain tiettyä lehteä killalle tilattavaksi. Hallitus käsittelee PTER-hakemukset aina seuraavan viikon kokouksessa.
 
-[Hae PTER-rahaa yhteydenottolomakkeella](https://forms.gle/zM9HofbL4TxWHc1j7)
-
 ## PTER-rahan hakeminen
 
 ### Ensisijainen tapa

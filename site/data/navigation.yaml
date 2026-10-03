@@ -11,12 +11,11 @@
 # The phone menu opens an item with a menuKey into the same links as its
 # mega-menu; an item without a menuKey is a direct link there.
 #
-# The bar names the five audiences the site speaks to, and Palvelut beside
-# them: the services are what a member comes back for week after week, so
-# they have an item of their own instead of hiding under Kilta. Events are
-# not in the bar: the calendar and the sign-up forms live in Ilmokilke, and
-# the footer takes a reader there. /fi/tapahtumat/ and /en/events/ remain as
-# addresses for anyone arriving from an old link or from search.
+# The bar names the five audiences the site speaks to, and Palvelut and
+# Tapahtumat beside them: the services and the events are what a member comes
+# back for week after week, so they have items of their own instead of hiding
+# under Kilta. The calendar and the sign-up forms live in Ilmokilke; the
+# Tapahtumat page introduces the guild's events and its menu leads there.
 fi:
   - title: Kilta
     url: /fi/guild/
@@ -26,6 +25,9 @@ fi:
     url: /fi/palvelut/
     menuKey: services
     owns: [/fi/palvelut/]
+  - title: Tapahtumat
+    url: /fi/tapahtumat/
+    menuKey: events
   - title: Abeille
     url: /fi/abit/
     menuKey: prospective
@@ -54,6 +56,9 @@ en:
     url: /en/services/
     menuKey: services
     owns: [/en/services/]
+  - title: Events
+    url: /en/events/
+    menuKey: events
   - title: Prospective students
     url: /en/prospective-students/
     menuKey: prospective
