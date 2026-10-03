@@ -83,6 +83,21 @@ All undergraduate and master's students of Industrial Engineering and Management
   <div class="row"><dt><a href="https://membership.prodeko.org/apply" target="_blank" rel="noopener">Membership application</a></dt><dd>membership.prodeko.org/apply · pay by card.</dd></div>
 </dl>
 
+## Guild ribbon
+
+Prodeko's emblem is a dark blue guild ribbon with two silver stripes. The ribbon is 20 millimetres wide, and its 3 millimetre stripes run lengthwise along both edges, one millimetre in from the edge. The ribbon is worn at academic celebrations such as annual balls.
+
+<dl class="def-list">
+  <div class="row"><dt>Who may wear it</dt><dd>All current and former members of the guild. The board may also grant the right to wear it to someone else as an honour. The ribbon must not be given to anyone without the right to wear it.</dd></div>
+  <div class="row"><dt>How to wear it</dt><dd>From the right shoulder down to the left hip. Everyone wears it the same way, and it must not touch bare skin.</dd></div>
+  <div class="row"><dt>Rosette</dt><dd>The ribbon can also be worn as a rosette on the right side of the chest.</dd></div>
+  <div class="row"><dt>On the lapel</dt><dd>With a suit, a women's suit or similar, the ribbon can instead be worn on the left lapel of the jacket, perpendicular to the lapel's outer edge.</dd></div>
+  <div class="row"><dt>Several ribbons</dt><dd>The AYY ribbon is always worn topmost, with the guild ribbon below it. The teekkari ribbon is also worn below the AYY ribbon.</dd></div>
+  <div class="row"><dt>Attire</dt><dd>The ribbon is worn with appropriate attire, and it must be clean and intact.</dd></div>
+</dl>
+
+The full rules are in the guild's [ribbon guideline](https://static.prodeko.org/media/public/2020/12/17/kiltanauhaohjesaanto.pdf) (in Finnish). AYY's page [Insignia used by Aalto students](https://www.ayy.fi/fi/aallon-opiskelijoiden-kayttamia-tunnuksia) (in Finnish) covers the ribbons, badges and caps of AYY, teekkaris and other Aalto communities.
+
 ## Important links
 
 <ul class="link-list">
