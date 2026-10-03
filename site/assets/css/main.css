@@ -434,6 +434,12 @@ img{display:block;max-width:100%}
 .link-cards .arrow{align-self:flex-end;font-size:var(--size-lg);color:var(--pd-blue);transition:transform var(--duration-fast) var(--ease-standard)}
 .link-cards a:hover .arrow{transform:translateX(4px)}
 
+/* Alumni portraits (the successful alumni pages) — a small round photo at
+   the start of the line that names who said the quote above it. The photo
+   is decorative, since the name is right beside it. */
+.prose p:has(> .alumni-photo){display:flow-root;min-height:72px}
+.prose .alumni-photo{float:left;width:72px;height:72px;margin:0 var(--space-4) var(--space-2) 0;object-fit:cover;border-radius:var(--radius-circle)}
+
 /* Partner logos */
 .partner-logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:var(--space-8) var(--space-10);align-items:center;list-style:none;margin:var(--space-6) 0;padding:0}
 .partner-logos img{display:block;max-width:100%;max-height:44px;object-fit:contain}
