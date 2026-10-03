@@ -74,6 +74,21 @@ Varsinaisiksi jäseniksi voidaan hyväksyä jäsenmaksunsa maksaneet Aalto-yliop
   <div class="row"><dt><a href="https://membership.prodeko.org/apply" target="_blank" rel="noopener">Jäsenhakemus</a></dt><dd>membership.prodeko.org/apply · maksu pankkikortilla.</dd></div>
 </dl>
 
+## Kiltanauha
+
+Prodekon tunnus on tummansininen kiltanauha, jossa on kaksi hopeanväristä raitaa. Nauha on 20 millimetriä leveä, ja sen 3 millimetrin raidat kulkevat nauhan suuntaisesti kummallakin reunalla millimetrin päässä reunasta. Nauhaa käytetään akateemisissa juhlatilaisuuksissa, kuten vuosijuhlilla.
+
+<dl class="def-list">
+  <div class="row"><dt>Käyttöoikeus</dt><dd>Kaikilla killan nykyisillä ja entisillä jäsenillä. Hallitus voi myöntää käyttöoikeuden huomionosoituksena myös muulle henkilölle. Nauhaa ei saa luovuttaa sellaiselle, jolla ei ole käyttöoikeutta.</dd></div>
+  <div class="row"><dt>Kantotapa</dt><dd>Oikealta olalta alas vasemmalle lantiolle. Kantotapa on sama kaikille, eikä nauha saa koskettaa paljasta ihoa.</dd></div>
+  <div class="row"><dt>Ruusuke</dt><dd>Nauhaa voi kantaa myös ruusukkeena puvun oikeassa miehustassa.</dd></div>
+  <div class="row"><dt>Kauluksessa</dt><dd>Puvun, jakkupuvun tai vastaavan kanssa nauhan voi kantaa myös takin vasemmassa kauluksessa, kohtisuorassa kauluksen ulkoreunaan nähden.</dd></div>
+  <div class="row"><dt>Useampi nauha</dt><dd>AYY:n kuntanauha kannetaan aina ylimpänä, ja kiltanauha sen alla. Myös teekkarinauha kannetaan AYY:n nauhan alla.</dd></div>
+  <div class="row"><dt>Asu</dt><dd>Nauhan käyttö edellyttää asianmukaista asua, ja nauhan tulee olla puhdas ja ehjä.</dd></div>
+</dl>
+
+Tarkemmat määräykset ovat killan [kiltanauhaohjesäännössä](https://static.prodeko.org/media/public/2020/12/17/kiltanauhaohjesaanto.pdf). AYY:n, teekkarien ja muiden Aallon yhteisöjen nauhoista, merkeistä ja lakeista kerrotaan AYY:n sivulla [Aallon opiskelijoiden käyttämiä tunnuksia](https://www.ayy.fi/fi/aallon-opiskelijoiden-kayttamia-tunnuksia).
+
 ## Tärkeät linkit
 
 <ul class="link-list">
