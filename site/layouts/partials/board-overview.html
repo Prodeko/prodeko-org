@@ -55,7 +55,10 @@
     {{ range $inGroup }}
       {{ $role := .role }}
       {{ if and (not $isFi) .roleEn }}{{ $role = .roleEn }}{{ end }}
-      {{ $rows = $rows | append (printf `<li><span class="org-name">%s</span><span class="org-role">%s</span></li>` (htmlEscape .name) (htmlEscape $role)) }}
+      {{/* A small portrait beside each name, or the placeholder. */}}
+      {{ $face := partial "person-placeholder.html" "org-face" }}
+      {{ with .photo }}{{ with resources.Get . }}{{ $face = printf `<img class="org-face" src="%s" alt="" loading="lazy">` (.Fill "96x96 q75").RelPermalink }}{{ end }}{{ end }}
+      {{ $rows = $rows | append (printf `<li>%s<span class="org-text"><span class="org-name">%s</span><span class="org-role">%s</span></span></li>` $face (htmlEscape .name) (htmlEscape $role)) }}
     {{ end }}
     {{ $boxes = $boxes | append (printf `<details class="org-group"%s><summary><span class="org-title">%s</span><span class="org-count">%d %s</span></summary><ul class="org-members">%s</ul></details>` (cond (eq $i 0) " open" "") (htmlEscape $title) (len $inGroup) (index $t "people") (delimit $rows "")) }}
   {{ end }}

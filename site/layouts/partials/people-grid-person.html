@@ -23,6 +23,8 @@
            the build is the only way the mistake is ever seen. */}}
       {{ errorf "photo %q not found for %s" . $name }}
     {{ end }}
+  {{ else }}
+    {{ if .placeholder }}{{ partial "person-placeholder.html" "person-placeholder" }}{{ end }}
   {{ end }}
   <span class="person-name">{{ .name }}</span>
   {{ with $role }}<span class="person-role">{{ . }}</span>{{ end }}

@@ -5,18 +5,19 @@
 # appear. groupEn names the group on an English page; the guild's own titles
 # (Terdetaituri, Fabujuomanlaskija, ...) have no English form, so only the
 # key officials carry a roleEn. A person with two titles in one group is one
-# entry, the titles joined with " / ".
+# entry, the titles joined with " / ". photo names the portrait from the old
+# site, resized to 400px; an official without one gets the placeholder.
 heading: "2026"
 sortKey: 2026
 members:
   - { name: "Reetta Uusitalo", role: "Päätoimittaja", roleEn: "Editor-in-Chief", group: "Vastuutoimarit", groupEn: "Key officials" }
-  - { name: "Enni Tiittanen", role: "Abivastaava", roleEn: "Upper Secondary Outreach Officer", group: "Vastuutoimarit" }
+  - { name: "Enni Tiittanen", role: "Abivastaava", roleEn: "Upper Secondary Outreach Officer", photo: "images/officials/2026/enni-tiittanen.jpg", group: "Vastuutoimarit" }
   - { name: "Iiris Leino", role: "Diskonttaustirehtööri", roleEn: "Director of Discounting", group: "Vastuutoimarit" }
   - { name: "Eero Koskenvesa", role: "ISOvastaava", roleEn: "Tutor Coordinator", group: "Vastuutoimarit" }
   - { name: "Charlie Cruz Kauppila", role: "CTO", roleEn: "CTO", group: "Vastuutoimarit" }
   - { name: "Elina Kärkkäinen", role: "Diskonttaustirehtööri", roleEn: "Director of Discounting", group: "Vastuutoimarit" }
   - { name: "Eemeli Karjalainen", role: "Abivastaava", roleEn: "Upper Secondary Outreach Officer", group: "Vastuutoimarit" }
-  - { name: "Oona Jokela", role: "ESTIEM-vastaava", roleEn: "ESTIEM Officer", group: "Vastuutoimarit" }
+  - { name: "Oona Jokela", role: "ESTIEM-vastaava", roleEn: "ESTIEM Officer", photo: "images/officials/2026/oona-jokela.jpg", group: "Vastuutoimarit" }
   - { name: "Alina Heikkinen", role: "Seminaaritsaari", roleEn: "Tsar of the Seminar", group: "Vastuutoimarit" }
   - { name: "Emmi Alahonko", role: "Seminaaritsaari", roleEn: "Tsar of the Seminar", group: "Vastuutoimarit" }
   - { name: "Veikko Valtonen", role: "Toimintapoliisi", group: "Toiminnantarkastus", groupEn: "Operations audit" }
@@ -33,20 +34,20 @@ members:
   - { name: "Robin Hansson", role: "Innovaattori", group: "Prodeko 60" }
   - { name: "Alvin Ekelund", role: "Innovaattori", group: "Prodeko 60" }
   - { name: "Herman Bergring", role: "Innovaattori", group: "Prodeko 60" }
-  - { name: "Aleksi Utriainen", role: "N-toimettomuushenkilö", group: "ÄNNÄ-jaos", groupEn: "ÄNNÄ division" }
+  - { name: "Aleksi Utriainen", role: "N-toimettomuushenkilö", photo: "images/officials/2026/aleksi-utriainen.jpg", group: "ÄNNÄ-jaos", groupEn: "ÄNNÄ division" }
   - { name: "Iiro Ukkonen", role: "N-toimettomuushenkilö", group: "ÄNNÄ-jaos" }
   - { name: "Jaakko Rouste", role: "N-toimettomuushenkilö", group: "ÄNNÄ-jaos" }
   - { name: "Markus Pirilä", role: "N-toimettomuushenkilö", group: "ÄNNÄ-jaos" }
   - { name: "Pihla Päivänsalo", role: "N-toimettomuushenkilö", group: "ÄNNÄ-jaos" }
   - { name: "Lotta Mäntylä", role: "N-vastaamaton", group: "ÄNNÄ-jaos" }
-  - { name: "Niklas Linnanen", role: "N-toimettomuushenkilö", group: "ÄNNÄ-jaos" }
+  - { name: "Niklas Linnanen", role: "N-toimettomuushenkilö", photo: "images/officials/2026/niklas-linnanen.jpg", group: "ÄNNÄ-jaos" }
   - { name: "Jenna Liinamaa", role: "Teekkarikokouksen varaedustaja / N-toimettomuushenkilö", group: "ÄNNÄ-jaos" }
   - { name: "Kuutti Kivinen", role: "Teekkarikokouksen edustaja", group: "ÄNNÄ-jaos" }
   - { name: "Aaron Katainen", role: "Teekkarikokouksen varaedustaja", group: "ÄNNÄ-jaos" }
   - { name: "Peter Blomqvist", role: "N-toimettomuushenkilö", group: "ÄNNÄ-jaos" }
   - { name: "Leo Ala-Laurila", role: "Teekkarikokouksen edustaja", group: "ÄNNÄ-jaos" }
-  - { name: "Juuli Ylönen", role: "Koirauimari", group: "VPJ:n alaiset", groupEn: "Under the Vice President" }
-  - { name: "Aleksi Utriainen", role: "Koirauimari", group: "VPJ:n alaiset" }
+  - { name: "Juuli Ylönen", role: "Koirauimari", photo: "images/officials/2026/juuli-ylonen.jpg", group: "VPJ:n alaiset", groupEn: "Under the Vice President" }
+  - { name: "Aleksi Utriainen", role: "Koirauimari", photo: "images/officials/2026/aleksi-utriainen.jpg", group: "VPJ:n alaiset" }
   - { name: "Jenna Liinamaa", role: "Häröpallo", group: "VPJ:n alaiset" }
   - { name: "Elisa Jääskeläinen", role: "Koirauimari", group: "VPJ:n alaiset" }
   - { name: "Emmi Alahonko", role: "Koirauimari", group: "VPJ:n alaiset" }
@@ -54,22 +55,22 @@ members:
   - { name: "Niclas von Plato", role: "Biljardivastaava", group: "Kiltistoimikunta" }
   - { name: "Risto Virtaharju", role: "Maitotyttö", group: "Kiltistoimikunta" }
   - { name: "Luka Veselinovic", role: "Biljardivastaava", group: "Kiltistoimikunta" }
-  - { name: "Aleksi Utriainen", role: "Shakkimatti", group: "Kiltistoimikunta" }
-  - { name: "Leo Torpo", role: "Namu Oy:n Toimitusjohtaja", group: "Kiltistoimikunta" }
-  - { name: "Anni Tapionlinna", role: "Punttisvastaava", group: "Kiltistoimikunta" }
-  - { name: "Samuel Santonen", role: "Terdetaikuri", group: "Kiltistoimikunta" }
-  - { name: "Kalle Saarivuori", role: "Namu Oy:n Toimitusjohtaja", group: "Kiltistoimikunta" }
+  - { name: "Aleksi Utriainen", role: "Shakkimatti", photo: "images/officials/2026/aleksi-utriainen.jpg", group: "Kiltistoimikunta" }
+  - { name: "Leo Torpo", role: "Namu Oy:n Toimitusjohtaja", photo: "images/officials/2026/leo-torpo.jpg", group: "Kiltistoimikunta" }
+  - { name: "Anni Tapionlinna", role: "Punttisvastaava", photo: "images/officials/2026/anni-tapionlinna.jpg", group: "Kiltistoimikunta" }
+  - { name: "Samuel Santonen", role: "Terdetaikuri", photo: "images/officials/2026/samuel-santonen.jpg", group: "Kiltistoimikunta" }
+  - { name: "Kalle Saarivuori", role: "Namu Oy:n Toimitusjohtaja", photo: "images/officials/2026/kalle-saarivuori.jpg", group: "Kiltistoimikunta" }
   - { name: "Marco Purovesi", role: "Historioitsija", group: "Kiltistoimikunta" }
-  - { name: "Reetta Pouta", role: "Kauppavastaava", group: "Kiltistoimikunta" }
+  - { name: "Reetta Pouta", role: "Kauppavastaava", photo: "images/officials/2026/reetta-pouta.jpg", group: "Kiltistoimikunta" }
   - { name: "Matias Pesonen", role: "Terdetaituri", group: "Kiltistoimikunta" }
   - { name: "Jenni Palukka", role: "Hyvis", group: "Kiltistoimikunta" }
   - { name: "Vilma Oksa", role: "Kauppavastaava", group: "Kiltistoimikunta" }
-  - { name: "Kuutti Niku", role: "Hyvis", group: "Kiltistoimikunta" }
+  - { name: "Kuutti Niku", role: "Hyvis", photo: "images/officials/2026/kuutti-niku.jpg", group: "Kiltistoimikunta" }
   - { name: "Kevin Ni", role: "Terdetaituri", group: "Kiltistoimikunta" }
   - { name: "Olli Mustajoki", role: "TEK-yhdyshenkilö", group: "Kiltistoimikunta" }
   - { name: "Jenna Liinamaa", role: "Kirjakeiju", group: "Kiltistoimikunta" }
-  - { name: "Dennis Lamberg", role: "Terdetaituri", group: "Kiltistoimikunta" }
-  - { name: "Kaisla Korhonen", role: "Hyvis", group: "Kiltistoimikunta" }
+  - { name: "Dennis Lamberg", role: "Terdetaituri", photo: "images/officials/2026/dennis-lamberg.jpg", group: "Kiltistoimikunta" }
+  - { name: "Kaisla Korhonen", role: "Hyvis", photo: "images/officials/2026/kaisla-korhonen.jpg", group: "Kiltistoimikunta" }
   - { name: "Juhana Kokkonen", role: "Terdetaituri", group: "Kiltistoimikunta" }
   - { name: "Kuutti Kivinen", role: "Historioitsija", group: "Kiltistoimikunta" }
   - { name: "Charlie Cruz Kauppila", role: "Maitotyttö", group: "Kiltistoimikunta" }
@@ -80,58 +81,58 @@ members:
   - { name: "Ata Dursun", role: "Kiltis MacGyver", group: "Kiltistoimikunta" }
   - { name: "Tiina Duan", role: "Hyvis", group: "Kiltistoimikunta" }
   - { name: "Leo Ala-Laurila", role: "Shakkimatti", group: "Kiltistoimikunta" }
-  - { name: "Enna Viinanen", role: "Prolekon taittaja", group: "Proleko?", groupEn: "Proleko? magazine" }
-  - { name: "Leo Torpo", role: "Prolekon toimittaja", group: "Proleko?" }
+  - { name: "Enna Viinanen", role: "Prolekon taittaja", photo: "images/officials/2026/enna-viinanen.jpg", group: "Proleko?", groupEn: "Proleko? magazine" }
+  - { name: "Leo Torpo", role: "Prolekon toimittaja", photo: "images/officials/2026/leo-torpo.jpg", group: "Proleko?" }
   - { name: "Kaisa Seppälä", role: "Prolekon toimittaja", group: "Proleko?" }
-  - { name: "Kalle Saarivuori", role: "Prolekon toimittaja", group: "Proleko?" }
+  - { name: "Kalle Saarivuori", role: "Prolekon toimittaja", photo: "images/officials/2026/kalle-saarivuori.jpg", group: "Proleko?" }
   - { name: "Helmi Pikkarainen", role: "Prolekon toimittaja", group: "Proleko?" }
-  - { name: "Roope Pekkala", role: "Prolekon toimittaja", group: "Proleko?" }
-  - { name: "Kuutti Niku", role: "Prolekon toimittaja", group: "Proleko?" }
-  - { name: "Elina Lauri", role: "Prolekon taittaja", group: "Proleko?" }
+  - { name: "Roope Pekkala", role: "Prolekon toimittaja", photo: "images/officials/2026/roope-pekkala.jpg", group: "Proleko?" }
+  - { name: "Kuutti Niku", role: "Prolekon toimittaja", photo: "images/officials/2026/kuutti-niku.jpg", group: "Proleko?" }
+  - { name: "Elina Lauri", role: "Prolekon taittaja", photo: "images/officials/2026/elina-lauri.jpg", group: "Proleko?" }
   - { name: "Niilo Lauha", role: "Prolekon toimittaja", group: "Proleko?" }
-  - { name: "Elli Lahtinen", role: "Prolekon toimittaja", group: "Proleko?" }
+  - { name: "Elli Lahtinen", role: "Prolekon toimittaja", photo: "images/officials/2026/elli-lahtinen.jpg", group: "Proleko?" }
   - { name: "Aino Kotiranta", role: "Prolekon taittaja", group: "Proleko?" }
   - { name: "Teemu Koskiahde", role: "Prolekon toimittaja", group: "Proleko?" }
   - { name: "Juhana Kokkonen", role: "Prolekon toimittaja", group: "Proleko?" }
   - { name: "Heini Koivu", role: "Prolekon taittaja", group: "Proleko?" }
   - { name: "Sara Kivi", role: "Prolekon toimittaja", group: "Proleko?" }
   - { name: "Charlie Cruz Kauppila", role: "Prolekon taittaja", group: "Proleko?" }
-  - { name: "Atte Kapanen", role: "Prolekon taittaja", group: "Proleko?" }
+  - { name: "Atte Kapanen", role: "Prolekon taittaja", photo: "images/officials/2026/atte-kapanen.jpg", group: "Proleko?" }
   - { name: "Frans Hietaranta", role: "Prolekon toimittaja", group: "Proleko?" }
   - { name: "Tiina Duan", role: "Prolekon toimittaja / Prolekon taittaja", group: "Proleko?" }
-  - { name: "Enna Viinanen", role: "Dokumentoija / Viestintävelho", group: "Viestintäjaos", groupEn: "Communications division" }
+  - { name: "Enna Viinanen", role: "Dokumentoija / Viestintävelho", photo: "images/officials/2026/enna-viinanen.jpg", group: "Viestintäjaos", groupEn: "Communications division" }
   - { name: "Aida Sinkkonen", role: "Some-omena", group: "Viestintäjaos" }
-  - { name: "Roope Pekkala", role: "Dokumentoija / Viestintävelho", group: "Viestintäjaos" }
-  - { name: "Kuutti Niku", role: "Viestintävelho / Dokumentoija", group: "Viestintäjaos" }
+  - { name: "Roope Pekkala", role: "Dokumentoija / Viestintävelho", photo: "images/officials/2026/roope-pekkala.jpg", group: "Viestintäjaos" }
+  - { name: "Kuutti Niku", role: "Viestintävelho / Dokumentoija", photo: "images/officials/2026/kuutti-niku.jpg", group: "Viestintäjaos" }
   - { name: "Viljami Meriläinen", role: "Some-omena", group: "Viestintäjaos" }
-  - { name: "Elli Lahtinen", role: "Viestintävelho", group: "Viestintäjaos" }
+  - { name: "Elli Lahtinen", role: "Viestintävelho", photo: "images/officials/2026/elli-lahtinen.jpg", group: "Viestintäjaos" }
   - { name: "Heini Koivu", role: "Dokumentoija", group: "Viestintäjaos" }
   - { name: "Mikael Kerkelä", role: "Some-omena", group: "Viestintäjaos" }
-  - { name: "Atte Kapanen", role: "Viestintävelho", group: "Viestintäjaos" }
+  - { name: "Atte Kapanen", role: "Viestintävelho", photo: "images/officials/2026/atte-kapanen.jpg", group: "Viestintäjaos" }
   - { name: "Joel Jussila", role: "Some-omena", group: "Viestintäjaos" }
   - { name: "Frans Hietaranta", role: "Viestintävelho", group: "Viestintäjaos" }
-  - { name: "Katariina Hietanen", role: "Some-omena", group: "Viestintäjaos" }
+  - { name: "Katariina Hietanen", role: "Some-omena", photo: "images/officials/2026/katariina-hietanen.jpg", group: "Viestintäjaos" }
   - { name: "Otto Hautasaari", role: "Dokumentoija", group: "Viestintäjaos" }
   - { name: "Tiina Duan", role: "Dokumentoija", group: "Viestintäjaos" }
-  - { name: "Aleksi Utriainen", role: "Pääainevastaava, PIM", group: "Opintojaos", groupEn: "Studies division" }
+  - { name: "Aleksi Utriainen", role: "Pääainevastaava, PIM", photo: "images/officials/2026/aleksi-utriainen.jpg", group: "Opintojaos", groupEn: "Studies division" }
   - { name: "Roope Siikaluoma", role: "Pääainevastaava, OM", group: "Opintojaos" }
   - { name: "Arttu Seppänen", role: "Mentorointimanageri", group: "Opintojaos" }
   - { name: "Jaakko Rouste", role: "Pääainevastaava, ODL", group: "Opintojaos" }
   - { name: "Jenna Liinamaa", role: "Mentorointimanageri", group: "Opintojaos" }
   - { name: "Frans Hietaranta", role: "Mentorointimanageri", group: "Opintojaos" }
   - { name: "Tiina Duan", role: "Pääainevastaava, Strategia", group: "Opintojaos" }
-  - { name: "Olivia Rönnemaa", role: "Chief Pöhinä Officer", group: "Ulkojaos", groupEn: "External relations division" }
+  - { name: "Olivia Rönnemaa", role: "Chief Pöhinä Officer", photo: "images/officials/2026/olivia-ronnemaa.jpg", group: "Ulkojaos", groupEn: "External relations division" }
   - { name: "Aada Mattila", role: "Ulkotoimari", group: "Ulkojaos" }
   - { name: "Joonas Heinonen", role: "Ulkotoimari", group: "Ulkojaos" }
   - { name: "Meri Halme", role: "ESTIEM-emissaari", group: "Ulkojaos" }
-  - { name: "Benjamin Granlund", role: "ESTIEM-emissaari", group: "Ulkojaos" }
+  - { name: "Benjamin Granlund", role: "ESTIEM-emissaari", photo: "images/officials/2026/benjamin-granlund.jpg", group: "Ulkojaos" }
   - { name: "Santtu Savola", role: "YS-toimihenkilö", group: "Yrityssuhdetiimi", groupEn: "Corporate relations team" }
-  - { name: "Sara Rasinmäki", role: "YS-toimihenkilö", group: "Yrityssuhdetiimi" }
+  - { name: "Sara Rasinmäki", role: "YS-toimihenkilö", photo: "images/officials/2026/sara-rasinmaki.jpg", group: "Yrityssuhdetiimi" }
   - { name: "Eppu Rantanen", role: "YS-toimihenkilö", group: "Yrityssuhdetiimi" }
-  - { name: "Jaakko Kangas", role: "YS-toimihenkilö", group: "Yrityssuhdetiimi" }
+  - { name: "Jaakko Kangas", role: "YS-toimihenkilö", photo: "images/officials/2026/jaakko-kangas.jpg", group: "Yrityssuhdetiimi" }
   - { name: "Salla Isoherranen", role: "YS-toimihenkilö", group: "Yrityssuhdetiimi" }
-  - { name: "Juuli Ylönen", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta", groupEn: "Annual ball committee" }
-  - { name: "Antti-Elmeri Takalo", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta" }
+  - { name: "Juuli Ylönen", role: "Vuosijuhlatoimikunnan jäsen", photo: "images/officials/2026/juuli-ylonen.jpg", group: "Vuosijuhlatoimikunta", groupEn: "Annual ball committee" }
+  - { name: "Antti-Elmeri Takalo", role: "Vuosijuhlatoimikunnan jäsen", photo: "images/officials/2026/antti-elmeri-takalo.jpg", group: "Vuosijuhlatoimikunta" }
   - { name: "Kaisa Seppälä", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta" }
   - { name: "Aada Mattila", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta" }
   - { name: "Eero Koskenvesa", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta" }
@@ -139,21 +140,21 @@ members:
   - { name: "Elisa Jääskeläinen", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta" }
   - { name: "Maggie Hollo", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta" }
   - { name: "Samu Bergman", role: "Vuosijuhlatoimikunnan jäsen", group: "Vuosijuhlatoimikunta" }
-  - { name: "Maija Väätäjä", role: "Seminaaritoimikunnan jäsen", group: "Seminaaritoimikunta", groupEn: "Seminar committee" }
-  - { name: "Aleksi Utriainen", role: "Seminaaritoimikunnan jäsen", group: "Seminaaritoimikunta" }
+  - { name: "Maija Väätäjä", role: "Seminaaritoimikunnan jäsen", photo: "images/officials/2026/maija-vaataja.jpg", group: "Seminaaritoimikunta", groupEn: "Seminar committee" }
+  - { name: "Aleksi Utriainen", role: "Seminaaritoimikunnan jäsen", photo: "images/officials/2026/aleksi-utriainen.jpg", group: "Seminaaritoimikunta" }
   - { name: "Reko Tainio", role: "Seminaaritoimikunnan jäsen", group: "Seminaaritoimikunta" }
   - { name: "Jaakko Rouste", role: "Seminaaritoimikunnan jäsen", group: "Seminaaritoimikunta" }
   - { name: "Markus Pirilä", role: "Sedinaaritsaari", group: "Seminaaritoimikunta" }
   - { name: "Jenni Palukka", role: "Seminaaritoimikunnan jäsen", group: "Seminaaritoimikunta" }
   - { name: "Aada Mattila", role: "Seminaaritoimikunnan jäsen", group: "Seminaaritoimikunta" }
   - { name: "Mikael Uusitalo", role: "Kulttuuripersoona", group: "Kulttuurijaos", groupEn: "Culture division" }
-  - { name: "Anni Tapionlinna", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
-  - { name: "Maria Pelkonen", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
+  - { name: "Anni Tapionlinna", role: "Kulttuuripersoona", photo: "images/officials/2026/anni-tapionlinna.jpg", group: "Kulttuurijaos" }
+  - { name: "Maria Pelkonen", role: "Kulttuuripersoona", photo: "images/officials/2026/maria-pelkonen.jpg", group: "Kulttuurijaos" }
   - { name: "Aada Mattila", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
   - { name: "Aino Kotiranta", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
   - { name: "Kuutti Kivinen", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
   - { name: "Siiri Keränen", role: "Kulttuurikuvernööri", group: "Kulttuurijaos" }
-  - { name: "Mimmi-Maija Karhu", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
+  - { name: "Mimmi-Maija Karhu", role: "Kulttuuripersoona", photo: "images/officials/2026/mimmi-maija-karhu.jpg", group: "Kulttuurijaos" }
   - { name: "Pinja Jokiniemi", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
   - { name: "Elisa Jääskeläinen", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
   - { name: "Maggie Hollo", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
@@ -162,7 +163,7 @@ members:
   - { name: "Aaro Arvonen", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
   - { name: "Leo Ala-Laurila", role: "Kulttuurikuvernööri", group: "Kulttuurijaos" }
   - { name: "Emmi Alahonko", role: "Kulttuuripersoona", group: "Kulttuurijaos" }
-  - { name: "Viola Ylitalo", role: "Abitiimin jäsen", group: "Mediajaos", groupEn: "Media division" }
+  - { name: "Viola Ylitalo", role: "Abitiimin jäsen", photo: "images/officials/2026/viola-ylitalo.jpg", group: "Mediajaos", groupEn: "Media division" }
   - { name: "Niclas von Plato", role: "Abitiimin jäsen", group: "Mediajaos" }
   - { name: "Risto Virtaharju", role: "Webbitiimin jäsen", group: "Mediajaos" }
   - { name: "Aleksi Virkkala", role: "Webbitiimin jäsen", group: "Mediajaos" }
@@ -171,69 +172,69 @@ members:
   - { name: "Urho Uurasmaa", role: "Abitiimin jäsen", group: "Mediajaos" }
   - { name: "Touko Ursin", role: "Abitiimin jäsen", group: "Mediajaos" }
   - { name: "Henri Salmi", role: "Webbitiimin jäsen", group: "Mediajaos" }
-  - { name: "Roope Romppanen", role: "Webbitiimin jäsen", group: "Mediajaos" }
-  - { name: "Victor Ocampo", role: "Webbitiimin jäsen", group: "Mediajaos" }
-  - { name: "Kuutti Niku", role: "Webbitiimin jäsen", group: "Mediajaos" }
-  - { name: "Niklas Linnanen", role: "Webbitiimin jäsen", group: "Mediajaos" }
+  - { name: "Roope Romppanen", role: "Webbitiimin jäsen", photo: "images/officials/2026/roope-romppanen.jpg", group: "Mediajaos" }
+  - { name: "Victor Ocampo", role: "Webbitiimin jäsen", photo: "images/officials/2026/victor-ocampo.jpg", group: "Mediajaos" }
+  - { name: "Kuutti Niku", role: "Webbitiimin jäsen", photo: "images/officials/2026/kuutti-niku.jpg", group: "Mediajaos" }
+  - { name: "Niklas Linnanen", role: "Webbitiimin jäsen", photo: "images/officials/2026/niklas-linnanen.jpg", group: "Mediajaos" }
   - { name: "Sofia Krapstak", role: "Abitiimin jäsen", group: "Mediajaos" }
   - { name: "Aino Kotiranta", role: "Webbitiimin jäsen", group: "Mediajaos" }
   - { name: "Heini Koivu", role: "Webbitiimin jäsen", group: "Mediajaos" }
   - { name: "Oona Ketomäki", role: "Abitiimin jäsen", group: "Mediajaos" }
-  - { name: "Tuomas Kärnä", role: "Webbitiimin jäsen", group: "Mediajaos" }
-  - { name: "Atte Kapanen", role: "Abitiimin jäsen", group: "Mediajaos" }
-  - { name: "Veera Kangastalo", role: "Abitiimin jäsen", group: "Mediajaos" }
+  - { name: "Tuomas Kärnä", role: "Webbitiimin jäsen", photo: "images/officials/2026/tuomas-karna.jpg", group: "Mediajaos" }
+  - { name: "Atte Kapanen", role: "Abitiimin jäsen", photo: "images/officials/2026/atte-kapanen.jpg", group: "Mediajaos" }
+  - { name: "Veera Kangastalo", role: "Abitiimin jäsen", photo: "images/officials/2026/veera-kangastalo.jpg", group: "Mediajaos" }
   - { name: "Jesse Heikinheimo", role: "Webbitiimin jäsen", group: "Mediajaos" }
-  - { name: "Antti Eskola", role: "Abitiimin jäsen", group: "Mediajaos" }
-  - { name: "Leo Boström", role: "Abitiimin jäsen", group: "Mediajaos" }
+  - { name: "Antti Eskola", role: "Abitiimin jäsen", photo: "images/officials/2026/antti-eskola.jpg", group: "Mediajaos" }
+  - { name: "Leo Boström", role: "Abitiimin jäsen", photo: "images/officials/2026/leo-bostrom.jpg", group: "Mediajaos" }
   - { name: "Henrik Ahlberg", role: "Abitiimin jäsen", group: "Mediajaos" }
-  - { name: "You Zhou", role: "Juomanlaskija", group: "Tapahtumajaos", groupEn: "Events division" }
-  - { name: "Juuli Ylönen", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Viola Ylitalo", role: "Juomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Mikael Willberg", role: "Lukkarikisälli", group: "Tapahtumajaos" }
+  - { name: "You Zhou", role: "Juomanlaskija", photo: "images/officials/2026/you-zhou.jpg", group: "Tapahtumajaos", groupEn: "Events division" }
+  - { name: "Juuli Ylönen", role: "Fabujuomanlaskija", photo: "images/officials/2026/juuli-ylonen.jpg", group: "Tapahtumajaos" }
+  - { name: "Viola Ylitalo", role: "Juomanlaskija", photo: "images/officials/2026/viola-ylitalo.jpg", group: "Tapahtumajaos" }
+  - { name: "Mikael Willberg", role: "Lukkarikisälli", photo: "images/officials/2026/mikael-willberg.jpg", group: "Tapahtumajaos" }
   - { name: "Risto Virtaharju", role: "Lukkari / Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Mikael Uusitalo", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Aleksi Utriainen", role: "Lukkari / Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Alina Talonpoika", role: "Juomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Olli Särkilahti", role: "Lukkari", group: "Tapahtumajaos" }
+  - { name: "Aleksi Utriainen", role: "Lukkari / Fabujuomanlaskija", photo: "images/officials/2026/aleksi-utriainen.jpg", group: "Tapahtumajaos" }
+  - { name: "Alina Talonpoika", role: "Juomanlaskija", photo: "images/officials/2026/alina-talonpoika.jpg", group: "Tapahtumajaos" }
+  - { name: "Olli Särkilahti", role: "Lukkari", photo: "images/officials/2026/olli-sarkilahti.jpg", group: "Tapahtumajaos" }
   - { name: "Jaakko Rouste", role: "Fabujuomanlaskija / Lukkari", group: "Tapahtumajaos" }
-  - { name: "Olivia Rönnemaa", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
+  - { name: "Olivia Rönnemaa", role: "Fabujuomanlaskija", photo: "images/officials/2026/olivia-ronnemaa.jpg", group: "Tapahtumajaos" }
   - { name: "Eppu Rantanen", role: "Juomanlaskija", group: "Tapahtumajaos" }
   - { name: "Viljami Puttonen", role: "Juomanlaskija", group: "Tapahtumajaos" }
   - { name: "Pauli Puhakainen", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Pekka Prieur", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Markus Pirilä", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Roope Pekkala", role: "Lukkarikisälli", group: "Tapahtumajaos" }
+  - { name: "Roope Pekkala", role: "Lukkarikisälli", photo: "images/officials/2026/roope-pekkala.jpg", group: "Tapahtumajaos" }
   - { name: "Jenni Palukka", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Pihla Päivänsalo", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Emilia Ojala", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Melina Nyberg", role: "Juomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Otso Murtomäki", role: "Juomanlaskija", group: "Tapahtumajaos" }
+  - { name: "Otso Murtomäki", role: "Juomanlaskija", photo: "images/officials/2026/otso-murtomaki.jpg", group: "Tapahtumajaos" }
   - { name: "Max Minkkinen", role: "Juomanlaskija", group: "Tapahtumajaos" }
   - { name: "Aada Mattila", role: "Lukkarikisälli / Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Akseli Lönnqvist", role: "Juomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Niklas Linnanen", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
+  - { name: "Niklas Linnanen", role: "Fabujuomanlaskija", photo: "images/officials/2026/niklas-linnanen.jpg", group: "Tapahtumajaos" }
   - { name: "Qilun Li", role: "Juomanlaskija", group: "Tapahtumajaos" }
   - { name: "Laura Lehikoinen", role: "Fabujuomanlaskija / Lukkarimestari / Lyriikkaloordi", group: "Tapahtumajaos" }
   - { name: "Reeta Lalla", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Aino Kotiranta", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Eino Koskinen", role: "Juomanlaskija", group: "Tapahtumajaos" }
+  - { name: "Eino Koskinen", role: "Juomanlaskija", photo: "images/officials/2026/eino-koskinen.jpg", group: "Tapahtumajaos" }
   - { name: "Heini Koivu", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Kuutti Kivinen", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Sara Kivi", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Kalle Kinnala", role: "Lukkari / Lyriikkaloordi", group: "Tapahtumajaos" }
+  - { name: "Kalle Kinnala", role: "Lukkari / Lyriikkaloordi", photo: "images/officials/2026/kalle-kinnala.jpg", group: "Tapahtumajaos" }
   - { name: "Aaron Katainen", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Eemeli Karjalainen", role: "Juomanlaskija", group: "Tapahtumajaos" }
   - { name: "Pinja Jokiniemi", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Elisa Jääskeläinen", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Julia Heikkilä", role: "Juomanlaskija", group: "Tapahtumajaos" }
+  - { name: "Julia Heikkilä", role: "Juomanlaskija", photo: "images/officials/2026/julia-heikkila.jpg", group: "Tapahtumajaos" }
   - { name: "Meri Halme", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Antti Eskola", role: "Lukkarikisälli", group: "Tapahtumajaos" }
+  - { name: "Antti Eskola", role: "Lukkarikisälli", photo: "images/officials/2026/antti-eskola.jpg", group: "Tapahtumajaos" }
   - { name: "Eino Elsinen", role: "Juomanlaskija", group: "Tapahtumajaos" }
   - { name: "Charlie Cruz Kauppila", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Leo Boström", role: "Juomanlaskija", group: "Tapahtumajaos" }
+  - { name: "Leo Boström", role: "Juomanlaskija", photo: "images/officials/2026/leo-bostrom.jpg", group: "Tapahtumajaos" }
   - { name: "Leo Ala-Laurila", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
   - { name: "Emmi Alahonko", role: "Fabujuomanlaskija", group: "Tapahtumajaos" }
-  - { name: "Aleksi Utriainen", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta", groupEn: "Continuity committee" }
+  - { name: "Aleksi Utriainen", role: "Jatkuvuustoimikunnan jäsen", photo: "images/officials/2026/aleksi-utriainen.jpg", group: "Jatkuvuustoimikunta", groupEn: "Continuity committee" }
   - { name: "Iiro Ukkonen", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
   - { name: "Markus Töyrylä", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
   - { name: "Arttu Seppänen", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
@@ -244,7 +245,7 @@ members:
   - { name: "Pihla Päivänsalo", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
   - { name: "Iiro Moisander", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
   - { name: "Lotta Mäntylä", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
-  - { name: "Niklas Linnanen", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
+  - { name: "Niklas Linnanen", role: "Jatkuvuustoimikunnan jäsen", photo: "images/officials/2026/niklas-linnanen.jpg", group: "Jatkuvuustoimikunta" }
   - { name: "Reeta Lalla", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
   - { name: "Aino Klintrup", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
   - { name: "Siiri Keränen", role: "Jatkuvuustoimikunnan jäsen", group: "Jatkuvuustoimikunta" }
