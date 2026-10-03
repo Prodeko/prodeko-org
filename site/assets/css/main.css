@@ -434,11 +434,17 @@ img{display:block;max-width:100%}
 .link-cards .arrow{align-self:flex-end;font-size:var(--size-lg);color:var(--pd-blue);transition:transform var(--duration-fast) var(--ease-standard)}
 .link-cards a:hover .arrow{transform:translateX(4px)}
 
-/* Alumni portraits (the successful alumni pages) — a small round photo at
-   the start of the line that names who said the quote above it. The photo
-   is decorative, since the name is right beside it. */
-.prose p:has(> .alumni-photo){display:flow-root;min-height:72px}
-.prose .alumni-photo{float:left;width:72px;height:72px;margin:0 var(--space-4) var(--space-2) 0;object-fit:cover;border-radius:var(--radius-circle)}
+/* Alumni cards (the successful alumni pages), after the old site: a large
+   portrait on the left, and beside it the quote and, under it, who said it —
+   the name in italics, then what they do. On a phone the portrait stacks
+   above the words. */
+.prose .alumni-card{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:var(--space-8);align-items:center;margin:var(--space-8) 0}
+.prose .alumni-card img{width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.prose .alumni-card blockquote{margin:0 0 var(--space-4);padding:0;border:0;color:var(--text-body);font-size:var(--size-lg);line-height:var(--leading-normal)}
+.prose .alumni-card blockquote p{margin:0}
+.prose .alumni-name{margin:0;color:var(--text-muted)}
+.prose .alumni-name em{color:var(--pd-black)}
+@media (max-width:600px){.prose .alumni-card{grid-template-columns:minmax(0,1fr);gap:var(--space-4)}.prose .alumni-card img{max-width:220px}}
 
 /* Partner logos */
 .partner-logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:var(--space-8) var(--space-10);align-items:center;list-style:none;margin:var(--space-6) 0;padding:0}
