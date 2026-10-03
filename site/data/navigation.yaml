@@ -8,8 +8,8 @@
 # owns lists the page prefixes whose pages light this item in the bar. An item
 # without owns lights on its own url alone.
 #
-# mobileChildren lists the item's group rows in the phone menu; an item
-# without mobileChildren is a direct link there.
+# The phone menu opens an item with a menuKey into the same links as its
+# mega-menu; an item without a menuKey is a direct link there.
 #
 # The bar names the five audiences the site speaks to, and Palvelut beside
 # them: the services are what a member comes back for week after week, so
@@ -22,10 +22,6 @@ fi:
     url: /fi/guild/
     menuKey: guild
     owns: [/fi/guild/, /fi/opinnot/]
-    mobileChildren:
-      - { label: Kilta, url: /fi/guild/ }
-      - { label: Hallitus ja toimarit, url: /fi/guild/hallitus-ja-toimihenkilot/ }
-      - { label: Opinnot, url: /fi/opinnot/ }
   - title: Palvelut
     url: /fi/palvelut/
     menuKey: services
@@ -54,10 +50,6 @@ en:
     url: /en/guild/
     menuKey: guild
     owns: [/en/guild/, /en/studies/]
-    mobileChildren:
-      - { label: Guild, url: /en/guild/ }
-      - { label: Board and officials, url: /en/guild/board-and-officials/ }
-      - { label: Studies, url: /en/studies/ }
   - title: Services
     url: /en/services/
     menuKey: services

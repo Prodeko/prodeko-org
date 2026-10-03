@@ -71,9 +71,12 @@ fi:
         - label: Prodeko-rahasto
           url: /fi/palvelut/prodeko-fund/
         - label: PTER
-          url: /fi/palvelut/pter/
+          url: /fi/jasenille/pter/
+          members: true
         - label: Brändi ja materiaalit
           url: /fi/palvelut/materiaalit/
+        - label: Tiedotuskanavat
+          url: /fi/palvelut/tiedotuskanavat/
         - label: Kokouspöytäkirjat
           url: /fi/jasenille/poytakirjat/
           members: true
@@ -88,10 +91,9 @@ fi:
         - label: Galleria
           url: https://gallery.prodeko.org/kuvat/
           signedIn: true
-        # The magazine archive still lives on the old site.
+        # The magazine archive still lives on the old site, open to everyone.
         - label: Proleko?-arkisto
           url: https://old.prodeko.org/fi/palvelut/proleko/
-          signedIn: true
   prospective:
     - title: Abeille
       links:
@@ -247,9 +249,12 @@ en:
         - label: Prodeko Fund
           url: /en/services/prodeko-fund/
         - label: PTER
-          url: /en/services/pter/
+          url: /en/members/pter/
+          members: true
         - label: Brand and materials
           url: /en/services/materials/
+        - label: Communication channels
+          url: /en/services/communication-channels/
         - label: Meeting minutes
           url: /en/members/minutes/
           members: true
@@ -266,7 +271,6 @@ en:
           signedIn: true
         - label: Proleko? archive
           url: https://old.prodeko.org/en/services/proleko/
-          signedIn: true
   prospective:
     - title: Prospective students
       links:

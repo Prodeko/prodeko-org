@@ -109,6 +109,9 @@ img{display:block;max-width:100%}
 .m-sub li:last-child a,.m-sub li:last-child .m-members{border-bottom:0}
 .m-sub a[aria-current]{font-weight:var(--weight-bold);color:var(--pd-blue-dark)}
 .m-sub .m-members{color:var(--text-muted)}
+.m-sub-title{padding:20px 0 4px;font-size:var(--size-2xs);font-weight:var(--weight-semibold);letter-spacing:var(--track-caps-wide);text-transform:uppercase;color:var(--text-muted)}
+.m-sub-title:first-child{padding-top:4px}
+.m-sub li:has(+ .m-sub-title) a,.m-sub li:has(+ .m-sub-title) .m-members{border-bottom:0}
 .m-bottom{margin-top:auto;padding-top:32px;display:flex;flex-direction:column;align-items:center;gap:20px}
 .m-bottom .lang-switch{font-size:20px;font-weight:var(--weight-bold)}
 @media (max-width:1000px){.site-header .nav,.site-header .side,.nav-search-toggle{display:none}.nav-toggle{display:flex}.mega-panel,.search-panel{display:none}}
