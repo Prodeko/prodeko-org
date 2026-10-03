@@ -24,6 +24,7 @@ fi:
       - { label: Edelliset hallitukset, url: /fi/guild/hallitus-ja-toimihenkilot/edelliset-hallitukset/ }
       - { label: Toimihenkilöt 2026, url: /fi/guild/hallitus-ja-toimihenkilot/toimihenkilot/ }
       - { label: Toimarien toiminta, url: /fi/guild/hallitus-ja-toimihenkilot/toimarien-toiminta/ }
+      - { label: Edelliset toimihenkilöt, url: /fi/guild/hallitus-ja-toimihenkilot/edelliset-toimihenkilot/ }
   - title: Kilta
     match: [/fi/guild/]
     items:
@@ -63,21 +64,27 @@ fi:
       - { label: Palvelut, url: /fi/palvelut/ }
       - { label: "Aallon ja AYY:n palvelut", url: /fi/palvelut/aallon-ja-ayyn-palveluita-2/ }
       - { label: Prodeko-rahasto, url: /fi/palvelut/prodeko-fund/ }
-      - { label: ESTIEM LG Helsinki, url: /fi/estiem-lg-helsinki/ }
+      - { label: PTER, url: /fi/palvelut/pter/ }
+      - { label: Brändi ja materiaalit, url: /fi/palvelut/materiaalit/ }
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/, members: true }
+  # The abipäivä page sits at the top level of the tree, so its prefix is
+  # matched here to give it the same sidebar as the rest of the abi pages.
   - title: Abeille
-    match: [/fi/abit/]
+    match: [/fi/abit/, /fi/abipaiva-2026/]
     items:
       - { label: Moikka abi!, url: /fi/abit/ }
+      - { label: Abipäivä 2026, url: /fi/abipaiva-2026/ }
       - { label: Abimentorointi, url: /fi/abit/abimentorointi/ }
       - { label: Opiskelijoiden polkuja tutalle, url: /fi/abit/opiskelijoiden-polkuja-tutalle/ }
       - { label: Menestyneet tutalaiset, url: /fi/abit/menestyneet-tutalaiset/ }
       - { label: Opinnot, url: /fi/opinnot/ }
       - { label: Tärkeitä linkkejä, url: /fi/opinnot/tarkeita-linkkeja/ }
+      - { label: Abimateriaalit ja lukiovierailut, url: /fi/palvelut/materiaalit/ }
+      - { label: På svenska, url: /sv/ }
   - title: Yrityksille
     match: [/fi/yrityssuhteet/]
     items:
-      - { label: Yrityssuhteet, url: /fi/yrityssuhteet/ }
+      - { label: Yrityksille, url: /fi/yrityssuhteet/ }
       - { label: Tietoa yrityksille, url: /fi/yrityssuhteet/yrityksille/ }
       - { label: Yritysvierailut, url: /fi/yrityssuhteet/yritysvierailut/ }
       - { label: Rekrytointi, url: /fi/yrityssuhteet/rekrytointi/ }
@@ -111,6 +118,9 @@ fi:
       - { label: Studerandenas vägar, url: /sv/studerandenas-vagar/ }
       - { label: Abimentorskap 2026, url: /sv/mentorskap/ }
       - { label: Framgångsrika produktionsekonomer, url: /sv/framgangsrika-produktionsekonomer/ }
+      - { label: Abidagen 2026 (på finska), url: /fi/abipaiva-2026/ }
+      - { label: Material och skolbesök (på finska), url: /fi/palvelut/materiaalit/ }
+      - { label: Sidorna på finska, url: /fi/abit/ }
   - title: Jäsenille
     match: [/fi/jasenille/]
     items:
@@ -126,6 +136,7 @@ en:
       - { label: Previous boards, url: /en/guild/board-and-officials/previous-boards/ }
       - { label: Officials 2026, url: /en/guild/board-and-officials/officials/ }
       - { label: What the officials do, url: /en/guild/board-and-officials/what-the-officials-do/ }
+      - { label: Previous officials, url: /en/guild/board-and-officials/previous-officials/ }
   - title: Guild
     match: [/en/guild/]
     items:
@@ -164,7 +175,8 @@ en:
       - { label: Services, url: /en/services/ }
       - { label: Aalto and AYY services, url: /en/services/aalto-and-ayy-services-3/ }
       - { label: Prodeko Fund, url: /en/services/prodeko-fund/ }
-      - { label: ESTIEM LG Helsinki, url: /en/estiem-lg-helsinki/ }
+      - { label: PTER, url: /en/services/pter/ }
+      - { label: Brand and materials, url: /en/services/materials/ }
       - { label: Meeting minutes, url: /en/members/minutes/, members: true }
   - title: Prospective students
     match: [/en/prospective-students/]
@@ -175,7 +187,7 @@ en:
   - title: For companies
     match: [/en/yrityssuhteet/]
     items:
-      - { label: Corporate relations, url: /en/yrityssuhteet/ }
+      - { label: For companies, url: /en/yrityssuhteet/ }
       - { label: About corporate relations, url: /en/yrityssuhteet/about/ }
       - { label: Company visits, url: /en/yrityssuhteet/excursions/ }
       - { label: Recruitment, url: /en/yrityssuhteet/recruiting/ }

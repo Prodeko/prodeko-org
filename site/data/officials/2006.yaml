@@ -1,0 +1,55 @@
+# Officials of 2006, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2006"
+sortKey: 2006
+members:
+  - { name: "Jussi Lehtinen", role: "Historiikkivastaava" }
+  - { name: "Tuomo Pesonen", role: "TEK-yhdyshenkilö" }
+  - { name: "Katja Ahtiainen", role: "Inttiyhdyshenkilö" }
+  - { name: "Matti Paatsama", role: "Äiti" }
+  - { name: "Tuomo Vepsalainen", role: "Webmasterin kaverit" }
+  - { name: "Eero Palomaki", role: "Webmasterin kaverit" }
+  - { name: "Janne Kalliomaki", role: "Webmasterin kaverit" }
+  - { name: "Antti Manninen", role: "Webmaster" }
+  - { name: "Juuso Takalainen", role: "ESTIEMtoimihenkilöt" }
+  - { name: "Nora Rosendahl", role: "ESTIEMtoimihenkilöt" }
+  - { name: "Iiris Kolu", role: "ISOVastaava" }
+  - { name: "Tomi Lahdemaki", role: "Varatilintarkastajat" }
+  - { name: "Lotta Haakana", role: "Varatilintarkastajat" }
+  - { name: "Linda Alanen", role: "Riipparivastaava" }
+  - { name: "Henri Valkonen", role: "Kuntosalivastaavat" }
+  - { name: "Hannes Jouhikainen", role: "Kuntosalivastaavat" }
+  - { name: "Antti Vassinen", role: "Tilintarkastajat" }
+  - { name: "Kristiina Kylakoski", role: "Tilintarkastajat" }
+  - { name: "Jenni Peratalo", role: "Namutäti" }
+  - { name: "Heidi Sivula", role: "Proleko?:n taittaja" }
+  - { name: "Lauri Tolvas", role: "Opintojaosto" }
+  - { name: "Juuso Soininen", role: "Opintojaosto" }
+  - { name: "Elina San", role: "Opintojaosto" }
+  - { name: "Maria Routti", role: "Opintojaosto" }
+  - { name: "Johanna Pynna", role: "Opintojaosto" }
+  - { name: "Esa Mononen", role: "Opintojaosto" }
+  - { name: "Aino Makisalo", role: "Opintojaosto" }
+  - { name: "Tomi Lahdemaki", role: "Opintojaosto" }
+  - { name: "Eveliina Koski", role: "Opintojaosto" }
+  - { name: "Sebastian Knight", role: "Opintojaosto" }
+  - { name: "Tommi Kemppainen", role: "Opintojaosto" }
+  - { name: "Paavo Happola", role: "Opintojaosto" }
+  - { name: "Linda Alanen", role: "Opintojaosto" }
+  - { name: "Eero Palomaki", role: "Talonmiehet" }
+  - { name: "Tomi Lahdemaki", role: "Talonmiehet" }
+  - { name: "Heidi Sivula", role: "Proleko?:n toimittajat" }
+  - { name: "Jenni Peratalo", role: "Proleko?:n toimittajat" }
+  - { name: "Eero Palomaki", role: "Proleko?:n toimittajat" }
+  - { name: "Sanna Mutka", role: "Proleko?:n toimittajat" }
+  - { name: "Satu Alikoski", role: "Proleko?:n toimittajat" }
+  - { name: "Olli Vitie", role: "Proleko?:n päätoimittaja" }
+  - { name: "Outi Herkepeus", role: "Kulttuuripersoona" }
+  - { name: "Nelli Lahteenmaki", role: "Reimari" }
+  - { name: "Antti Suorsa", role: "Lukkarit" }
+  - { name: "Ville Heikkila", role: "Lukkarit" }
+  - { name: "Janus Timperi", role: "Juomanlaskija" }
+  - { name: "Timo Tervola", role: "Juomanlaskija" }
+  - { name: "Tuomas Oijala", role: "Juomanlaskija" }
+  - { name: "Katja Ahtiainen", role: "Juomanlaskija" }

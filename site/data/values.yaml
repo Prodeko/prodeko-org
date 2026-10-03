@@ -1,0 +1,19 @@
+# The five guild values, defined in 2017, read by layouts/partials/values-cards.html.
+# Five values, five colours on the overalls: colour names a rainbow token in
+# assets/css/tokens/colors.css (--pd-rainbow-<colour>). The values are written
+# in English in both languages, as the guild wrote them.
+- title: Think big
+  colour: red
+  text: Be bold. Trust yourself and your skills. Take risks, but not blindly — do so with entrepreneurial responsibility, ownership and humility.
+- title: Get things done
+  colour: orange
+  text: Take initiative. Have a can-do attitude. Value results, not working hours. Be efficient, but above all be effective — what you do and don’t do are equally important.
+- title: Learn and grow
+  colour: yellow
+  text: Be curious. Keep learning. Embrace imperfection. Know that your qualities aren’t fixed — you can grow and develop throughout life.
+- title: Give back
+  colour: green
+  text: Support. Collaborate. Value your community. Don’t ask what others can do for you, ask what you can do for others.
+- title: Be a good person
+  colour: blue
+  text: Act with integrity. Be worthy of trust. Meet others with kindness. Remember that who you are is more important than what you do.

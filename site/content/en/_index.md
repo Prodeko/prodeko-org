@@ -4,13 +4,20 @@ translationKey: home
 description: Prodeko is the guild of around 900 Industrial Engineering and Management students at Aalto University in Otaniemi.
 source: raw-website design export, Prodeko-site.dc.html
 heroTitle: Welcome to IEM at Aalto
+values: true
+social:
+  title: Follow us
+  text: See what is happening in the guild right now – sitsit, excursions, wappu and everyday life in the guild room.
+  accounts:
+    - { service: instagram, name: Instagram, handle: "@prodeko", url: "https://www.instagram.com/prodeko/", label: Follow on Instagram }
+    - { service: tiktok, name: TikTok, handle: "@prodekolife", url: "https://www.tiktok.com/@prodekolife", label: Watch on TikTok }
 aside:
   - title: Membership
     text: Membership is 8 € per academic year.
     button: { label: Join the guild, url: "https://membership.prodeko.org/apply" }
 ---
 
-## Bringing IEM students together since 1966
+## Bringing IEM students together since 1866
 
 Prodeko is the guild of Industrial Engineering and Management students at
 Aalto University, operating alongside the Aalto University Student Union. We
@@ -43,29 +50,3 @@ here](https://membership.prodeko.org/apply).
 ## Guild values
 
 Defined in 2017. Five values, five colours on the overalls.
-
-### Think big
-
-Be bold. Trust yourself and your skills. Take risks, but not blindly — do so
-with entrepreneurial responsibility, ownership and humility.
-
-### Get things done
-
-Take initiative. Have a can-do attitude. Value results, not working hours. Be
-efficient, but above all be effective — what you do and don’t do are equally
-important.
-
-### Learn and grow
-
-Be curious. Keep learning. Embrace imperfection. Know that your qualities
-aren’t fixed — you can grow and develop throughout life.
-
-### Give back
-
-Support. Collaborate. Value your community. Don’t ask what others can do for
-you, ask what you can do for others.
-
-### Be a good person
-
-Act with integrity. Be worthy of trust. Meet others with kindness. Remember
-that who you are is more important than what you do.

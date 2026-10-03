@@ -32,3 +32,5 @@ Prodeko Network- ja muusta yritysyhteistyöstä vastaa killan yrityssuhdevastaav
 [RELEX](https://www.relexsolutions.com/eu/fi/) (vuodesta 2019)
 
 [Visma](https://www.visma.fi/) (vuodesta 2021)
+
+[Vuono Group](https://www.vuonogroup.com) (vuodesta 2026)

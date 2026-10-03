@@ -14,6 +14,37 @@
   <div class="page-main">
     <div class="prose">
       {{ .Content }}
+      {{ if .Params.values }}{{ partial "values-cards.html" . }}{{ end }}
+
+      {{/* The guild's social accounts as two large cards that link out. They
+           embed nothing: an Instagram or TikTok embed would set the
+           platforms' tracking cookies for every visitor before anyone has
+           agreed to them. A click-to-load feed can be added on top of these
+           cards later, once a script for it is approved. */}}
+      {{ with .Params.social }}
+        <section class="social-section" aria-labelledby="social-title">
+          <h2 id="social-title">{{ .title }}</h2>
+          {{ with .text }}<p>{{ . }}</p>{{ end }}
+          <ul class="social-cards">
+            {{ range .accounts }}
+              <li>
+                <a class="social-card social-{{ .service }}" href="{{ .url }}" target="_blank" rel="noopener">
+                  <span class="social-icon" aria-hidden="true">
+                    {{ if eq .service "instagram" }}
+                      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                    {{ else if eq .service "tiktok" }}
+                      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>
+                    {{ end }}
+                  </span>
+                  <span class="social-name">{{ .name }}</span>
+                  <span class="social-handle">{{ .handle }}</span>
+                  <span class="social-cta">{{ .label }} <span aria-hidden="true">↗</span></span>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
     </div>
   </div>
 

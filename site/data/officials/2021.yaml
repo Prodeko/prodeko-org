@@ -1,0 +1,189 @@
+# Officials of 2021, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2021"
+sortKey: 2021
+members:
+  - { name: "Hannes Väre", role: "Varatoiminnantarkastaja" }
+  - { name: "Timo Riski", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Henna Pirskanen", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Lotta Oksala", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Rita Myllymäki", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Timo Moilanen", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Teemu Mikola", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Kirsikka Mannerkoski", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Rami Luhta", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Miki Lehto", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Erik Kymäläinen", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Erik Kymäläinen", role: "Toiminnantarkastaja" }
+  - { name: "Niko Kinnunen", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Olli Kiikkilä", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Joel Kauppi", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Elina Karjalainen", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Joonas Kaijala", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Sara Ikonen", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Petrus Holm", role: "Varatoiminnantarkastaja" }
+  - { name: "Aaro Hämeri", role: "Toiminnantarkastaja" }
+  - { name: "Petteri Arponen", role: "Jatkuvuustoimikunnan jäsen" }
+  - { name: "Teemu Salminen", role: "Vastuullisuuskansleri" }
+  - { name: "Heikki Saarenhovi", role: "Hyvis" }
+  - { name: "Heikki Saarenhovi", role: "Häirintäyhdyshenkilö" }
+  - { name: "Suvi Rinkineva", role: "Häirintäyhdyshenkilö" }
+  - { name: "Toivo Rannila", role: "Biljardivastaava" }
+  - { name: "Faeq Qanezadeh", role: "Biljardivastaava" }
+  - { name: "Sami Pelander", role: "Kiltis MacGyver" }
+  - { name: "Linda Noronen", role: "Punttisvastaava" }
+  - { name: "Rita Myllymäki", role: "Historioitsija" }
+  - { name: "Rita Myllymäki", role: "Häirintäyhdyshenkilö" }
+  - { name: "Juho Mäki", role: "Maitotyttö" }
+  - { name: "Julius Leino", role: "NAMU Oy:n toimitusjohtaja" }
+  - { name: "Miki Lehto", role: "Hyvis" }
+  - { name: "Niko Kinnunen", role: "TEK-yhdyshenkilö" }
+  - { name: "Eeva Jokinen", role: "Hyvis" }
+  - { name: "Heidi Fontell", role: "Hyvis" }
+  - { name: "Jieming You", role: "Dokumentoija" }
+  - { name: "Lotta Pyykönen", role: "Viestintävelho" }
+  - { name: "Pihla Päivänsalo", role: "Dokumentoija" }
+  - { name: "Lotta Oksala", role: "Viestintävelho" }
+  - { name: "Taavi Mustajoki", role: "Viestintävelho" }
+  - { name: "Kirsikka Mannerkoski", role: "Viestintävelho" }
+  - { name: "Miki Lehto", role: "Viestintävelho" }
+  - { name: "Elina Karjalainen", role: "Viestintävelho" }
+  - { name: "Eeva Jokinen", role: "Viestintävelho" }
+  - { name: "Sini Hänninen", role: "Viestintävelho" }
+  - { name: "Antonia Eneh", role: "Viestintävelho" }
+  - { name: "Oskar Renholm", role: "Vastuuiso" }
+  - { name: "Toivo Rannila", role: "Vastuuiso" }
+  - { name: "Pihla Päivänsalo", role: "Vastuuiso" }
+  - { name: "Oskari Ojavuo", role: "Vastuuiso" }
+  - { name: "Markus Koljonen", role: "Vastuuiso" }
+  - { name: "Aino Klintrup", role: "Vastuuiso" }
+  - { name: "Lotta Oksala", role: "Hallopedi" }
+  - { name: "Nuutti Nikkola", role: "Mentorointimanageri" }
+  - { name: "Rita Myllymäki", role: "Pääainevastaava" }
+  - { name: "Rita Myllymäki", role: "Hallopedi" }
+  - { name: "Niko Laukkanen", role: "Hallopedi" }
+  - { name: "Olli Kesseli", role: "Hallopedi" }
+  - { name: "Oona Kallela", role: "Pääainevastaava" }
+  - { name: "Oona Kallela", role: "Hallopedi" }
+  - { name: "Ilari Jokinen", role: "Hallopedi" }
+  - { name: "Sara Ikonen", role: "Pääainevastaava" }
+  - { name: "Sara Ikonen", role: "Hallopedi" }
+  - { name: "Olli Halminen", role: "Hallopedi" }
+  - { name: "Iiro Ukkonen", role: "Ulkotoimari" }
+  - { name: "Áron Szász", role: "Ulkotoimari" }
+  - { name: "Aino Soinio", role: "Ulkotoimari" }
+  - { name: "Joni Pakkala", role: "Ulkotoimari" }
+  - { name: "Kasperi Koski", role: "Ulkotoimari" }
+  - { name: "Jieming You", role: "YS-toimihenkilö" }
+  - { name: "Iiro Moisander", role: "YS-toimihenkilö" }
+  - { name: "Aino Klintrup", role: "YS-toimihenkilö" }
+  - { name: "Hannes Väre", role: "Kauppaneuvos" }
+  - { name: "Hannes Väre", role: "Seminaaritoimikunnan jäsen" }
+  - { name: "Timofei Telov", role: "Kulttuuripersoona" }
+  - { name: "Severi Sinkko", role: "Vuosijuhlatoimikunnan jäsen" }
+  - { name: "Sonia Singh", role: "Kulttuuripersoona" }
+  - { name: "Teemu Salminen", role: "Kulttuuripersoona" }
+  - { name: "Tommi Salmi", role: "Kulttuuripersoona" }
+  - { name: "Toivo Rannila", role: "Kulttuuripersoona" }
+  - { name: "Pihla Päivänsalo", role: "Kulttuuripersoona" }
+  - { name: "Lotta Oksala", role: "Vuosijuhlatoimikunnan jäsen" }
+  - { name: "Oskari Ojavuo", role: "Kulttuuripersoona" }
+  - { name: "Mikael Nuotio", role: "Kulttuuripersoona" }
+  - { name: "Taavi Mustajoki", role: "Vuosijuhlatoimikunnan jäsen" }
+  - { name: "Mika Muhonen", role: "Kulttuuripersoona" }
+  - { name: "Jaakko Lehtonen", role: "Seminaaritoimikunnan jäsen" }
+  - { name: "Miki Lehto", role: "Kauppaneuvos" }
+  - { name: "Iina-Sofia Launonen", role: "Kulttuuripersoona" }
+  - { name: "Lauri Lahtinen", role: "Vuosijuhlatoimikunnan jäsen" }
+  - { name: "Markus Koljonen", role: "Kulttuuripersoona" }
+  - { name: "Oona Kallela", role: "Kauppaneuvos" }
+  - { name: "Eeva Jokinen", role: "Seminaaritoimikunnan jäsen" }
+  - { name: "Niina Ikonen", role: "Kulttuuripersoona" }
+  - { name: "Sara Ikonen", role: "Kauppaneuvos" }
+  - { name: "Ilona Hemming", role: "Kauppaneuvos" }
+  - { name: "Sini Hänninen", role: "Kulttuuripersoona" }
+  - { name: "Veera Fristadius", role: "Kulttuuripersoona" }
+  - { name: "Heidi Fontell", role: "Kulttuuripersoona" }
+  - { name: "Tresor Banzuzi", role: "Sedinaaritsaari" }
+  - { name: "Venla Viitanen", role: "Abitiimin jäsen" }
+  - { name: "Jani Vepsäläinen", role: "Webbitiimin jäsen" }
+  - { name: "Mika Vänskä", role: "Toimittaja" }
+  - { name: "Veikko Valtonen", role: "Abitiimin jäsen" }
+  - { name: "Aleksi Turkkila", role: "Abitiimin jäsen" }
+  - { name: "Eero Turkki", role: "Webbitiimin jäsen" }
+  - { name: "Miika Tuomimäki", role: "Abitiimin jäsen" }
+  - { name: "Miika Tuomimäki", role: "Webbitiimin jäsen" }
+  - { name: "Matias Tekoniemi", role: "Abitiimin jäsen" }
+  - { name: "Elias Takala", role: "Toimittaja" }
+  - { name: "Ilarion Sjöberg", role: "Webbitiimin jäsen" }
+  - { name: "Severi Sinkko", role: "Toimittaja" }
+  - { name: "Teemu Salminen", role: "Toimittaja" }
+  - { name: "Tommi Salmi", role: "Webbitiimin jäsen" }
+  - { name: "Timo Riski", role: "Webbitiimin jäsen" }
+  - { name: "Hilja Raunu", role: "Abitiimin jäsen" }
+  - { name: "Antti Ranta", role: "Abitiimin jäsen" }
+  - { name: "Ilona Raimas", role: "Taittaja" }
+  - { name: "Joonas Räikkönen", role: "Webbitiimin jäsen" }
+  - { name: "Faeq Qanezadeh", role: "Abitiimin jäsen" }
+  - { name: "Lotta Pyykönen", role: "Toimittaja" }
+  - { name: "Juho Poteri", role: "Abitiimin jäsen" }
+  - { name: "Henrik Pikka", role: "Webbitiimin jäsen" }
+  - { name: "Aleksi Pietarinen", role: "Webbitiimin jäsen" }
+  - { name: "Sami Pelander", role: "Toimittaja" }
+  - { name: "Rasmus Pekkarinen", role: "Toimittaja" }
+  - { name: "Pihla Päivänsalo", role: "Abitiimin jäsen" }
+  - { name: "Akseli Paakkola", role: "Webbitiimin jäsen" }
+  - { name: "Nuutti Nikkola", role: "Abitiimin jäsen" }
+  - { name: "Taavi Mustajoki", role: "Webbitiimin jäsen" }
+  - { name: "Taavi Mustajoki", role: "Taittaja" }
+  - { name: "Anna Murtoniemi", role: "Abitiimin jäsen" }
+  - { name: "Oskari Muhonen", role: "Taittaja" }
+  - { name: "Iiro Moisander", role: "Toimittaja" }
+  - { name: "Veera Mäntylä", role: "Toimittaja" }
+  - { name: "Kirsikka Mannerkoski", role: "Toimittaja" }
+  - { name: "Juho Mäki", role: "Abitiimin jäsen" }
+  - { name: "Juho Mäki", role: "Toimittaja" }
+  - { name: "Iina Launonen", role: "Abitiimin jäsen" }
+  - { name: "Laura Lähteenmäki", role: "Abitiimin jäsen" }
+  - { name: "Samuli Laakko", role: "Webbitiimin jäsen" }
+  - { name: "Teemu Koskiahde", role: "Toimittaja" }
+  - { name: "Santeri Kivinen", role: "Webbitiimin jäsen" }
+  - { name: "Meri Kalke", role: "Toimittaja" }
+  - { name: "Tobias Jungmann", role: "Abitiimin jäsen" }
+  - { name: "Sanni Hyytinen", role: "Toimittaja" }
+  - { name: "Antti Honkanen", role: "Abitiimin jäsen" }
+  - { name: "Kalle Hiltunen", role: "Webbitiimin jäsen" }
+  - { name: "Ilona Hemming", role: "Abitiimin jäsen" }
+  - { name: "Kusti Hämäläinen", role: "Webbitiimin jäsen" }
+  - { name: "Veera Fristadius", role: "Toimittaja" }
+  - { name: "Antero Eloranta", role: "Webbitiimin jäsen" }
+  - { name: "Ville Ahokas", role: "Webbitiimin jäsen" }
+  - { name: "Alexander Wikström", role: "Juomanlaskija" }
+  - { name: "Pekka Urvas", role: "Lukkari" }
+  - { name: "Linus Tiitinen", role: "Juomanlaskija" }
+  - { name: "Ella Talme", role: "Juomanlaskija" }
+  - { name: "Elias Takala", role: "Lukkari" }
+  - { name: "Severi Sinkko", role: "Lukkari" }
+  - { name: "Oskar Renholm", role: "Lukkarikisälli" }
+  - { name: "Toivo Rannila", role: "Juomanlaskija" }
+  - { name: "Peter Pekkinen", role: "Lukkarikisälli" }
+  - { name: "Rasmus Pekkarinen", role: "Lukkari" }
+  - { name: "Oskari Ojavuo", role: "Juomanlaskija" }
+  - { name: "Linda Noronen", role: "Juomanlaskija" }
+  - { name: "Nuutti Luotonen", role: "Lukkari" }
+  - { name: "Oskari Leppä", role: "Lukkarikisälli" }
+  - { name: "Reeta Lalla", role: "Juomanlaskija" }
+  - { name: "Lauri Kunnas", role: "Lukkarikisälli" }
+  - { name: "Meri Kalke", role: "Lukkarikisälli" }
+  - { name: "Kustaa Juurakko", role: "Juomanlaskija" }
+  - { name: "Roy Ihatsu", role: "Juomanlaskija" }
+  - { name: "Valtteri Haikarainen", role: "Juomanlaskija" }
+  - { name: "Eero Turkki", role: "Diskonttaustirehtööri" }
+  - { name: "Roosa Toivakka", role: "Isovastaava" }
+  - { name: "Rasmus Pekkarinen", role: "Seminaaritsaari" }
+  - { name: "Sakari Palojoki", role: "CTO" }
+  - { name: "Jaakko Lehtonen", role: "ESTIEM-vastaava" }
+  - { name: "Ilari Jokinen", role: "Päätoimittaja" }
+  - { name: "Niina Ikonen", role: "Diskonttaustirehtööri" }
+  - { name: "Kusti Hämäläinen", role: "Abivastaava" }

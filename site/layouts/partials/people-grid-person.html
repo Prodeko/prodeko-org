@@ -1,0 +1,38 @@
+{{/* One person of people-grid.html: a portrait if there is one, the name, the
+     role, and the ways to reach them. See people-grid.html for the fields. */}}
+{{ $isFi := eq page.Language.Lang "fi" }}
+{{ $name := .name }}
+{{ $role := .role }}
+{{ if and (not $isFi) .roleEn }}{{ $role = .roleEn }}{{ end }}
+<li class="person">
+  {{ with .photo }}
+    {{ $img := resources.Get . }}
+    {{ if $img }}
+      {{ $img = $img.Fill "400x400 q80" }}
+      {{/* The name is right below the picture, so alt is empty: a
+           screen reader that read both would say it twice.
+
+           No width and height attributes: they are a presentational
+           hint the stylesheet cannot outrank, and a fixed 400px height
+           would win over the square the grid asks for. The cell's
+           aspect-ratio reserves the space instead. */}}
+      <img src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
+    {{ else }}
+      {{/* A person names their portrait by asset path, and a typo in
+           that path is silent: the picture simply disappears. Stopping
+           the build is the only way the mistake is ever seen. */}}
+      {{ errorf "photo %q not found for %s" . $name }}
+    {{ end }}
+  {{ end }}
+  <span class="person-name">{{ .name }}</span>
+  {{ with $role }}<span class="person-role">{{ . }}</span>{{ end }}
+  {{ if or .email .telegram }}
+    <span class="person-contact">
+      {{/* A break opportunity before the @, so a long address that does not
+           fit the column wraps as "puheenjohtaja / @prodeko.org" rather than
+           losing its last letter to the next line. */}}
+      {{ with .email }}<a href="mailto:{{ . }}">{{ replace (htmlEscape .) "@" "<wbr>@" | safeHTML }}</a>{{ end }}
+      {{ with .telegram }}<a href="https://t.me/{{ . }}" target="_blank" rel="noopener">@{{ . }}</a>{{ end }}
+    </span>
+  {{ end }}
+</li>

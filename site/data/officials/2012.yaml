@@ -1,0 +1,62 @@
+# Officials of 2012, from
+# https://old.prodeko.org/fi/guild/toimarit/edelliset-toimihenkilot/.
+# Where the old site gave no title, the role is the committee name.
+heading: "2012"
+sortKey: 2012
+members:
+  - { name: "Heini Lehtonen", role: "Päätoimittaja" }
+  - { name: "Risto Vuorio", role: "Taittaja" }
+  - { name: "Valtter Vihervuori", role: "Toimittaja" }
+  - { name: "Mikko Valjus", role: "Toimittaja" }
+  - { name: "Elisa Terho", role: "Toimittaja" }
+  - { name: "Mikko Savola", role: "Toimittaja" }
+  - { name: "Juhana Nurmio", role: "Toimittaja" }
+  - { name: "Iida Myllymäki", role: "Toimittaja" }
+  - { name: "Tiina Liukkonen", role: "Toimittaja" }
+  - { name: "Laura Korhonen", role: "Päätoimittaja" }
+  - { name: "Henri Koponen", role: "Toimittaja" }
+  - { name: "Arttu Anttonen", role: "Toimittaja" }
+  - { name: "Miikka Ahonen", role: "Toimittaja" }
+  - { name: "Jyri Yli-Willamo", role: "Punttisvastaava" }
+  - { name: "Tommi Huoponen", role: "Punttisvastaava" }
+  - { name: "Susanna Tulokas", role: "Kulttuuripersoona" }
+  - { name: "Emma Nermes", role: "Kulttuuripersoona" }
+  - { name: "Ukko Kilpinen", role: "Kulttuuripersoona" }
+  - { name: "Julius Säilä", role: "ISO-vastaava" }
+  - { name: "Mikko Valjus", role: "Killan setä" }
+  - { name: "Niko-Petteri Ahonen", role: "Killan äiti" }
+  - { name: "Tuomas Sarkola", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Juha Murtoaro", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Vili Lappalainen", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Christine Korjus", role: "Kulttuuri- ja vuosijuhlatoimikunta" }
+  - { name: "Riku Mäkelä", role: "Bilisvastaava" }
+  - { name: "Valtter Vihervuori", role: "Webmaster" }
+  - { name: "Matti Vesikivi", role: "Webmaster" }
+  - { name: "Mikko Valjus", role: "Webmaster" }
+  - { name: "Pasi Lohi", role: "Webmaster" }
+  - { name: "Antti Laukkanen", role: "Webmaster" }
+  - { name: "Reetta Repo", role: "KV-vastaava" }
+  - { name: "Henri Koponen", role: "Varajäsen" }
+  - { name: "Salli Hukkinen", role: "Toiminnantarkastaja" }
+  - { name: "Juho Hoikka", role: "Toiminnantarkastaja" }
+  - { name: "Matti Fouchault-Airasmaa", role: "Varajäsen" }
+  - { name: "Lauri Ikonen", role: "TEK-kiltayhdyshenkilö" }
+  - { name: "Katriina Suojala", role: "Maitotyttö" }
+  - { name: "Laura Wirtavuori", role: "Dokumentoija" }
+  - { name: "Miikka Uosukainen", role: "Dokumentoija" }
+  - { name: "Markus Junkkari", role: "Reimari" }
+  - { name: "Kristian Sjölund", role: "Lukkari" }
+  - { name: "Jaakko Laukkanen", role: "Lukkari" }
+  - { name: "Lauri Ikonen", role: "Lukkari" }
+  - { name: "Pauli Nikkanen", role: "YS-toimari" }
+  - { name: "Lauri Mikkola", role: "YS-toimari" }
+  - { name: "Santeri Vilos", role: "Juomanlaskija" }
+  - { name: "Marianne Vikkula", role: "Juomanlaskija" }
+  - { name: "Sarri Nykänen", role: "Juomanlaskija" }
+  - { name: "Lari Laukia", role: "Juomanlaskija" }
+  - { name: "Wolf Angyal", role: "Juomanlaskija" }
+  - { name: "Olli Suominen", role: "Abivastaava" }
+  - { name: "Toni Tikkanen", role: "Ulkojaos" }
+  - { name: "Marko Sommarberg", role: "Ulkojaos" }
+  - { name: "Anni-Emilia Pesonen", role: "Ulkojaos" }
+  - { name: "Pauli Nikkanen", role: "Ulkojaos" }
