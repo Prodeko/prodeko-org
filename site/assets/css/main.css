@@ -201,8 +201,7 @@ img{display:block;max-width:100%}
 .content-image{margin:0 0 var(--space-10)}
 .content-image a{display:block}
 .content-image img{width:100%}
-.content-image figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-2);font-size:var(--size-xs);color:var(--text-muted)}
-.content-image figcaption a{display:inline;white-space:nowrap}
+.content-image figcaption{margin-top:var(--space-2);font-size:var(--size-xs);color:var(--text-muted)}
 
 /* FAQ */
 .faq-item{border-bottom:1px solid var(--border-subtle)}

@@ -16,4 +16,3 @@ Here you can find the Prodeko Survival Guide containing all you need to know of 
 **Exchange Students**
 
 [Survival Guide, spring 2026](https://static.prodeko.org/media/public/2025/12/07/fuksiopas_2025_exchangers_spring3.pdf)
-</content>
