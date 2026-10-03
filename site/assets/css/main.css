@@ -379,3 +379,13 @@ img{display:block;max-width:100%}
   .embed-head .btn{width:100%}
   .embed-frame{min-height:26rem !important;height:26rem}
 }
+
+/* Site notice (partials/site-notice.html) — one line on the front page that
+   the site is being rebuilt, with a button to the old one. The brand blue
+   band sits right under the header so it is the first thing read. */
+.site-notice{background:var(--surface-brand);color:var(--text-on-brand)}
+.site-notice-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4) var(--space-6);flex-wrap:wrap;width:calc(var(--content-w) + var(--space-8) + var(--aside-w));max-width:calc(100% - 2 * var(--space-6));margin:0 auto;padding:var(--space-4) 0}
+.site-notice p{margin:0;font-size:var(--size-sm);line-height:var(--leading-normal)}
+.site-notice strong{margin-right:var(--space-1)}
+.site-notice-btn{flex:none;padding:var(--space-2) var(--space-4);border:1px solid var(--text-on-brand);color:var(--text-on-brand);font-size:var(--size-sm);font-weight:var(--weight-semibold);white-space:nowrap;transition:var(--transition-ui)}
+.site-notice-btn:hover{background:var(--text-on-brand);color:var(--pd-blue);text-decoration:none}
