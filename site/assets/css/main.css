@@ -152,9 +152,7 @@ img{display:block;max-width:100%}
 .section-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .section-nav a{display:block;color:var(--pd-black);font-size:15px;line-height:1.4}
 .section-nav a:hover{color:var(--pd-blue)}
-.section-nav a[aria-current]{position:relative;color:var(--pd-blue-dark);font-weight:var(--weight-bold)}
-/* The page the reader is on, marked with a short stripe of the rainbow. */
-.section-nav a[aria-current]::before{content:"";position:absolute;left:calc(-1 * var(--space-3));top:2px;bottom:2px;width:3px;background:var(--rainbow-gradient-vertical)}
+.section-nav a[aria-current]{color:var(--pd-blue-dark);font-weight:var(--weight-bold)}
 .section-nav .m-members{display:block;font-size:15px;line-height:1.4;color:var(--text-muted)}
 
 /* Aside block */
@@ -172,7 +170,7 @@ img{display:block;max-width:100%}
 .prose{max-width:var(--content-w);font-size:var(--size-md);line-height:var(--leading-loose)}
 .prose>:first-child{margin-top:0}
 .prose p{margin:0 0 var(--space-4)}
-.prose .lead{font-weight:var(--weight-bold);color:var(--pd-black);padding-left:var(--space-4);border-left:4px solid transparent;border-image:var(--rainbow-gradient-vertical) 1}
+.prose .lead{font-weight:var(--weight-bold);color:var(--pd-black)}
 .prose h2{font-size:var(--size-2xl);font-weight:var(--weight-regular);color:var(--pd-blue);line-height:1.2;margin:var(--space-12) 0 var(--space-3)}
 .prose h3{font-size:var(--size-md);font-weight:var(--weight-bold);color:var(--pd-black);margin:var(--space-6) 0 var(--space-1)}
 .prose h3+p{margin-top:0}
