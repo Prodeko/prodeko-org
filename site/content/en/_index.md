@@ -9,8 +9,10 @@ social:
   title: Follow us
   text: See what is happening in the guild right now – sitsit, excursions, wappu and everyday life in the guild room.
   accounts:
-    - { service: instagram, name: Instagram, handle: "@prodeko", url: "https://www.instagram.com/prodeko/", label: Follow on Instagram }
-    - { service: tiktok, name: TikTok, handle: "@prodekolife", url: "https://www.tiktok.com/@prodekolife", label: Watch on TikTok }
+    - { service: instagram, name: Instagram, handle: "@prodeko", url: "https://www.instagram.com/prodeko/", label: Follow on Instagram, feed: true, feedLabel: Show Instagram feed }
+    - { service: tiktok, name: TikTok, handle: "@prodekolife", url: "https://www.tiktok.com/@prodekolife", label: Watch on TikTok, feed: true, feedLabel: Show TikTok feed }
+    - { service: linkedin, name: LinkedIn, handle: Prodeko, url: "https://www.linkedin.com/company/prodeko-guild-of-industrial-engineering-and-management/", label: Follow on LinkedIn }
+  feedNote: A feed loads only when you press its button. Its content then comes straight from Instagram or TikTok, which may store their own cookies on your device.
 aside:
   - title: Membership
     text: Membership is 8 € per academic year.

@@ -10,8 +10,10 @@ social:
   title: Seuraa meitä
   text: Katso, mitä killassa tapahtuu juuri nyt – sitsejä, excursioita, wappua ja arkea kiltiksellä.
   accounts:
-    - { service: instagram, name: Instagram, handle: "@prodeko", url: "https://www.instagram.com/prodeko/", label: Seuraa Instagramissa }
-    - { service: tiktok, name: TikTok, handle: "@prodekolife", url: "https://www.tiktok.com/@prodekolife", label: Katso TikTokissa }
+    - { service: instagram, name: Instagram, handle: "@prodeko", url: "https://www.instagram.com/prodeko/", label: Seuraa Instagramissa, feed: true, feedLabel: Näytä Instagram-syöte }
+    - { service: tiktok, name: TikTok, handle: "@prodekolife", url: "https://www.tiktok.com/@prodekolife", label: Katso TikTokissa, feed: true, feedLabel: Näytä TikTok-syöte }
+    - { service: linkedin, name: LinkedIn, handle: Prodeko, url: "https://www.linkedin.com/company/prodeko-guild-of-industrial-engineering-and-management/", label: Seuraa LinkedInissä }
+  feedNote: Syöte ladataan vasta, kun painat painiketta. Silloin sisältö tulee suoraan Instagramista tai TikTokista, jotka voivat tallentaa laitteellesi omia evästeitään.
 aside:
   - title: Jäsenyys
     text: Jäsenyys maksaa 8 € lukuvuodessa.

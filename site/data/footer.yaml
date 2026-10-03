@@ -32,8 +32,8 @@ fi:
     - { label: Tietosuojaseloste, url: /fi/tietosuoja/ }
     - { label: Ylläpito, url: /admin/ }
     - { label: Instagram, url: "https://www.instagram.com/prodeko/" }
-    - { label: LinkedIn, url: "https://www.linkedin.com/company/prodeko/" }
-    - { label: TikTok, url: "https://www.tiktok.com/@prodeko" }
+    - { label: LinkedIn, url: "https://www.linkedin.com/company/prodeko-guild-of-industrial-engineering-and-management/" }
+    - { label: TikTok, url: "https://www.tiktok.com/@prodekolife" }
 en:
   linksTitle: Links
   links:
@@ -53,5 +53,5 @@ en:
     - { label: Privacy policy, url: /en/privacy-policy/ }
     - { label: Admin, url: /admin/ }
     - { label: Instagram, url: "https://www.instagram.com/prodeko/" }
-    - { label: LinkedIn, url: "https://www.linkedin.com/company/prodeko/" }
-    - { label: TikTok, url: "https://www.tiktok.com/@prodeko" }
+    - { label: LinkedIn, url: "https://www.linkedin.com/company/prodeko-guild-of-industrial-engineering-and-management/" }
+    - { label: TikTok, url: "https://www.tiktok.com/@prodekolife" }

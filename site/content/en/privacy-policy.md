@@ -34,7 +34,9 @@ All the service providers we use comply with the EU data protection regulation.
 
 ### Use of cookies
 
-Cookies are small text files that the browser stores on the user's terminal device. Prodeko's main website stores no cookie and no other identifier on your device: the counting of visitor numbers uses no cookie either, and the site carries no third-party plugin that would set one of its own.
+Cookies are small text files that the browser stores on the user's terminal device. Prodeko's main website stores no cookie and no other identifier on your device: the counting of visitor numbers uses no cookie either, and the site carries no third-party plugin that would set one of its own when a page is opened.
+
+On the front page you can choose to load the guild's Instagram or TikTok feed with its own button. No feed is loaded unless you press the button. When you do, the content is fetched straight from Instagram (Meta Platforms) or TikTok, which may store their own cookies on your device and handle the data under their own privacy policies.
 
 Services that require a login, such as the member pages and event sign-up, use a session cookie. It is strictly necessary for providing the service you asked for — without it you would not stay logged in — and it is used for nothing else. If you wish, you can block the use of cookies in your browser settings, in which case the services requiring a login will not work.
 
