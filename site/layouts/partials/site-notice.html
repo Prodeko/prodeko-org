@@ -1,0 +1,14 @@
+{{/* A short notice under the header on the front page: the new site is being
+     built and the old one is still at old.prodeko.org. The words and the link
+     live in data/notice.yaml, and `show: false` there takes it down. */}}
+{{ $n := hugo.Data.notice }}
+{{ if and $n $n.show }}
+  {{ with index $n page.Language.Lang }}
+    <aside class="site-notice" aria-label="{{ .title }}">
+      <div class="site-notice-inner">
+        <p><strong>{{ .title }}</strong> {{ .text }}</p>
+        <a class="site-notice-btn" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+  {{ end }}
+{{ end }}
