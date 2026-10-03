@@ -3,7 +3,9 @@
 # every entry names a page of this site or a service the guild runs: a menu
 # item is a promise, and the menu only makes promises the site keeps. An
 # entry marked members: true names a page of the gated member tree, which
-# the template prints as plain text in a build that carries no such tree.
+# the template prints as plain text in a build that carries no such tree. An
+# entry marked signedIn: true is shown to signed-in members only, in the
+# member build, and left out of the public menu altogether.
 # Links to ilmo/viikkotiedote/gallery/store/kululaskut reuse the base
 # addresses in data/embeds.yaml.
 fi:
@@ -68,11 +70,14 @@ fi:
         - label: Kulukorvaukset
           url: https://prodeko.kululaskut.fi
         - label: Galleria
-          url: https://gallery.prodeko.org
+          url: https://gallery.prodeko.org/kuvat/
+          signedIn: true
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
-        - label: Proleko
-          url: https://old.prodeko.org/en/services/proleko/
+        # The magazine archive still lives on the old site.
+        - label: Proleko?-arkisto
+          url: https://old.prodeko.org/fi/palvelut/proleko/
+          signedIn: true
         - label: Prodeko rahasto
           url: /fi/palvelut/prodeko-fund/
         - label: PTER
@@ -236,11 +241,13 @@ en:
         - label: Expense claims
           url: https://prodeko.kululaskut.fi
         - label: Gallery
-          url: https://gallery.prodeko.org
+          url: https://gallery.prodeko.org/kuvat/
+          signedIn: true
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
-        - label: Proleko
+        - label: Proleko? archive
           url: https://old.prodeko.org/en/services/proleko/
+          signedIn: true
         - label: Prodeko Fund
           url: /en/services/prodeko-fund/
         - label: PTER
