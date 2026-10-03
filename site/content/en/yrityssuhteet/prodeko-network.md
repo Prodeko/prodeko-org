@@ -5,7 +5,7 @@ translationKey: yrityssuhteet-prodeko-network
 sourceURL: https://prodeko.org/en/yrityssuhteet/prodeko-network/
 ---
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2024/12/17/2024-10-07_network.png__3898x2117_subsampling-2.png)
+![](/uploads/2024-10-07_network.png)
 
 *Prodeko Network* is the most integral part of Prodeko's company relations. It consists of leading Finnish companies from several industries and has existed since 1994. Network companies are present in both the celebrations and daily lives of our students as they are visible in a broad range of our guild's activities.
 

@@ -11,7 +11,7 @@ Prodekolla on viisi häirintäyhdyshenkilöä: Aino Soinio, Aino Salmi, Kalle Sa
 
 **Alla Prodekon häryjen esittelyt.**
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2022/03/02/ainosoinio2.jpg__457x572_q85_subsampling-2.jpg)
+![](/uploads/ainosoinio2.jpg)
 
 **Aino Soinio, Fuksi ‘20**
 
@@ -23,7 +23,7 @@ Heipsuu! Mä oon Aino Soinio, kuudennen vuoden prodekolainen. Bailut on jees, mu
 
 *TG: @qlonqqu*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2024/05/31/aino-salmi-2.jpg__500x500_q85_subsampling-2.jpg)
+![](/uploads/aino-salmi-2.jpg)
 
 **Aino Salmi, Fuksi '23**
 
@@ -35,7 +35,7 @@ Moikku! Mä oon Aino Salmi, Prodekon fuksi vuosimallia ’23. Vapaa-ajalla rakas
 
 *TG: @salmiaino*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2026/01/16/hary-kuva_kalle.jpg__480x505_q85_subsampling-2.jpg)
+![](/uploads/hary-kuva_kalle.jpg)
 
 **Kalle Saarivuori, Fuksi '24**
 
@@ -47,7 +47,7 @@ Moi, tässä Kalle, prodekofuksi '24! Olen helposti lähestyttävä ja sosiaalin
 
 *TG: @kallesaarivuori*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2026/01/07/2026-01-07_144401.jpg__427x640_q85_subject_location-427%2C642_subsampling-2.jpg)
+![](/uploads/2026-01-07_144401.jpg)
 
 **Jenni Palukka, Fuksi '22**
 
@@ -59,7 +59,7 @@ Helou! Täällä kirjoittelee Jenni, fuksi vuosimallia ’22. Oon helposti uusis
 
 *TG: @jennipalukka*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2026/01/07/2026-01-07_144414.jpg__480x640_q85_subsampling-2.jpg)
+![](/uploads/2026-01-07_144414.jpg)
 
 **Elli Lahtinen, Fuksi '24**
 

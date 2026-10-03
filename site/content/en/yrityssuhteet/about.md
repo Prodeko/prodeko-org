@@ -5,7 +5,7 @@ translationKey: yrityssuhteet-yrityksille
 sourceURL: https://prodeko.org/en/yrityssuhteet/about/
 ---
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2020/07/07/disko.jpg__2048x1367_q85_subsampling-2.jpg)
+![](/uploads/disko.jpg)
 
 Corporate relations have always been important to Prodeko. Prodekoians enjoy challenges and many of us want to learn specialities of many industries during their career. Possible employers are companies from management consulting to new startups and non-profit organizations. You can send all questions to our Head of Corporate Relations, **[yrityssuhteet@prodeko.org](mailto:yrityssuhteet@prodeko.org)**. If you have questions about excursions, please contact our Minister of Excursions, **excumestari@prodeko.org.**
 

@@ -7,7 +7,7 @@ sourceURL: https://prodeko.org/en/new-students/living/
 
 More information about getting an apartment, eating and another basic stuff about living.
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2020/07/07/lettuja.jpg__2048x1536_q85_subsampling-2.jpg)
+![](/uploads/lettuja.jpg)
 
 ## Apartments
 

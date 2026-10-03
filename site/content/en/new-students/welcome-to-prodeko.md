@@ -33,7 +33,7 @@ As earlier mentioned, another important channel is **Telegram**. It's similar to
 
 Prodeko is the Guild for Industrial Engineering and Management. It will be like a family for you during your studies. The aim of Prodeko is to unite IEM students and ensure that they have the best student life in the world. The possibilities are limitless!
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2020/07/07/sciski2018.jpg__3232x2424_q85_subsampling-2.jpg)
+![](/uploads/sciski2018.jpg)
 
 The guild has a lot to offer for international students. To begin with, the guildroom is a perfect place to get in contact with other internationals or Finnish students of Prodeko. Whether you just want to grab a coffee between lectures or hang out with some friends, it’s always a good idea to visit the guild room as there are couches, a pool table and consoles, among other things. Some people can even be seen at the guild room on Sundays playing PS5 or pool.
 
@@ -51,7 +51,7 @@ Finland’s culture has many different and extreme elements. A great thing in Fi
 
 In the summer time the weather is warm and sunny at its best. Then people spend time at their summer cottages at a lake and in the nature. The amount of summer cottages is one of the highest in the world as also the amount of lakes. During the summer there are also lots of music festivals where people like to listen to great music and get a little drunk in good company.
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2025/03/31/dsc_1039_ejCEPUP.jpg__4288x2848_q85_subsampling-2.jpg)
+![](/uploads/dsc_1039_ejcepup.jpg)
 
 ## Cultural specialities
 

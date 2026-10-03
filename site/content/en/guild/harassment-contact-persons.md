@@ -11,7 +11,7 @@ Prodeko has five harassment contact persons: Aino Soinio, Aino Salmi, Kalle Saar
 
 **Below you can find introductions of Prodeko's harrasment contact persons.**
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2022/03/02/ainosoinio2.jpg__457x572_q85_subsampling-2.jpg)
+![](/uploads/ainosoinio2.jpg)
 
 **Aino Soinio, Fresher ‘20**
 
@@ -23,7 +23,7 @@ Hello! I'm Aino Soinio, a sixth year prodekoian. Parties are fun, but sometimes 
 
 *TG: @qlonqqu*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2024/05/31/aino-salmi-2.jpg__500x500_q85_subsampling-2.jpg)
+![](/uploads/aino-salmi-2.jpg)
 
 **Aino Salmi, Fresher '23**
 
@@ -35,7 +35,7 @@ Hellou! I’m Aino Salmi, a Prodeko fresher ’23. In my free time I love to han
 
 *TG: @salmiaino*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2026/01/16/hary-kuva_kalle.jpg__480x505_q85_subsampling-2.jpg)
+![](/uploads/hary-kuva_kalle.jpg)
 
 **Kalle Saarivuori, Fresher '24**
 
@@ -47,7 +47,7 @@ Hi, this is Kalle, a second-year Prodeko student! I am an approachable and socia
 
 *TG: @kallesaarivuori*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2026/01/07/2026-01-07_144401.jpg__427x640_q85_subject_location-427%2C642_subsampling-2.jpg)
+![](/uploads/2026-01-07_144401.jpg)
 
 **Jenni Palukka, Fresher '22**
 
@@ -59,7 +59,7 @@ Hello! My name is Jenni and I'm a freshman from the class of ’22. I’m easily
 
 *TG: @jennipalukka*
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2026/01/07/2026-01-07_144414.jpg__480x640_q85_subsampling-2.jpg)
+![](/uploads/2026-01-07_144414.jpg)
 
 **Elli Lahtinen, Fresher '24**
 

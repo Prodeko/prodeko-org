@@ -5,7 +5,7 @@ description: How first-year IEM studies work in practice, with links to MyCourse
 sourceURL: https://prodeko.org/en/new-students/first-year-studies/
 ---
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2020/07/07/kirjat.png__1428x940_subsampling-2.png)
+![](/uploads/kirjat.png)
 
 On this page's Finnish version is told about studies which a bachelor student studies on their first year. As bachelor part of IEM in Aalto University is only in Finnish and in Swedish, there is not that much to tell in English. More study related text you can find on topbar: Guild > Studies. Courses are mix of lectures, practise sessions and group work. You have academic freedom but also you yourself are responsible to get you studies done.
 
