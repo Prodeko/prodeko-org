@@ -27,4 +27,4 @@ Actual, outside, old and supporting members are all approved by the board of the
 
 You can become a member by filling in the [membership application](https://membership.prodeko.org/apply). The membership costs 8 euros.
 
-If you use the form to apply to be a member, you can pay it with a credit card. If there is any problems with that, contact [mediakeisari@prodeko.org](mailto:mediakeisari@prodeko.org?subject=Problems%20with%20membership%20fee) or [@mediakeisari](http://t.me/mediakeisari) on telegram. By applying to be a member, you accept this [registry policy](https://static.prodeko.org/media/public/2024/03/26/rekisteriseloste.pdf)
+If you use the form to apply to be a member, you can pay it with a credit card. If there is any problems with that, contact [mediakeisari@prodeko.org](mailto:mediakeisari@prodeko.org?subject=Problems%20with%20membership%20fee) or [@mediakeisari](http://t.me/mediakeisari) on telegram. By applying to be a member, you accept this [registry policy](/uploads/dokumentit/rekisteriseloste.pdf)
