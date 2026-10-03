@@ -33,7 +33,7 @@ fi:
     - { label: Ylläpito, url: /admin/ }
     - { label: Instagram, url: "https://www.instagram.com/prodeko/" }
     - { label: LinkedIn, url: "https://www.linkedin.com/company/prodeko/" }
-    - { label: TikTok, url: "https://www.tiktok.com/@prodeko" }
+    - { label: TikTok, url: "https://www.tiktok.com/@prodekolife" }
 en:
   linksTitle: Links
   links:
@@ -54,4 +54,4 @@ en:
     - { label: Admin, url: /admin/ }
     - { label: Instagram, url: "https://www.instagram.com/prodeko/" }
     - { label: LinkedIn, url: "https://www.linkedin.com/company/prodeko/" }
-    - { label: TikTok, url: "https://www.tiktok.com/@prodeko" }
+    - { label: TikTok, url: "https://www.tiktok.com/@prodekolife" }

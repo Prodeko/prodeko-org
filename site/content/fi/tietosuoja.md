@@ -34,7 +34,9 @@ Kaikki käyttämämme palveluntarjoajat noudattavat EU:n tietosuoja-asetusta.
 
 ### Evästeiden käyttö
 
-Evästeet ovat pienikokoisia tekstitiedostoja, joita selain tallentaa käyttäjän päätelaitteelle. Prodekon pääsivusto ei tallenna laitteellesi evästeitä eikä muuta tunnistetta: myöskään kävijämäärien laskenta ei käytä evästettä, eikä sivustolla ole kolmannen osapuolen liitännäisiä, jotka asettaisivat omia evästeitään.
+Evästeet ovat pienikokoisia tekstitiedostoja, joita selain tallentaa käyttäjän päätelaitteelle. Prodekon pääsivusto ei tallenna laitteellesi evästeitä eikä muuta tunnistetta: myöskään kävijämäärien laskenta ei käytä evästettä, eikä sivustolla ole kolmannen osapuolen liitännäisiä, jotka asettaisivat omia evästeitään sivua avattaessa.
+
+Etusivulla voit halutessasi ladata killan Instagram- tai TikTok-syötteen sen omalla painikkeella. Syötettä ei ladata, ellet paina painiketta. Kun painat, sisältö haetaan suoraan Instagramista (Meta Platforms) tai TikTokista, jotka voivat tallentaa laitteellesi omia evästeitään ja käsittelevät tietoja omien tietosuojaselosteidensa mukaisesti.
 
 Kirjautumista vaativissa palveluissa, kuten jäsensivuilla ja ilmoittautumisessa, käytetään istuntoevästettä. Se on välttämätön pyytämäsi palvelun toteuttamiseksi — ilman sitä et pysyisi kirjautuneena — eikä sitä käytetä mihinkään muuhun. Voit halutessasi estää evästeiden käytön selaimesi asetuksista, jolloin kirjautumista vaativat palvelut eivät toimi.
 
