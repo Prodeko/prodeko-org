@@ -17,6 +17,13 @@ Industrial Engineering and Management combines technology and business: an
 engineer's tools, commercial understanding and the ability to lead people.
 This page covers how to apply and what the first year looks like.
 
+<figure class="content-video">
+  <video controls preload="metadata" playsinline src="/uploads/abivideo.webm#t=1">
+    Your browser does not support video playback. <a href="/uploads/abivideo.webm">Download the video</a>.
+  </video>
+  <figcaption>See what studying IEM at Aalto and being part of Prodeko is like.</figcaption>
+</figure>
+
 Also check out [Prodeko's mentoring programme](/en/prospective-students/mentoring-program/),
 read [current students' paths to IEM](/en/prospective-students/student-paths/),
 and meet some [successful IEM alumni](/en/prospective-students/successful-alumni/).
