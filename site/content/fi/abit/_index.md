@@ -19,6 +19,13 @@ löytyy oma paikkansa. Järjestämme jäsenillemme monipuolista ohjelmaa
 yritysvierailuista sitseihin, valmennuksista hengailuiltoihin ja
 viikoittaisesta urheilusta erilaisiin lajikokeiluihin.
 
+<figure class="content-video">
+  <video controls preload="metadata" playsinline src="/uploads/abivideo.webm#t=1">
+    Selaimesi ei tue videon toistoa. <a href="/uploads/abivideo.webm">Lataa abivideo</a>.
+  </video>
+  <figcaption>Katso, millaista on opiskella tutaa Aallossa ja olla prodekolainen.</figcaption>
+</figure>
+
 **Abipäivä pe 6.11.2026!** Prodeko ja Athene järjestävät Otaniemessä abipäivän, jonka jatkoksi täysi-ikäisille on abisitsit. [Lue lisää ja ilmoittaudu →](/fi/abipaiva-2026/)
 
 Tutustu myös [Prodekon abimentorointiin](/fi/abit/abimentorointi/), lue
