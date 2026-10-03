@@ -16,6 +16,13 @@ gemenskap där var och en hittar sin egen plats. Vi ordnar mångsidigt program
 för våra medlemmar, allt från företagsbesök till sitzer, från coachning till
 hängkvällar och från idrott varje vecka till att prova på nya grenar.
 
+<figure class="content-video">
+  <video controls preload="metadata" playsinline src="/uploads/abivideo.webm#t=1">
+    Din webbläsare stöder inte videouppspelning. <a href="/uploads/abivideo.webm">Ladda ner videon</a>.
+  </video>
+  <figcaption>Se hur det är att studera produktionsekonomi vid Aalto och vara en del av Prodeko.</figcaption>
+</figure>
+
 Bekanta dig också med [Prodekos abimentorskap](/sv/mentorskap/),
 läs [nuvarande studerandes vägar till produktionsekonomi](/sv/studerandenas-vagar/)
 och möt [framgångsrika produktionsekonomer](/sv/framgangsrika-produktionsekonomer/).

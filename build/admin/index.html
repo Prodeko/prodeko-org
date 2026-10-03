@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Prodeko – sivujen muokkaus</title>
+  </head>
+  <body>
+    <!--
+      Decap is pinned to an exact version. It is a single file with no build
+      step here, so an unpinned version would change the editing screen on a
+      day nobody was working on it.
+    -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script src="https://unpkg.com/decap-cms@3.16.2/dist/decap-cms.js"></script>
+    <script src="/admin/embeds.js"></script>
+    <script>
+      // Decap ships no Finnish translation. The one string worth fixing is the
+      // login button: the editor signs in with a Prodeko account through the
+      // proxy and never sees GitHub, so "Login with GitHub" is simply wrong.
+      // The rest of the interface stays English.
+      var en = CMS.getLocale('en');
+      CMS.registerLocale(
+        'fi',
+        Object.assign({}, en, {
+          auth: Object.assign({}, en.auth, {
+            login: 'Kirjaudu',
+            loggingIn: 'Kirjaudutaan…',
+            loginWithGitHub: 'Kirjaudu Prodeko-tunnuksella',
+          }),
+        }),
+      );
+
+      CMS.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,440 @@
+# The editing screen at prodeko.org/admin.
+#
+# Public pages and member-only pages, Finnish and English, one collection each;
+# beside them the fixed pages (the front page and the four section hubs) and
+# the front page's Ajankohtaista links. Labels are Finnish because the editors
+# are; Decap ships no Finnish locale, so the chrome around them is English.
+#
+# YAML anchors (&name) and merge keys (<<:) are used to write the fields that
+# are identical in all four collections once. Decap parses the file with merge
+# keys enabled, so an alias (*name) is the same field definition repeated.
+
+backend:
+  name: github
+  repo: prodeko/prodeko-org
+  branch: main
+
+  # The editor login proxy, not GitHub. base_url must be a bare origin: Decap
+  # compares the login popup's postMessage origin against this string exactly,
+  # and a trailing slash or a path makes the login hang with no error.
+  # See proxy/README.md.
+  base_url: https://cms.prodeko.org
+  auth_endpoint: auth
+  api_root: https://cms.prodeko.org/github
+
+  # The commit status .github/workflows/preview.yml posts with the address of
+  # this entry's pull request preview. Decap resolves the entry's cms/ branch
+  # to its pull request, reads GET /commits/{head.sha}/status, and shows the
+  # link on the entry.
+  #
+  # This must be set. Unset, Decap matches any status context containing the
+  # substring "deploy", and "prodeko/preview" does not, so the link never
+  # appears and nothing says why. With it set the match is exact, so this
+  # string and the workflow's context field are one value in two files.
+  preview_context: prodeko/preview
+
+# There is no local_backend key here on purpose, and there must never be one.
+# Decap's local backend bypasses the proxy entirely, so testing with it
+# exercises none of the login path while appearing to work.
+
+# Saving opens a pull request on a cms/ branch instead of writing main. The
+# proxy's allowlist assumes this: it permits ref writes only under refs/heads/cms/*.
+publish_mode: editorial_workflow
+
+locale: fi
+
+# Page addresses are ASCII on the current site (arvot, poytakirjat), so
+# transliterate rather than putting ä and ö into filenames and URLs.
+slug:
+  encoding: ascii
+  clean_accents: true
+
+# Hugo copies site/static/ to the root of the built site, so an image saved
+# here is served at /uploads/<name> from both the public and the member tree.
+# Member-page images are therefore public; nothing member-only belongs in a
+# picture until the member tree has a gated media path of its own.
+media_folder: site/static/uploads
+public_folder: /uploads
+
+# No preview pane. The visual design lives in the templates and is being built
+# separately; a preview that does not look like the site misleads the editor.
+editor:
+  preview: false
+
+collections:
+  - name: pages_fi
+    label: "Sivut (suomeksi)"
+    label_singular: "Sivu"
+    description: >-
+      Julkiset suomenkieliset sivut. Tiedoston polku on sivun osoite:
+      kilta/arvot on prodeko.org/fi/kilta/arvot/.
+    folder: site/content/fi
+    create: true
+    extension: md
+    format: frontmatter
+    # depth covers content/fi/a/b/c/d.md. subfolders: false tells the listing
+    # that a page is a file in a folder, not a folder with an index file in it,
+    # which is how this repository is laid out.
+    nested:
+      depth: 4
+      subfolders: false
+    # Where this entry lands in the built site, appended to the preview address
+    # from the commit status. {{dirname}} is the path under folder: above and
+    # keeps its slashes; {{slug}} would be run through the slug sanitiser and
+    # come back with them replaced, which is why it is not used here.
+    #
+    # A page at the top of the folder has an empty {{dirname}} and so a doubled
+    # slash, which Caddy resolves to the same page. A section's own _index.md
+    # previews one level too deep, at the section address plus "_index/"; those
+    # pages are edited rarely and the cure is a files collection, not a second
+    # template.
+    #
+    # Nothing in this file may spell a member section path. Hugo copies
+    # site/static/ into the public tree, and check-trees.sh fails the build if
+    # the public tree so much as names one.
+    preview_path: "fi/{{dirname}}/{{filename}}/"
+    sortable_fields: [title, reviewed]
+    fields:
+      - &title
+        label: "Otsikko"
+        name: title
+        widget: string
+
+      # The Finnish page owns the key. Lower case, no spaces, and it never
+      # changes once the English page points at it.
+      - label: "Käännösavain"
+        name: translationKey
+        widget: string
+        pattern:
+          ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Pieniä kirjaimia, numeroita ja väliviivoja.']
+        hint: >-
+          Yhdistää tämän sivun englanninkieliseen vastineeseensa. Englanninkielistä
+          sivua tehdessä avain valitaan listasta, joten tämä on ainoa paikka jossa
+          se kirjoitetaan. Älä muuta olemassa olevaa avainta.
+
+      - &reviewed
+        label: "Tarkistettu"
+        name: reviewed
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: true
+        hint: "Päivä jona sisältö on viimeksi tarkistettu ajantasaiseksi."
+
+      - &owner
+        label: "Vastuurooli"
+        name: owner
+        widget: string
+        pattern: ['^[a-z0-9-]+$', 'Pieniä kirjaimia ja väliviivoja, esimerkiksi hallitus.']
+        hint: "Killan rooli joka vastaa tästä sivusta, esimerkiksi hallitus tai webbitiimi."
+
+      - &body
+        label: "Sisältö"
+        name: body
+        widget: markdown
+        required: false
+        hint: >-
+          Prodekon palvelut lisätään Lisää-valikosta (ilmo, kuvagalleria,
+          verkkokauppa, viikkotiedote, vaalit) eikä kirjoittamalla HTML:ää.
+
+      # One photo per page at most, above the text. The file is saved into
+      # site/assets/, not site/static/uploads/, because the template resizes it
+      # before serving it; the address that ends up in the page is the assets
+      # path, which is what the template looks up.
+      - &photo
+        label: "Kuva"
+        name: photo
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: "Tiedosto"
+            name: src
+            widget: image
+            required: false
+            media_folder: /site/assets/images/pages
+            public_folder: /images/pages
+          - label: "Kuvan kuvaus"
+            name: alt
+            widget: string
+            required: false
+            hint: >-
+              Mitä kuvassa näkyy, ruudunlukijalle ja hakukoneelle. Kirjoita tämä
+              aina kun valitset kuvan.
+          - label: "Kuvateksti"
+            name: caption
+            widget: string
+            required: false
+            hint: "Kuvan alle tuleva teksti. Useimmiten tyhjä."
+
+      # The notes beside the text: an address, a contact, a call to action, a
+      # short list of links. A page's contact details belong here and nowhere
+      # else in it. Each note is a title plus text, text with a button, or
+      # links.
+      - &aside
+        label: "Sivuhuomiot"
+        name: aside
+        widget: list
+        required: false
+        summary: "{{title}}"
+        fields:
+          - {label: "Otsikko", name: title, widget: string}
+          - label: "Teksti"
+            name: text
+            widget: text
+            required: false
+            hint: >-
+              Lyhyt teksti. Rivinvaihdot säilyvät, joten osoitteen voi kirjoittaa
+              rivi riviltä. Linkki kirjoitetaan muodossa [teksti](osoite).
+          - label: "Painike"
+            name: button
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Sivulla on korkeintaan yksi painike."
+            fields:
+              - {label: "Teksti", name: label, widget: string, required: false}
+              - {label: "Osoite", name: url, widget: string, required: false}
+          - label: "Linkit"
+            name: links
+            widget: list
+            required: false
+            summary: "{{label}}"
+            fields:
+              - {label: "Teksti", name: label, widget: string}
+              - {label: "Osoite", name: url, widget: string}
+              - {label: "Kuvaus", name: description, widget: string, required: false}
+
+  - name: pages_en
+    label: "Sivut (englanniksi)"
+    label_singular: "Sivu"
+    description: >-
+      Julkiset englanninkieliset sivut. Tee suomenkielinen sivu ensin:
+      käännösavain valitaan suomenkielisten sivujen listasta.
+    folder: site/content/en
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 4
+      subfolders: false
+    # See pages_fi. The language prefix is the only difference.
+    preview_path: "en/{{dirname}}/{{filename}}/"
+    sortable_fields: [title, reviewed]
+    fields:
+      - *title
+
+      # Picked from the Finnish pages rather than typed. A mistyped key does
+      # not fail a build; it silently unpairs the two pages and the language
+      # switch on the live site leads to a 404.
+      - label: "Käännösavain"
+        name: translationKey
+        widget: relation
+        collection: pages_fi
+        value_field: translationKey
+        search_fields: [title, translationKey]
+        display_fields: [title, translationKey]
+        hint: "Valitse suomenkielinen sivu jonka käännös tämä on."
+
+      - *reviewed
+      - *owner
+      - *body
+      - *photo
+      - *aside
+
+  - name: member_pages_fi
+    label: "VAIN JÄSENILLE – Sivut (suomeksi)"
+    label_singular: "Jäsensivu"
+    description: >-
+      VAIN JÄSENILLE. Näitä sivuja ei julkaista avoimeen verkkoon lainkaan, vaan
+      ne näkyvät ainoastaan Prodeko-tunnuksella kirjautuneille. Julkinen sivu ei
+      kuulu tänne: kukaan ulkopuolinen ei löydä sitä.
+    folder: site/content-members/fi
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 4
+      subfolders: false
+    # See pages_fi.
+    preview_path: "fi/{{dirname}}/{{filename}}/"
+    sortable_fields: [title, reviewed]
+    fields:
+      - *title
+      - label: "Käännösavain"
+        name: translationKey
+        widget: string
+        pattern:
+          ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Pieniä kirjaimia, numeroita ja väliviivoja.']
+        hint: "Yhdistää tämän sivun englanninkieliseen vastineeseensa."
+      - *reviewed
+      - *owner
+      - *body
+      - *photo
+      - *aside
+
+  # Ten fixed pages: the front page and the four section hubs (Kilta, Abeille,
+  # Yrityksille, Alumni), each in both languages. Unlike pages_fi/pages_en
+  # above, this is not an open collection an editor can add to - a `files`
+  # collection is Decap's way to edit a fixed set of files.
+  #
+  # The hubs take the same fields as any other page, because they are ordinary
+  # pages: a title, text, one photo and the notes beside it. The front page is
+  # the one page with a shape of its own, so it is the one entry here with a
+  # field list of its own.
+  #
+  # Each file carries its own preview_path, which Decap prefers over a
+  # collection-level one. They are literal addresses rather than templates,
+  # because a section index is at the directory's own URL and no arrangement of
+  # {{dirname}} and {{filename}} produces that from an _index.md.
+  - name: special_pages
+    label: "Erikoissivut"
+    label_singular: "Erikoissivu"
+    description: >-
+      Etusivu ja neljä pääsivua. Nämä ovat kiinteitä sivuja, joita ei voi
+      lisätä eikä poistaa; teksti, kuva ja sivuhuomiot muokataan täältä.
+    files:
+      - name: home_fi
+        label: "Etusivu (suomeksi)"
+        file: site/content/fi/_index.md
+        preview_path: "fi/"
+        fields: &homeFields
+          - *title
+          - name: source
+            widget: hidden
+            required: false
+          - {label: "Käännösavain", name: translationKey, widget: string}
+          - label: "Otsikko kuvan päällä"
+            name: heroTitle
+            widget: string
+          - *body
+          - *aside
+
+      - name: home_en
+        label: "Etusivu (englanniksi)"
+        file: site/content/en/_index.md
+        preview_path: "en/"
+        fields: *homeFields
+
+      - name: guild_hub_fi
+        label: "Kilta-sivu (suomeksi)"
+        file: site/content/fi/guild/_index.md
+        preview_path: "fi/guild/"
+        fields: &hubFields
+          - *title
+          - {label: "Käännösavain", name: translationKey, widget: string}
+          - *body
+          - *photo
+          - *aside
+
+      - name: guild_hub_en
+        label: "Guild page (English)"
+        file: site/content/en/guild/_index.md
+        preview_path: "en/guild/"
+        fields: *hubFields
+
+      - name: prospective_hub_fi
+        label: "Abeille-sivu (suomeksi)"
+        file: site/content/fi/abit/_index.md
+        preview_path: "fi/abit/"
+        fields: *hubFields
+
+      - name: prospective_hub_en
+        label: "Prospective students page (English)"
+        file: site/content/en/prospective-students.md
+        preview_path: "en/prospective-students/"
+        fields: *hubFields
+
+      - name: corporate_hub_fi
+        label: "Yrityksille-sivu (suomeksi)"
+        file: site/content/fi/yrityssuhteet/_index.md
+        preview_path: "fi/yrityssuhteet/"
+        fields: *hubFields
+
+      - name: corporate_hub_en
+        label: "Companies page (English)"
+        file: site/content/en/yrityssuhteet/_index.md
+        preview_path: "en/yrityssuhteet/"
+        fields: *hubFields
+
+      - name: alumni_hub_fi
+        label: "Alumni-sivu (suomeksi)"
+        file: site/content/fi/alumni/_index.md
+        preview_path: "fi/alumni/"
+        fields: *hubFields
+
+      - name: alumni_hub_en
+        label: "Alumni page (English)"
+        file: site/content/en/alumni/_index.md
+        preview_path: "en/alumni/"
+        fields: *hubFields
+
+  # The three links in the front page's Ajankohtaista note, one list per
+  # language. They live in a data file rather than in the front page, because
+  # they are the one part of the site that goes stale on its own and are edited
+  # far more often than the page around them. Saving here rewrites the whole
+  # file, comments included.
+  - name: news
+    label: "Ajankohtaista"
+    label_singular: "Ajankohtaista"
+    description: >-
+      Etusivun Ajankohtaista-nostot. Kolme riviä per kieli: linkin teksti,
+      osoite ja yksi rivi, jonka perusteella lukija päättää klikkaako.
+    extension: yaml
+    format: yaml
+    files:
+      - name: news
+        label: "Ajankohtaista"
+        file: site/data/news.yaml
+        preview_path: "fi/"
+        fields:
+          - label: "Suomeksi"
+            name: fi
+            widget: object
+            fields: &newsFields
+              - {label: "Otsikko", name: title, widget: string}
+              - label: "Nostot"
+                name: items
+                widget: list
+                summary: "{{label}}"
+                fields:
+                  - {label: "Teksti", name: label, widget: string}
+                  - {label: "Osoite", name: url, widget: string}
+                  - {label: "Kuvaus", name: description, widget: string}
+          - label: "Englanniksi"
+            name: en
+            widget: object
+            fields: *newsFields
+
+  - name: member_pages_en
+    label: "VAIN JÄSENILLE – Sivut (englanniksi)"
+    label_singular: "Jäsensivu"
+    description: >-
+      VAIN JÄSENILLE. Näitä sivuja ei julkaista avoimeen verkkoon lainkaan.
+      Tee suomenkielinen jäsensivu ensin.
+    folder: site/content-members/en
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 4
+      subfolders: false
+    # See pages_fi. The language prefix is the only difference.
+    preview_path: "en/{{dirname}}/{{filename}}/"
+    sortable_fields: [title, reviewed]
+    fields:
+      - *title
+      - label: "Käännösavain"
+        name: translationKey
+        widget: relation
+        collection: member_pages_fi
+        value_field: translationKey
+        search_fields: [title, translationKey]
+        display_fields: [title, translationKey]
+        hint: "Valitse suomenkielinen jäsensivu jonka käännös tämä on."
+      - *reviewed
+      - *owner
+      - *body
+      - *photo
+      - *aside
