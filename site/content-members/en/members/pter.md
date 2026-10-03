@@ -14,8 +14,6 @@ aside:
 
 PTER (Prodekolaistoiminnan edistämisrahasto) is a sum set aside in the guild's budget every year to support Prodeko members' projects, events, purchases and other activity in all its forms. You can apply for PTER money to organise an event for guild members, to buy something the guild room is missing, or to suggest a magazine the guild should subscribe to, for example. The board always handles PTER applications at the following week's meeting.
 
-[Apply for PTER money through the contact form](https://forms.gle/zM9HofbL4TxWHc1j7)
-
 ## Applying for PTER money
 
 ### The usual way

@@ -8,7 +8,9 @@
      The first entry whose match prefix opens the page's path wins, which is
      why a subsection is listed above the section containing it. A page that
      matches nothing gets no list. The Swedish pages live in the Finnish tree,
-     so their language is fi and their section sits among the Finnish ones. */}}
+     so their language is fi and their section sits among the Finnish ones.
+
+     An item with a heading and no url names a group of the rows below it. */}}
 {{ $page := . }}
 {{ $isFi := eq $page.Language.Lang "fi" }}
 {{ $section := "" }}
@@ -25,6 +27,10 @@
     <div class="section-nav-title">{{ .title }}</div>
     <ul>
       {{ range .items }}
+        {{ with .heading }}
+          <li class="section-nav-group">{{ . }}</li>
+          {{ continue }}
+        {{ end }}
         <li>
           {{ if and .members (not site.Params.members) }}
             {{/* A page of the member tree, in a build that has no member tree.

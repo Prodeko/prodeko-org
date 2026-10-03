@@ -5,5 +5,18 @@
   {{ if .Params.values }}
     {{ $body = printf "%s%s" (string $body) (string (partial "values-cards.html" .)) | safeHTML }}
   {{ end }}
+  {{/* A page that sets `zigzag: true` is a set of features, one per h2 —
+       the guild's events, each with a paragraph or two. Each heading and the
+       text under it become a block of their own, the blocks stepping left and
+       right down the page with their headings walking the rainbow. The text
+       before the first heading stays as it is, so the page keeps its lead. */}}
+  {{ if .Params.zigzag }}
+    {{ $parts := split (string $body) "<h2" }}
+    {{ $out := index $parts 0 }}
+    {{ range after 1 $parts }}
+      {{ $out = printf `%s<section class="zigzag-item"><h2%s</section>` $out . }}
+    {{ end }}
+    {{ $body = printf `%s` $out | safeHTML }}
+  {{ end }}
   {{ partial "page-shell.html" (dict "page" . "body" $body) }}
 {{ end }}

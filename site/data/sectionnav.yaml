@@ -10,7 +10,8 @@
 # A page whose path matches nothing has no sidebar and reads full width.
 #
 # An item marked members: true names a page of the gated member tree, which
-# the template prints as plain text in a build that carries no such tree.
+# the template prints as plain text in a build that carries no such tree. An
+# item with a heading and no url starts a group of the rows under it.
 #
 # The Swedish pages live in the fi tree with /sv/ URLs of their own, so their
 # section sits among the Finnish ones.
@@ -59,8 +60,9 @@ fi:
       - { label: Palvelut, url: /fi/palvelut/ }
       - { label: "Aallon ja AYY:n palvelut", url: /fi/palvelut/aallon-ja-ayyn-palveluita-2/ }
       - { label: Prodeko-rahasto, url: /fi/palvelut/prodeko-fund/ }
-      - { label: PTER, url: /fi/palvelut/pter/ }
+      - { label: PTER, url: /fi/jasenille/pter/, members: true }
       - { label: Brändi ja materiaalit, url: /fi/palvelut/materiaalit/ }
+      - { label: Tiedotuskanavat, url: /fi/palvelut/tiedotuskanavat/ }
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/, members: true }
   # The abipäivä page sits at the top level of the tree, so its prefix is
   # matched here to give it the same sidebar as the rest of the abi pages.
@@ -121,6 +123,22 @@ fi:
     items:
       - { label: Jäsenille, url: /fi/jasenille/ }
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/ }
+      - { label: PTER, url: /fi/jasenille/pter/ }
+      # A member who signs in lands here, and the member build is the only one
+      # that may name the gallery, so the guild's services are listed under
+      # the member pages as well.
+      - { heading: Palvelut }
+      - { label: Kaikki palvelut, url: /fi/palvelut/ }
+      - { label: "Aallon ja AYY:n palvelut", url: /fi/palvelut/aallon-ja-ayyn-palveluita-2/ }
+      - { label: Prodeko-rahasto, url: /fi/palvelut/prodeko-fund/ }
+      - { label: Brändi ja materiaalit, url: /fi/palvelut/materiaalit/ }
+      - { label: Tiedotuskanavat, url: /fi/palvelut/tiedotuskanavat/ }
+      - { heading: Verkkopalvelut }
+      - { label: Galleria, url: "https://gallery.prodeko.org/kuvat/" }
+      - { label: Proleko?-arkisto, url: "https://old.prodeko.org/fi/palvelut/proleko/" }
+      - { label: Viikkotiedote, url: "https://tiedotteet.prodeko.org" }
+      - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }
+      - { label: Kulukorvaukset, url: "https://prodeko.kululaskut.fi" }
 en:
   - title: Board and officials
     match: [/en/guild/board-and-officials/]
@@ -165,8 +183,9 @@ en:
       - { label: Services, url: /en/services/ }
       - { label: Aalto and AYY services, url: /en/services/aalto-and-ayy-services-3/ }
       - { label: Prodeko Fund, url: /en/services/prodeko-fund/ }
-      - { label: PTER, url: /en/services/pter/ }
+      - { label: PTER, url: /en/members/pter/, members: true }
       - { label: Brand and materials, url: /en/services/materials/ }
+      - { label: Communication channels, url: /en/services/communication-channels/ }
       - { label: Meeting minutes, url: /en/members/minutes/, members: true }
   - title: Prospective students
     match: [/en/prospective-students/]
@@ -208,3 +227,16 @@ en:
     items:
       - { label: Members, url: /en/members/ }
       - { label: Meeting minutes, url: /en/members/minutes/ }
+      - { label: PTER, url: /en/members/pter/ }
+      - { heading: Services }
+      - { label: All services, url: /en/services/ }
+      - { label: Aalto and AYY services, url: /en/services/aalto-and-ayy-services-3/ }
+      - { label: Prodeko Fund, url: /en/services/prodeko-fund/ }
+      - { label: Brand and materials, url: /en/services/materials/ }
+      - { label: Communication channels, url: /en/services/communication-channels/ }
+      - { heading: Web services }
+      - { label: Gallery, url: "https://gallery.prodeko.org/kuvat/" }
+      - { label: Proleko? archive, url: "https://old.prodeko.org/en/services/proleko/" }
+      - { label: Weekly letter, url: "https://tiedotteet.prodeko.org" }
+      - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }
+      - { label: Expense claims, url: "https://prodeko.kululaskut.fi" }

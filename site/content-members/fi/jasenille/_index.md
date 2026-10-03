@@ -1,6 +1,6 @@
 ---
 title: Jäsenille
-description: "Killan jäsenille tarkoitetut sivut: kokouspöytäkirjat ja Prolekon arkisto."
+description: "Killan jäsenille tarkoitetut sivut: kokouspöytäkirjat ja PTER-rahan hakeminen."
 translationKey: members
 reviewed: 2026-09-18
 owner: hallitus

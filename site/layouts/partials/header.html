@@ -125,13 +125,12 @@
   </div>
 
   {{/* The phone menu. The mega panels open on hover, which touch never fires,
-       so the bar's items are repeated here. A group carries the section hubs
-       named in navigation.yaml's mobileChildren and stops there: the deeper
-       pages of a section are reached from the hub's own SectionNav, which
-       keeps this menu one screen tall instead of a hundred-link scroll.
-       .mobile-nav is itself the scrolling column, so its children sit directly
-       under it — .m-bottom's auto top margin needs this element as its flex
-       parent to fall to the foot of the panel. */}}
+       so the bar's items are repeated here, and an item with a mega-menu opens
+       into that same menu's links, column by column, so a phone reaches every
+       page a desktop reader reaches from the bar. .mobile-nav is itself the
+       scrolling column, so its children sit directly under it — .m-bottom's
+       auto top margin needs this element as its flex parent to fall to the
+       foot of the panel. */}}
   <nav class="mobile-nav" id="mobile-nav" aria-label="{{ if $isFi }}Valikko{{ else }}Menu{{ end }}">
     {{/* First child of the menu, so opening it puts search under the reader's
          thumb. The results render inline beneath the input rather than in an
@@ -158,24 +157,43 @@
     <ul class="m-list">
       <li><a class="m-row" href="{{ "/" | relLangURL }}">{{ if $isFi }}Etusivu{{ else }}Home{{ end }}</a></li>
       {{ range $navItems }}
-        {{ if .mobileChildren }}
-          {{/* The shared name makes the browser close the other groups as this
-               one opens, so the menu never grows past a screen. */}}
+        {{ $item := . }}
+        {{ $columns := slice }}
+        {{ with .menuKey }}{{ $columns = index $megamenu . | default slice }}{{ end }}
+        {{ if $columns }}
+          {{/* On the desktop the item's title is itself a link to its hub, with
+               the panel opening beside it; here the title is what opens the
+               group, so the hub becomes the group's first row unless the menu
+               already names it, as "Kaikki palvelut" does. */}}
+          {{ $hasHub := false }}
+          {{ range $columns }}{{ range .links }}{{ if eq .url $item.url }}{{ $hasHub = true }}{{ end }}{{ end }}{{ end }}
           <li>
+            {{/* The shared name makes the browser close the other groups as this
+                 one opens, so the menu never grows past a screen. */}}
             <details class="m-group" name="m-group">
               <summary class="m-row">{{ .title }}<span class="m-marker" aria-hidden="true"></span></summary>
               <ul class="m-sub">
-                {{ range .mobileChildren }}
-                  <li>
-                    {{ if and .members (not site.Params.members) }}
-                      {{/* A row into the member tree, in a build that has no
-                           member tree. Naming the address here would publish
-                           it, so the row stays a label. */}}
-                      <span class="m-members">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</span>
-                    {{ else }}
-                      <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>{{ .label }}</a>
-                    {{ end }}
-                  </li>
+                {{ if not $hasHub }}
+                  <li><a href="{{ .url }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>{{ .title }} – {{ if $isFi }}pääsivu{{ else }}main page{{ end }}</a></li>
+                {{ end }}
+                {{ range $columns }}
+                  {{/* A column title names its links only where there are other
+                       columns to tell them from; a one-column menu sits under
+                       the item's own title already. */}}
+                  {{ if gt (len $columns) 1 }}<li class="m-sub-title">{{ .title }}</li>{{ end }}
+                  {{ range .links }}
+                    {{ if and .signedIn (not site.Params.members) }}{{ continue }}{{ end }}
+                    <li>
+                      {{ if and .members (not site.Params.members) }}
+                        {{/* A row into the member tree, in a build that has no
+                             member tree. Naming the address here would publish
+                             it, so the row stays a label. */}}
+                        <span class="m-members">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</span>
+                      {{ else }}
+                        <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>{{ .label }}</a>
+                      {{ end }}
+                    </li>
+                  {{ end }}
                 {{ end }}
               </ul>
             </details>

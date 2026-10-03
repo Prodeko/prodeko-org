@@ -1,6 +1,6 @@
 ---
 title: For members
-description: "Pages that require a Prodeko membership: meeting minutes and the guild magazine archive."
+description: "Pages that require a Prodeko membership: meeting minutes and applying for PTER money."
 translationKey: members
 reviewed: 2026-09-18
 owner: hallitus

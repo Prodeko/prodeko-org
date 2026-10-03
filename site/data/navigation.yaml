@@ -8,28 +8,26 @@
 # owns lists the page prefixes whose pages light this item in the bar. An item
 # without owns lights on its own url alone.
 #
-# mobileChildren lists the item's group rows in the phone menu; an item
-# without mobileChildren is a direct link there.
+# The phone menu opens an item with a menuKey into the same links as its
+# mega-menu; an item without a menuKey is a direct link there.
 #
-# The bar names the five audiences the site speaks to, and Palvelut beside
-# them: the services are what a member comes back for week after week, so
-# they have an item of their own instead of hiding under Kilta. Events are
-# not in the bar: the calendar and the sign-up forms live in Ilmokilke, and
-# the footer takes a reader there. /fi/tapahtumat/ and /en/events/ remain as
-# addresses for anyone arriving from an old link or from search.
+# The bar names the five audiences the site speaks to, and Palvelut and
+# Tapahtumat beside them: the services and the events are what a member comes
+# back for week after week, so they have items of their own instead of hiding
+# under Kilta. The calendar and the sign-up forms live in Ilmokilke; the
+# Tapahtumat page introduces the guild's events and its menu leads there.
 fi:
   - title: Kilta
     url: /fi/guild/
     menuKey: guild
     owns: [/fi/guild/, /fi/opinnot/]
-    mobileChildren:
-      - { label: Kilta, url: /fi/guild/ }
-      - { label: Hallitus ja toimarit, url: /fi/guild/hallitus-ja-toimihenkilot/ }
-      - { label: Opinnot, url: /fi/opinnot/ }
   - title: Palvelut
     url: /fi/palvelut/
     menuKey: services
     owns: [/fi/palvelut/]
+  - title: Tapahtumat
+    url: /fi/tapahtumat/
+    menuKey: events
   - title: Abeille
     url: /fi/abit/
     menuKey: prospective
@@ -54,14 +52,13 @@ en:
     url: /en/guild/
     menuKey: guild
     owns: [/en/guild/, /en/studies/]
-    mobileChildren:
-      - { label: Guild, url: /en/guild/ }
-      - { label: Board and officials, url: /en/guild/board-and-officials/ }
-      - { label: Studies, url: /en/studies/ }
   - title: Services
     url: /en/services/
     menuKey: services
     owns: [/en/services/]
+  - title: Events
+    url: /en/events/
+    menuKey: events
   - title: Prospective students
     url: /en/prospective-students/
     menuKey: prospective

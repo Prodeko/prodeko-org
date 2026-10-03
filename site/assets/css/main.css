@@ -51,7 +51,7 @@ img{display:block;max-width:100%}
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border-subtle)}
 .site-header .bar{display:flex;align-items:center;gap:var(--space-6);height:64px;padding:0 var(--space-5)}
-.site-header .home{display:flex}
+.site-header .home{display:flex;flex-shrink:0}
 .site-header .nav{flex:1;display:flex;justify-content:center;margin:0;padding:0;list-style:none}
 .site-header .nav>li>a{display:flex;align-items:center;height:64px;padding:0 12px;font-size:17px;font-weight:var(--weight-regular);color:var(--pd-black)}
 .site-header .nav>li>a:hover{color:var(--pd-blue);text-decoration:none}
@@ -109,8 +109,15 @@ img{display:block;max-width:100%}
 .m-sub li:last-child a,.m-sub li:last-child .m-members{border-bottom:0}
 .m-sub a[aria-current]{font-weight:var(--weight-bold);color:var(--pd-blue-dark)}
 .m-sub .m-members{color:var(--text-muted)}
+.m-sub-title{padding:20px 0 4px;font-size:var(--size-2xs);font-weight:var(--weight-semibold);letter-spacing:var(--track-caps-wide);text-transform:uppercase;color:var(--text-muted)}
+.m-sub-title:first-child{padding-top:4px}
+.m-sub li:has(+ .m-sub-title) a,.m-sub li:has(+ .m-sub-title) .m-members{border-bottom:0}
 .m-bottom{margin-top:auto;padding-top:32px;display:flex;flex-direction:column;align-items:center;gap:20px}
 .m-bottom .lang-switch{font-size:20px;font-weight:var(--weight-bold)}
+/* Nine items fill the bar: between the phone breakpoint and 1240px the items
+   draw closer and a size smaller, so the emblem and the member button keep
+   their room. */
+@media (max-width:1240px){.site-header .bar{gap:var(--space-4)}.site-header .nav>li>a{padding:0 7px;font-size:16px}}
 @media (max-width:1000px){.site-header .nav,.site-header .side,.nav-search-toggle{display:none}.nav-toggle{display:flex}.mega-panel,.search-panel{display:none}}
 
 /* Footer */
@@ -136,7 +143,7 @@ img{display:block;max-width:100%}
 .page-layout{display:grid;grid-template-columns:minmax(0,var(--content-w)) var(--aside-w);gap:var(--space-8);justify-content:center;align-items:start;max-width:var(--page-max);margin:0 auto;padding:var(--space-8) var(--space-6) var(--space-24)}
 .page-layout.no-aside{grid-template-columns:minmax(0,var(--content-w))}
 .page-aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:var(--space-8)}
-@media (max-width:900px){.page-layout{grid-template-columns:minmax(0,1fr)}.page-aside{position:static}}
+@media (max-width:900px){.page-layout{grid-template-columns:minmax(0,1fr)}.page-aside{position:static;padding-top:var(--space-8);border-top:1px solid var(--border-subtle)}.page-aside .section-nav{order:1}}
 
 /* Breadcrumbs + title */
 .breadcrumbs ol{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 var(--space-8);padding:0;font-size:var(--size-sm)}
@@ -154,6 +161,7 @@ img{display:block;max-width:100%}
 .section-nav a:hover{color:var(--pd-blue)}
 .section-nav a[aria-current]{color:var(--pd-blue-dark);font-weight:var(--weight-bold)}
 .section-nav .m-members{display:block;font-size:15px;line-height:1.4;color:var(--text-muted)}
+.section-nav .section-nav-group{margin-top:var(--space-4);font-size:var(--size-2xs);font-weight:var(--weight-semibold);letter-spacing:var(--track-caps-wide);text-transform:uppercase;color:var(--text-muted)}
 
 /* Aside block */
 .aside-block h2{font-size:var(--size-xs);font-weight:var(--weight-bold);text-transform:uppercase;letter-spacing:0.06em;color:var(--pd-black);margin:0 0 var(--space-2)}
@@ -365,6 +373,17 @@ img{display:block;max-width:100%}
 /* The menus link straight to these headings; without the margin the sticky
    header would cover the heading the link was aimed at. */
 .prose h2[id]{scroll-margin-top:88px}
+/* Zigzag features (zigzag: true): each h2 block steps left and right, its
+   heading in the next colour of the rainbow. Yellow is darkened for the
+   heading only, since the overalls yellow on white is too faint to read. */
+.prose .zigzag-item{width:min(100%,520px);margin-top:var(--space-12)}
+.prose .zigzag-item:nth-of-type(even){margin-left:auto}
+.prose .zigzag-item h2{margin-top:0;font-family:var(--font-core);font-weight:var(--weight-extrabold);text-transform:uppercase;color:var(--zz)}
+.prose .zigzag-item:nth-of-type(5n+1){--zz:var(--pd-rainbow-red)}
+.prose .zigzag-item:nth-of-type(5n+2){--zz:var(--pd-rainbow-green)}
+.prose .zigzag-item:nth-of-type(5n+3){--zz:color-mix(in oklab,var(--pd-rainbow-yellow),#000 30%)}
+.prose .zigzag-item:nth-of-type(5n+4){--zz:var(--pd-rainbow-blue)}
+.prose .zigzag-item:nth-of-type(5n){--zz:var(--pd-rainbow-orange)}
 .org-group{background:var(--surface-sunken);border-left:4px solid var(--pd-blue)}
 .org-group:nth-child(5n+1){border-left-color:var(--pd-rainbow-red)}
 .org-group:nth-child(5n+2){border-left-color:var(--pd-rainbow-orange)}
