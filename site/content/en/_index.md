@@ -17,7 +17,7 @@ aside:
     button: { label: Join the guild, url: "https://membership.prodeko.org/apply" }
 ---
 
-## Bringing IEM students together since 1966
+## Bringing IEM students together since 1866
 
 Prodeko is the guild of Industrial Engineering and Management students at
 Aalto University, operating alongside the Aalto University Student Union. We
