@@ -33,7 +33,6 @@ fi:
       - { label: Hallitus ja toimihenkilöt, url: /fi/guild/hallitus-ja-toimihenkilot/ }
       - { label: Fukseille, url: /fi/new-students/ }
       - { label: Opinnot, url: /fi/opinnot/ }
-      - { label: Palvelut, url: /fi/palvelut/ }
   - title: Fukseille
     match: [/fi/new-students/]
     items:
@@ -141,7 +140,6 @@ en:
       - { label: Board and officials, url: /en/guild/board-and-officials/ }
       - { label: New students, url: /en/new-students/ }
       - { label: Studies, url: /en/studies/ }
-      - { label: Services, url: /en/services/ }
   - title: New students
     match: [/en/new-students/]
     items:

@@ -58,32 +58,40 @@ fi:
           url: /fi/opinnot/tarkeita-linkkeja/
         - label: Kaikki opinnoista
           url: /fi/opinnot/
+  # A bar item of its own since it left Kilta. Two columns rather than one: a
+  # single column of ten links stretches across the whole panel. The first
+  # holds the pages of this site, the second the guild's web services.
+  services:
     - title: Palvelut
       links:
         - label: Kaikki palvelut
           url: /fi/palvelut/
-        - label: Viikkotiedote
-          url: https://tiedotteet.prodeko.org
-        - label: Kokouspöytäkirjat
-          url: /fi/jasenille/poytakirjat/
-          members: true
-        - label: Kulukorvaukset
-          url: https://prodeko.kululaskut.fi
-        - label: Galleria
-          url: https://gallery.prodeko.org/kuvat/
-          signedIn: true
-        - label: Ilmokilke 3.0
-          url: https://ilmo.prodeko.org
-        # The magazine archive still lives on the old site.
-        - label: Proleko?-arkisto
-          url: https://old.prodeko.org/fi/palvelut/proleko/
-          signedIn: true
-        - label: Prodeko rahasto
+        - label: "Aallon ja AYY:n palvelut"
+          url: /fi/palvelut/aallon-ja-ayyn-palveluita-2/
+        - label: Prodeko-rahasto
           url: /fi/palvelut/prodeko-fund/
         - label: PTER
           url: /fi/palvelut/pter/
         - label: Brändi ja materiaalit
           url: /fi/palvelut/materiaalit/
+        - label: Kokouspöytäkirjat
+          url: /fi/jasenille/poytakirjat/
+          members: true
+    - title: Verkkopalvelut
+      links:
+        - label: Viikkotiedote
+          url: https://tiedotteet.prodeko.org
+        - label: Ilmokilke 3.0
+          url: https://ilmo.prodeko.org
+        - label: Kulukorvaukset
+          url: https://prodeko.kululaskut.fi
+        - label: Galleria
+          url: https://gallery.prodeko.org/kuvat/
+          signedIn: true
+        # The magazine archive still lives on the old site.
+        - label: Proleko?-arkisto
+          url: https://old.prodeko.org/fi/palvelut/proleko/
+          signedIn: true
   prospective:
     - title: Abeille
       links:
@@ -229,31 +237,36 @@ en:
           url: /en/studies/important-links/
         - label: All study pages
           url: /en/studies/
+  services:
     - title: Services
       links:
         - label: All services
           url: /en/services/
-        - label: Weekly letter
-          url: https://tiedotteet.prodeko.org
-        - label: Meeting minutes
-          url: /en/members/minutes/
-          members: true
-        - label: Expense claims
-          url: https://prodeko.kululaskut.fi
-        - label: Gallery
-          url: https://gallery.prodeko.org/kuvat/
-          signedIn: true
-        - label: Ilmokilke 3.0
-          url: https://ilmo.prodeko.org
-        - label: Proleko? archive
-          url: https://old.prodeko.org/en/services/proleko/
-          signedIn: true
+        - label: Aalto and AYY services
+          url: /en/services/aalto-and-ayy-services-3/
         - label: Prodeko Fund
           url: /en/services/prodeko-fund/
         - label: PTER
           url: /en/services/pter/
         - label: Brand and materials
           url: /en/services/materials/
+        - label: Meeting minutes
+          url: /en/members/minutes/
+          members: true
+    - title: Web services
+      links:
+        - label: Weekly letter
+          url: https://tiedotteet.prodeko.org
+        - label: Ilmokilke 3.0
+          url: https://ilmo.prodeko.org
+        - label: Expense claims
+          url: https://prodeko.kululaskut.fi
+        - label: Gallery
+          url: https://gallery.prodeko.org/kuvat/
+          signedIn: true
+        - label: Proleko? archive
+          url: https://old.prodeko.org/en/services/proleko/
+          signedIn: true
   prospective:
     - title: Prospective students
       links:
