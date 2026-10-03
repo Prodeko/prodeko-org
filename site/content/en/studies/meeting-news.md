@@ -6,7 +6,7 @@ description: Summaries of the meetings of Prodeko's study sector from the years 
 
 Meeting news of the study sector from 2024:
 
-[Meeting summary 2024 (PDF)](https://static.prodeko.org/media/public/2024/10/03/opintosektorin_kokouskooste_2024a.pdf)
+[Meeting summary 2024 (PDF)](/uploads/dokumentit/opintosektorin_kokouskooste_2024a.pdf)
 
 Meeting news of the study sector from 2023:
 
@@ -14,10 +14,10 @@ Meeting news of the study sector from 2023:
 
 Meeting news of the study sector from 2022:
 
-[Meeting summary 2022 (PDF)](https://static.prodeko.org/media/public/2024/10/03/opintosektorin_kokouskooste_2022.pdf)
+[Meeting summary 2022 (PDF)](/uploads/dokumentit/opintosektorin_kokouskooste_2022.pdf)
 
 Meeting news of the study sector from 2021:
 
-[Meeting summary 2021 (PDF)](https://static.prodeko.org/media/public/2024/10/03/opintosektorin_kokouskooste_2021.pdf)
+[Meeting summary 2021 (PDF)](/uploads/dokumentit/opintosektorin_kokouskooste_2021.pdf)
 
 If you have questions about any topic, contact [opintovastaava@prodeko.org](mailto:opintovastaava@prodeko.org).
