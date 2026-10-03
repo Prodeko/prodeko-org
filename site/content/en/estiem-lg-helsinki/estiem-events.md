@@ -7,7 +7,7 @@ description: Descriptions of the ESTIEM event types, from Academic Days and TIME
 
 ESTIEM organised dozens, if not hundreds of event for its members yearly. Here is some of our favorite event types!
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2020/07/07/october.jpg__2048x1365_q85_subsampling-2.jpg)
+![](/uploads/october.jpg)
 
 ## Academic Days
 

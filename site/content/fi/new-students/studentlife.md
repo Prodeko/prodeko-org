@@ -7,7 +7,7 @@ description: "Fuksin opas opiskelijaelämän perusasioihin: haalarit, teekkarila
 
 Opiskelijaelämä on elämän parasta aikaa, joten fuksivuosi on tällä logiikalla elämän parhaan ajan parasta aikaa. Vastaan tulee mitä kummallisempia juhlia ja kissanristiäisiä, jotka voivat laittaa myös vanhemman tieteenharjoittajan pään pyörälle. Tässä uutuuden tietovyöryssä selviämiseksi voit lukea alta, perustiedot siitä, miten jokainen fuksi voi perehdyttää itsensä opiskelijaelämän kummallisuuksiin.
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2020/07/07/abc.jpg__2000x1333_q85_subsampling-2.jpg)
+![](/uploads/abc.jpg)
 
 ## Haalarit
 

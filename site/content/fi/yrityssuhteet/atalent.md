@@ -5,7 +5,7 @@ sourceURL: https://prodeko.org/fi/yrityssuhteet/atalent/
 description: aTalent on Prodekon, sen alumnien ja KY:n omistama rekrytointiyritys, joka välittää opiskelijoille ja yrityksille oman alan työpaikkoja.
 ---
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2022/02/04/atalent_logo.png__500x117_subsampling-2.png)
+![](/uploads/atalent_logo.png)
 
 ## Unelmaduuneja Prodekolaisille vuodesta 2004
 

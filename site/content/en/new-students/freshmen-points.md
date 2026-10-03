@@ -7,7 +7,7 @@ sourceURL: https://prodeko.org/en/new-students/freshmen-points/
 
 Freshmen points are a list of different activities you need to conduct in order to achieve a tech student cap ("teekkarilakki") in possible Wappu. Freshmen points introduce you to Prodeko and teekkari culture. Almost all students who starts Prodeko want to have their cap and thus collect points into their Freshmen point card. This is possible also for master students and exchangers! If you want to participate in earning points for your cap, please contact Captain of Master and International Students: maisterikvkapteeni(at)prodeko.org. In order to achieve the tech student cap, you need to be present in Otaniemi the whole year, from September to May.
 
-![](https://static.prodeko.org/media/filer_public_thumbnails/public/2020/07/07/tomoftuta.jpg__2048x1365_q85_subsampling-2.jpg)
+![](/uploads/tomoftuta.jpg)
 
 ## Compulsory freshmen points (10)
 
