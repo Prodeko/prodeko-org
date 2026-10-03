@@ -139,6 +139,9 @@ img{display:block;max-width:100%}
 .breadcrumbs li+li::before{content:"/";margin-right:8px;color:var(--text-muted)}
 .breadcrumbs [aria-current]{color:var(--pd-black)}
 .page-title h1{font-size:var(--size-2xl);font-weight:var(--weight-extrabold);text-transform:uppercase;letter-spacing:0.01em;color:var(--pd-black);line-height:var(--leading-tight);margin:0 0 var(--space-6)}
+/* The overalls stripe under every page title: the guild's signature, the
+   same five bands as the footer, short enough to read as a mark. */
+.page-title h1::after{content:"";display:block;width:96px;height:6px;margin-top:var(--space-3);background:var(--rainbow-gradient)}
 
 /* Section nav — plain list, no box */
 .section-nav-title{font-size:var(--size-xs);font-weight:var(--weight-bold);text-transform:uppercase;letter-spacing:0.06em;color:var(--pd-black);margin-bottom:var(--space-3)}
@@ -191,7 +194,7 @@ img{display:block;max-width:100%}
 
 /* Figure */
 .figure{margin:0 0 var(--space-10)}
-.figure img{display:block;width:100%;object-fit:cover}
+.figure img{display:block;width:100%;object-fit:cover;border-bottom:6px solid transparent;border-image:var(--rainbow-gradient) 1}
 .figure figcaption{margin-top:var(--space-2);font-size:var(--size-xs);color:var(--text-muted)}
 
 /* An image written into the body of a page (_markup/render-image.html). It
@@ -244,6 +247,18 @@ img{display:block;max-width:100%}
 .link-list .desc{font-size:var(--size-sm);color:var(--text-muted)}
 .link-list .arrow{transition:transform var(--duration-fast) var(--ease-standard)}
 .link-list a:hover .arrow{transform:translateX(3px)}
+/* A row being pointed at slides in behind a bar of its own colour; the
+   colour walks the rainbow down the list, so a hub page reads as a set of
+   overalls bands rather than a table of links. */
+.link-list a{--row:var(--pd-blue);position:relative;transition:var(--transition-ui),padding var(--duration-fast) var(--ease-standard)}
+.link-list li:nth-child(5n+1) a{--row:var(--pd-rainbow-red)}
+.link-list li:nth-child(5n+2) a{--row:var(--pd-rainbow-orange)}
+.link-list li:nth-child(5n+3) a{--row:var(--pd-rainbow-yellow)}
+.link-list li:nth-child(5n+4) a{--row:var(--pd-rainbow-green)}
+.link-list li:nth-child(5n) a{--row:var(--pd-rainbow-blue)}
+.link-list a::before{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:0;background:var(--row);transition:width var(--duration-fast) var(--ease-standard)}
+.link-list a:hover,.link-list a:focus-visible{padding-left:var(--space-4)}
+.link-list a:hover::before,.link-list a:focus-visible::before{width:4px}
 /* Inside the prose column the list is still a row of links, not a bulleted
    paragraph: the generic list and link rules have to give way. */
 .prose .link-list{padding-left:0;list-style:none}
@@ -402,7 +417,7 @@ img{display:block;max-width:100%}
 .kicker{font-size:var(--size-2xs);font-weight:var(--weight-semibold);letter-spacing:var(--track-caps-wide);text-transform:uppercase}
 
 /* Home hero — the only place text sits on a photo */
-.home-hero{position:relative;display:flex;align-items:flex-end;min-height:clamp(200px,22vw,260px);background:var(--photo-guild) center 62%/cover no-repeat}
+.home-hero{position:relative;display:flex;align-items:flex-end;min-height:clamp(200px,22vw,260px);background:var(--photo-guild) center 62%/cover no-repeat;border-bottom:8px solid transparent;border-image:var(--rainbow-gradient) 1}
 .home-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgb(0 10 20 / 0) 20%,rgb(0 10 20 / 0.8) 100%)}
 .home-hero.has-links{min-height:clamp(300px,35vw,400px)}
 .home-hero.has-links::before{background:linear-gradient(to bottom,rgb(0 10 20 / 0) 25%,rgb(0 10 20 / 0.8) 100%)}
