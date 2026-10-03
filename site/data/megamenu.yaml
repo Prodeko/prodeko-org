@@ -28,20 +28,20 @@ fi:
     # subsection anyway.
     - title: Hallitus ja toimarit
       links:
+        # One hub page holds this year's board and officials and every earlier
+        # year; the anchors take a reader straight to each part of it.
         - label: Hallitus ja toimihenkilöt
           url: /fi/guild/hallitus-ja-toimihenkilot/
         - label: Hallitus 2026
-          url: /fi/guild/hallitus-ja-toimihenkilot/hallitus/
+          url: /fi/guild/hallitus-ja-toimihenkilot/#hallitus-2026
+        - label: Toimihenkilöt 2026
+          url: /fi/guild/hallitus-ja-toimihenkilot/#toimihenkilot-2026
+        - label: Edelliset vuodet
+          url: /fi/guild/hallitus-ja-toimihenkilot/#edelliset-vuodet
         - label: Hallituksen toiminta
           url: /fi/guild/hallitus-ja-toimihenkilot/hallituksen-toiminta/
-        - label: Edelliset hallitukset
-          url: /fi/guild/hallitus-ja-toimihenkilot/edelliset-hallitukset/
-        - label: Toimihenkilöt 2026
-          url: /fi/guild/hallitus-ja-toimihenkilot/toimihenkilot/
         - label: Toimarien toiminta
           url: /fi/guild/hallitus-ja-toimihenkilot/toimarien-toiminta/
-        - label: Edelliset toimihenkilöt
-          url: /fi/guild/hallitus-ja-toimihenkilot/edelliset-toimihenkilot/
     - title: Opinnot
       links:
         - label: Keneen otan yhteyttä
@@ -201,17 +201,15 @@ en:
         - label: Board and officials
           url: /en/guild/board-and-officials/
         - label: Board 2026
-          url: /en/guild/board-and-officials/board/
+          url: /en/guild/board-and-officials/#board-2026
+        - label: Officials 2026
+          url: /en/guild/board-and-officials/#officials-2026
+        - label: Previous years
+          url: /en/guild/board-and-officials/#previous-years
         - label: What the board does
           url: /en/guild/board-and-officials/what-the-board-does/
-        - label: Previous boards
-          url: /en/guild/board-and-officials/previous-boards/
-        - label: Officials 2026
-          url: /en/guild/board-and-officials/officials/
         - label: What the officials do
           url: /en/guild/board-and-officials/what-the-officials-do/
-        - label: Previous officials
-          url: /en/guild/board-and-officials/previous-officials/
     - title: Studies
       links:
         - label: Who to contact

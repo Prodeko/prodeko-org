@@ -5,6 +5,7 @@ translationKey: guild-arvot
 sourceURL: https://prodeko.org/en/guild/values/
 reviewed: 2026-09-18
 owner: hallitus
+values: true
 ---
 
 Prodeko is the guild of industrial engineering and management students at
@@ -18,4 +19,6 @@ pointing to community spirit, helping friends, respecting diversity, and
 accepting failure and imperfection.
 
 The work produced five values: Think Big, Get Things Done, Learn and Grow,
-Give Back, and Be a Good Person.
+Give Back, and Be a Good Person. Five values, five colours on the overalls.
+
+## Prodeko's values

@@ -19,12 +19,8 @@ fi:
     match: [/fi/guild/hallitus-ja-toimihenkilot/]
     items:
       - { label: Hallitus ja toimihenkilöt, url: /fi/guild/hallitus-ja-toimihenkilot/ }
-      - { label: Hallitus 2026, url: /fi/guild/hallitus-ja-toimihenkilot/hallitus/ }
       - { label: Hallituksen toiminta, url: /fi/guild/hallitus-ja-toimihenkilot/hallituksen-toiminta/ }
-      - { label: Edelliset hallitukset, url: /fi/guild/hallitus-ja-toimihenkilot/edelliset-hallitukset/ }
-      - { label: Toimihenkilöt 2026, url: /fi/guild/hallitus-ja-toimihenkilot/toimihenkilot/ }
       - { label: Toimarien toiminta, url: /fi/guild/hallitus-ja-toimihenkilot/toimarien-toiminta/ }
-      - { label: Edelliset toimihenkilöt, url: /fi/guild/hallitus-ja-toimihenkilot/edelliset-toimihenkilot/ }
   - title: Kilta
     match: [/fi/guild/]
     items:
@@ -131,12 +127,8 @@ en:
     match: [/en/guild/board-and-officials/]
     items:
       - { label: Board and officials, url: /en/guild/board-and-officials/ }
-      - { label: Board 2026, url: /en/guild/board-and-officials/board/ }
       - { label: What the board does, url: /en/guild/board-and-officials/what-the-board-does/ }
-      - { label: Previous boards, url: /en/guild/board-and-officials/previous-boards/ }
-      - { label: Officials 2026, url: /en/guild/board-and-officials/officials/ }
       - { label: What the officials do, url: /en/guild/board-and-officials/what-the-officials-do/ }
-      - { label: Previous officials, url: /en/guild/board-and-officials/previous-officials/ }
   - title: Guild
     match: [/en/guild/]
     items:

@@ -318,6 +318,52 @@ img{display:block;max-width:100%}
 .social-handle{font-size:var(--size-md);opacity:.85}
 .social-cta{margin-top:var(--space-4);font-size:var(--size-xs);font-weight:var(--weight-semibold);letter-spacing:var(--track-caps);text-transform:uppercase}
 
+/* Combined documents (section.html, `documents:`) — the rules, guidelines
+   and decrees on one page. The jump row sticks under the header so a reader
+   deep in the rules can still move to the decrees. */
+.prose .doc-nav{position:sticky;top:64px;z-index:5;display:flex;flex-wrap:wrap;gap:var(--space-2);margin:var(--space-6) 0 var(--space-8);padding:var(--space-3) 0;background:var(--surface-page);border-bottom:1px solid var(--border-subtle)}
+.prose .doc-nav a{padding:var(--space-2) var(--space-4);border:1px solid var(--border-strong);color:var(--pd-blue);font-size:var(--size-sm);font-weight:var(--weight-semibold);text-decoration:none;transition:var(--transition-ui)}
+.prose .doc-nav a:hover{background:var(--pd-blue);color:var(--text-on-brand)}
+.doc-section{padding-top:var(--space-4);border-top:6px solid transparent;border-image:var(--rainbow-gradient) 1}
+.doc-section+.doc-section{margin-top:var(--space-12)}
+.prose .doc-section>h2{margin-top:var(--space-6);scroll-margin-top:140px}
+
+/* Board and officials hub (partials/board-overview.html) — the committees
+   as a chart of folding boxes, and earlier years as folding rows. */
+.prose .org-chart{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--space-3);align-items:start;margin:var(--space-4) 0 var(--space-8)}
+/* The menus link straight to these headings; without the margin the sticky
+   header would cover the heading the link was aimed at. */
+.prose h2[id]{scroll-margin-top:88px}
+.org-group{background:var(--surface-sunken);border-left:4px solid var(--pd-blue)}
+.org-group:nth-child(5n+1){border-left-color:var(--pd-rainbow-red)}
+.org-group:nth-child(5n+2){border-left-color:var(--pd-rainbow-orange)}
+.org-group:nth-child(5n+3){border-left-color:var(--pd-rainbow-yellow)}
+.org-group:nth-child(5n+4){border-left-color:var(--pd-rainbow-green)}
+.org-group:nth-child(5n){border-left-color:var(--pd-rainbow-blue)}
+.org-group:first-child{grid-column:1/-1}
+.org-group summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);padding:var(--space-3) var(--space-4)}
+.org-group summary::-webkit-details-marker{display:none}
+.org-title{font-weight:var(--weight-bold);color:var(--pd-black)}
+.org-count{flex:none;font-size:var(--size-xs);color:var(--text-muted)}
+.org-count::after{content:" +";color:var(--pd-blue)}
+.org-group[open] .org-count::after{content:" \2013"}
+.prose .org-members{list-style:none;margin:0;padding:0 var(--space-4) var(--space-4);display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-2) var(--space-4)}
+.prose .org-members li{margin:0;display:flex;flex-direction:column;font-size:var(--size-sm);line-height:var(--leading-snug)}
+.org-name{font-weight:var(--weight-semibold);color:var(--pd-black)}
+.org-role{color:var(--text-muted)}
+/* Sixty years of boards as a wrapping row of year buttons; the year that is
+   opened takes the whole row, so its list reads at full width. */
+.prose .year-folds h3{margin:var(--space-6) 0 var(--space-3)}
+.year-folds section{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.year-folds section>h3{flex-basis:100%}
+.year-fold.faq-item,.year-fold.faq-item:first-of-type{flex:0 0 auto;border:1px solid var(--border-subtle)}
+.year-fold.faq-item summary{padding:6px 12px;gap:var(--space-2);font-size:var(--size-sm);font-variant-numeric:tabular-nums}
+.year-fold.faq-item summary:hover{background:var(--surface-sunken)}
+.year-fold[open]{flex-basis:100%;border-color:var(--border-strong)}
+.year-fold[open] summary{background:var(--pd-blue);color:var(--text-on-brand)}
+.year-fold[open] summary::after{color:var(--text-on-brand)}
+.year-fold .def-list{margin:0;padding:0 var(--space-4);border-top:0}
+
 /* Partner logos */
 .partner-logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:var(--space-8) var(--space-10);align-items:center;list-style:none;margin:var(--space-6) 0;padding:0}
 .partner-logos img{display:block;max-width:100%;max-height:44px;object-fit:contain}
