@@ -2,18 +2,16 @@
 
      The migrated pages carry a few images that are documents rather than
      decoration — the orientation week timetable is the whole of its page, and
-     at 342px every event label in it is an unreadable smudge. Without a way to
-     open the original, that page says nothing on a phone. */}}
+     at 342px every event label in it is an unreadable smudge. Tapping the
+     image opens the original. There is no separate "open full size" line
+     under it: under every photo of every page it was noise, and the image
+     itself is the link. The caption, when the image has alt text, is that
+     text alone. */}}
 {{ $alt := .PlainText }}
 {{ $title := .Title }}
 <figure class="content-image">
   <a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener">
     <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy">
   </a>
-  <figcaption>
-    {{ with $alt }}<span>{{ . }}</span>{{ end }}
-    <a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener">
-      {{ if eq page.Language.Lang "fi" }}Avaa kuva täysikokoisena{{ else }}Open the image full size{{ end }} <span aria-hidden="true">↗</span>
-    </a>
-  </figcaption>
+  {{ with $alt }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>
