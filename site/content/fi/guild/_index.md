@@ -3,8 +3,11 @@ title: Kilta
 description: "Prodeko on Aalto-yliopiston tuotantotalouden opiskelijoiden kilta: hallitus, toimarit, jäsenyys, kiltahuone ja killan säännöt."
 translationKey: guild
 photo:
-  src: images/pages/page-guild-crop.png
-  alt: Kiltalaisia TUAS-talolla
+  src: images/pages/wappu-group-kaivopuisto.jpg
+  alt: Prodekolaisia wappuna Kaivopuistossa
+  position: bottom
+hero: true
+cards: true
 aside:
   - title: Kiltahuone
     text: TUAS-talo, Maarintie 8, 02150 Espoo.

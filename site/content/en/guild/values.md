@@ -2,6 +2,9 @@
 title: Values
 description: The five values Prodeko members defined together in 2016-2017 for the guild's 50th anniversary.
 translationKey: guild-arvot
+photo:
+  src: images/values/arvot-haalarimerkki.jpg
+  alt: Prodeko's values on an overalls patch over the rainbow stripe
 sourceURL: https://prodeko.org/en/guild/values/
 reviewed: 2026-09-18
 owner: hallitus

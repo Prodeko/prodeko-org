@@ -1,12 +1,12 @@
-{{/* The five guild values from data/values.yaml as a row of cards, each in
-     its own colour of the overalls rainbow. Drawn where a page sets
+{{/* The five guild values from data/values.yaml as five bands, each filled
+     with its own colour of the overalls rainbow, after the values page of the
+     old site. Drawn where a page sets
      `values: true` in its front matter: the front page and the values page.
      An ordered list, because the values have an order the guild gave them. */}}
 {{ with hugo.Data.values }}
   <ol class="values-cards">
     {{ range $i, $v := . }}
       <li class="value-card value-{{ $v.colour }}">
-        <span class="value-number" aria-hidden="true">{{ add $i 1 }}</span>
         <h3>{{ $v.title }}</h3>
         <p>{{ $v.text }}</p>
       </li>

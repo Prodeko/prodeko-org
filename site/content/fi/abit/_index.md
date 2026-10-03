@@ -1,5 +1,6 @@
 ---
 title: Abeille
+cards: true
 translationKey: abit
 description: Abiturientille tietoa tuotantotalouden opinnoista, hakemisesta ja opiskelijaelämästä Aallossa.
 photo:

@@ -1,5 +1,7 @@
 ---
 title: Alumni
+hero: true
+cards: true
 translationKey: alumni
 description: Prodekon Alumni ry on tuotantotalouden alumnien yhdistys, joka ylläpitää alumniverkostoa ja järjestää jäsenilleen tapahtumia.
 photo:

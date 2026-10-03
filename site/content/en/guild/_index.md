@@ -3,8 +3,11 @@ title: Guild
 description: How the student-run guild works — its board, official positions, guild meetings, guild room and official documents.
 translationKey: guild
 photo:
-  src: images/pages/page-guild-crop.png
-  alt: Guild members at the TUAS building
+  src: images/pages/wappu-group-kaivopuisto.jpg
+  alt: Prodeko members at Kaivopuisto on wappu
+  position: bottom
+hero: true
+cards: true
 aside:
   - title: Guild room
     text: TUAS building, Maarintie 8, 02150 Espoo.

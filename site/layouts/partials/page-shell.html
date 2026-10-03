@@ -36,17 +36,41 @@
 {{ $blocks := partial "aside-blocks.html" $page }}
 {{ $hasAside := or (ne (trim (string $nav) " \n\t") "") (ne (trim (string $blocks) " \n\t") "") }}
 
+{{/* A page that sets `hero: true` and has a photo opens like the front page:
+     the photo across the full width with the breadcrumb and title over it,
+     closed by the overalls stripe. The audience hubs — Kilta, Abeille,
+     Yrityksille, Alumneille, Fukseille, ESTIEM — use it, so each door into the
+     site looks like a door rather than another page of text. */}}
+{{ $hero := "" }}
+{{ if and $page.Params.hero $page.Params.photo }}
+  {{ with resources.Get $page.Params.photo.src }}
+    {{ $hero = (.Resize "1800x webp q70").RelPermalink }}
+  {{ else }}
+    {{ errorf "photo %q not found on %s" $page.Params.photo.src $page.RelPermalink }}
+  {{ end }}
+{{ end }}
+{{ with $hero }}
+  <section class="page-hero" style="--photo-hero:url('{{ . }}')"{{ with $page.Params.photo.position }} data-pos="{{ . }}"{{ end }}>
+    <div class="page-hero-content">
+      {{ partial "breadcrumbs.html" $page }}
+      <h1>{{ $page.Title }}</h1>
+    </div>
+  </section>
+{{ end }}
+
 {{/* The grid keeps the 240px sidebar track even when it is empty, so a page
      with neither a section nor notes is given the single-column shape rather
      than a column of air. */}}
 <div class="page-layout{{ if not $hasAside }} no-aside{{ end }}">
   <div class="page-main">
+    {{ if not $hero }}
     <header class="page-title">
       {{ partial "breadcrumbs.html" $page }}
       <h1>{{ $page.Title }}</h1>
     </header>
+    {{ end }}
 
-    {{ with $page.Params.photo }}
+    {{ with and (not $hero) $page.Params.photo }}
       {{ $img := resources.Get .src }}
       {{ if $img }}
         {{ $img = $img.Resize "1500x q80" }}

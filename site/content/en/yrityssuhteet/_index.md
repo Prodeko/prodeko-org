@@ -1,6 +1,8 @@
 ---
 title: For companies
 description: How companies can work with Prodeko's roughly 900 Industrial Engineering and Management students, and who to contact.
+hero: true
+cards: true
 translationKey: yrityssuhteet
 photo:
   src: images/pages/page-companies.jpg

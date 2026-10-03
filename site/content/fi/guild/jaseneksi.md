@@ -2,6 +2,9 @@
 title: Killan jäseneksi
 description: Ketkä voivat liittyä Prodekon jäseniksi, miten jäsenhakemus tehdään ja mitä jäsenyys maksaa.
 translationKey: guild-jaseneksi
+photo:
+  src: images/pages/page-guild-crop.png
+  alt: Kiltalaisia TUAS-talon portailla
 sourceURL: https://prodeko.org/fi/guild/jaseneksi/
 ---
 

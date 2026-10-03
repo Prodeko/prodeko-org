@@ -1,5 +1,7 @@
 ---
 title: Yrityksille
+hero: true
+cards: true
 translationKey: yrityssuhteet
 description: Prodekon yrityssuhdetoiminta ja yhteistyömuodot yrityksille excursioista sponsorointiin, rekrytointiin ja projektikursseihin.
 photo:

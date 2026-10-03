@@ -1,5 +1,7 @@
 ---
 title: New students
+hero: true
+cards: true
 translationKey: new-students
 description: Everything a new IEM student needs for their first year.
 photo:
