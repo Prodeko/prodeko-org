@@ -73,6 +73,10 @@
           <div class="mega-col">
             <div class="mega-col-title">{{ .title }}</div>
             {{ range .links }}
+              {{/* signedIn: a link for signed-in members only. The public
+                   build leaves it out altogether rather than greying it, since
+                   a reader who is not signed in can do nothing with it. */}}
+              {{ if and .signedIn (not site.Params.members) }}{{ continue }}{{ end }}
               {{ if and .members (not site.Params.members) }}
                 {{/* A link into the member tree, in a build that has no member
                      tree. Naming the address here would publish it. */}}
