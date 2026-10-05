@@ -80,8 +80,8 @@ Vuosikurssilistat:
 
 ## III Asetus killan maksukortista
 
-[Asetus killan maksukortista](https://static.prodeko.org/media/public/2019/11/19/asetus_killan_maksukortista.pdf)
+[Asetus killan maksukortista](/uploads/dokumentit/asetus_killan_maksukortista.pdf)
 
 ## IV Brändiasetus
 
-[Brändiohje](https://static.prodeko.org/media/public/2023/12/14/brandidokumentti_final.pdf)
+[Brändiohje](/uploads/dokumentit/brandidokumentti_final.pdf)

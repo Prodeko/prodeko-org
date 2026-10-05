@@ -9,4 +9,4 @@ Kannattaa ehdottamasti lukea/silmäillä/lausua kyseessä oleva infopläjäys, e
 
 Fyysiset fuksioppaat saapuvat postin tuomana elokuun alkupuolella, mutta siihen asti joudutte tyytymään vain netissä selattavaan versioon.
 
-[Fuksioppaan 2026 löydät tämän linkin takaa!](https://static.prodeko.org/media/public/2026/05/20/fuksiopas2026_nettiin.pdf)
+[Fuksioppaan 2026 löydät tämän linkin takaa!](/uploads/dokumentit/fuksiopas2026_nettiin.pdf)
