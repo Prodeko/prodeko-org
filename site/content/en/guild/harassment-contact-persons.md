@@ -1,27 +1,17 @@
 ---
 title: Harassment Contact Persons
-description: Prodeko's five harassment contact persons introduce themselves and explain how to reach them confidentially.
+description: Prodeko's five harassment contact persons introduce themselves and
+  explain how to reach them confidentially.
 translationKey: guild-hairintayhdyshenkilot
 sourceURL: https://prodeko.org/en/guild/harassment-contact-persons/
+reviewed: 2026-10-05
+owner: hallitus
 ---
-
 Prodeko has five harassment contact persons: Aino Soinio, Aino Salmi, Kalle Saarivuori, Jenni Palukka & Elli Lahtinen. The harassment contact persons are there for the guild members and they provide a low-threshold opportunity to report about experienced or witnessed harassment. The harassment contact persons can help the harassed to get in touch with professionals and make sure the situation is addressed within the guild. You can get in touch with the harassment contact persons even if you want to talk about the inappropriate behaviour you witnessed. Contact with the harassment contact persons is confidential and will not lead to further action unless the contact maker so wishes. You can find information about Prodeko's harassment contact persons below. You can also contact Prodeko's harrasment contact persons anonymously here:
 
 [HÄRYCHAT](https://harychat.prodeko.org)
 
 **Below you can find introductions of Prodeko's harrasment contact persons.**
-
-![](/uploads/ainosoinio2.jpg)
-
-**Aino Soinio, Fresher ‘20**
-
-Hello! I'm Aino Soinio, a sixth year prodekoian. Parties are fun, but sometimes I feel mentally middle-aged and love chillin' at home with Downton Abbey :) I'm reliable and a pretty nice person, so if you ever need someone to talk to, just send me a message! Even about the weather if nothing else ;)
-
-*[aino.soinio@aalto.fi](mailto:aino.soinio@aalto.fi)*
-
-*[+358 44 974 5644](tel:+358449745644)*
-
-*TG: @qlonqqu*
 
 ![](/uploads/aino-salmi-2.jpg)
 
@@ -73,7 +63,7 @@ Hello! I’m Elli, a Prodeko fresher ‘24. I really enjoy hitting the gym, list
 
 If you wish, you can also contact AYY’s harassment contact persons or SCI’s Manager of Academic Affairs. SCI's Manager of Academic Affairs can help you in situations regarding Aalto staff.
 
-[**AYY's harassment contact persons can be found here**](https://www.ayy.fi/fi/palvelut-jasenille/hairintayhdyshenkilot)
+**[AYY's harassment contact persons can be found here](https://www.ayy.fi/fi/palvelut-jasenille/hairintayhdyshenkilot)**
 
 **SCI’s Manager of Academic Affairs:**
 
