@@ -391,9 +391,9 @@ img{display:block;max-width:100%}
 .org-group:nth-child(5n+4){border-left-color:var(--pd-rainbow-green)}
 .org-group:nth-child(5n){border-left-color:var(--pd-rainbow-blue)}
 .org-group:first-child{grid-column:1/-1}
-.org-group summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);padding:var(--space-3) var(--space-4)}
+.org-group summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:var(--space-1) var(--space-3);padding:var(--space-3) var(--space-4)}
 .org-group summary::-webkit-details-marker{display:none}
-.org-title{font-weight:var(--weight-bold);color:var(--pd-black)}
+.org-title{min-width:0;overflow-wrap:anywhere;font-weight:var(--weight-bold);color:var(--pd-black)}
 .org-count{flex:none;font-size:var(--size-xs);color:var(--text-muted)}
 .org-count::after{content:" +";color:var(--pd-blue)}
 .org-group[open] .org-count::after{content:" \2013"}
