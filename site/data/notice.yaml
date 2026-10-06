@@ -1,7 +1,7 @@
 # The notice under the header on the front page, read by
 # layouts/partials/site-notice.html. Set `show: false` to take it down, for
 # instance once the old site is switched off.
-show: true
+show: false
 fi:
   title: Uudistamme nettisivujamme!
   text: Uusi prodeko.org on vielä työn alla. Vanhat sivut löytyvät toistaiseksi osoitteesta old.prodeko.org.
