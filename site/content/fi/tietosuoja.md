@@ -5,7 +5,7 @@ description: Prodeko ry:n tietosuojaseloste siitä, miten kilta kerää, käytt�
 sourceURL: https://prodeko.org/fi/tietosuoja/
 ---
 
-Tämä on Prodeko Ry:n henkilötietolain (10 ja 24 §) ja EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 23.05.2018. Viimeisin muutos 19.09.2026.
+Tämä on Prodeko Ry:n henkilötietolain (10 ja 24 §) ja EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 23.05.2018. Viimeisin muutos 07.10.2026.
 
 Tämä tietosuojaseloste kuvaa, kuinka Tuotantotalouden Kilta Prodeko ry kerää, käyttää ja käsittelee käyttäjien henkilötietoja. Sitä sovelletaan kaikkiin Prodekon sähköisiin palveluihin, jotka on eritelty tarkemmin dokumentin lopussa.
 
@@ -99,6 +99,12 @@ Palvelu on tarkoitettu jatkuvasti päivittyväksi tiedotusnäytöksi ja sen käy
 Palvelu toimii maksupäätteenä kiltahuoneella myytäville ruokatuotteille. Palvelun käyttäminen edellyttää luomaan käyttäjän, josta tallennetaan etu- ja sukunimi sekä käyttäjän määrittämä käyttäjänimi. Käyttäjä voi ostaa tuotteita tallettamalla käyttäjätililleen rahaa jä käyttämällä sitä ostoksiin. Talletus tapahtuu tilisiirtona MobilePay-mobiilisovelluksella ([https://mobilepay.fi](https://mobilepay.fi)) tai Stripe-palveluntarjoajan välittämänä mobiilimaksuna ([https://stripe.com/en-fi](https://stripe.com/en-fi)). Ulkoiset palveluntarjoajat käsittelevät maksuihin liittyviä tietoja omien tietosuojaselosteidensa mukaisesti.
 
 Palvelu pitää kirjaa tehdyistä talletuksista, ostoksista, palveluun kirjautumisesta, kirjautuneen käyttäjän laitetyypistä (mobiili, työpöytä tai kiltahuoneen tabletti) sekä talletuksiin käytetystä ulkoisesta palvelusta (Mobilepay tai Stripe). Palvelun ylläpitäjät voivat nähdä edellä mainituista tiedoista aggregoituja tilastoja, joita ei voi yhdistää yksittäisiin käyttäjiin. Käyttäjän osto- ja talletushistoria on näkyvissä vain käyttäjälle itselleen.
+
+**pter.prodeko.org**
+
+Palvelussa jäsenet jättävät hakemuksia killan PTER-rahastosta ja seuraavat, miten rahastoa on käytetty. Prodeko-tunnuksesta tallennetaan nimi, sähköpostiosoite ja kieli. Jokaisesta hakemuksesta tallennetaan otsikko, kuvaus, summa, linkki, väri, yhteyssähköposti ja Telegram-käyttäjätunnus, ja lisäksi kommentit ja äänet. Äänet näkyvät palvelussa vain lukumääränä, mutta tietokantaan tallennetaan, mikä tunnus on äänestänyt, jotta kukaan ei voi äänestää kahdesti. Palvelun lähettämistä sähköposteista (ilmoitus hallitukselle uudesta hakemuksesta ja hakijalle hakemuksen käsittelystä) tallennetaan loki, jossa ovat vastaanottaja, otsikko ja viestin teksti. Tietoja käytetään PTER-hakemusten käsittelyyn ja rahaston käytön esittämiseen.
+
+Jäsenet näkevät hakemukset ja kommentit, ja nimi piilotetaan, jos hakemuksen tai kommentin kirjoittaja on niin valinnut. Yhteystiedot näkee vain hallitus. Yhteystiedot (yhteyssähköposti ja Telegram-käyttäjätunnus) poistetaan kolme kuukautta sen jälkeen, kun hakemus on hyväksytty tai hylätty, poistettu tai piilotettu, ja sähköpostiloki poistetaan kolmen kuukauden kuluttua. Hakemukset, päätökset ja kommentit säilytetään killan tietona siitä, miten rahastoa on käytetty. Sähköpostit lähettää SendGrid, ja palvelu tietokantoineen toimii killan virtuaalipalvelimella Microsoft Azuressa EU:n alueella.
 
 **sikajuhlat.com**
 
