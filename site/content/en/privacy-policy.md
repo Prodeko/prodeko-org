@@ -5,7 +5,7 @@ description: "Prodeko ry's privacy notice on how the guild collects, uses and st
 sourceURL: https://prodeko.org/en/privacy-policy/
 ---
 
-This is the register and privacy notice of Prodeko Ry in accordance with the henkilötietolaki (the Personal Data Act, sections 10 and 24) and the EU General Data Protection Regulation (GDPR). Drawn up 23.05.2018. Last modified 19.09.2026.
+This is the register and privacy notice of Prodeko Ry in accordance with the henkilötietolaki (the Personal Data Act, sections 10 and 24) and the EU General Data Protection Regulation (GDPR). Drawn up 23.05.2018. Last modified 07.10.2026.
 
 This privacy notice describes how Tuotantotalouden Kilta Prodeko ry collects, uses and processes users' personal data. It applies to all of Prodeko's digital services, which are specified in more detail at the end of this document.
 
@@ -99,6 +99,12 @@ The service is intended as a continuously updating information display and its u
 The service acts as a payment terminal for the food products sold in the guild room. Using the service requires creating a user account, about which the first and last name as well as a username determined by the user are stored. The user can buy products by depositing money into their user account and using it for purchases. The deposit is made as a bank transfer with the MobilePay mobile application ([https://mobilepay.fi](https://mobilepay.fi)) or as a mobile payment intermediated by the service provider Stripe ([https://stripe.com/en-fi](https://stripe.com/en-fi)). The external service providers process data relating to payments in accordance with their own privacy notices.
 
 The service keeps a record of the deposits and purchases made, of logins to the service, of the device type of the logged-in user (mobile, desktop or the guild room tablet) and of the external service used for deposits (Mobilepay or Stripe). The maintainers of the service can see aggregated statistics of the above-mentioned data, which cannot be connected to individual users. A user's purchase and deposit history is visible only to the user themselves.
+
+**pter.prodeko.org**
+
+In the service, members submit applications to the guild's PTER fund and follow how the fund has been used. From the Prodeko account, the name, email address and language are stored. For each application, the title, description, amount, link, colour, contact email and Telegram username are stored, as well as comments and the votes on applications and comments. The board's reasons for a decision, any request by the board to the applicant for more information, the reason for hiding, and the actual amount spent are also stored, as is the time the account last signed in. Votes are shown in the service only as a count, but the database stores which account has voted so that nobody can vote twice. Of the emails the service sends (a notice to the board about a new application and notices to the applicant about the handling of the application), a log is kept that holds the recipient, the reply-to address, the subject and the text of the message. The data is used for handling PTER applications and for showing how the fund has been used.
+
+Members see the applications and comments, and the name is hidden if the author of the application or comment has chosen so. Only the board sees the contact details. The contact details (contact email and Telegram username) are erased three months after an application has been approved or rejected, deleted or hidden, and the email log is deleted after three months. Applications, decisions and comments are kept as the guild's record of how the fund has been used. A deleted or hidden application or comment stops being shown, but its content (title, description, comment text) stays in the database; only the contact details are erased. The emails are sent by SendGrid, and the service runs on the guild's virtual server in Microsoft Azure, and its data is stored in the guild's PostgreSQL database service in Microsoft Azure.
 
 **sikajuhlat.com**
 
