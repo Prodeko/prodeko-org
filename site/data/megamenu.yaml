@@ -84,6 +84,8 @@ fi:
       links:
         - label: Viikkotiedote
           url: https://tiedotteet.prodeko.org
+        - label: Vaaliplatta
+          url: https://vaalit.prodeko.org
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
         - label: Kulukorvaukset
@@ -275,6 +277,8 @@ en:
       links:
         - label: Weekly letter
           url: https://tiedotteet.prodeko.org
+        - label: Vaaliplatta
+          url: https://vaalit.prodeko.org
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
         - label: Expense claims
