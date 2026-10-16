@@ -9,11 +9,9 @@ fi:
   title: Ajankohtaista
   items:
     - { label: Prodeko 60, url: "https://juhlavuosi.prodeko.org/fi/home", description: "Prodeko täyttää tänä vuonna 60! Tältä sivulta löydät juhlavuoden tapahtumat tiivistettynä." }
-    - { label: Tervetuloa tutalle!, url: /fi/new-students/welcome-to-prodeko/, description: Fuksikapteenin tervehdys }
-    - { label: Orientaatioviikko 2026, url: /fi/new-students/orientaatio/, description: Aikataulu on julkaistu }
+    - { label: Vaalit 2026, url: "https://vaalit.prodeko.org/", description: "Linkki vaaliplattaan, josta löytyy kaikki ajankohtainen tieto killan vaaleista." }
 en:
   title: News
   items:
     - { label: Prodeko 60, url: "https://juhlavuosi.prodeko.org/en/home", description: "Prodeko turns 60 this year! All the anniversary year's events in one place." }
-    - { label: Welcome to IEM, url: /en/new-students/welcome-to-prodeko/, description: "The fuksi captain's greeting" }
-    - { label: New students, url: /en/new-students/, description: Autumn 2026 dates }
+    - { label: Elections 2026, url: "https://vaalit.prodeko.org/", description: "The election board: all the latest on the guild's elections in one place." }

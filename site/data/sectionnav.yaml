@@ -137,6 +137,7 @@ fi:
       - { label: Galleria, url: "https://gallery.prodeko.org/kuvat/" }
       - { label: Proleko?-arkisto, url: "https://old.prodeko.org/fi/palvelut/proleko/" }
       - { label: Viikkotiedote, url: "https://tiedotteet.prodeko.org" }
+      - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
       - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }
       - { label: Kulukorvaukset, url: "https://prodeko.kululaskut.fi" }
 en:
@@ -238,5 +239,6 @@ en:
       - { label: Gallery, url: "https://gallery.prodeko.org/kuvat/" }
       - { label: Proleko? archive, url: "https://old.prodeko.org/en/services/proleko/" }
       - { label: Weekly letter, url: "https://tiedotteet.prodeko.org" }
+      - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
       - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }
       - { label: Expense claims, url: "https://prodeko.kululaskut.fi" }
