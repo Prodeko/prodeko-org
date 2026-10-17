@@ -88,6 +88,8 @@ fi:
           url: https://vaalit.prodeko.org
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
+        - label: PTER-kilke
+          url: https://pter.prodeko.org/fi
         - label: Kulukorvaukset
           url: https://prodeko.kululaskut.fi
         - label: Galleria
@@ -281,6 +283,8 @@ en:
           url: https://vaalit.prodeko.org
         - label: Ilmokilke 3.0
           url: https://ilmo.prodeko.org
+        - label: PTER-kilke
+          url: https://pter.prodeko.org/en
         - label: Expense claims
           url: https://prodeko.kululaskut.fi
         - label: Gallery
