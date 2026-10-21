@@ -5,6 +5,8 @@ site/public-members/
 site/public-preview/
 site/resources/
 site/.hugo_build.lock
+# Local Hugo builds (hugo --destination build): never commit build output
+build/
 
 .env
 *.local
