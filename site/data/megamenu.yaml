@@ -4,8 +4,9 @@
 # item is a promise, and the menu only makes promises the site keeps. An
 # entry marked members: true names a page of the gated member tree, which
 # the template prints as plain text in a build that carries no such tree. An
-# entry marked signedIn: true is shown to signed-in members only, in the
-# member build, and left out of the public menu altogether.
+# entry marked signedIn: true is shown to signed-in members only: it is in the
+# member build, left out of the public HTML altogether, and added to a public
+# page's menu by js/signed-in.js once the gate says the reader is signed in.
 # Links to ilmo/viikkotiedote/gallery/store/kululaskut reuse the base
 # addresses in data/embeds.yaml.
 fi:
