@@ -80,14 +80,17 @@
                    build leaves it out altogether rather than greying it, since
                    a reader who is not signed in can do nothing with it. The
                    member build marks it data-signed-in, which is where
-                   js/signed-in.js copies it from into a public page. */}}
+                   js/signed-in.js copies it from into a public page. A row
+                   into the member tree carries data-members with its label in
+                   both builds, so the script can swap the public label for the
+                   member build's link without the public HTML naming it. */}}
               {{ if and .signedIn (not site.Params.members) }}{{ continue }}{{ end }}
               {{ if and .members (not site.Params.members) }}
                 {{/* A link into the member tree, in a build that has no member
                      tree. Naming the address here would publish it. */}}
-                <span class="mega-link-disabled">{{ .label }}</span>
+                <span class="mega-link-disabled" data-members="{{ .label }}">{{ .label }}</span>
               {{ else if .url }}
-                <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if .signedIn }} data-signed-in{{ end }}><span>{{ .label }}</span><span aria-hidden="true">→</span></a>
+                <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if .signedIn }} data-signed-in{{ end }}{{ if .members }} data-members="{{ .label }}"{{ end }}><span>{{ .label }}</span><span aria-hidden="true">→</span></a>
               {{ else }}
                 <span class="mega-link-disabled">{{ .label }}</span>
               {{ end }}
@@ -193,9 +196,9 @@
                         {{/* A row into the member tree, in a build that has no
                              member tree. Naming the address here would publish
                              it, so the row stays a label. */}}
-                        <span class="m-members">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</span>
+                        <span class="m-members" data-members="{{ .label }}">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</span>
                       {{ else }}
-                        <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>{{ .label }}</a>
+                        <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}{{ if .members }} data-members="{{ .label }}"{{ end }}>{{ .label }}</a>
                       {{ end }}
                     </li>
                   {{ end }}

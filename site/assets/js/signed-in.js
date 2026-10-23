@@ -60,6 +60,29 @@
     }
   }
 
+  // A row into the member tree is a grey label in the public build, named by
+  // data-members and nothing else, so the page holds no member address. The
+  // member build's header has the same row as a link: the mega menu's for a
+  // mega-menu row, the phone menu's for the others, whose plain link is also
+  // the sidebar's.
+  function upgrade(theirs) {
+    var links = { mega: {}, plain: {} };
+    theirs.querySelectorAll(".mega-panel a[data-members]").forEach(function (a) {
+      links.mega[a.getAttribute("data-members")] = a;
+    });
+    theirs.querySelectorAll("#mobile-nav a[data-members]").forEach(function (a) {
+      links.plain[a.getAttribute("data-members")] = a;
+    });
+    document.querySelectorAll("span[data-members]").forEach(function (span) {
+      var kind = span.classList.contains("mega-link-disabled") ? "mega" : "plain";
+      var link = links[kind][span.getAttribute("data-members")];
+      if (!link) return;
+      var copy = document.importNode(link, true);
+      copy.removeAttribute("aria-current");
+      span.replaceWith(copy);
+    });
+  }
+
   // redirect: "manual" keeps the Keycloak redirect from being followed, so a
   // signed-out reader costs one small response. A login page answered with a
   // 200 has no member menu in it and counts as signed out as well.
@@ -79,6 +102,7 @@
       remember("1");
       merge(header.querySelectorAll(".mega-panel .mega-col"), theirs.querySelectorAll(".mega-panel .mega-col"));
       merge(header.querySelectorAll("#mobile-nav .m-sub"), theirs.querySelectorAll("#mobile-nav .m-sub"));
+      upgrade(theirs);
     })
     .catch(function () {});
 })();
