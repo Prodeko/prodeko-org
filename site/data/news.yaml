@@ -10,8 +10,10 @@ fi:
   items:
     - { label: Prodeko 60, url: "https://juhlavuosi.prodeko.org/fi/home", description: "Prodeko täyttää tänä vuonna 60! Tältä sivulta löydät juhlavuoden tapahtumat tiivistettynä." }
     - { label: Vaalit 2026, url: "https://vaalit.prodeko.org/", description: "Linkki vaaliplattaan, josta löytyy kaikki ajankohtainen tieto killan vaaleista." }
+    - { label: PTER-kilke, url: "https://pter.prodeko.org/fi", description: "Ehdota ideaa PTER-rahalla toteutettavaksi, äänestä muiden ideoita ja katso, mihin rahaa on käytetty." }
 en:
   title: News
   items:
     - { label: Prodeko 60, url: "https://juhlavuosi.prodeko.org/en/home", description: "Prodeko turns 60 this year! All the anniversary year's events in one place." }
     - { label: Elections 2026, url: "https://vaalit.prodeko.org/", description: "The election board: all the latest on the guild's elections in one place." }
+    - { label: PTER-kilke, url: "https://pter.prodeko.org/en", description: "Propose an idea for PTER money, vote on other members' ideas and see what the money has been used for." }
