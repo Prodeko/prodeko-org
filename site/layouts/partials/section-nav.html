@@ -35,8 +35,9 @@
           {{ if and .members (not site.Params.members) }}
             {{/* A page of the member tree, in a build that has no member tree.
                  Naming the address here would publish it, so the row stays a
-                 label. */}}
-            <span class="m-members">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</span>
+                 label. data-members lets js/signed-in.js turn it into the
+                 link for a signed-in reader. */}}
+            <span class="m-members" data-members="{{ .label }}">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</span>
           {{ else }}
             <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if eq .url $page.RelPermalink }} aria-current="page"{{ end }}>{{ .label }}</a>
           {{ end }}
