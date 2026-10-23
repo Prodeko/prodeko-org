@@ -73,6 +73,14 @@
       }
       remember("1");
       upgrade(theirs);
+      // The sign-in button offers a login on a public page. Past the gate it
+      // names where it goes instead, as the member build's own button does.
+      var button = theirs.querySelector("[data-member-button]");
+      if (button) {
+        document.querySelectorAll("[data-member-button]").forEach(function (b) {
+          b.textContent = button.textContent;
+        });
+      }
     })
     .catch(function () {});
 })();

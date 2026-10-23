@@ -8,7 +8,8 @@
      gate's prefix here instead would put the address of the login flow in a
      third place that has to agree with Keycloak. In a build that carries the
      member tree the reader is already past the gate, so the button names where
-     it goes rather than offering a login. */}}
+     it goes rather than offering a login, and js/signed-in.js does the same on
+     a public page once the gate says the reader is signed in. */}}
 {{ $memberHome := cond $isFi "/fi/jasenille/" "/en/members/" }}
 {{ $memberLabel := cond site.Params.members (cond $isFi "Jäsensivut" "Member pages") (cond $isFi "Kirjaudu" "Log in") }}
 <a class="skip-link" href="#main">{{ if $isFi }}Siirry sisältöön{{ else }}Skip to content{{ end }}</a>
@@ -61,7 +62,7 @@
     </ul>
     <div class="side">
       {{ partial "lang-switch.html" . }}
-      <a class="btn btn-primary btn-sm" href="{{ $memberHome }}">{{ $memberLabel }}</a>
+      <a class="btn btn-primary btn-sm" href="{{ $memberHome }}" data-member-button>{{ $memberLabel }}</a>
     </div>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="{{ if $isFi }}Valikko{{ else }}Menu{{ end }}">
       <span></span>
@@ -208,7 +209,7 @@
     </ul>
     <div class="m-bottom">
       {{ partial "lang-switch.html" . }}
-      <a class="btn btn-primary btn-block" href="{{ $memberHome }}">{{ $memberLabel }}</a>
+      <a class="btn btn-primary btn-block" href="{{ $memberHome }}" data-member-button>{{ $memberLabel }}</a>
     </div>
   </nav>
 </header>
