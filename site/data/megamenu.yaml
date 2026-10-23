@@ -93,6 +93,9 @@ fi:
         - label: Galleria
           url: https://gallery.prodeko.org/kuvat/
           signedIn: true
+        - label: Kiltiskamera
+          url: https://kiltiskamera.prodeko.org/
+          signedIn: true
         # The magazine archive still lives on the old site, open to everyone.
         - label: Proleko?-arkisto
           url: https://old.prodeko.org/fi/palvelut/proleko/
@@ -285,6 +288,9 @@ en:
           url: https://prodeko.kululaskut.fi
         - label: Gallery
           url: https://gallery.prodeko.org/kuvat/
+          signedIn: true
+        - label: Kiltiskamera
+          url: https://kiltiskamera.prodeko.org/
           signedIn: true
         - label: Proleko? archive
           url: https://old.prodeko.org/en/services/proleko/

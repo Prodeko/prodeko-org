@@ -125,8 +125,8 @@ fi:
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/ }
       - { label: PTER, url: /fi/jasenille/pter/ }
       # A member who signs in lands here, and the member build is the only one
-      # that may name the gallery, so the guild's services are listed under
-      # the member pages as well.
+      # that may name the gallery and the guild room camera, so the guild's
+      # services are listed under the member pages as well.
       - { heading: Palvelut }
       - { label: Kaikki palvelut, url: /fi/palvelut/ }
       - { label: "Aallon ja AYY:n palvelut", url: /fi/palvelut/aallon-ja-ayyn-palveluita-2/ }
@@ -135,6 +135,7 @@ fi:
       - { label: Tiedotuskanavat, url: /fi/palvelut/tiedotuskanavat/ }
       - { heading: Verkkopalvelut }
       - { label: Galleria, url: "https://gallery.prodeko.org/kuvat/" }
+      - { label: Kiltiskamera, url: "https://kiltiskamera.prodeko.org/" }
       - { label: Proleko?-arkisto, url: "https://old.prodeko.org/fi/palvelut/proleko/" }
       - { label: Viikkotiedote, url: "https://tiedotteet.prodeko.org" }
       - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
@@ -237,6 +238,7 @@ en:
       - { label: Communication channels, url: /en/services/communication-channels/ }
       - { heading: Web services }
       - { label: Gallery, url: "https://gallery.prodeko.org/kuvat/" }
+      - { label: Kiltiskamera, url: "https://kiltiskamera.prodeko.org/" }
       - { label: Proleko? archive, url: "https://old.prodeko.org/en/services/proleko/" }
       - { label: Weekly letter, url: "https://tiedotteet.prodeko.org" }
       - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
