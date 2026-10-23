@@ -1,12 +1,12 @@
-// Links for signed-in members, added to the menus of a public page.
+// Links for signed-in members, in the menus of a public page.
 //
-// The public build leaves an entry marked signedIn out of its HTML altogether,
-// since the public tree may not name those services. A member reading a public
-// page is still signed in, though, so this asks the gate: it fetches the
-// member section's landing page, the same door the sign-in button names. A
-// reader without a session gets a redirect to Keycloak and nothing changes; a
-// member gets the member build of that page, and the rows its menus mark
-// data-signed-in are copied into the same places here.
+// The public build shows a members-only row (a member page, or a service such
+// as the gallery) as a grey label, since the public tree may not name those
+// addresses. A member reading a public page is still signed in, though, so
+// this asks the gate: it fetches the member section's landing page, the same
+// door the sign-in button names. A reader without a session gets a redirect to
+// Keycloak and the labels stay grey; a member gets the member build of that
+// page, whose menus hold the same rows as links.
 //
 // Same idiom as mega-menu.js: an IIFE, var, no modules.
 (function () {
@@ -32,35 +32,7 @@
   var probe = header.getAttribute("data-signed-in-probe");
   if (!probe || recall() === "0") return;
 
-  // Rows are matched by position: both builds render the same menu data, and
-  // the member build differs only by the rows marked data-signed-in. A column
-  // that does not line up, as during a deploy between two versions, is left as
-  // it is rather than guessed at.
-  function merge(ours, theirs) {
-    if (ours.length !== theirs.length) return;
-    for (var i = 0; i < ours.length; i++) {
-      var target = ours[i];
-      var mine = Array.prototype.slice.call(target.children);
-      var rows = Array.prototype.slice.call(theirs[i].children);
-      var extra = rows.filter(function (row) { return row.hasAttribute("data-signed-in"); });
-      if (!extra.length || mine.length + extra.length !== rows.length) continue;
-
-      var prev = null;
-      var j = 0;
-      rows.forEach(function (row) {
-        if (row.hasAttribute("data-signed-in")) {
-          var copy = document.importNode(row, true);
-          if (prev) prev.after(copy);
-          else target.prepend(copy);
-          prev = copy;
-        } else {
-          prev = mine[j++];
-        }
-      });
-    }
-  }
-
-  // A row into the member tree is a grey label in the public build, named by
+  // A members-only row is a grey label in the public build, named by
   // data-members and nothing else, so the page holds no member address. The
   // member build's header has the same row as a link: the mega menu's for a
   // mega-menu row, the phone menu's for the others, whose plain link is also
@@ -95,14 +67,20 @@
     .then(function (html) {
       var doc = html ? new DOMParser().parseFromString(html, "text/html") : null;
       var theirs = doc && doc.getElementById("site-header");
-      if (!theirs || !theirs.querySelector("[data-signed-in]")) {
+      if (!theirs || !theirs.querySelector("a[data-members]")) {
         remember("0");
         return;
       }
       remember("1");
-      merge(header.querySelectorAll(".mega-panel .mega-col"), theirs.querySelectorAll(".mega-panel .mega-col"));
-      merge(header.querySelectorAll("#mobile-nav .m-sub"), theirs.querySelectorAll("#mobile-nav .m-sub"));
       upgrade(theirs);
+      // The sign-in button offers a login on a public page. Past the gate it
+      // names where it goes instead, as the member build's own button does.
+      var button = theirs.querySelector("[data-member-button]");
+      if (button) {
+        document.querySelectorAll("[data-member-button]").forEach(function (b) {
+          b.textContent = button.textContent;
+        });
+      }
     })
     .catch(function () {});
 })();
