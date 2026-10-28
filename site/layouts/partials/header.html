@@ -81,14 +81,18 @@
             <div class="mega-col-links"{{ if .split }} style="--rows: {{ div (add (len .links) 1) 2 }}"{{ end }}>
             {{ range .links }}
               {{/* members: a page of the member tree. signedIn: a service for
-                   signed-in members only. Either is a grey label in the public
-                   build, which may not name the address, so a reader sees it
-                   exists and that signing in opens it. The row carries
-                   data-members with its label in both builds, and
-                   js/signed-in.js swaps the public label for the member
-                   build's link once the gate says the reader is signed in. */}}
+                   signed-in members only. Either is grey in the public build,
+                   which may not name the address, so a reader sees it exists
+                   and that signing in opens it. The row is a door: it points
+                   at the sign-in button's address with the row's label in
+                   ?to=, and once the gate has let the reader in,
+                   js/signed-in.js on the member page follows the member
+                   menu's link of that label. The row carries data-members with
+                   its label in both builds, and js/signed-in.js swaps the
+                   public door for the member build's link once the gate says
+                   the reader is signed in. */}}
               {{ if and (or .members .signedIn) (not site.Params.members) }}
-                <span class="mega-link-disabled" data-members="{{ .label }}">{{ .label }}</span>
+                <a class="mega-link-disabled members-door" href="{{ printf "%s?to=%s" $memberHome (.label | urlquery) | safeURL }}" data-members="{{ .label }}" title="{{ if $isFi }}Kirjaudu sisään{{ else }}Log in{{ end }}"><span>{{ .label }}</span><span aria-hidden="true">→</span></a>
               {{ else if .url }}
                 <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if or .members .signedIn }} data-members="{{ .label }}"{{ end }}><span>{{ .label }}</span><span aria-hidden="true">→</span></a>
               {{ else }}
@@ -195,8 +199,9 @@
                       {{ if and (or .members .signedIn) (not site.Params.members) }}
                         {{/* A row for members, in a build that has no member
                              tree. Naming the address here would publish it, so
-                             the row stays a label. */}}
-                        <span class="m-members" data-members="{{ .label }}">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</span>
+                             the row is a door through sign-in, as in the mega
+                             menu. */}}
+                        <a class="m-members members-door" href="{{ printf "%s?to=%s" $memberHome (.label | urlquery) | safeURL }}" data-members="{{ .label }}">{{ .label }}{{ if $isFi }} (jäsenille){{ else }} (members only){{ end }}</a>
                       {{ else }}
                         <a href="{{ .url }}"{{ partial "link-target.html" .url | safeHTMLAttr }}{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}{{ if or .members .signedIn }} data-members="{{ .label }}"{{ end }}>{{ .label }}</a>
                       {{ end }}

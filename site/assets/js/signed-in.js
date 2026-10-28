@@ -1,8 +1,8 @@
 // Links for signed-in members, in the menus of a public page.
 //
 // The public build shows a members-only row (a member page, or a service such
-// as the gallery) as a grey label, since the public tree may not name those
-// addresses. A member reading a public page is still signed in, though, so
+// as the gallery) greyed out, since the public tree may not name those
+// addresses; in the header the row is a door through the sign-in page. A member reading a public page is still signed in, though, so
 // this asks the gate: it fetches the member section's landing page, the same
 // door the sign-in button names. A reader without a session gets a redirect to
 // Keycloak and the labels stay grey; a member gets the member build of that
@@ -26,14 +26,33 @@
 
   if (header.hasAttribute("data-member-tree")) {
     remember("1");
+    follow();
     return;
+  }
+
+  // A members-only row on a public page is a door: it points at the member
+  // section's landing page with its label in ?to=, so the gate signs the reader
+  // in first. Past the gate, the row of that label in this page's own menu is
+  // where the reader was going. Only a link of this menu is followed, so ?to=
+  // cannot send anyone elsewhere.
+  function follow() {
+    var to;
+    try { to = new URLSearchParams(location.search).get("to"); } catch (e) { return; }
+    if (!to) return;
+    var links = header.querySelectorAll(".mega-panel a[data-members], #mobile-nav a[data-members]");
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute("data-members") === to) {
+        location.replace(links[i].href);
+        return;
+      }
+    }
   }
 
   var probe = header.getAttribute("data-signed-in-probe");
   if (!probe || recall() === "0") return;
 
-  // A members-only row is a grey label in the public build, named by
-  // data-members and nothing else, so the page holds no member address. The
+  // A members-only row is grey in the public build, named by data-members and
+  // pointing only at the sign-in door, so the page holds no member address. The
   // member build's header has the same row as a link: the mega menu's for a
   // mega-menu row, the phone menu's for the others, whose plain link is also
   // the sidebar's.
@@ -45,7 +64,7 @@
     theirs.querySelectorAll("#mobile-nav a[data-members]").forEach(function (a) {
       links.plain[a.getAttribute("data-members")] = a;
     });
-    document.querySelectorAll("span[data-members]").forEach(function (span) {
+    document.querySelectorAll("span[data-members], a.members-door").forEach(function (span) {
       var kind = span.classList.contains("mega-link-disabled") ? "mega" : "plain";
       var link = links[kind][span.getAttribute("data-members")];
       if (!link) return;
