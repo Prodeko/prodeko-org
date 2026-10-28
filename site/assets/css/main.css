@@ -81,6 +81,7 @@ img{display:block;max-width:100%}
 .mega-col a span:last-child{font-size:var(--size-xs);color:var(--pd-blue-light)}
 .mega-col a:hover{color:var(--pd-blue-light);text-decoration:none}
 .mega-col .mega-link-disabled{color:var(--text-muted)}
+.mega-col-split .mega-col-links{display:grid;grid-auto-flow:column;grid-template-rows:repeat(var(--rows),auto);grid-auto-columns:minmax(0,1fr);column-gap:var(--space-10)}
 
 .nav-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;margin-left:auto}
 .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;width:20px;height:2px;background:var(--pd-blue-dark);position:relative}

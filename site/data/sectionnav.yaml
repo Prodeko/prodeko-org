@@ -60,7 +60,7 @@ fi:
       - { label: Palvelut, url: /fi/palvelut/ }
       - { label: "Aallon ja AYY:n palvelut", url: /fi/palvelut/aallon-ja-ayyn-palveluita-2/ }
       - { label: Prodeko-rahasto, url: /fi/palvelut/prodeko-fund/ }
-      - { label: PTER, url: /fi/jasenille/pter/, members: true }
+      - { label: PTER, url: /fi/palvelut/pter/ }
       - { label: Brändi ja materiaalit, url: /fi/palvelut/materiaalit/ }
       - { label: Tiedotuskanavat, url: /fi/palvelut/tiedotuskanavat/ }
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/, members: true }
@@ -123,7 +123,6 @@ fi:
     items:
       - { label: Jäsenille, url: /fi/jasenille/ }
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/ }
-      - { label: PTER, url: /fi/jasenille/pter/ }
       # A member who signs in lands here, and the member build is the only one
       # that may name the gallery and the guild room camera, so the guild's
       # services are listed under the member pages as well.
@@ -140,7 +139,7 @@ fi:
       - { label: Viikkotiedote, url: "https://tiedotteet.prodeko.org" }
       - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
       - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }
-      - { label: PTER-kilke, url: "https://pter.prodeko.org/fi" }
+      - { label: PTER-kilke, url: /fi/palvelut/pter/ }
       - { label: Kulukorvaukset, url: "https://prodeko.kululaskut.fi" }
 en:
   - title: Board and officials
@@ -186,7 +185,7 @@ en:
       - { label: Services, url: /en/services/ }
       - { label: Aalto and AYY services, url: /en/services/aalto-and-ayy-services-3/ }
       - { label: Prodeko Fund, url: /en/services/prodeko-fund/ }
-      - { label: PTER, url: /en/members/pter/, members: true }
+      - { label: PTER, url: /en/services/pter/ }
       - { label: Brand and materials, url: /en/services/materials/ }
       - { label: Communication channels, url: /en/services/communication-channels/ }
       - { label: Meeting minutes, url: /en/members/minutes/, members: true }
@@ -230,7 +229,6 @@ en:
     items:
       - { label: Members, url: /en/members/ }
       - { label: Meeting minutes, url: /en/members/minutes/ }
-      - { label: PTER, url: /en/members/pter/ }
       - { heading: Services }
       - { label: All services, url: /en/services/ }
       - { label: Aalto and AYY services, url: /en/services/aalto-and-ayy-services-3/ }
@@ -244,5 +242,5 @@ en:
       - { label: Weekly letter, url: "https://tiedotteet.prodeko.org" }
       - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
       - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }
-      - { label: PTER-kilke, url: "https://pter.prodeko.org/en" }
+      - { label: PTER-kilke, url: /en/services/pter/ }
       - { label: Expense claims, url: "https://prodeko.kululaskut.fi" }
