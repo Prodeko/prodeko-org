@@ -1,0 +1,14 @@
+{{/* One Prodeko Network logo, sized so that every logo covers the same area.
+
+     A shared height cap makes a wide wordmark like Visma loom over a nearly
+     square mark like UPM, which is left a fraction of its size. Giving each
+     logo the area of a square .side px wide instead keeps them all visually
+     the same weight: a wide logo comes out long and low, a tall one narrow
+     and high. The CSS only ever shrinks one further, to fit its cell.
+
+     Expects a dict: "img" (an image resource), "name", "side" (px). */}}
+{{ $aspect := div (float .img.Width) .img.Height }}
+{{ $area := mul .side .side }}
+<img src="{{ .img.RelPermalink }}" alt="{{ .name }}"
+     width="{{ math.Round (math.Sqrt (mul $area $aspect)) }}"
+     height="{{ math.Round (math.Sqrt (div $area $aspect)) }}" loading="lazy">

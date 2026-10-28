@@ -1,16 +1,15 @@
 {{/* The Prodeko Network logo wall, from data/partners.yaml.
 
      The logo files are small raster exports — 100 to 209 px wide — and no
-     larger original exists, so each one is drawn at half its own pixel size.
-     That is the largest it can be and still be sharp on a 2x screen. */}}
+     larger original exists. At a 48 px side every logo is drawn at about half
+     its own pixel size or less, which keeps it sharp on a 2x screen. */}}
 <ul class="partner-logos">
   {{ range hugo.Data.partners }}
     {{ $partner := . }}
     {{ with resources.Get $partner.logo }}
       <li>
         <a href="{{ $partner.url }}" target="_blank" rel="noopener">
-          <img src="{{ .RelPermalink }}" alt="{{ $partner.name }}"
-               width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" loading="lazy">
+          {{ partial "partner-logo.html" (dict "img" . "name" $partner.name "side" 48) }}
         </a>
       </li>
     {{ end }}
