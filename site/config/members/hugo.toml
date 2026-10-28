@@ -18,6 +18,10 @@ staticDir = []
 enableRobotsTXT = false
 disableKinds = ["taxonomy", "term", "rss", "sitemap"]
 
+# The infoscreen's slides are public and served from the public tree.
+[outputs]
+  home = ["html"]
+
 [params]
   # Lets a template show something only where member pages are reachable, for
   # example a navigation entry pointing into this tree. The public build leaves

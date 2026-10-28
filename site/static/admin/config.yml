@@ -407,6 +407,48 @@ collections:
             widget: object
             fields: *newsFields
 
+  # The slides on the guild room's infoscreen. Like the news links they are a
+  # data file, not pages: they have no address of their own on the site and
+  # are published together as /fi/infoscreen.json, which the screen polls.
+  # Saving here rewrites the whole file, comments included.
+  - name: infoscreen
+    label: "Infoscreen"
+    label_singular: "Infoscreen"
+    description: >-
+      Kiltahuoneen infoscreenin diat. Diat näytetään listan järjestyksessä,
+      ja muutos näkyy ruudulla muutaman minuutin kuluttua julkaisusta.
+    extension: yaml
+    format: yaml
+    files:
+      - name: infoscreen
+        label: "Diat"
+        file: site/data/infoscreen.yaml
+        preview_path: "fi/infoscreen.json"
+        fields:
+          - label: "Diat"
+            name: slides
+            widget: list
+            summary: "{{title}}"
+            fields:
+              - {label: "Otsikko", name: title, widget: string}
+              - label: "Sisältö"
+                name: body
+                widget: markdown
+                required: false
+                buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list]
+                editor_components: []
+              - label: "Kuva"
+                name: image
+                widget: image
+                required: false
+                hint: "Näytetään otsikon alla koko dian levyisenä."
+              - label: "Korosta"
+                name: highlight
+                widget: boolean
+                default: false
+                required: false
+                hint: "Piirtää dian ympärille kehyksen."
+
   - name: member_pages_en
     label: "VAIN JÄSENILLE – Sivut (englanniksi)"
     label_singular: "Jäsensivu"

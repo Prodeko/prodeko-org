@@ -18,6 +18,18 @@ disableKinds = ["taxonomy", "term", "rss"]
   startLevel = 2
   endLevel = 3
 
+# The infoscreen's slides as JSON, from data/infoscreen.yaml. One file per
+# language at /fi/infoscreen.json and /en/infoscreen.json with the same
+# content; the infoscreen reads the Finnish one.
+[outputFormats.infoscreen]
+  mediaType = "application/json"
+  baseName = "infoscreen"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["html", "infoscreen"]
+
 [params]
   # Origin of the self-hosted GoatCounter that counts pageviews:
   # https://analytics.prodeko.org in the published site. Empty here on

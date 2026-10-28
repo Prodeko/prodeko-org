@@ -1,0 +1,17 @@
+{{- /* The infoscreen's slides, from data/infoscreen.yaml. The shape is what
+       github.com/Prodeko/infoscreen expects: description is HTML, image is
+       an absolute URL, id only has to be unique and stable. */ -}}
+{{- $slides := slice -}}
+{{- range $i, $s := hugo.Data.infoscreen.slides -}}
+  {{- $slide := dict
+    "id" (printf "%d-%s" $i (anchorize $s.title))
+    "title" $s.title
+    "description" ($.RenderString (dict "display" "block") ($s.body | default ""))
+    "highlight" ($s.highlight | default false)
+  -}}
+  {{- with $s.image -}}
+    {{- $slide = merge $slide (dict "image" (absURL .)) -}}
+  {{- end -}}
+  {{- $slides = $slides | append $slide -}}
+{{- end -}}
+{{- jsonify (dict "indent" "  ") $slides -}}
