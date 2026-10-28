@@ -58,7 +58,37 @@
     {{ end }}
   {{ end }}
 
+  {{/* A mega-menu column whose hub is this page lists the page's children in
+       the menu's order and under the menu's names, so the hub and the menu
+       read the same. Its links off the site follow as a second list, the
+       menu's second column. Rows for members are left out: a page body may
+       not name a member address, not even a sign-in door, since the public
+       search index is read from it. */}}
   {{ $rows := slice }}
+  {{ $webRows := slice }}
+  {{ range $key, $columns := index hugo.Data.megamenu .Language.Lang }}
+    {{ range $columns }}
+      {{ if eq .hub $page.RelPermalink }}
+        {{ range .links }}
+          {{ if or .members .signedIn (eq .url $page.RelPermalink) }}{{ continue }}{{ end }}
+          {{ if hasPrefix .url "http" }}
+            {{ $webRows = $webRows | append (printf `<li><a href="%s"%s><span class="label"><span class="name">%s</span></span><span class="arrow" aria-hidden="true">→</span></a></li>` .url (partial "link-target.html" .url) .label) }}
+          {{ else }}
+            {{ $link := . }}
+            {{ range $page.Pages }}
+              {{ if eq .RelPermalink $link.url }}
+                {{ $shown = $shown | append .RelPermalink }}
+                {{ $desc := "" }}
+                {{ with .Description }}{{ $desc = . }}{{ else }}{{ $desc = .Summary | plainify | truncate 140 }}{{ end }}
+                {{ $label := printf `<span class="label"><span class="name">%s</span>%s</span>` $link.label (cond (eq $desc "") "" (printf `<span class="desc">%s</span>` $desc)) }}
+                {{ $rows = $rows | append (printf `<li><a href="%s">%s<span class="arrow" aria-hidden="true">→</span></a></li>` .RelPermalink $label) }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
   {{ range .Pages }}
     {{ if not (in $shown .RelPermalink) }}
       {{ $desc := "" }}
@@ -69,6 +99,9 @@
   {{ end }}
   {{ if $rows }}
     {{ $body = $body | append (printf `<ul class="%s">%s</ul>` (cond (.Params.cards | default false) "link-cards" "link-list") (delimit $rows "")) }}
+  {{ end }}
+  {{ if $webRows }}
+    {{ $body = $body | append (printf `<h2>%s</h2><ul class="link-list">%s</ul>` (cond $isFi "Verkkopalvelut" "Web services") (delimit $webRows "")) }}
   {{ end }}
   {{ partial "page-shell.html" (dict "page" . "body" (delimit $body "" | safeHTML)) }}
 {{ end }}
