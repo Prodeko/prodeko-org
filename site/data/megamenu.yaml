@@ -63,10 +63,12 @@ fi:
   # A bar item of its own since it left Kilta. One title over two columns of
   # links: split halves the list, so the pages of this site fill the first
   # column and the guild's web services the second. Keep the two halves the
-  # same length.
+  # same length. hub: the services page lists this column's links too, in
+  # this order and under these names; see layouts/section.html.
   services:
     - title: Palvelut
       split: true
+      hub: /fi/palvelut/
       links:
         - label: Kaikki palvelut
           url: /fi/palvelut/
@@ -261,6 +263,7 @@ en:
   services:
     - title: Services
       split: true
+      hub: /en/services/
       links:
         - label: All services
           url: /en/services/
