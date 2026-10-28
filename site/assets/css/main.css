@@ -128,7 +128,7 @@ img{display:block;max-width:100%}
 .footer-links{list-style:none;margin:0;padding:0;columns:2;column-gap:var(--space-6)}
 .footer-links li{margin-bottom:6px;break-inside:avoid}
 .footer-partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-5) var(--space-6);align-items:center}
-.footer-partners img{max-width:100%;max-height:28px;object-fit:contain}
+.footer-partners img{display:block;max-width:100%;height:auto}
 .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);padding-top:var(--space-4);padding-bottom:var(--space-6);border-top:1px solid var(--border-subtle);color:var(--text-muted);font-size:var(--size-xs)}
 /* The small-print row wraps: five links and a copyright line are wider than a
    phone, and an unwrapped row scrolls the whole document sideways. */
@@ -472,7 +472,7 @@ img{display:block;max-width:100%}
 
 /* Partner logos */
 .partner-logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:var(--space-8) var(--space-10);align-items:center;list-style:none;margin:var(--space-6) 0;padding:0}
-.partner-logos img{display:block;max-width:100%;max-height:44px;object-fit:contain}
+.partner-logos img{display:block;max-width:100%;height:auto}
 /* Both walls are lists, and inside the prose column the generic list rules
    would indent them past the text beside them and add a row of air under
    every cell. The grid is the layout; the list rules give way, as they do for

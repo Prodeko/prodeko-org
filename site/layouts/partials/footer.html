@@ -24,7 +24,7 @@
         {{ range hugo.Data.partners }}
           {{ $partner := . }}
           {{ with resources.Get $partner.logo }}
-            <img src="{{ .RelPermalink }}" alt="{{ $partner.name }}">
+            {{ partial "partner-logo.html" (dict "img" . "name" $partner.name "side" 34) }}
           {{ end }}
         {{ end }}
       </div>
