@@ -17,6 +17,9 @@
   // rather than on every page. Signing in lands on a member page, which resets
   // it, so a stale "no" lasts only until the next login.
   var KEY = "prodeko-signed-in";
+  // Where a reader who clicked a members-only row was going; see follow().
+  var TO = "prodeko-signed-in-to";
+  var TO_MAX_AGE = 10 * 60 * 1000;
   function remember(value) {
     try { sessionStorage.setItem(KEY, value); } catch (e) {}
   }
@@ -32,12 +35,28 @@
 
   // A members-only row on a public page is a door: it points at the member
   // section's landing page with its label in ?to=, so the gate signs the reader
-  // in first. Past the gate, the row of that label in this page's own menu is
-  // where the reader was going. Only a link of this menu is followed, so ?to=
-  // cannot send anyone elsewhere.
+  // in first. The gate sends the reader back without the query string, so the
+  // click also keeps the label for the tab, for ten minutes: long enough to
+  // sign in, short enough that a login abandoned now does not redirect a later
+  // one. Past the gate, the row of that label in this page's own menu is where
+  // the reader was going. Only a link of this menu is followed, so neither
+  // ?to= nor the kept label can send anyone elsewhere.
+  document.addEventListener("click", function (event) {
+    var door = event.target.closest && event.target.closest("a.members-door");
+    if (!door) return;
+    try {
+      sessionStorage.setItem(TO, JSON.stringify({ label: door.getAttribute("data-members"), at: Date.now() }));
+    } catch (e) {}
+  });
+
   function follow() {
-    var to;
-    try { to = new URLSearchParams(location.search).get("to"); } catch (e) { return; }
+    var to = null;
+    try { to = new URLSearchParams(location.search).get("to"); } catch (e) {}
+    try {
+      var kept = JSON.parse(sessionStorage.getItem(TO) || "null");
+      sessionStorage.removeItem(TO);
+      if (!to && kept && Date.now() - kept.at < TO_MAX_AGE) to = kept.label;
+    } catch (e) {}
     if (!to) return;
     var links = header.querySelectorAll(".mega-panel a[data-members], #mobile-nav a[data-members]");
     for (var i = 0; i < links.length; i++) {
