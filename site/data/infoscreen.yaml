@@ -1,0 +1,10 @@
+# The slides on the guild room's infoscreen (github.com/Prodeko/infoscreen),
+# shown in this order. layouts/home.infoscreen.json publishes them at
+# /fi/infoscreen.json, which the infoscreen polls.
+#
+# Each slide is {title, body, image, highlight}. body is Markdown, image an
+# /uploads/ path, highlight draws a frame around the slide.
+slides:
+  - title: Tervetuloa kiltahuoneelle
+    body: Prodekon infoscreen hakee diat prodeko.org:sta.
+    highlight: false
