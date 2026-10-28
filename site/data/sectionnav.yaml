@@ -60,7 +60,7 @@ fi:
       - { label: Palvelut, url: /fi/palvelut/ }
       - { label: "Aallon ja AYY:n palvelut", url: /fi/palvelut/aallon-ja-ayyn-palveluita-2/ }
       - { label: Prodeko-rahasto, url: /fi/palvelut/prodeko-fund/ }
-      - { label: PTER, url: /fi/palvelut/pter/ }
+      - { label: PTER-kilke, url: /fi/palvelut/pter/ }
       - { label: Brändi ja materiaalit, url: /fi/palvelut/materiaalit/ }
       - { label: Tiedotuskanavat, url: /fi/palvelut/tiedotuskanavat/ }
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/, members: true }
@@ -185,7 +185,7 @@ en:
       - { label: Services, url: /en/services/ }
       - { label: Aalto and AYY services, url: /en/services/aalto-and-ayy-services-3/ }
       - { label: Prodeko Fund, url: /en/services/prodeko-fund/ }
-      - { label: PTER, url: /en/services/pter/ }
+      - { label: PTER-kilke, url: /en/services/pter/ }
       - { label: Brand and materials, url: /en/services/materials/ }
       - { label: Communication channels, url: /en/services/communication-channels/ }
       - { label: Meeting minutes, url: /en/members/minutes/, members: true }
