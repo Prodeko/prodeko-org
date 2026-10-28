@@ -74,8 +74,11 @@
       <div class="mega-panel-rainbow"></div>
       <div class="container mega-panel-inner">
         {{ range $columns }}
-          <div class="mega-col">
+          {{/* split: one title over two columns of links, the first half of
+               the list in the first. */}}
+          <div class="mega-col{{ if .split }} mega-col-split{{ end }}">
             <div class="mega-col-title">{{ .title }}</div>
+            <div class="mega-col-links"{{ if .split }} style="--rows: {{ div (add (len .links) 1) 2 }}"{{ end }}>
             {{ range .links }}
               {{/* members: a page of the member tree. signedIn: a service for
                    signed-in members only. Either is a grey label in the public
@@ -92,6 +95,7 @@
                 <span class="mega-link-disabled">{{ .label }}</span>
               {{ end }}
             {{ end }}
+            </div>
           </div>
         {{ end }}
       </div>
