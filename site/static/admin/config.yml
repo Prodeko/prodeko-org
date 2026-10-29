@@ -448,6 +448,17 @@ collections:
                 default: false
                 required: false
                 hint: "Piirtää dian ympärille kehyksen."
+              - label: "Näytä asti"
+                name: until
+                widget: datetime
+                format: "YYYY-MM-DD"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                picker_utc: true
+                required: false
+                hint: >-
+                  Viimeinen päivä jona dia näytetään, esimerkiksi tapahtuman
+                  päivä. Tyhjä: dia näkyy kunnes se poistetaan.
 
   - name: member_pages_en
     label: "VAIN JÄSENILLE – Sivut (englanniksi)"
