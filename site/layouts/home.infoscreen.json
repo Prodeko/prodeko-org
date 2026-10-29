@@ -3,7 +3,8 @@
        an absolute URL, id only has to be unique and stable. until is a
        YYYY-MM-DD date the screen stops showing the slide after; the screen
        filters on it itself, so an expired slide disappears without waiting
-       for the next site build. */ -}}
+       for the next site build. link is an absolute URL the screen shows as
+       a QR code. */ -}}
 {{- $slides := slice -}}
 {{- range $i, $s := hugo.Data.infoscreen.slides -}}
   {{- $slide := dict
@@ -14,6 +15,9 @@
   -}}
   {{- with $s.image -}}
     {{- $slide = merge $slide (dict "image" (absURL .)) -}}
+  {{- end -}}
+  {{- with $s.link -}}
+    {{- $slide = merge $slide (dict "link" .) -}}
   {{- end -}}
   {{- with $s.until -}}
     {{- $slide = merge $slide (dict "until" (time.Format "2006-01-02" (time.AsTime .))) -}}

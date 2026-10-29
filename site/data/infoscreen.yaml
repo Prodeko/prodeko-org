@@ -2,9 +2,10 @@
 # shown in this order. layouts/home.infoscreen.json publishes them at
 # /fi/infoscreen.json, which the infoscreen polls.
 #
-# Each slide is {title, body, image, highlight, until}. body is Markdown,
-# image an /uploads/ path, highlight draws a frame around the slide, and the
-# optional until (YYYY-MM-DD) is the last day the slide is shown.
+# Each slide is {title, body, image, highlight, link, until}. body is
+# Markdown, image an /uploads/ path, highlight draws a frame around the slide,
+# the optional link (a full URL) is shown as a QR code, and the optional until
+# (YYYY-MM-DD) is the last day the slide is shown.
 slides:
   - title: Tervetuloa kiltahuoneelle
     body: Prodekon infoscreen hakee diat prodeko.org:sta.
