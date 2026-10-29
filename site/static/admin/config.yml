@@ -465,6 +465,23 @@ collections:
                 hint: >-
                   Viimeinen päivä jona dia näytetään, esimerkiksi tapahtuman
                   päivä. Tyhjä: dia näkyy kunnes se poistetaan.
+          - label: "Laskurit"
+            name: countdowns
+            widget: list
+            required: false
+            summary: "{{title}} – {{at}}"
+            hint: >-
+              Infoscreenin sivupalkin laskuri seuraavaan isoon tapahtumaan.
+              Ruudulla näkyy lähin tuleva; mennyt laskuri katoaa itsestään.
+            fields:
+              - {label: "Tapahtuma", name: title, widget: string}
+              - label: "Alkaa"
+                name: at
+                widget: datetime
+                format: "YYYY-MM-DDTHH:mm:ss"
+                date_format: "D.M.YYYY"
+                time_format: "HH:mm"
+                hint: "Suomen aikaa."
 
   - name: member_pages_en
     label: "VAIN JÄSENILLE – Sivut (englanniksi)"
