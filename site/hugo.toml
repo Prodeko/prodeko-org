@@ -27,8 +27,17 @@ disableKinds = ["taxonomy", "term", "rss"]
   isPlainText = true
   notAlternative = true
 
+# The countdowns in the infoscreen's sidebar, from the same file, at
+# /fi/infoscreen-countdowns.json. A file of their own, because the screen
+# reads infoscreen.json as a plain list of slides.
+[outputFormats.infoscreencountdowns]
+  mediaType = "application/json"
+  baseName = "infoscreen-countdowns"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
-  home = ["html", "infoscreen"]
+  home = ["html", "infoscreen", "infoscreencountdowns"]
 
 [params]
   # Origin of the self-hosted GoatCounter that counts pageviews:

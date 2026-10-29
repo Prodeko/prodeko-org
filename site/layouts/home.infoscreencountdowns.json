@@ -1,0 +1,13 @@
+{{- /* The countdowns in the infoscreen's sidebar, from the countdowns list in
+       data/infoscreen.yaml. The shape is what github.com/Prodeko/infoscreen
+       expects: title, and at as an RFC 3339 time in Finnish time. The screen
+       shows the nearest one still ahead, so a past entry needs no removing. */ -}}
+{{- $countdowns := slice -}}
+{{- range hugo.Data.infoscreen.countdowns -}}
+  {{- $at := time.AsTime .at "Europe/Helsinki" -}}
+  {{- $countdowns = $countdowns | append (dict
+    "title" .title
+    "at" ($at.Format "2006-01-02T15:04:05Z07:00")
+  ) -}}
+{{- end -}}
+{{- jsonify (dict "indent" "  ") $countdowns -}}

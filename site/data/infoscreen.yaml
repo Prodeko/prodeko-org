@@ -6,7 +6,14 @@
 # Markdown, image an /uploads/ path, highlight draws a frame around the slide,
 # the optional link (a full URL) is shown as a QR code, and the optional until
 # (YYYY-MM-DD) is the last day the slide is shown.
+#
+# countdowns are the sidebar's countdowns, each {title, at}; at is a date and
+# time in Finnish time. layouts/home.infoscreencountdowns.json publishes them
+# at /fi/infoscreen-countdowns.json. The screen shows the nearest one ahead.
 slides:
   - title: Tervetuloa kiltahuoneelle
     body: Prodekon infoscreen hakee diat prodeko.org:sta.
     highlight: false
+countdowns:
+  - title: Halloweensitsit
+    at: 2026-10-30T18:00:00

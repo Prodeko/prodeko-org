@@ -18,7 +18,8 @@ staticDir = []
 enableRobotsTXT = false
 disableKinds = ["taxonomy", "term", "rss", "sitemap"]
 
-# The infoscreen's slides are public and served from the public tree.
+# The infoscreen's slides and countdowns are public and served from the
+# public tree.
 [outputs]
   home = ["html"]
 
