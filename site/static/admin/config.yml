@@ -448,6 +448,12 @@ collections:
                 default: false
                 required: false
                 hint: "Piirtää dian ympärille kehyksen."
+              - label: "Linkki"
+                name: link
+                widget: string
+                required: false
+                pattern: ['^https?://', "Koko osoite, esimerkiksi https://ilmo.prodeko.org/..."]
+                hint: "Näytetään dian kulmassa QR-koodina, josta pääsee sivulle puhelimella."
               - label: "Näytä asti"
                 name: until
                 widget: datetime
