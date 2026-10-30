@@ -32,6 +32,6 @@ Jäsenyys maksaa 8 euroa. Jäsenenä sinut lisätään myös automaattisesti tie
 
 Lomakeen kautta pystyy maksamaan suoraan pankkikortilla. Jos välttämättä haluat maksaa tilisiirrolla tai käteisellä tai maksun kanssa on jotain ongelmia, ole yhteydessä mediakeisari@prodeko.org.
 
-Liittyessäsi jäseneksi hyväksyt jäsenrekisterin [rekisteriselosteen](https://static.prodeko.org/media/public/2024/03/26/rekisteriseloste.pdf)
+Liittyessäsi jäseneksi hyväksyt jäsenrekisterin [rekisteriselosteen](/uploads/dokumentit/rekisteriseloste.pdf)
 
 Lämpimästi tervetuloa prodekolaiseksi!
