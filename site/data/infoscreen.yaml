@@ -10,10 +10,10 @@
 # countdowns are the sidebar's countdowns, each {title, at}; at is a date and
 # time in Finnish time. layouts/home.infoscreencountdowns.json publishes them
 # at /fi/infoscreen-countdowns.json. The screen shows the nearest one ahead.
-slides:
-  - title: Tervetuloa kiltahuoneelle
-    body: Prodekon infoscreen hakee diat prodeko.org:sta.
-    highlight: false
+slides: []
+  # - title: Tervetuloa kiltahuoneelle
+  #   body: Prodekon infoscreen hakee diat prodeko.org:sta.
+  #   highlight: false
 countdowns:
   - title: Vaalikokous 2
     at: 2026-11-09T16:30:00
