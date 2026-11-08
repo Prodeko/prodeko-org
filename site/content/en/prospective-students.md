@@ -1,14 +1,17 @@
 ---
 title: Prospective students
 translationKey: abit
-description: How to apply to Industrial Engineering and Management at Aalto, and what student life and the first year look like.
+description: How to apply to Industrial Engineering and Management at Aalto, and
+  what student life and the first year look like.
 photo:
   src: images/pages/page-prospective-crop.png
   alt: First-year IEM students
 aside:
   - title: Ask a student
-    text: |
-      To ask a current student about studies or student life, email the prospective-student team.
+    text: >
+      To ask a current student about studies or student life, email the
+      prospective-student team.
+
 
       [abivastaava@prodeko.org](mailto:abivastaava@prodeko.org)
 ---
@@ -38,8 +41,8 @@ Graduates work as consultants, product managers, analysts and founders. About ha
 
 ## How to apply
 
-1. **Joint application in March.** Apply at Studyinfo. IEM is its own study option.
-2. **Certificate or entrance exam.** About half are admitted on the matriculation certificate, half on the DIA entrance exam in May–June.
+1. **Joint application 9–23 March 2027.** Apply at Studyinfo; the application period closes at 15:00 on the last day. IEM is its own study option.
+2. **Certificate or entrance exam.** About 80 % of places are filled on the matriculation certificate and 20 % through university entrance exam A on 7 June 2027.
 3. **Results in July.** Accept your place at Studyinfo and register as attending.
 4. **Orientation in August.** The fuksi captains get in touch over the summer. The first week is full of programme.
 
