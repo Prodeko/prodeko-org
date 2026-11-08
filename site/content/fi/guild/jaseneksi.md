@@ -1,13 +1,15 @@
 ---
 title: Killan jäseneksi
-description: Ketkä voivat liittyä Prodekon jäseniksi, miten jäsenhakemus tehdään ja mitä jäsenyys maksaa.
+description: Ketkä voivat liittyä Prodekon jäseniksi, miten jäsenhakemus tehdään
+  ja mitä jäsenyys maksaa.
 translationKey: guild-jaseneksi
+owner: webbitiimi
 photo:
   src: images/pages/page-guild-crop.png
   alt: Kiltalaisia TUAS-talon portailla
 sourceURL: https://prodeko.org/fi/guild/jaseneksi/
+reviewed: 2026-11-08
 ---
-
 Prodekon jäsenet voimassa olevien [killan sääntöjen](/fi/guild/guild-rules/rules/) (luku II) puitteissa Prodekon jäseniksi voivat liittyä seuraavat henkilöt:
 
 ## Varsinaiset jäsenet
@@ -16,7 +18,7 @@ Killan varsinaisiksi jäseniksi voidaan hyväksyä jäsenmaksunsa maksaneet Aalt
 
 ## Alumni
 
-Prodekon Alumni ry on yhdistys, joka on suunnattu Aallon tuotantotalouden linjan alumneille. Yhdistys ylläpitää alumniverkostoa ja järjestää jäsenistölleen tapahtumia. Yhdistyksellä ei ole jäsenmaksua ja kaikki valmistuneet tuotantotalouden opiskelijat liitetään yhdistyksen jäseniksi automaattisesti. Lisätietoa saa alumniyhdistyksen hallitukselta [alumni@prodeko.org](mailto:alumni@prodeko.org). Lue lisää [näiltä sivuilta](/fi/alumni/) ja [tämän linkin](https://alumni.prodeko.org/) takaa. **Alumnin jäseneksi voi hakea laittamalla alumnikoordinaattori Akseli Köngäkselle sähköpostia (akseli.kongas@aalto.fi).**
+Prodekon Alumni ry on yhdistys, joka on suunnattu Aallon tuotantotalouden linjan alumneille. Yhdistys ylläpitää alumniverkostoa ja järjestää jäsenistölleen tapahtumia. Yhdistyksellä ei ole jäsenmaksua ja kaikki valmistuneet tuotantotalouden opiskelijat liitetään yhdistyksen jäseniksi automaattisesti. Lisätietoa saa alumniyhdistyksen hallitukselta [alumni@prodeko.org](mailto:alumni@prodeko.org). Lue lisää [näiltä sivuilta](/fi/alumni/) ja [tämän linkin](https://alumni.prodeko.org/) takaa. **Alumnin jäseneksi voi hakea laittamalla alumnikoordinaattori Joonas Heinoselle sähköpostia (joonas.o.heinonen@aalto.fi).**
 
 ## Muut jäsenet
 
