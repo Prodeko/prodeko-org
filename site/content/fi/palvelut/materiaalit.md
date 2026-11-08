@@ -1,11 +1,16 @@
 ---
 title: Brändi ja materiaalit
 translationKey: palvelut-materiaalit
-description: Prodekon brändiohje, logot, kalvopohjat ja abimateriaalit sekä lomake lukiovierailun pyytämiseen.
+description: Prodekon brändiohje, logot, kalvopohjat ja abimateriaalit sekä
+  lomake lukiovierailun pyytämiseen.
+reviewed: 2026-11-08
+owner: webbitiimi
 aside:
   - title: Kysyttävää brändistä?
-    text: |
-      Brändiin ja visuaaliseen ilmeeseen liittyvissä asioissa auttaa mediakeisari.
+    text: >
+      Brändiin ja visuaaliseen ilmeeseen liittyvissä asioissa auttaa
+      mediakeisari.
+
 
       [mediakeisari@prodeko.org](mailto:mediakeisari@prodeko.org)
 ---
@@ -19,6 +24,8 @@ Täältä löydät Prodekon brändiohjeen ja materiaalit, joilla kilta esitellä
 [Killan logot, LinkedIn-taustat, taustaelementit, kalvopohjat ja muut materiaalit (Google Drive)](https://drive.google.com/drive/folders/1BAXDkRnlMFLdE1UII8D5QLjEc1yG0_N4?usp=sharing)
 
 ## Abimateriaalit
+
+[Prodekon abidiat 2026, verkkoversio (PDF)](/uploads/abidiat-2026.pdf)
 
 [Prodekon abikalvot 2024–2025 (PowerPoint)](https://static.prodeko.org/media/public/2024/10/27/prodeko_abikalvot_2024-2025_e9c35t1.pptx)
 
