@@ -1,13 +1,13 @@
 ---
+cards: true
 title: Guild
-description: How the student-run guild works — its board, official positions, guild meetings, guild room and official documents.
 translationKey: guild
+reviewed: 2026-11-08
+owner: hallitus
 photo:
   src: images/pages/wappu-group-kaivopuisto.jpg
   alt: Prodeko members at Kaivopuisto on wappu
   position: bottom
-hero: true
-cards: true
 aside:
   - title: Guild room
     text: TUAS building, Maarintie 8, 02150 Espoo.
@@ -18,8 +18,10 @@ aside:
       TUAS-talo, Maarintie 8, 02150 Espoo
 
       [hallitus@prodeko.org](mailto:hallitus@prodeko.org)
+hero: true
+description: How the student-run guild works — its board, official positions,
+  guild meetings, guild room and official documents.
 ---
-
 Prodeko was founded in 1966 as a subsection of the Mechanical Engineers' Guild
 at what was then Helsinki University of Technology, for the students majoring
 in industrial engineering and management. In 1989 Prodeko became a guild of its
@@ -33,13 +35,13 @@ The board is elected each autumn at the electoral assembly and runs the guild fo
 <dl class="def-list">
   <div class="row"><dt>President</dt><dd>Coordinates the guild and represents it in AYY, the alumni and the advisory council.</dd></div>
   <div class="row"><dt>Vice President</dt><dd>Supports the President; the seminar, harassment contact persons and officials' wellbeing.</dd></div>
-  <div class="row"><dt>Minister of Excursions</dt><dd>Excursions, longer excursion trips and the corporate relations team.</dd></div>
+  <div class="row"><dt>Master of Excursions</dt><dd>Coordinates excursions in Finland and abroad and leads the corporate relations team.</dd></div>
   <div class="row"><dt>Captain of Freshmen Education</dt><dd>Introducing freshmen to the guild, freshman events and tutor operations.</dd></div>
   <div class="row"><dt>Captain of Master and International Students</dt><dd>Master's freshmen, exchange students and advocacy for international students.</dd></div>
   <div class="row"><dt>Minister of Media and Information Technology</dt><dd>Communications, the Prodeko brand, the member register and board minutes.</dd></div>
   <div class="row"><dt>Minister of Studies</dt><dd>Advocacy, contact with university governance and the study division.</dd></div>
   <div class="row"><dt>Treasurer</dt><dd>Bookkeeping, the budget, the financial statement and investments.</dd></div>
-  <div class="row"><dt>Minister of Corporate Relations</dt><dd>The Prodeko Network, corporate contracts and the corporate relations team.</dd></div>
+  <div class="row"><dt>Head of Corporate Relations</dt><dd>Responsible for the Prodeko Network, corporate contracts and leading the corporate relations team.</dd></div>
   <div class="row"><dt>Minister of Internal and Cultural Affairs</dt><dd>Guild events, traditions and the culture division.</dd></div>
   <div class="row"><dt>Host</dt><dd>Events, the annual ball, the warehouse, keys and room reservations.</dd></div>
   <div class="row"><dt>Minister of Foreign Affairs</dt><dd>International cooperation, ESTIEM and the external relations division.</dd></div>
