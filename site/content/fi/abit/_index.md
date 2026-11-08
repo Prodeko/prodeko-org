@@ -2,14 +2,17 @@
 title: Abeille
 cards: true
 translationKey: abit
-description: Abiturientille tietoa tuotantotalouden opinnoista, hakemisesta ja opiskelijaelämästä Aallossa.
+description: Abiturientille tietoa tuotantotalouden opinnoista, hakemisesta ja
+  opiskelijaelämästä Aallossa.
 photo:
   src: images/pages/page-prospective-crop.png
   alt: Tutafukseja
 aside:
   - title: Abivastaavat
-    text: |
-      Jos haluat kysyä opinnoista tai opiskelijaelämästä suoraan opiskelijalta, tavoitat abivastaavat sähköpostilla.
+    text: >
+      Jos haluat kysyä opinnoista tai opiskelijaelämästä suoraan opiskelijalta,
+      tavoitat abivastaavat sähköpostilla.
+
 
       [abivastaava@prodeko.org](mailto:abivastaava@prodeko.org)
 ---
@@ -26,7 +29,9 @@ viikoittaisesta urheilusta erilaisiin lajikokeiluihin.
   <figcaption>Katso, millaista on opiskella tutaa Aallossa ja olla prodekolainen.</figcaption>
 </figure>
 
+<!-- ABIPÄIVÄ-NOSTO piilotettu 8.11.2026, koska abipäivä on ohi. Syksyllä 2027: päivitä päivämäärä ja linkki ja poista tämän kommentin alku- ja loppumerkit.
 **Abipäivä pe 6.11.2026!** Prodeko ja Athene järjestävät Otaniemessä abipäivän, jonka jatkoksi täysi-ikäisille on abisitsit. [Lue lisää ja ilmoittaudu →](/fi/abipaiva-2026/)
+-->
 
 Tutustu myös [Prodekon abimentorointiin](/fi/abit/abimentorointi/), lue
 [nykyisten opiskelijoiden polkuja tutalle](/fi/abit/opiskelijoiden-polkuja-tutalle/)
@@ -40,11 +45,11 @@ Tuotantotalous yhdistää tekniikkaa, liiketoimintaa ja johtamista. Aallossa pai
 
 Monilla kursseilla tehdään yritysprojekteja jo opintojen alkuvaiheessa. Kursseja käydään sekä suomeksi että englanniksi, ja opintojen edetessä englannin määrä kasvaa. Valmistuneet päätyvät esimerkiksi liikkeenjohdon konsultointiin, tuote- ja liiketoiminnan kehitykseen, kasvuyritysten johtoon, analytiikkaan ja rahoitukseen sekä yrittäjiksi.
 
-## Hakeminen 2026
+## Hakeminen 2027
 
-1. **Hakuaika 10.3.–24.3.2026.** Hae Opintopolussa. Ajantasaiset tiedot kannattaa aina tarkistaa Aallon virallisilta sivuilta.
+1. **Hakuaika 9.3.–23.3.2027.** Hae Opintopolussa, hakuaika päättyy klo 15. Ajantasaiset tiedot kannattaa aina tarkistaa Aallon virallisilta sivuilta.
 2. **Todistusvalinta.** Pisteet lasketaan enintään viidestä aineesta: matematiikka, äidinkieli, fysiikka tai kemia sekä kaksi muuta. Kynnysehtona pitkä matematiikka sekä fysiikka tai kemia, ainakin yksi vähintään arvosanalla C.
-3. **Valintakoe A ma 1.6.2026 klo 10.** Digitaalinen tekniikan alan valintakoe. Helsingissä koe järjestetään Messukeskuksessa, ei Aallon kampuksella.
+3. **Valintakoe A ma 7.6.2027 klo 9.** Digitaalinen tekniikan alan valintakoe, joka tehdään omalla kannettavalla tietokoneella. Koepaikkakunnan valitset Opintopolun hakulomakkeella.
 4. **Orientaatioviikko elokuussa.** Fuksikapteenit ovat yhteydessä jo kesällä. Jäsenmaksun voi maksaa orientaatioviikolla.
 
 ## Opiskelijaelämän ABC
@@ -81,7 +86,7 @@ Viikoittaista urheilua ja erilaisia lajikokeiluja. Killalla on oma kuntosali.
 </details>
 <details class="faq-item">
   <summary>Mistä saan pääsykoemateriaaleja?</summary>
-  <p class="answer">Prodekon abidiat ja tärkeimmät linkit hakemiseen löytyvät abisivuilta. Aallon valintakoesivu ja Opintopolku ovat viralliset lähteet.</p>
+  <p class="answer"><a href="/uploads/abidiat-2026.pdf">Prodekon abidiat (PDF)</a> ja tärkeimmät linkit hakemiseen löytyvät abisivuilta. Aallon valintakoesivu ja Opintopolku ovat viralliset lähteet.</p>
 </details>
 <details class="faq-item">
   <summary>Entä jos en pääse ensimmäisellä kerralla?</summary>
