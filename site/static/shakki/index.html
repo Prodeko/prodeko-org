@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Chess Clock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #111; --paper: #fbfaf6; --low: #d63a2c; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; height: 100%; background: var(--paper); color: var(--ink);
+    font-family: "Outfit", system-ui, sans-serif; overflow: hidden;
+    user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+  .app { display: flex; flex-direction: column; height: 100%; }
+  .side { flex: 1; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; position: relative; overflow: hidden; background: var(--paper); }
+  .side.top { transform: rotate(180deg); }
+  .side svg.pattern { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .side .fade { position: absolute; inset: 0; background: var(--paper); opacity: .55; z-index: 1; transition: opacity .2s; pointer-events: none; }
+  .side.active .fade { opacity: 0; }
+  .face { position: relative; z-index: 2; background: var(--paper); border: 5px solid var(--ink); border-radius: 999px;
+    padding: 18px 44px 16px; text-align: center; box-shadow: 8px 8px 0 var(--ink); transition: background .15s, color .15s, transform .1s; }
+  .side.active .face { background: var(--ink); color: var(--paper); box-shadow: 8px 8px 0 rgba(0,0,0,.25); }
+  .side:active .face { transform: translate(2px, 2px); }
+  .time { font-family: "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums;
+    font-size: clamp(36px, 11vw, 130px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .time .ms { font-size: .55em; }
+  .meta { margin-top: 10px; font-size: clamp(12px, 2.2vw, 17px); font-weight: 500; display: flex; gap: 18px; justify-content: center; }
+  .label { font-size: 13px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 6px; }
+  .side.low .time { color: var(--low); }
+  .side.flag .face { background: var(--low); color: #fff; border-color: var(--ink); }
+  .side.done .fade { opacity: .7; }
+  .bar { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px;
+    background: var(--paper); border-top: 5px solid var(--ink); border-bottom: 5px solid var(--ink); position: relative; z-index: 3; }
+  .bar button, .panel .actions button, .presets button { font-family: inherit; background: var(--paper); color: var(--ink);
+    border: 3px solid var(--ink); border-radius: 999px; padding: 8px 18px; font-size: 15px; font-weight: 700; cursor: pointer; }
+  .bar button { min-width: 100px; }
+  .bar button:hover, .presets button:hover { background: #ecebe4; }
+  .bar button.primary, .panel .actions button.primary { background: var(--ink); color: var(--paper); }
+  .bar button:disabled { opacity: .4; cursor: default; }
+  #banner { text-align: center; font-size: 14px; font-weight: 700; background: var(--paper); position: relative; z-index: 3; }
+  .overlay { position: fixed; inset: 0; background: rgba(17,17,17,.55); display: none; align-items: center; justify-content: center; z-index: 10; }
+  .overlay.open { display: flex; }
+  .panel { background: var(--paper); border: 5px solid var(--ink); border-radius: 28px; box-shadow: 10px 10px 0 var(--ink);
+    padding: 24px; width: min(430px, 92vw); max-height: 92vh; overflow: auto; }
+  .panel h2 { margin: 0 0 16px; font-size: 24px; font-weight: 700; }
+  .row { margin-bottom: 14px; }
+  .row label { display: block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+  .inputs { display: flex; gap: 8px; align-items: center; }
+  .inputs input, .inputs select { font-family: inherit; background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 12px;
+    padding: 8px 10px; font-size: 16px; width: 100%; }
+  .inputs span { font-size: 13px; font-weight: 500; }
+  .hint, .keys { font-size: 13px; color: #444; margin-top: 6px; line-height: 1.5; }
+  .presets { display: flex; flex-wrap: wrap; gap: 6px; }
+  .presets button { padding: 5px 12px; font-size: 13px; border-width: 2px; }
+  .panel .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px; }
+  @media (max-height: 560px) { .face { padding: 8px 26px; } .label { margin-bottom: 2px; } .meta { margin-top: 4px; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="side top" id="side0" data-p="0">
+    <svg class="pattern" id="pat0" preserveAspectRatio="xMidYMid slice"></svg><div class="fade"></div>
+    <div class="face">
+    <div class="label">Player 1</div>
+    <div class="time" id="time0">0:10.<span class="ms">000</span></div>
+    <div class="meta"><span id="moves0">Presses: 0</span><span id="left0"></span></div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <button id="pauseBtn">Pause</button>
+    <button id="resetBtn">Reset</button>
+    <button id="settingsBtn" class="primary">Settings</button>
+  </div>
+  <div id="banner"></div>
+
+  <div class="side" id="side1" data-p="1">
+    <svg class="pattern" id="pat1" preserveAspectRatio="xMidYMid slice"></svg><div class="fade"></div>
+    <div class="face">
+    <div class="label">Player 2</div>
+    <div class="time" id="time1">0:10.<span class="ms">000</span></div>
+    <div class="meta"><span id="moves1">Presses: 0</span><span id="left1"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="settings">
+  <div class="panel">
+    <h2>Clock settings</h2>
+
+    <div class="row">
+      <label>Quick presets</label>
+      <div class="presets">
+        <button data-m="1" data-s="0" data-i="0">1+0</button>
+        <button data-m="3" data-s="0" data-i="2">3+2</button>
+        <button data-m="5" data-s="0" data-i="0">5+0</button>
+        <button data-m="10" data-s="0" data-i="0">10+0</button>
+        <button data-m="15" data-s="0" data-i="10">15+10</button>
+        <button data-m="0" data-s="30" data-i="0">30 s</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Time per player</label>
+      <div class="inputs">
+        <input type="number" id="setMin" min="0" max="600" value="0"><span>min</span>
+        <input type="number" id="setSec" min="0" max="59" value="10"><span>sec</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Increment per press</label>
+      <div class="inputs">
+        <input type="number" id="setInc" min="0" max="600" step="0.1" value="0"><span>sec</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Stop limit (number of clock presses)</label>
+      <div class="inputs">
+        <input type="number" id="setLimit" min="0" max="9999" value="3">
+        <select id="setLimitMode">
+          <option value="each">each player</option>
+          <option value="total">both combined</option>
+        </select>
+      </div>
+      <div class="hint">When the limit is reached, both clocks stop. 0 = no limit.</div>
+    </div>
+
+    <div class="keys">
+      Tap your side to end your turn. Keyboard: <b>Space</b> = press the running clock,
+      <b>A</b> / <b>L</b> = player 1 / player 2, <b>P</b> = pause.
+    </div>
+
+    <div class="actions">
+      <button id="cancelSettings">Cancel</button>
+      <button id="applySettings" class="primary">Apply &amp; reset</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+
+  // ---- Settings (remembered in this browser if storage is available) ----
+  let cfg = { min: 0, sec: 10, inc: 0, limit: 3, limitMode: 'each' };
+  try {
+    const saved = JSON.parse(localStorage.getItem('chessClockCfg2') || 'null');
+    if (saved) cfg = Object.assign(cfg, saved);
+  } catch (e) {}
+
+  // ---- State ----
+  let times, presses, active, paused, finished, lastNow, reason;
+
+  function baseMs() { return (Number(cfg.min) * 60 + Number(cfg.sec)) * 1000; }
+
+  function reset() {
+    times = [baseMs(), baseMs()];
+    presses = [0, 0];
+    active = -1;          // -1 = not started
+    paused = false;
+    finished = false;
+    reason = '';
+    lastNow = performance.now();
+    render();
+  }
+
+  function fmt(ms) {
+    if (ms < 0) ms = 0;
+    const total = Math.floor(ms);
+    const msPart = total % 1000;
+    const s = Math.floor(total / 1000) % 60;
+    const m = Math.floor(total / 60000) % 60;
+    const h = Math.floor(total / 3600000);
+    const ss = String(s).padStart(2, '0');
+    const mmm = String(msPart).padStart(3, '0');
+    const head = h > 0 ? `${h}:${String(m).padStart(2, '0')}:${ss}` : `${m}:${ss}`;
+    return `${head}.<span class="ms">${mmm}</span>`;
+  }
+
+  function limitInfo(p) {
+    const lim = Number(cfg.limit);
+    if (!lim) return '';
+    if (cfg.limitMode === 'total') {
+      return `Left (both): ${Math.max(0, lim - presses[0] - presses[1])}`;
+    }
+    return `Left: ${Math.max(0, lim - presses[p])}`;
+  }
+
+  function limitReached() {
+    const lim = Number(cfg.limit);
+    if (!lim) return false;
+    if (cfg.limitMode === 'total') return presses[0] + presses[1] >= lim;
+    return presses[0] >= lim && presses[1] >= lim;
+  }
+
+  // A player presses their side: ends their turn, starts the opponent's clock.
+  function press(p) {
+    if (finished) return;
+    if (paused) { resume(); return; }
+    if (active === -1) {
+      // First press starts the other player's clock (not counted toward the limit).
+      active = 1 - p;
+      lastNow = performance.now();
+      render();
+      return;
+    }
+    if (p !== active) return;      // can only stop your own running clock
+    tick();                        // settle time up to this exact moment
+    if (finished) return;
+    presses[p]++;
+    times[p] += Number(cfg.inc) * 1000;
+    if (limitReached()) {
+      finished = true;
+      reason = 'Press limit reached: clocks stopped';
+      active = -1;
+      render();
+      return;
+    }
+    active = 1 - p;
+    render();
+  }
+
+  function tick() {
+    const now = performance.now();
+    if (active !== -1 && !paused && !finished) {
+      times[active] -= (now - lastNow);
+      if (times[active] <= 0) {
+        times[active] = 0;
+        finished = true;
+        reason = `Player ${active + 1} ran out of time`;
+        render(active);
+        active = -1;
+      }
+    }
+    lastNow = now;
+  }
+
+  function pause() {
+    if (finished || active === -1 || paused) return;
+    tick();
+    paused = true;
+    render();
+  }
+  function resume() {
+    if (!paused) return;
+    paused = false;
+    lastNow = performance.now();
+    render();
+  }
+
+  let flagged = -1;
+  function render(flagPlayer) {
+    if (flagPlayer !== undefined) flagged = flagPlayer;
+    if (!finished) flagged = -1;
+    for (const p of [0, 1]) {
+      const el = $('side' + p);
+      $('time' + p).innerHTML = fmt(times[p]);
+      $('moves' + p).textContent = `Presses: ${presses[p]}`;
+      $('left' + p).textContent = limitInfo(p);
+      el.classList.toggle('active', p === active && !finished);
+      el.classList.toggle('low', times[p] < 10000 && times[p] > 0);
+      el.classList.toggle('flag', finished && flagged === p);
+      el.classList.toggle('done', finished && flagged !== p);
+    }
+    $('pauseBtn').textContent = paused ? 'Resume' : 'Pause';
+    $('pauseBtn').disabled = finished || active === -1;
+    let msg = '';
+    if (finished) msg = reason;
+    else if (paused) msg = 'Paused: tap a side or Resume to continue';
+    else if (active === -1) msg = 'Tap your side to start your opponent’s clock';
+    $('banner').textContent = msg;
+    $('banner').style.padding = msg ? '0 0 8px' : '0';
+  }
+
+  function loop() {
+    if (active !== -1 && !paused && !finished) {
+      tick();
+      if (!finished) {
+        $('time' + active).innerHTML = fmt(times[active]);
+        $('side' + active).classList.toggle('low', times[active] < 10000);
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+
+  // ---- Input ----
+  for (const p of [0, 1]) {
+    $('side' + p).addEventListener('pointerdown', e => { e.preventDefault(); press(p); });
+  }
+  $('pauseBtn').addEventListener('click', () => paused ? resume() : pause());
+  $('resetBtn').addEventListener('click', reset);
+
+  document.addEventListener('keydown', e => {
+    if ($('settings').classList.contains('open')) {
+      if (e.key === 'Escape') closeSettings();
+      return;
+    }
+    if (e.repeat) return;
+    if (e.code === 'Space') { e.preventDefault(); press(active === -1 ? 1 : active); }
+    else if (e.key === 'a' || e.key === 'A') press(0);
+    else if (e.key === 'l' || e.key === 'L') press(1);
+    else if (e.key === 'p' || e.key === 'P') paused ? resume() : pause();
+  });
+
+  // ---- Settings dialog ----
+  function openSettings() {
+    pause();
+    $('setMin').value = cfg.min;
+    $('setSec').value = cfg.sec;
+    $('setInc').value = cfg.inc;
+    $('setLimit').value = cfg.limit;
+    $('setLimitMode').value = cfg.limitMode;
+    $('settings').classList.add('open');
+  }
+  function closeSettings() { $('settings').classList.remove('open'); }
+
+  $('settingsBtn').addEventListener('click', openSettings);
+  $('cancelSettings').addEventListener('click', closeSettings);
+  $('settings').addEventListener('pointerdown', e => { if (e.target.id === 'settings') closeSettings(); });
+
+  document.querySelectorAll('.presets button').forEach(b => b.addEventListener('click', () => {
+    $('setMin').value = b.dataset.m;
+    $('setSec').value = b.dataset.s;
+    $('setInc').value = b.dataset.i;
+  }));
+
+  $('applySettings').addEventListener('click', () => {
+    const num = (v, lo, hi) => Math.min(hi, Math.max(lo, Number(v) || 0));
+    cfg.min = Math.floor(num($('setMin').value, 0, 600));
+    cfg.sec = Math.floor(num($('setSec').value, 0, 59));
+    cfg.inc = num($('setInc').value, 0, 600);
+    cfg.limit = Math.floor(num($('setLimit').value, 0, 9999));
+    cfg.limitMode = $('setLimitMode').value === 'total' ? 'total' : 'each';
+    if (cfg.min === 0 && cfg.sec === 0) cfg.sec = 1;
+    try { localStorage.setItem('chessClockCfg2', JSON.stringify(cfg)); } catch (e) {}
+    closeSettings();
+    reset();
+  });
+
+
+  // ---- Daisy line-art pattern (original drawing, generated in code) ----
+  function rng(seed) { return () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+  function daisy(cx, cy, R, rot, r) {
+    const out = [];
+    const core = R * 0.24;
+    const layers = [{ n: 22, len: 1.0, w: 0.085, off: 0 }, { n: 22, len: 0.9, w: 0.08, off: 0.5 }];
+    // back layer first, front on top
+    for (const L of [layers[1], layers[0]]) {
+      for (let i = 0; i < L.n; i++) {
+        const a = rot + (i + L.off) / L.n * 360 + (r() - .5) * 6;
+        const len = (R - core) * L.len * (0.85 + r() * 0.25);
+        const w = R * L.w * (0.85 + r() * 0.3);
+        const x0 = core * 0.9, x1 = x0 + len;
+        const d = `M${x0},0 C${x0 + len * .2},${-w} ${x1 - w * 1.2},${-w * 1.1} ${x1},${-w * .2} Q${x1 + w * .5},0 ${x1},${w * .2} C${x1 - w * 1.2},${w * 1.1} ${x0 + len * .2},${w} ${x0},0Z`;
+        out.push(`<path d="${d}" transform="translate(${cx} ${cy}) rotate(${a.toFixed(1)})" fill="#fbfaf6" stroke="#111" stroke-width="${(R * .018 + 1.6).toFixed(1)}" stroke-linejoin="round"/>`);
+        if (r() < 0.55) {
+          const m0 = x0 + len * (0.35 + r() * .15), m1 = x0 + len * (0.75 + r() * .12);
+          out.push(`<path d="M${m0},${((r() - .5) * w * .3).toFixed(1)} L${m1},0" transform="translate(${cx} ${cy}) rotate(${a.toFixed(1)})" stroke="#111" stroke-width="${(R * .012 + 1).toFixed(1)}" stroke-linecap="round"/>`);
+        }
+      }
+    }
+    // bumpy ring around the centre
+    const bumps = 20;
+    for (let i = 0; i < bumps; i++) {
+      const a = i / bumps * Math.PI * 2;
+      out.push(`<circle cx="${(cx + Math.cos(a) * core).toFixed(1)}" cy="${(cy + Math.sin(a) * core).toFixed(1)}" r="${(core * .17).toFixed(1)}" fill="#fbfaf6" stroke="#111" stroke-width="${(R * .014 + 1).toFixed(1)}"/>`);
+    }
+    out.push(`<circle cx="${cx}" cy="${cy}" r="${core.toFixed(1)}" fill="#fbfaf6" stroke="#111" stroke-width="${(R * .02 + 1.5).toFixed(1)}"/>`);
+    // speckled seed head
+    const dots = Math.round(core * core / 22);
+    for (let i = 0; i < dots; i++) {
+      const rr = Math.sqrt(r()) * core * 0.86, a = r() * Math.PI * 2;
+      out.push(`<ellipse cx="${(cx + Math.cos(a) * rr).toFixed(1)}" cy="${(cy + Math.sin(a) * rr).toFixed(1)}" rx="${(core * (.035 + r() * .03)).toFixed(1)}" ry="${(core * (.03 + r() * .025)).toFixed(1)}" fill="#111"/>`);
+    }
+    return out.join('');
+  }
+  function stem(x0, y0, x1, y1, r) {
+    const mx = (x0 + x1) / 2 + (r() - .5) * 160, my = (y0 + y1) / 2 + (r() - .5) * 80;
+    return `<path d="M${x0},${y0} Q${mx},${my} ${x1},${y1}" fill="none" stroke="#111" stroke-width="${(10 + r() * 10).toFixed(0)}" stroke-linecap="round"/>`
+      + `<path d="M${(x0 + mx) / 2},${(y0 + my) / 2} q${(r() - .5) * 120},${-40 - r() * 60} ${(r() - .5) * 200},${-90 - r() * 60}" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round"/>`;
+  }
+  function drawPattern(svg, seed) {
+    const r = rng(seed);
+    const W = 1000, H = 600;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const flowers = [
+      [130 + r() * 60, 150 + r() * 60, 230], [560 + r() * 60, 100 + r() * 50, 200],
+      [860 + r() * 60, 380 + r() * 60, 260], [330 + r() * 60, 470 + r() * 50, 190],
+      [700 + r() * 40, 620, 150], [-30, 470, 160], [1000, 40, 150]
+    ];
+    let parts = '';
+    for (const [x, y] of flowers) parts += stem(x, y, x + (r() - .5) * 200, H + 80, r);
+    for (const [x, y, R] of flowers) parts += daisy(x, y, R, r() * 360, r);
+    svg.innerHTML = parts;
+  }
+  drawPattern($('pat0'), 7);
+  drawPattern($('pat1'), 31);
+
+  reset();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
