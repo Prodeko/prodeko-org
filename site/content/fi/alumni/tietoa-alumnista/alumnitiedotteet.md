@@ -7,6 +7,8 @@ description: Arkisto Prodekon Alumnin jäsenilleen lähettämistä alumnitiedott
 
 ## 2026
 
+[Alumnitiedote 4/2026](https://static.prodeko.org/media/public/2026/11/10/alumnitiedote_4_2026.pdf)
+
 [Alumnitiedote 3/2026](https://static.prodeko.org/media/public/2026/08/15/alumnitiedote_3_2026.pdf)
 
 [Alumnitiedote 2/2026](https://static.prodeko.org/media/public/2026/04/29/alumnitiedote_2_2026.pdf)
