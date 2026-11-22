@@ -81,10 +81,16 @@
           <ul class="link-list">
             {{ range .items }}
               <li>
-                <a href="{{ .url | safeURL }}"{{ partial "link-target.html" .url | safeHTMLAttr }}>
-                  <span class="label"><span class="name">{{ .label }}</span>{{ with .description }}<span class="desc">{{ . }}</span>{{ end }}</span>
-                  <span class="arrow" aria-hidden="true">→</span>
-                </a>
+                {{ if .url }}
+                  <a href="{{ .url | safeURL }}"{{ partial "link-target.html" .url | safeHTMLAttr }}>
+                    <span class="label"><span class="name">{{ .label }}</span>{{ with .description }}<span class="desc">{{ . }}</span>{{ end }}</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                {{ else }}
+                  <div class="notice">
+                    <span class="label"><span class="name">{{ .label }}</span>{{ with .description }}<span class="desc">{{ . }}</span>{{ end }}</span>
+                  </div>
+                {{ end }}
               </li>
             {{ end }}
           </ul>

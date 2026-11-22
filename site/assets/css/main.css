@@ -170,7 +170,7 @@ img{display:block;max-width:100%}
 .aside-body p{margin:0 0 var(--space-3)}
 .aside-body .btn{margin-top:var(--space-2)}
 .aside-body .link-list{margin:0}
-.aside-body .link-list a{padding:10px 0;align-items:flex-start}
+.aside-body .link-list a,.aside-body .link-list .notice{padding:10px 0;align-items:flex-start}
 .aside-body .link-list .name{font-size:var(--size-sm);line-height:1.4}
 .aside-body .link-list .desc{font-size:var(--size-xs);line-height:1.4}
 .aside-body .link-list .arrow{font-size:var(--size-xs);line-height:1.6}
@@ -252,7 +252,7 @@ img{display:block;max-width:100%}
 
 /* Link list */
 .link-list{list-style:none;margin:0 0 var(--space-6);padding:0;border-top:1px solid var(--border-subtle)}
-.link-list a{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);padding:13px 0;border-bottom:1px solid var(--border-subtle);color:var(--pd-blue)}
+.link-list a,.link-list .notice{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);padding:13px 0;border-bottom:1px solid var(--border-subtle);color:var(--pd-blue)}
 .link-list a:hover{color:var(--pd-blue-dark);text-decoration:none}
 .link-list a:hover .name{text-decoration:underline}
 .link-list .label{display:flex;flex-direction:column;gap:2px;min-width:0;overflow-wrap:anywhere}
