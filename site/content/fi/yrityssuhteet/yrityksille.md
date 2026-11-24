@@ -5,7 +5,7 @@ sourceURL: https://prodeko.org/fi/yrityssuhteet/yrityksille/
 description: Vinkkejä yrityksille työnantajamielikuvan rakentamiseen prodekolaisten keskuudessa sponsoroinnin, näkyvyyden ja projektikurssien avulla.
 ---
 
-![](/uploads/disko.jpg)
+![Katettu juhlapöytä Prodekon 50-vuotisjuhlan pöytäkortteineen](/uploads/disko.jpg)
 
 Suhteet yritysmaailmaan ovat aina olleet Prodekolle ja prodekolaisille lähellä sydäntä. Prodekolaiset nauttivat haasteista ja moni heistä haluaa oppia uransa aikana monen eri toimialan erityispiirteistä - työllistymme liikkeenjohdon konsultoinnista tuoreimpiin startup-yrityksiin sekä voittoa tavoittelemattomiin organisaatioihin. **Kaikkiin kysymyksiin yrityssuhteista vastaa kiltamme yrityssuhdevastaava, jonka tavoitat sähköpostilla [yrityssuhteet@prodeko.org](mailto:yrityssuhteet@prodeko.org).** Excursioihin liittyvissä asioissa puolestaan kannattaa olla yhteydessä excumestariimme **[excumestari@prodeko.org](mailto:excumestari@prodeko.org)**.
 

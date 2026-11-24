@@ -5,7 +5,7 @@ translationKey: alumni-neuvottelukunta
 sourceURL: https://prodeko.org/en/alumni/honorary-advisory-council/
 ---
 
-![](/uploads/nk.jpg)
+![Members of Prodeko's honorary advisory council in formal dress](/uploads/nk.jpg)
 
 ## General
 

@@ -1,0 +1,22 @@
+{{/* The page the server answers with when an address leads nowhere —
+     typically an old link from before the move to this site. It keeps the
+     visitor on the site with a way onward instead of a bare error, and tells
+     search engines to leave it out of the index. Hugo writes one per
+     language; the web server serves /fi/404.html. */}}
+{{ define "main" }}
+{{ $fi := eq .Language.Lang "fi" }}
+<div class="page-layout">
+  <div class="page-main">
+    <div class="prose">
+      <h1>{{ if $fi }}Sivua ei löytynyt{{ else }}Page not found{{ end }}</h1>
+      {{ if $fi }}
+        <p>Etsimääsi sivua ei ole tai se on siirtynyt.</p>
+        <p><a href="/fi/">Etusivulle</a> · <a href="/en/">In English</a></p>
+      {{ else }}
+        <p>The page you were looking for does not exist or has moved.</p>
+        <p><a href="/en/">Front page</a> · <a href="/fi/">Suomeksi</a></p>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

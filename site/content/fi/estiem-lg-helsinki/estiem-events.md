@@ -7,13 +7,13 @@ sourceURL: https://prodeko.org/fi/estiem-lg-helsinki/estiem-events/
 
 ESTIEM-verkostossa järjestetään kymmeniä tapahtumia vuosittain. Tällä sivulla löydät tärkeimmät ESTIEM-tapahtumatyypit. Tapahtumat voivat tyypistä riippumatta olla minkä tahansa Local Groupin järjestämiä. Kiinnostaako oman ESTIEM-tapahtuman järjestäminen? Ota yhteyttä hallitukseen!
 
-![](/uploads/dsc05891.jpg)
+![ESTIEM-tapahtuman osallistujia kädet ilmassa rannalla](/uploads/dsc05891.jpg)
 
 ## Activity Weeks
 
 Activity Weekin aikana tutustutaan johonkin paikallisen kulttuurin elementtiin ja pidetään hauskaa. Paikan päällä unohdetaan akateemisuus, ja tapahtuma sisältää paikallisten järjestämää ohjelmaa ja aktiviteetteja. Esimerkkejä ovat Skiing Activity Week Alpeilla, Oktoberfest Münchenissä ja karnevaalit Alankomaiden Eindhovenissa.
 
-![](/uploads/whatsapp_image_2024-09-24_at_182455.jpeg)
+![ESTIEM-opiskelijoita oluttuopit kädessä Activity Weekillä](/uploads/whatsapp_image_2024-09-24_at_182455.jpeg)
 
 ## Europe3D
 

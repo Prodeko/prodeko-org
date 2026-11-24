@@ -13,7 +13,7 @@ Prodeko has four harassment contact persons: Aino Salmi, Kalle Saarivuori, Jenni
 
 **Below you can find introductions of Prodeko's harrasment contact persons.**
 
-![](/uploads/aino-salmi-2.jpg)
+![Aino Salmi](/uploads/aino-salmi-2.jpg)
 
 **Aino Salmi, Fresher '23**
 
@@ -25,7 +25,7 @@ Hellou! I’m Aino Salmi, a Prodeko fresher ’23. In my free time I love to han
 
 *TG: @salmiaino*
 
-![](/uploads/hary-kuva_kalle.jpg)
+![Kalle Saarivuori](/uploads/hary-kuva_kalle.jpg)
 
 **Kalle Saarivuori, Fresher '24**
 
@@ -37,7 +37,7 @@ Hi, this is Kalle, a second-year Prodeko student! I am an approachable and socia
 
 *TG: @kallesaarivuori*
 
-![](/uploads/2026-01-07_144401.jpg)
+![Jenni Palukka](/uploads/2026-01-07_144401.jpg)
 
 **Jenni Palukka, Fresher '22**
 
@@ -49,7 +49,7 @@ Hello! My name is Jenni and I'm a freshman from the class of ’22. I’m easily
 
 *TG: @jennipalukka*
 
-![](/uploads/2026-01-07_144414.jpg)
+![Elli Lahtinen](/uploads/2026-01-07_144414.jpg)
 
 **Elli Lahtinen, Fresher '24**
 

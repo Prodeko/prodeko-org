@@ -1,6 +1,7 @@
 ---
 title: Abipäivä 2026
 translationKey: abit-abipaiva-2026
+description: Prodekon ja Athenen abipäivä Otaniemessä 6.11.2026 – tutustu tuotantotalouden opiskeluun Aallossa ja ilmoittaudu mukaan.
 reviewed: 2026-09-24
 owner: abivastaava
 ---
@@ -22,9 +23,9 @@ Tähän päättyy päivän kaikilla avoin ohjelma, mutta ei syytä huoleen, sill
 
 Sitseille on rajallinen määrä paikkoja. Mikäli ilmoittautuneita on enemmän kuin paikkoja, osallistujat valitaan ilmoittautumislomakkeen motivaatiovastausten perusteella. Ilmoitamme kaikille sitseille hakeneille valinnan tuloksesta.
 
-![](/uploads/abisitsit-2025-1.jpg)
+![Abiturientteja istumassa sitsipöydissä jouluvaloin koristellussa salissa Athenen ja Prodekon ABIsitseillä 2025](/uploads/abisitsit-2025-1.jpg)
 
- ![](/uploads/abisitsit-2025-2.jpg)
+ ![Athenen ja Prodekon ABIsitsien 2025 laulukortti pöydällä gongin edessä](/uploads/abisitsit-2025-2.jpg)
 
 ## Ilmoittautumislomake
 

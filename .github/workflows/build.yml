@@ -31,13 +31,6 @@ jobs:
       # the same release, so an editor's build fails and succeeds for the same
       # reasons this one does. Bump both: proxy.yml fails the moment they drift.
       HUGO_VERSION: 0.166.0
-      # Where the built site is actually served. hugo.toml declares the eventual
-      # address, prodeko.org, which is what every canonical link, sitemap entry
-      # and language redirect is built from. Until the cutover the site answers
-      # on uusi.prodeko.org, and without this the root of the staging site
-      # redirects visitors straight to the old production site.
-      # One line to change at cutover; then it can be deleted.
-      HUGO_BASEURL: https://uusi.prodeko.org/
     steps:
       - uses: actions/checkout@v5
 

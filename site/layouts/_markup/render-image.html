@@ -5,13 +5,18 @@
      at 342px every event label in it is an unreadable smudge. Tapping the
      image opens the original. There is no separate "open full size" line
      under it: under every photo of every page it was noise, and the image
-     itself is the link. The caption, when the image has alt text, is that
-     text alone. */}}
+     itself is the link.
+
+     Alt text and caption are kept apart: the alt describes the picture for a
+     screen reader and a search engine, and often repeats what the text beside
+     it already says (a contact person's photo next to their name). A caption
+     shows only when the image is given a title — ![alt](/uploads/x.jpg
+     "Caption") — and it then shows the title. */}}
 {{ $alt := .PlainText }}
 {{ $title := .Title }}
 <figure class="content-image">
   <a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener">
-    <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy">
+    <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy">
   </a>
-  {{ with $alt }}<figcaption>{{ . }}</figcaption>{{ end }}
+  {{ with $title }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>

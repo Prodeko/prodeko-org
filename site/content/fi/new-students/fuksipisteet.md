@@ -11,7 +11,7 @@ Ollaksesi esteetön teekkarilakin saamista varten mahdollisena wappuna, kortin t
 
 Kortista tulee suorittaa 11 pakollista pistettä ja vähintään 8 valinnaista pistettä. Koko pistekortin täyttämällä (lisäpisteellä voi korvata yhden pisteen) voit tulla Superfuksiksi. Fuksipisteitä myöntää fuksikapteeni pätevää ja todenperäistä selitystä vastaan. Orientaatioviikon tapahtumia ei lasketa fuksipisteisiin.
 
-![](/uploads/tomoftuta.jpg)
+![Opiskelija istuu sateenkaariväreihin maalatun auton konepellillä sateenkaarilippujen keskellä](/uploads/tomoftuta.jpg)
 
 ## Pakolliset (11)
 

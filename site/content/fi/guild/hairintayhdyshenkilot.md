@@ -13,7 +13,7 @@ Prodekolla on neljä häirintäyhdyshenkilöä: Aino Salmi, Kalle Saarivuori, Je
 
 **Alla Prodekon häryjen esittelyt.**
 
-![](/uploads/aino-salmi-2.jpg)
+![Aino Salmi](/uploads/aino-salmi-2.jpg)
 
 **Aino Salmi, Fuksi '23**
 
@@ -25,7 +25,7 @@ Moikku! Mä oon Aino Salmi, Prodekon fuksi vuosimallia ’23. Vapaa-ajalla rakas
 
 *TG: @salmiaino*
 
-![](/uploads/hary-kuva_kalle.jpg)
+![Kalle Saarivuori](/uploads/hary-kuva_kalle.jpg)
 
 **Kalle Saarivuori, Fuksi '24**
 
@@ -37,7 +37,7 @@ Moi, tässä Kalle, prodekofuksi '24! Olen helposti lähestyttävä ja sosiaalin
 
 *TG: @kallesaarivuori*
 
-![](/uploads/2026-01-07_144401.jpg)
+![Jenni Palukka](/uploads/2026-01-07_144401.jpg)
 
 **Jenni Palukka, Fuksi '22**
 
@@ -49,7 +49,7 @@ Helou! Täällä kirjoittelee Jenni, fuksi vuosimallia ’22. Oon helposti uusis
 
 *TG: @jennipalukka*
 
-![](/uploads/2026-01-07_144414.jpg)
+![Elli Lahtinen](/uploads/2026-01-07_144414.jpg)
 
 **Elli Lahtinen, Fuksi '24**
 

@@ -5,7 +5,7 @@ translationKey: yrityssuhteet-prodeko-network
 sourceURL: https://prodeko.org/en/yrityssuhteet/prodeko-network/
 ---
 
-![](/uploads/2024-10-07_network.png)
+![Prodeko Network member companies: UPM, ABB, Metso, Nokia, Nordea, Relex, Kone, Visma, Vaisala and Neste](/uploads/2024-10-07_network.png)
 
 *Prodeko Network* is the most integral part of Prodeko's company relations. It consists of leading Finnish companies from several industries and has existed since 1994. Network companies are present in both the celebrations and daily lives of our students as they are visible in a broad range of our guild's activities.
 

@@ -7,7 +7,7 @@ sourceURL: https://prodeko.org/en/new-students/studentlife/
 
 Technology students in Finland have a lot of traditions and ways to celebrate. Here's a few of our favourites!
 
-![](/uploads/abc.jpg)
+![Two students in overalls and Prodeko 50th anniversary sweatshirts](/uploads/abc.jpg)
 
 ## Sitsit
 

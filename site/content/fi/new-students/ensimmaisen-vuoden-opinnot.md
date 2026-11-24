@@ -5,7 +5,7 @@ sourceURL: https://prodeko.org/fi/new-students/ensimmaisen-vuoden-opinnot/
 description: Tietoa fuksivuoden kursseista, opiskelumateriaalin hankkimisesta, kielten opinnoista ja yliopiston opiskelujärjestelmistä.
 ---
 
-![](/uploads/kirjat.png)
+![Teekkarilakki pinon päällä, jossa on kauppatieteen, ohjelmoinnin ja matematiikan oppikirjoja](/uploads/kirjat.png)
 
 Tällä sivulla on tietoa hyödyllisistä järjestelmistä, joita käytetään koulussa. Asiaa ja opittavaa on paljon, mutta muista ettet ole koskaan yksin. Ensimmäisellä viikolla käydään läpi tärkeitä asioita ja vanhemmat kiltalaiset ovat halukkaita auttamaan. Johdatus opiskeluun –kurssilla käydään läpi tärkeimmät asiat opintoihin liittyen ja se alkaa heti orientaatioviikon ensimmäisinä päivinä ilmoittautumalla kursseille sekä opettamalla yliopiston tietojärjestelmistä. Muista kysellä ISOilta neuvoja opiskelukäytännöistä, jos kysymyksiä herää.
 
