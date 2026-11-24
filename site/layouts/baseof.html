@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ if .IsHome }}{{ .Site.Title }} | {{ if eq .Language.Lang "fi" }}Tuotantotalouden kilta{{ else }}The IEM guild at Aalto University{{ end }}{{ else }}{{ .Site.Title }} | {{ .Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }} | {{ if eq .Language.Lang "fi" }}Tuotantotalouden kilta{{ else }}The IEM guild at Aalto University{{ end }}{{ else if eq .Kind "404" }}{{ if eq .Language.Lang "fi" }}Sivua ei löytynyt{{ else }}Page not found{{ end }} | {{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     {{ with .Description }}<meta name="description" content="{{ . }}" />{{ end }}
     {{ partial "head.html" . }}
   </head>

@@ -7,7 +7,7 @@ description: Käytännön tietoa opiskelija-asunnon hakemisesta, opintotuesta, o
 
 Täältä löydät lisää tietoa asunnon saamisesta, syömisestä ja muista elämän perusvälttämättömyyksistä, joista on hyvä pitää kiinni myös kaiken fuksivuoden hauskan keskellä.
 
-![](/uploads/lettuja.jpg)
+![Haalaripukuisia opiskelijoita paistamassa lettuja lumisessa metsässä](/uploads/lettuja.jpg)
 
 ## Asunnot
 

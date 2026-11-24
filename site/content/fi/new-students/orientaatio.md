@@ -7,4 +7,4 @@ description: Prodekon fuksien orientaatioviikon 2026 aikataulu.
 
 Orientaatioviikon aikataulu on julkaistu!
 
-![](/uploads/orientaatioviikon_aikataulu_2026_nettiin.png)
+![Orientaatioviikon 2026 aikataulu 24.–28.8.](/uploads/orientaatioviikon_aikataulu_2026_nettiin.png)
