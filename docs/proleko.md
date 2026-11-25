@@ -1,7 +1,7 @@
 # Proleko?
 
 The guild magazine's pages on the new site, and how its editor-in-chief adds
-an issue without being a website editor.
+an issue in the editing screen.
 
 ## Pages
 
@@ -11,8 +11,6 @@ an issue without being a website editor.
 | `/fi/palvelut/proleko/arkisto/` | every issue since 1999, by year | `layouts/proleko-archive.html` |
 | `/fi/palvelut/proleko/verkkojulkaisut/` | the 16 web articles of spring 2020 | `layouts/proleko-posts.html`, `proleko-post.html` |
 | `/en/services/proleko/`, `/en/services/proleko/archive/` | the same in English; the articles are Finnish only | as above |
-| `/fi/palvelut/proleko/lehdet.json` | the archive as JSON, for the upload page | `layouts/proleko-home.prolekoissues.json` |
-| `/admin/proleko/` | the upload page | `static/admin/proleko/index.html` |
 
 The design follows the editors' sketch (`nettisivuvisiota.pptx`): a navy
 masthead with the name in serif capitals, the newest cover large, "Tuoretta
@@ -25,40 +23,38 @@ login later means moving the three section folders under `content-members/`.
 
 ## Where things are kept
 
-Each issue is three things:
+Each issue is a data file and a PDF:
 
 - `site/data/proleko/<year>-<number>.yaml`: year, number, title, the PDF's
-  path below `/media/proleko/`, and the cover's asset path.
-- `site/assets/images/proleko/kannet/<year>-<number>.(webp|jpg|png)`: the
-  cover. Hugo resizes it.
-- `<year>/proleko-<year>-<number>.pdf` in the server's PDF directory, served at
+  path below `/media/proleko/`, and optionally `cover`, an image in assets.
+- The PDF in the server's PDF directory, served at
   `https://prodeko.org/media/proleko/`. **Not in git**: the 102 old issues are
   1.3 GB, 70 of them are over the build's 5 MB limit and one is over GitHub's
   100 MB limit.
+- The cover: for the old issues an image in
+  `site/assets/images/proleko/kannet/`, which Hugo resizes. For a new issue,
+  unless the editor chooses one, the JPEG of the PDF's first page that is
+  stored beside the PDF with the same name.
 
 `site.Params.prolekoMedia` in `hugo.toml` is the PDF base address.
 
 ## Adding an issue
 
-The editor-in-chief opens **prodeko.org/admin/proleko/**, signs in with their
-Prodeko account, and fills in year, number, title and the PDF. The page renders
-the PDF's first page as the cover (or takes an image they choose) and sends
-everything to the proxy's `POST /proleko/issues` (`proxy/internal/proleko`),
-which:
+In **prodeko.org/admin**, collection **Proleko?**, "New Proleko?-lehti":
+year, number, title, then the PDF. The PDF field (`static/admin/proleko-pdf.js`)
+renders the first page as the cover with pdf.js and sends both to the
+proxy's `POST /proleko/pdf` (`proxy/internal/proleko`), which writes them to
+`PROLEKO_DIR` as `<year>/proleko-<year>-<number>-<random>.pdf` and `.jpg`.
+The field stores that path. Saving and publishing then work like any other
+change: a pull request, a preview, and the site rebuilds on publish.
 
-1. writes the PDF to `PROLEKO_DIR/<year>/proleko-<year>-<number>.pdf`;
-2. commits the data file and the cover on a `proleko/…` branch, authored by
-   the editor-in-chief, and opens a pull request;
-3. merges it. If `main` requires a review the pull request stays open and the
-   page says so, with the link.
+Each upload gets a new file name, so a draft never replaces the PDF that the
+published page links to. A replaced PDF, or the PDF of a draft that is thrown
+away, stays on the disk with nothing linking to it.
 
-The site rebuilds on the merge, so the issue appears a few minutes later. The
-same form with an existing year and number updates the title or cover; the
-PDF is then optional.
-
-Who may upload: anyone with the website editor roles (`EDITOR_ROLES`), and
-anyone with every role in `PROLEKO_ROLES`. The second group cannot use
-`/admin` or `/github/*` at all.
+The editor-in-chief needs ordinary website editor rights (`EDITOR_ROLES`).
+The upload is behind the same session and role check as the rest of the
+editing screen.
 
 ## Deployment checklist
 
@@ -85,15 +81,13 @@ Keycloak and the server.
    addresses.
 4. **Proxy container**: mount the directory and set `PROLEKO_DIR=/srv/proleko`.
    The proxy refuses to start if the directory is missing or not writable.
-5. **Keycloak**: create a realm role such as `proleko-editor`, grant it to the
-   editor-in-chief, and set `PROLEKO_ROLES=membership,proleko-editor` on the
-   proxy. With `membership` included, the right lapses with the membership,
-   as it does for editors.
+5. **Keycloak**: give the editor-in-chief the website editor roles.
 6. Keep static.prodeko.org's `media/proleko/` in place: the old PDF links
    are in emails and chats.
 
-Until steps 1–4 are done, the covers and pages work but the PDF links answer
-404, so deploy the infra before merging this to `main`.
+Until steps 1–4 are done, the pages and old covers work but the PDF links
+answer 404 and the PDF field cannot upload, so deploy the infra before merging
+this to `main`.
 
 ## Re-running the migration
 

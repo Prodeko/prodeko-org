@@ -348,3 +348,43 @@ func TestShutdownIsGraceful(t *testing.T) {
 		t.Fatal("serve did not return after the context was cancelled")
 	}
 }
+
+// The Proleko? PDF upload is behind the same three gates as /github/*: CORS
+// answers the preflight, and a request needs a session with every editor role.
+func TestProlekoUploadRequiresAnEditor(t *testing.T) {
+	store, err := session.NewStore(session.Options{Secret: []byte("0123456789abcdef0123456789abcdef")})
+	if err != nil {
+		t.Fatal(err)
+	}
+	cfg := testConfig()
+	reached := false
+	magazine := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		reached = true
+		w.WriteHeader(http.StatusOK)
+	})
+	h := routes(cfg, slog.New(slog.DiscardHandler), &stubSignin{}, store, http.NotFoundHandler(), magazine)
+
+	call := func(method, token string) int {
+		req := httptest.NewRequest(method, "/proleko/pdf", nil)
+		req.Header.Set("Origin", cmsOrigin)
+		if token != "" {
+			req.Header.Set("Authorization", "Bearer "+token)
+		}
+		rec := httptest.NewRecorder()
+		h.ServeHTTP(rec, req)
+		return rec.Code
+	}
+
+	if got := call(http.MethodOptions, ""); got != http.StatusNoContent {
+		t.Errorf("preflight = %d", got)
+	}
+	if got := call(http.MethodPost, ""); got != http.StatusUnauthorized || reached {
+		t.Errorf("no session = %d, reached %v", got, reached)
+	}
+	if got := call(http.MethodPost, tokenFor(t, store, "membership")); got != http.StatusForbidden || reached {
+		t.Errorf("member without the editor roles = %d, reached %v", got, reached)
+	}
+	if got := call(http.MethodPost, tokenFor(t, store, cfg.Keycloak.EditorRoles...)); got != http.StatusOK || !reached {
+		t.Errorf("editor = %d, reached %v", got, reached)
+	}
+}

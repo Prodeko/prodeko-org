@@ -818,29 +818,21 @@ func TestProleko(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if cfg.Proleko.Enabled() || cfg.Proleko.Roles != nil {
+	if cfg.Proleko.Enabled() {
 		t.Errorf("Proleko on by default: %+v", cfg.Proleko)
 	}
 
-	cfg, err = loadWith(t, map[string]*string{
-		EnvProlekoDir:   set("/srv/proleko/"),
-		EnvProlekoRoles: set("membership, proleko-editor,membership"),
-	})
+	cfg, err = loadWith(t, map[string]*string{EnvProlekoDir: set("/srv/proleko/")})
 	if err != nil {
 		t.Fatal(err)
 	}
-	if cfg.Proleko.Dir != "/srv/proleko" || strings.Join(cfg.Proleko.Roles, ",") != "membership,proleko-editor" {
+	if cfg.Proleko.Dir != "/srv/proleko" {
 		t.Errorf("Proleko = %+v", cfg.Proleko)
 	}
 
-	for name, env := range map[string]map[string]*string{
-		"relative dir":        {EnvProlekoDir: set("srv/proleko")},
-		"root dir":            {EnvProlekoDir: set("/")},
-		"roles without dir":   {EnvProlekoRoles: set("proleko-editor")},
-		"roles that are none": {EnvProlekoDir: set("/srv/proleko"), EnvProlekoRoles: set(" , ")},
-	} {
+	for name, dir := range map[string]string{"relative": "srv/proleko", "root": "/"} {
 		t.Run(name, func(t *testing.T) {
-			if _, err := loadWith(t, env); err == nil {
+			if _, err := loadWith(t, map[string]*string{EnvProlekoDir: set(dir)}); err == nil {
 				t.Error("accepted")
 			}
 		})

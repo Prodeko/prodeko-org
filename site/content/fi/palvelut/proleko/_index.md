@@ -2,7 +2,6 @@
 title: Proleko?
 translationKey: proleko
 layout: proleko-home
-outputs: [html, prolekoissues]
 description: Proleko? on Tuotantotalouden killan kiltalehti. Uusin numero ja kaikki lehdet vuodesta 1999 PDF-muodossa.
 ---
 

@@ -1,20 +1,34 @@
 {{/* One issue as its cover, linking to the PDF. Takes {issue, size, lang};
      size "large" is the newest issue on the Proleko? front page, anything
-     else a cover in a grid. A cover file that is missing is a build error:
-     the upload page always writes one, so a missing file is a typo in a data
-     file, and an empty box would hide it. */}}
+     else a cover in a grid.
+
+     An issue with `cover` names an image in assets, which is resized here;
+     a missing file is a build error, since an empty box would hide a typo.
+     Without `cover`, the JPEG the proxy stored beside the PDF is used as it
+     is: it lives on the server, out of Hugo's reach, and is already 1000 px
+     wide. */}}
 {{ $i := .issue }}
 {{ $w := cond (eq .size "large") 600 300 }}
-{{ $img := resources.Get $i.cover }}
-{{ if not $img }}
-  {{ errorf "proleko: cover %q of issue %s not found" $i.cover $i.slug }}
+{{ $src := $i.coverURL }}
+{{ $srcset := "" }}
+{{ $width := $w }}
+{{ $height := div (mul $w 1000) 707 }}
+{{ with $i.cover }}
+  {{ $img := resources.Get (strings.TrimPrefix "/" .) }}
+  {{ if not $img }}
+    {{ errorf "proleko: cover %q of issue %s not found" . $i.slug }}
+  {{ end }}
+  {{ $one := $img.Resize (printf "%dx webp q75" $w) }}
+  {{ $two := $img }}
+  {{ if gt $img.Width $w }}{{ $two = $img.Resize (printf "%dx webp q75" (int (math.Min $img.Width (mul $w 2)))) }}{{ end }}
+  {{ $src = $one.RelPermalink }}
+  {{ $srcset = printf "%s 1x, %s 2x" $one.RelPermalink $two.RelPermalink }}
+  {{ $width = $one.Width }}
+  {{ $height = $one.Height }}
 {{ end }}
-{{ $one := $img.Resize (printf "%dx webp q75" $w) }}
-{{ $two := $img }}
-{{ if gt $img.Width $w }}{{ $two = $img.Resize (printf "%dx webp q75" (int (math.Min $img.Width (mul $w 2)))) }}{{ end }}
 <a class="pl-cover{{ if eq .size "large" }} pl-cover--large{{ end }}" href="{{ $i.url }}" target="_blank" rel="noopener">
-  <img src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x"
-       width="{{ $one.Width }}" height="{{ $one.Height }}" loading="lazy"
+  <img src="{{ $src }}"{{ with $srcset }} srcset="{{ . }}"{{ end }}
+       width="{{ $width }}" height="{{ $height }}" loading="lazy"
        alt="Proleko? {{ $i.label }}{{ with $i.title }}: {{ . }}{{ end }} (PDF)">
   <span class="pl-cover-text" aria-hidden="true">
     <span class="pl-cover-number">{{ $i.label }}</span>

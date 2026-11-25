@@ -36,16 +36,6 @@ disableKinds = ["taxonomy", "term", "rss"]
   isPlainText = true
   notAlternative = true
 
-# Every Proleko? issue as JSON at /fi/palvelut/proleko/lehdet.json, from
-# data/proleko/. The editors' upload page (static/admin/proleko/) reads it to
-# say when a number is already in the archive. Turned on in the Finnish
-# magazine section's front matter only.
-[outputFormats.prolekoissues]
-  mediaType = "application/json"
-  baseName = "lehdet"
-  isPlainText = true
-  notAlternative = true
-
 [outputs]
   home = ["html", "infoscreen", "infoscreencountdowns"]
 

@@ -1,8 +1,6 @@
 {{/* Every Proleko? issue, newest first.
 
-     data/proleko/ holds one file per issue, named year-number, written by
-     tools/import-proleko.py for the old archive and by the editors' upload
-     page (proxy/internal/proleko) for every new one. Each file is
+     data/proleko/ holds one file per issue, named year-number. Each file is
 
        year: 2026
        number: 3
@@ -10,12 +8,18 @@
        pdf: 2026/proleko-2026-3.pdf
        cover: images/proleko/kannet/2026-3.webp
 
+     Files are written by tools/import-proleko.py for the old archive and by
+     Decap (the proleko collection) for every new issue.
+
      The PDFs are not in the repository: at 1.3 GB, some over GitHub's file
      limit, they are served from the server's disk under params.prolekoMedia.
-     The covers are small and are in assets, so Hugo resizes them.
+     An issue's cover is either an image in assets (`cover`, which Hugo
+     resizes) or, when that is empty, the JPEG the proxy stored next to the
+     PDF when it was uploaded through Decap.
 
      Returns a slice of maps with the file's fields plus slug, url (the PDF),
-     label ("3/2026") and name (the title, or the label for an untitled one). */}}
+     coverURL (the stored JPEG, for an issue without `cover`), label
+     ("3/2026") and name (the title, or the label for an untitled one). */}}
 {{ $media := site.Params.prolekoMedia | default "/media/proleko/" }}
 {{ $out := slice }}
 {{ range $slug, $i := hugo.Data.proleko }}
@@ -24,6 +28,7 @@
       "slug" $slug
       "sortKey" (add (mul (int $i.year) 100) (int $i.number))
       "url" (printf "%s%s" $media $i.pdf)
+      "coverURL" (printf "%s%s.jpg" $media (strings.TrimSuffix ".pdf" $i.pdf))
       "label" $label
       "name" (or $i.title $label))) }}
 {{ end }}

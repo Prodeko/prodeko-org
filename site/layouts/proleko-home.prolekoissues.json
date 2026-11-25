@@ -1,7 +1,0 @@
-{{- /* The archive as JSON for the upload page: one object per issue, newest
-       first, with the fields of its data file. */ -}}
-{{- $out := slice -}}
-{{- range partial "proleko-issues.html" . -}}
-  {{- $out = $out | append (dict "year" .year "number" .number "title" .title "pdf" .url "slug" .slug) -}}
-{{- end -}}
-{{- $out | jsonify -}}

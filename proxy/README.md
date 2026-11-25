@@ -41,11 +41,10 @@ sequenceDiagram
   opener window with `postMessage`.
 - `ANY /github/*` forwards to the GitHub API. Everything under here requires a
   valid session.
-- `POST /proleko/issues` adds or updates one Proleko? issue, when
-  `PROLEKO_DIR` is set. The PDF goes to that directory and the cover and a
-  data file are committed through a pull request that is merged at once, or
-  left open where `main` wants a review. It admits every editor and, if
-  `PROLEKO_ROLES` is set, anyone holding all of those roles. See
+- `POST /proleko/pdf` stores one Proleko? PDF and its cover, when
+  `PROLEKO_DIR` is set, and answers with their paths. Decap's PDF field for
+  the magazine calls it, because Decap would commit the file to git. Behind
+  the same session and editor role check as `/github/*`. See
   `internal/proleko` and `docs/proleko.md`.
 - `GET /healthz` says the process is listening. Unauthenticated, and it makes
   no claim about Keycloak or GitHub being reachable.
@@ -71,14 +70,6 @@ sequenceDiagram
 - Allow only the GitHub paths Decap actually uses. Repository contents, git
   objects, pull requests, and the current user. Not collaborators, webhooks or
   secrets.
-
-### The one exception to rule 1
-
-`PROLEKO_ROLES` admits the magazine's editor-in-chief without the editor
-roles. Such a session is accepted by `POST /proleko/issues` alone:
-`/github/*` checks `EDITOR_ROLES` on every call, so it cannot touch anything
-else. The upload builds both repository paths from two validated integers,
-so nothing the browser sends becomes a path.
 
 ## Operational constraints
 
@@ -128,8 +119,7 @@ Optional:
 - `LISTEN_ADDR`, `LOG_LEVEL`, `SESSION_TTL`, `OAUTH_SCOPE`, `GITHUB_API_ROOT`
 - `GITHUB_COMMITTER_NAME`, `GITHUB_COMMITTER_EMAIL`, the bot identity recorded
   as the git committer. The author is the editor and is never configurable.
-- `PROLEKO_DIR` and `PROLEKO_ROLES`, the Proleko? upload; see the endpoint
-  above.
+- `PROLEKO_DIR`, the Proleko? PDF upload; see the endpoint above.
 - `KEYCLOAK_DISCOVERY_URL`, for split-horizon setups such as the dev compose
   stack, where the browser and the proxy reach Keycloak at different
   addresses. Discovery happens here; `iss` is still checked against

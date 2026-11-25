@@ -5,11 +5,11 @@ The old archive is a member-only page listing 102 issues, each a PDF and a
 cover picture on static.prodeko.org. This turns that list into:
 
   - one data file per issue in site/data/proleko/, which is what the archive
-    page renders and what the editors' upload page writes for a new issue;
+    page renders and what Decap's proleko collection writes for a new issue;
   - one cover per issue in site/assets/images/proleko/kannet/, shrunk to
     600 px wide so 102 of them stay small enough for git;
   - with --pdf-dir, the PDFs themselves under a directory outside the
-    repository, named the same way the upload page names new ones. They are
+    repository, as <year>/proleko-<year>-<number>.pdf. They are
     1.3 GB together and several are over GitHub's 100 MB limit, so they are
     served from the server's disk at /media/proleko/, never committed. Copy the
     directory to the server's media volume after running this.

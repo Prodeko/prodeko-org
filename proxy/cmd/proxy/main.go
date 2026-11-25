@@ -112,7 +112,6 @@ func run(cfg *config.Config, log *slog.Logger) error {
 		ClientID:     cfg.Keycloak.ClientID,
 		ClientSecret: cfg.Keycloak.ClientSecret,
 		EditorRoles:  cfg.Keycloak.EditorRoles,
-		ProlekoRoles: cfg.Proleko.Roles,
 		PublicURL:    cfg.PublicURL,
 		CMSOrigins:   cfg.CMSOrigins,
 		Scopes:       cfg.Keycloak.Scopes,
@@ -158,27 +157,14 @@ func run(cfg *config.Config, log *slog.Logger) error {
 		return err
 	}
 
-	// The Proleko? upload, when PROLEKO_DIR is set. It shares the GitHub
-	// credential but not the forwarder: it writes two files whose paths it
-	// builds itself, through calls of its own.
+	// The Proleko? PDF upload, when PROLEKO_DIR is set.
 	var magazine http.Handler
 	if cfg.Proleko.Enabled() {
-		magazine, err = proleko.New(proleko.Config{
-			Dir:          cfg.Proleko.Dir,
-			EditorRoles:  cfg.Keycloak.EditorRoles,
-			ProlekoRoles: cfg.Proleko.Roles,
-			Owner:        cfg.GitHub.Owner,
-			Repo:         cfg.GitHub.Repo,
-			Branch:       cfg.GitHub.Branch,
-			APIRoot:      cfg.GitHub.APIRoot,
-			Credential:   credential,
-			Committer:    proleko.Author{Name: cfg.GitHub.CommitterName, Email: cfg.GitHub.CommitterEmail},
-			Logger:       log.With("component", "proleko"),
-		})
+		magazine, err = proleko.New(cfg.Proleko.Dir, log.With("component", "proleko"))
 		if err != nil {
 			return err
 		}
-		log.Info("Proleko? upload enabled", "dir", cfg.Proleko.Dir, "proleko_roles", cfg.Proleko.Roles)
+		log.Info("Proleko? PDF upload enabled", "dir", cfg.Proleko.Dir)
 	}
 
 	srv := &http.Server{
@@ -228,10 +214,13 @@ func routes(
 	mux.Handle(githubPrefix+"/", editors)
 	mux.Handle(githubPrefix, editors)
 
-	// The Proleko? upload checks its own roles, because it admits a set that
-	// /github/* does not: PROLEKO_ROLES. Nil when PROLEKO_DIR is unset.
+	// The Proleko? PDF upload, for the PDF field in Decap. The same chain as
+	// /github/*: whoever may edit the site may upload, and nobody else. Nil
+	// when PROLEKO_DIR is unset.
 	if magazine != nil {
-		mux.Handle(proleko.Path, cors(cfg.CMSOrigins, log, session.Middleware(sessions)(magazine)))
+		mux.Handle(proleko.Path, cors(cfg.CMSOrigins, log,
+			session.Middleware(sessions)(
+				session.RequireRoles(cfg.Keycloak.EditorRoles)(magazine))))
 	}
 
 	// Liveness only: it says the process is listening, not that Keycloak or
