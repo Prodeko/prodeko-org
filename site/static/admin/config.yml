@@ -502,7 +502,7 @@ collections:
     identifier_field: title
     summary: "{{fields.number}}/{{fields.year}} {{fields.title}}"
     sortable_fields: [year, number, title]
-    preview_path: "fi/palvelut/proleko/arkisto/"
+    preview_path: "fi/jasenille/proleko/arkisto/"
     fields:
       - label: "Vuosi"
         name: year

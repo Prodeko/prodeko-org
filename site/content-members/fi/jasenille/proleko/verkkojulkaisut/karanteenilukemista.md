@@ -6,7 +6,7 @@ description: Nyt kun suurin osa ajastasi kuluu omassa kotonasi, on hyv√§ aina v√
 photo:
   src: images/proleko/verkkojulkaisut/bannerilukemiset.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/8/]
+aliases: [/jasenille/proleko/posts/8/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/8/
 ---
 

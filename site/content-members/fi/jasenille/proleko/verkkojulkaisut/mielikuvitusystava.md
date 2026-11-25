@@ -6,7 +6,7 @@ description: Muistatko lapsuutesi parhaan ystävän? Sen henkilön, joka oli kan
 photo:
   src: images/proleko/verkkojulkaisut/bannermielikuvitusystava.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/4/]
+aliases: [/jasenille/proleko/posts/4/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/4/
 ---
 

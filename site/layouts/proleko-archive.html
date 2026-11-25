@@ -12,7 +12,7 @@
        Finnish list. */}}
   {{ $posts := "" }}
   {{ range hugo.Sites }}
-    {{ if eq .Language.Lang "fi" }}{{ $posts = .GetPage "/palvelut/proleko/verkkojulkaisut" }}{{ end }}
+    {{ if eq .Language.Lang "fi" }}{{ $posts = .GetPage "/jasenille/proleko/verkkojulkaisut" }}{{ end }}
   {{ end }}
 
   {{ partial "proleko-masthead.html" . }}

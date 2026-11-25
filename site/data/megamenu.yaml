@@ -100,7 +100,8 @@ fi:
           url: https://kiltiskamera.prodeko.org/
           signedIn: true
         - label: Proleko?
-          url: /fi/palvelut/proleko/
+          url: /fi/jasenille/proleko/
+          members: true
   events:
     - title: Tapahtumat
       links:
@@ -294,7 +295,8 @@ en:
           url: https://kiltiskamera.prodeko.org/
           signedIn: true
         - label: Proleko?
-          url: /en/services/proleko/
+          url: /en/members/proleko/
+          members: true
   events:
     - title: Events
       links:

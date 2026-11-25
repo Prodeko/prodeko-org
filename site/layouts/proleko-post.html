@@ -5,7 +5,7 @@
   {{ partial "proleko-masthead.html" . }}
   <article class="pl-post">
     {{ with .Params.photo }}{{ with resources.Get .src }}
-      {{ $img := .Resize "1500x webp q75" }}
+      {{ $img := partial "proleko-gated.html" (.Resize "1500x webp q75") }}
       <img class="pl-post-banner" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="">
     {{ end }}{{ end }}
     <header class="pl-post-head">

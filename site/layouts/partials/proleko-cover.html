@@ -18,9 +18,9 @@
   {{ if not $img }}
     {{ errorf "proleko: cover %q of issue %s not found" . $i.slug }}
   {{ end }}
-  {{ $one := $img.Resize (printf "%dx webp q75" $w) }}
-  {{ $two := $img }}
-  {{ if gt $img.Width $w }}{{ $two = $img.Resize (printf "%dx webp q75" (int (math.Min $img.Width (mul $w 2)))) }}{{ end }}
+  {{ $one := partial "proleko-gated.html" ($img.Resize (printf "%dx webp q75" $w)) }}
+  {{ $two := partial "proleko-gated.html" $img }}
+  {{ if gt $img.Width $w }}{{ $two = partial "proleko-gated.html" ($img.Resize (printf "%dx webp q75" (int (math.Min $img.Width (mul $w 2))))) }}{{ end }}
   {{ $src = $one.RelPermalink }}
   {{ $srcset = printf "%s 1x, %s 2x" $one.RelPermalink $two.RelPermalink }}
   {{ $width = $one.Width }}

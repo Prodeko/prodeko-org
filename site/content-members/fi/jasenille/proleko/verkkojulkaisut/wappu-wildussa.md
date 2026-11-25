@@ -6,7 +6,7 @@ description: Tartu RuneScape haasteeseen, niin kuin tarttuivat pelottomat soturi
 photo:
   src: images/proleko/verkkojulkaisut/banneri_runetappelu.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/9/]
+aliases: [/jasenille/proleko/posts/9/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/9/
 ---
 

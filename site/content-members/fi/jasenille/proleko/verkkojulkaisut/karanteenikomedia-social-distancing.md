@@ -6,7 +6,7 @@ description: Kuten nyt on tiedettyä, on koronakaranteeni jokaisen Prolekoakin p
 photo:
   src: images/proleko/verkkojulkaisut/banneri_fillari.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/14/]
+aliases: [/jasenille/proleko/posts/14/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/14/
 ---
 

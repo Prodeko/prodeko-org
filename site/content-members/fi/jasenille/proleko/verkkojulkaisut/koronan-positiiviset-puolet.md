@@ -6,8 +6,8 @@ description: "Covid19, tuttavallisemmin korona, iski maailman polvilleen ennäty
 photo:
   src: images/proleko/verkkojulkaisut/banneri_koronapositiivisuus.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/2/]
+aliases: [/jasenille/proleko/posts/2/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/2/
 ---
 
-![Koronan positiiviset puolet](/uploads/proleko/verkkojulkaisut/koronapositiivisuus_final_I7seHcp.webp)
+![Koronan positiiviset puolet](/fi/jasenille/proleko/verkkojulkaisut/kuvat/koronapositiivisuus_final_I7seHcp.webp)

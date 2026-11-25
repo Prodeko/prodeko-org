@@ -6,7 +6,7 @@ description: "Varoitus: saattaa sisältää pieniä jäämiä totuuden siemeniä
 photo:
   src: images/proleko/verkkojulkaisut/banneri_escape.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/10/]
+aliases: [/jasenille/proleko/posts/10/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/10/
 ---
 

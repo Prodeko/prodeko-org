@@ -18,7 +18,7 @@ The list itself is tools/proleko/old-archive.txt, saved from the logged-in
 page, because the page cannot be fetched without a member login.
 
 The 16 web articles from spring 2020 were converted by hand into
-site/content/fi/palvelut/proleko/verkkojulkaisut/. --post-images downloads the
+site/content-members/fi/jasenille/proleko/verkkojulkaisut/. --post-images downloads the
 pictures those pages refer to.
 
 Run from the repository root. Needs cwebp (libwebp) for the covers.
@@ -50,7 +50,7 @@ COVER_WIDTH = 600
 # later ones were renamed.
 CK = "https://static.prodeko.org/media/ckeditor_uploads/2020/"
 BANNERS = "https://static.prodeko.org/media/proleko/posts/2020/"
-POST_IMAGE_DIR = Path("site/static/uploads/proleko/verkkojulkaisut")
+POST_IMAGE_DIR = Path("site/content-members/fi/jasenille/proleko/verkkojulkaisut/kuvat")
 BANNER_DIR = Path("site/assets/images/proleko/verkkojulkaisut")
 POST_IMAGES = [
     ("04/14/koronapositiivisuus_final_I7seHcp.jpg", None),

@@ -5,21 +5,35 @@ an issue in the editing screen.
 
 ## Pages
 
+Members only: the pages are in the member tree (`content-members/`) and Caddy
+serves them, and the PDFs, only to someone signed in with the `membership`
+realm role, as on the old site.
+
 | Address | What | Template |
 |---|---|---|
-| `/fi/palvelut/proleko/` | front page: the newest issue, the eight before it, the years | `layouts/proleko-home.html` |
-| `/fi/palvelut/proleko/arkisto/` | every issue since 1999, by year | `layouts/proleko-archive.html` |
-| `/fi/palvelut/proleko/verkkojulkaisut/` | the 16 web articles of spring 2020 | `layouts/proleko-posts.html`, `proleko-post.html` |
-| `/en/services/proleko/`, `/en/services/proleko/archive/` | the same in English; the articles are Finnish only | as above |
+| `/fi/jasenille/proleko/` | front page: the newest issue, the eight before it, the years | `layouts/proleko-home.html` |
+| `/fi/jasenille/proleko/arkisto/` | every issue since 1999, by year | `layouts/proleko-archive.html` |
+| `/fi/jasenille/proleko/verkkojulkaisut/` | the 16 web articles of spring 2020 | `layouts/proleko-posts.html`, `proleko-post.html` |
+| `/en/members/proleko/`, `/en/members/proleko/archive/` | the same in English; the articles are Finnish only | as above |
 
 The design follows the editors' sketch (`nettisivuvisiota.pptx`): a navy
 masthead with the name in serif capitals, the newest cover large, "Tuoretta
 tuotantoa" as a grid, and the years down the side. Every cover opens the PDF.
 
-The old addresses `/fi/palvelut/proleko/archives/`, `/en/services/proleko/archives/`
-and `/fi/palvelut/proleko/posts/1/`…`16/` are Hugo aliases. The archive is
-public; on the old site it was behind a member login. Moving it behind the
-login later means moving the three section folders under `content-members/`.
+The menus name the pages with `members: true`, so the public build shows
+them as plain text and never prints a member address.
+
+Every image is under the gate as well. Hugo publishes processed images at
+`/images/…`, which the gate does not cover, so `partials/proleko-gated.html`
+copies each cover and banner to `/fi/jasenille/proleko/kuvat/`. The
+articles' own pictures are files in the section,
+`verkkojulkaisut/kuvat/`.
+
+The old addresses are redirected by Caddy: `/fi/palvelut/proleko/…` to
+`/fi/jasenille/proleko/…` and `/en/services/proleko/…` to
+`/en/members/proleko/…`. Inside the member tree, `archives/` and
+`posts/1/`…`16/` are Hugo aliases of the new pages, so every old link
+lands on its page after sign-in.
 
 ## Where things are kept
 
@@ -61,8 +75,9 @@ editing screen.
 The host side is in Prodeko/infrastructure#39: the `cms_auth_proxy` role
 creates `/srv/proleko` (owned by the container's uid 65532), mounts it into
 the proxy and sets `PROLEKO_DIR`, and the Caddyfile serves it at
-`/media/proleko/`, redirects `/en/services/proleko/posts/*` to the Finnish
-aliases and points proleko.prodeko.org at the new archive.
+`/media/proleko/` behind the member gate, redirects the old addresses into
+`/fi/jasenille/proleko/` and `/en/members/proleko/`, and points
+proleko.prodeko.org at the new pages.
 
 1. Merge that pull request and run
    `ansible-playbook playbooks/prodeko_vm.yml --tags caddy,cms_auth_proxy`.
@@ -93,4 +108,4 @@ this to `main`.
 2026-11-25, saved from the logged-in page.
 `python3 tools/import-proleko.py --post-images` rewrites the data files and
 fetches any missing cover or article picture. It does not touch the
-hand-converted articles in `content/fi/palvelut/proleko/verkkojulkaisut/`.
+hand-converted articles in `content-members/fi/jasenille/proleko/verkkojulkaisut/`.

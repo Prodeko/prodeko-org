@@ -6,7 +6,7 @@ description: Netflixin kulutus on ainakin toimittajien keskuudessa kasvanut viim
 photo:
   src: images/proleko/verkkojulkaisut/bannerinetflixsuositukset.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/5/]
+aliases: [/jasenille/proleko/posts/5/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/5/
 ---
 

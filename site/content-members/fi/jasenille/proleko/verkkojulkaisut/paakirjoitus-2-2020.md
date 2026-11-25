@@ -6,7 +6,7 @@ description: Yksi killan vuosikalenterin kärkitapahtumista, Prodeko Seminaari, 
 photo:
   src: images/proleko/verkkojulkaisut/Paakirjoitus_22020.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/1/]
+aliases: [/jasenille/proleko/posts/1/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/1/
 ---
 

@@ -6,7 +6,7 @@ description: Tällä vakavamielisellä testillä voit selvittää, millainen ves
 photo:
   src: images/proleko/verkkojulkaisut/Made_artikkeli.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/16/]
+aliases: [/jasenille/proleko/posts/16/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/16/
 ---
 

@@ -63,7 +63,7 @@ fi:
       - { label: PTER-kilke, url: /fi/palvelut/pter/ }
       - { label: Brändi ja materiaalit, url: /fi/palvelut/materiaalit/ }
       - { label: Tiedotuskanavat, url: /fi/palvelut/tiedotuskanavat/ }
-      - { label: Proleko?, url: /fi/palvelut/proleko/ }
+      - { label: Proleko?, url: /fi/jasenille/proleko/, members: true }
       - { label: Kokouspöytäkirjat, url: /fi/jasenille/poytakirjat/, members: true }
   # The abipäivä page sits at the top level of the tree, so its prefix is
   # matched here to give it the same sidebar as the rest of the abi pages.
@@ -136,7 +136,7 @@ fi:
       - { heading: Verkkopalvelut }
       - { label: Galleria, url: "https://gallery.prodeko.org/kuvat/" }
       - { label: Kiltiskamera, url: "https://kiltiskamera.prodeko.org/" }
-      - { label: Proleko?, url: /fi/palvelut/proleko/ }
+      - { label: Proleko?, url: /fi/jasenille/proleko/, members: true }
       - { label: Viikkotiedote, url: "https://tiedotteet.prodeko.org" }
       - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
       - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }
@@ -189,7 +189,7 @@ en:
       - { label: PTER-kilke, url: /en/services/pter/ }
       - { label: Brand and materials, url: /en/services/materials/ }
       - { label: Communication channels, url: /en/services/communication-channels/ }
-      - { label: Proleko?, url: /en/services/proleko/ }
+      - { label: Proleko?, url: /en/members/proleko/, members: true }
       - { label: Meeting minutes, url: /en/members/minutes/, members: true }
   - title: Prospective students
     match: [/en/prospective-students/]
@@ -240,7 +240,7 @@ en:
       - { heading: Web services }
       - { label: Gallery, url: "https://gallery.prodeko.org/kuvat/" }
       - { label: Kiltiskamera, url: "https://kiltiskamera.prodeko.org/" }
-      - { label: Proleko?, url: /en/services/proleko/ }
+      - { label: Proleko?, url: /en/members/proleko/, members: true }
       - { label: Weekly letter, url: "https://tiedotteet.prodeko.org" }
       - { label: Vaaliplatta, url: "https://vaalit.prodeko.org" }
       - { label: Ilmokilke 3.0, url: "https://ilmo.prodeko.org" }

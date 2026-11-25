@@ -6,7 +6,7 @@ description: Maailmaa ryöpöttelee tällä hetkellä koronavirus, jonka vaikutu
 photo:
   src: images/proleko/verkkojulkaisut/bannerimarkets.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/13/]
+aliases: [/jasenille/proleko/posts/13/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/13/
 ---
 

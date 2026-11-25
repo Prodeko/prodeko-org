@@ -6,17 +6,17 @@ description: Mitä sitseiltä oikein vaaditaan? Mikä tekee hyvät sitsit ja mik
 photo:
   src: images/proleko/verkkojulkaisut/bannerisitsit.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/12/]
+aliases: [/jasenille/proleko/posts/12/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/12/
 ---
 
 Aloitetaan siis perusasioista. Millaisia elementtejä sitseillä on ja mikä on oikeasti relevanttia? No perinteisesti sitseillä on tietenkin ruokaa, juomaa, hyvää seuraa, ohjelmaa, lauluja ja ehkä jopa erikoisia asuja. Omakohtaisista kokemuksistamme kuitenkin ilmeni se, että sitseiltä vaaditaan vain yksi elementti: juomat. Ruokaa saa kaupasta halutessaan, ohjelman löytää vikkelään internetistä, ja asukin on mukavempi, mitä vähempi. Mikä olisikaan sen suomalaisempaa kuin kalsarikännit itsekseen ja kuten vanha sananlasku sanoo: “Älä opeta isääs panee!” Esi-isämme kyllä tiesivät onnen salat.
 
-![](/uploads/proleko/verkkojulkaisut/kalsarikannit.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/kalsarikannit.webp)
 
 Elämme erikoisia aikoja ja sen kanssa tulee myös erikoisia ideoita. Kaikki tietävät nämä perinteisten sitsien salat. Etäsitsit tarjoavat kuitenkin mahdollisuuden piristää sitsejä ja löytää yllättäviä helmiä sitsien sisältöön. Kannattaa ehdottomasti varata sitseille yksi kolmijalkainen pöytä, suora yhteys Taiwanin poliisipäälikköön ja kuvaasi filtteri (Näytät kerrankin yhtä hyvältä kuin sinusta tuntuu!)
 
-![](/uploads/proleko/verkkojulkaisut/tiger-king.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/tiger-king.webp)
 
 Miten etäsitsit sitten vertauvat normaaleihin sitseihin? Tässä kohtaa tutkivan journalismin osasto päätti ottaa taulukot auki ja toteuttaa kattavan “Pros-and-Cons”-analyysin. Huomasimme lopulta, että hyvin monet näistä asioista ovat kaksisuuntaisia. Etäsitsien ominaisuuksia sopii pitkälti hyville ja huonoille puolille yhtä aikaa. Alla listattuna näitä elementtejä:
 
@@ -49,4 +49,4 @@ _(Sponsored by “Pornhub.com”)_
 Ehdotus Prodekon etäwappusitseille!\
 IE-toimittaa lavan kaljaa kaikkien oville!
 
-![](/uploads/proleko/verkkojulkaisut/koff.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/koff.webp)

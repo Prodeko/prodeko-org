@@ -6,13 +6,13 @@ description: "Kuun alussa mediassa nousi kohu presidentti Trumpin suosittamasta 
 photo:
   src: images/proleko/verkkojulkaisut/Lukashenko.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/15/]
+aliases: [/jasenille/proleko/posts/15/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/15/
 ---
 
 Herra Trump, suosittelen teitä ottamaan mallia aidolta, monen vuoden kokemuksen omaavalta maanjohtajalta Lukashenkalta. Tätä alphapolitikkoa ei mikään virus saa koskaan epäröimään ja kannatusluvutkin ovat huippuluokkaa!
 
-![](/uploads/proleko/verkkojulkaisut/kuva-1.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/kuva-1.webp)
 
 Lukashenka, onkin tuttuun tapaan ottanut isännän otteen tilanteesta ja jakanut pomminvarmoja ohjeistuksia koronan nujertamiseen. Nämä ovat myös osoittautuneet toimiviksi, onhan Valko-Venäjä käytännössä viimeinen maa, jossa elämä jatkuu ja talous pyörii! Ja toisin kuin Trumpin pesuainelääkkeet, nämä keinot ovat ihan todettuja kansanlääkkeitä, joilla ei ole sivuvaikutuksia ja jonka toimivuudesta meillä on 140% varmuus.
 
@@ -34,14 +34,14 @@ Tämä keino on myös Suomessa tuttu ja toisen kohdan toteutus ei tule tuottamaa
 
 ## Traktorityöt
 
-![](/uploads/proleko/verkkojulkaisut/kuva-2-traktori.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/kuva-2-traktori.webp)
 
 Viiruksen ennaltaehkäisemiseksi, ihmisten kuuluisi Lukashenkon mukaan mennä töihin, mielellään traktoritöihin pellolle. Prodekolle käsite ”mennä töihin” on enemmän kuin tuttu, joten tämäkin onnistuu meiltä ongelmitta.
 
 **Pros**: Hanki traktoritöitä Uudenmaan ulkopuolelta ja saat virallisen luvan matkustaa sinne (auttaa kohdassa 6)\
 **Cons**: Traktorityöt ei tee itseään pelkällä käsienheiluttelulla
 
-![](/uploads/proleko/verkkojulkaisut/lukashenko3.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/lukashenko3.webp)
 
 ## Jääkiekko
 
@@ -59,7 +59,7 @@ Rasvainen ruoka auttaa keuhkoja taistelemaan viruksia vastaan. Onneksi karanteen
 
 ## Pienet vuohet
 
-![](/uploads/proleko/verkkojulkaisut/kuva-3-vuohet.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/kuva-3-vuohet.webp)
 
 Presidentti kertoi, että hänellä on 11 lehmää (weird flex, but okay) ja hän oli juuri saanut uusia pieniä vuohia! Vuohet olivat kuulema lumenvalkoisia ja niin söpöjä, että kaikki maailman ongelmat siirtyivät taka-alalle. ”Tää tulee ihan sydämmestä. Kaikki te puhutte: korona sitä korona tätä, mutta tässä se oikea lääke on” Ehkä ristiriitaisin ja vaikeitten toteutettavissa oleva ohjelman osa, eikä ole täyttä varmuutta presidentin taka-ajatuksesta. Mahdollisesti hän halusi vain leijua vuohillaan. Mutta mikäli lähettyvillä ei ole lumivalkoisia vuohia suosittelen esimerkiksi piirtämään ne!
 

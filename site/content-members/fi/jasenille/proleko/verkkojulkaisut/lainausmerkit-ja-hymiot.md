@@ -6,18 +6,18 @@ description: Kuinka raudanluja on suomalaisten mediatalojen journalistinen integ
 photo:
   src: images/proleko/verkkojulkaisut/banneri_kaksoispistedee.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/6/]
+aliases: [/jasenille/proleko/posts/6/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/6/
 ---
 
-![](/uploads/proleko/verkkojulkaisut/prodeko.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/prodeko.webp)
 
-![](/uploads/proleko/verkkojulkaisut/mycourses.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/mycourses.webp)
 
-![](/uploads/proleko/verkkojulkaisut/omistajuuskiista.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/omistajuuskiista.webp)
 
-![](/uploads/proleko/verkkojulkaisut/arts.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/arts.webp)
 
-![](/uploads/proleko/verkkojulkaisut/slush.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/slush.webp)
 
-![](/uploads/proleko/verkkojulkaisut/ruotsi.webp)
+![](/fi/jasenille/proleko/verkkojulkaisut/kuvat/ruotsi.webp)

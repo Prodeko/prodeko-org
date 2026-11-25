@@ -6,7 +6,7 @@ description: Kun vantaalainen Oona Kallela tanssii musiikin tahtiin, katsotaan h
 photo:
   src: images/proleko/verkkojulkaisut/banneritiktokinfluensseri.webp
   alt: ""
-aliases: [/palvelut/proleko/posts/7/]
+aliases: [/jasenille/proleko/posts/7/]
 sourceURL: https://old.prodeko.org/fi/palvelut/proleko/posts/7/
 ---
 
@@ -23,13 +23,13 @@ Kallela arvelee seuraajien löytävän hänen tilinsä suositun #prodekokhpp-tun
 
 TikTok on Kallela silti ensi kädessä harrastus.
 
-![Oona Kallela](/uploads/proleko/verkkojulkaisut/kuva1.webp "Oona Kallela kertoo, että eniten aikaa vie tanssivideoiden tanssien opettelu.")
+![Oona Kallela](/fi/jasenille/proleko/verkkojulkaisut/kuvat/kuva1.webp "Oona Kallela kertoo, että eniten aikaa vie tanssivideoiden tanssien opettelu.")
 
 Videon kuvaamiseen menee aikaa muutamasta minuutista yli tuntiin. Videoiden tekeminen ei vaadi erikoistaitoja, Kallela todistaa. Jos suositut tanssit eivät luonnistu, voi tehdä esimerkiksi mininäytelmiä tai vain höpötellä elämästään. Kallelan suosikkeja ovat kuitenkin tanssivideot, mutta suunnitteilla on siirtyä myös huumoristisiin videoihin Wapun lähestyessä. TikTokin suosiota voi osaltaan selittää kuvaamisen helppous. Videot saavat näyttää kotikutoisilta, eikä taustalla tarvitse olla harkittua rekvisiittaa tai täydellistä auringonlaskua. Kallela kuvaakin useimmiten kotonaan, koska sieltä ei saa poistua.
 
-![Oona Kallela](/uploads/proleko/verkkojulkaisut/kuva-2.webp "Oona Kallelalla on 5 seuraajaa.")
+![Oona Kallela](/fi/jasenille/proleko/verkkojulkaisut/kuvat/kuva-2.webp "Oona Kallelalla on 5 seuraajaa.")
 
-![Oona Kallela](/uploads/proleko/verkkojulkaisut/kuva-3.webp "Välillä 23-vuotiasta Oona huolettaa somessa saamansa huomio näin nuorena.")
+![Oona Kallela](/fi/jasenille/proleko/verkkojulkaisut/kuvat/kuva-3.webp "Välillä 23-vuotiasta Oona huolettaa somessa saamansa huomio näin nuorena.")
 
 TikTok on herättänyt monien tärkeiden tahojen kuten Suomen hallituksen ja Polyteknikkojen Raittiusseuran johotkunnan huomion. ”Kuulin, että Poran johtis oli nähnyt videoni. Vasta siinä vaiheessa tajusin, miten isosta jutusta tässä on kyse.”
 
