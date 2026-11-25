@@ -85,7 +85,7 @@ func routesFor(t *testing.T, store *session.Store, roles []string) (http.Handler
 	}
 
 	signin := &stubSignin{}
-	return routes(cfg, slog.New(slog.DiscardHandler), signin, store, github), signin
+	return routes(cfg, slog.New(slog.DiscardHandler), signin, store, github, nil), signin
 }
 
 func tokenFor(t *testing.T, store *session.Store, roles ...string) string {

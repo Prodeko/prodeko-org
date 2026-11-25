@@ -580,3 +580,87 @@ img{display:block;max-width:100%}
 .site-notice strong{margin-right:var(--space-1)}
 .site-notice-btn{flex:none;padding:var(--space-2) var(--space-4);border:1px solid var(--text-on-brand);color:var(--text-on-brand);font-size:var(--size-sm);font-weight:var(--weight-semibold);white-space:nowrap;transition:var(--transition-ui)}
 .site-notice-btn:hover{background:var(--text-on-brand);color:var(--pd-blue);text-decoration:none}
+
+/* Proleko? — the guild magazine's own pages (layouts/proleko-*.html). The
+   magazine keeps the site's header and footer but has a masthead of its own,
+   set in a serif after the vision its editors drew: a navy band, the name in
+   large capitals, and navy title bars over each column. */
+:root{--pl-serif:Georgia,"Times New Roman",Times,serif;--pl-navy:var(--pd-blue-dark);--pl-max:1280px}
+.pl-masthead{background:var(--pl-navy);color:#fff;border-bottom:8px solid transparent;border-image:var(--rainbow-gradient) 1}
+.pl-masthead-inner{max-width:var(--pl-max);margin:0 auto;padding:var(--space-5) var(--space-6) var(--space-5);text-align:center}
+.pl-masthead .breadcrumbs ol{margin:0 0 var(--space-4);justify-content:flex-start}
+.pl-masthead .breadcrumbs a,.pl-masthead .breadcrumbs [aria-current],.pl-masthead .breadcrumbs li+li::before{color:rgb(255 255 255 / 0.8)}
+.pl-tagline{font-family:var(--pl-serif);font-size:clamp(1rem,2.4vw,1.5rem);margin:0}
+.pl-name{font-family:var(--pl-serif);font-weight:700;font-size:clamp(3rem,10vw,5.5rem);line-height:1;letter-spacing:0.01em;text-transform:uppercase;color:#fff;margin:var(--space-1) 0 var(--space-3)}
+.pl-name a{color:inherit}
+.pl-name a:hover{color:inherit;text-decoration:none}
+.pl-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:var(--space-2) var(--space-12);font-family:var(--pl-serif);font-size:var(--size-lg)}
+.pl-nav a{color:#fff;padding:var(--space-1) 0}
+.pl-nav a[aria-current]{font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.pl-band{font-family:var(--pl-serif);font-size:var(--size-xl);font-weight:700;line-height:1.2;text-align:center;color:#fff;background:var(--pl-navy);padding:var(--space-3) var(--space-4);margin:0 0 var(--space-4)}
+
+.pl-home{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2.3fr) minmax(0,0.9fr);gap:var(--space-6);align-items:start;max-width:var(--pl-max);margin:0 auto;padding:var(--space-6) var(--space-6) var(--space-16)}
+.pl-col--recent .pl-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pl-intro{max-width:var(--content-w);margin:0 auto;padding:0 var(--space-6) var(--space-16)}
+
+.pl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--space-5) var(--space-3)}
+.pl-cover{display:block;color:var(--pd-black)}
+.pl-cover img{display:block;width:100%;height:auto;aspect-ratio:707/1000;object-fit:cover;background:var(--pd-blue-tint-08);box-shadow:var(--shadow-sm);transition:transform var(--duration-base) var(--ease-standard),box-shadow var(--duration-base) var(--ease-standard)}
+.pl-cover:hover{text-decoration:none;color:var(--pd-blue)}
+.pl-cover:hover img{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.pl-cover-text{display:block;margin-top:var(--space-2);font-size:var(--size-sm);line-height:1.3}
+.pl-cover-number{display:block;font-weight:var(--weight-bold)}
+.pl-cover-title{display:block;color:var(--text-muted)}
+.pl-cover--large{position:relative}
+.pl-cover--large .pl-cover-text{font-size:var(--size-md)}
+/* The arrow in the corner of the newest issue says "open me", as in the
+   editors' sketch. */
+.pl-cover--large::after{content:"→";position:absolute;right:var(--space-3);top:calc(var(--space-3) + 0px);display:grid;place-items:center;width:52px;height:52px;border-radius:var(--radius-circle);background:#fff;color:var(--pl-navy);font-size:28px;line-height:1;box-shadow:var(--shadow-md)}
+.pl-cover--web img{object-fit:cover}
+
+.pl-years{list-style:none;margin:0;padding:0 var(--space-4);font-family:var(--pl-serif);font-size:var(--size-xl);font-weight:700;line-height:1.75}
+.pl-years a{color:var(--text-muted)}
+.pl-years a:hover{color:var(--pl-navy)}
+.pl-years-all{margin-top:var(--space-2)}
+
+.pl-archive{display:grid;grid-template-columns:140px minmax(0,1fr);gap:var(--space-8);max-width:var(--pl-max);margin:0 auto;padding:var(--space-6) var(--space-6) var(--space-16)}
+.pl-archive-years{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 112px);overflow-y:auto}
+.pl-archive-years .pl-years{padding:0;font-size:var(--size-lg);line-height:1.6}
+.pl-year+.pl-year{margin-top:var(--space-10)}
+.pl-year .pl-band{text-align:left;scroll-margin-top:88px}
+.pl-archive-intro{margin-bottom:var(--space-6)}
+
+.pl-posts{max-width:var(--pl-max);margin:0 auto;padding:var(--space-8) var(--space-6) var(--space-16)}
+.pl-posts-head{max-width:var(--content-w);margin-bottom:var(--space-8)}
+.pl-posts-head h1{font-family:var(--pl-serif);text-transform:none;color:var(--pl-navy)}
+.pl-post-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-6)}
+.pl-post-card{display:flex;flex-direction:column;height:100%;color:var(--pd-black);border:1px solid var(--border-subtle);background:var(--surface-card)}
+.pl-post-card:hover{text-decoration:none;border-color:var(--pl-navy)}
+.pl-post-card img{width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+.pl-post-card-text{display:block;padding:var(--space-4)}
+.pl-post-title{display:block;font-family:var(--pl-serif);font-size:var(--size-lg);font-weight:700;line-height:1.3;color:var(--pl-navy);margin-bottom:var(--space-2)}
+.pl-post-meta{display:block;font-size:var(--size-sm);color:var(--text-muted)}
+
+.pl-post{max-width:calc(var(--content-w) + 2 * var(--space-6));margin:0 auto;padding:var(--space-8) var(--space-6) var(--space-16)}
+.pl-post-banner{width:100%;height:auto;max-height:420px;object-fit:cover;margin-bottom:var(--space-6)}
+.pl-post-head h1{font-family:var(--pl-serif);font-size:clamp(1.75rem,4vw,2.5rem);text-transform:none;color:var(--pl-navy);margin-bottom:var(--space-2)}
+.pl-post-head .pl-post-meta{margin:0 0 var(--space-6)}
+.pl-post .prose blockquote{font-family:var(--pl-serif);font-size:var(--size-xl);font-style:italic;color:var(--pl-navy);border-left:4px solid var(--pl-navy);margin:var(--space-6) 0;padding:var(--space-1) 0 var(--space-1) var(--space-5)}
+.pl-post-back{margin-top:var(--space-10)}
+
+@media (max-width:1000px){
+  .pl-home{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
+  .pl-col--years{grid-column:1/-1}
+  .pl-col--years .pl-years{display:flex;flex-wrap:wrap;gap:0 var(--space-5);padding:0}
+  .pl-col--recent .pl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .pl-home{grid-template-columns:minmax(0,1fr);padding-left:var(--space-4);padding-right:var(--space-4)}
+  .pl-col--latest .pl-cover{max-width:340px;margin:0 auto}
+  .pl-archive{grid-template-columns:minmax(0,1fr);padding-left:var(--space-4);padding-right:var(--space-4)}
+  .pl-archive-years{position:static;max-height:none}
+  .pl-archive-years .pl-years{display:flex;flex-wrap:wrap;gap:0 var(--space-4)}
+  .pl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pl-masthead-inner{padding-left:var(--space-4);padding-right:var(--space-4)}
+  .pl-nav{gap:var(--space-2) var(--space-6)}
+}

@@ -1,0 +1,23 @@
+{{/* One issue as its cover, linking to the PDF. Takes {issue, size, lang};
+     size "large" is the newest issue on the Proleko? front page, anything
+     else a cover in a grid. A cover file that is missing is a build error:
+     the upload page always writes one, so a missing file is a typo in a data
+     file, and an empty box would hide it. */}}
+{{ $i := .issue }}
+{{ $w := cond (eq .size "large") 600 300 }}
+{{ $img := resources.Get $i.cover }}
+{{ if not $img }}
+  {{ errorf "proleko: cover %q of issue %s not found" $i.cover $i.slug }}
+{{ end }}
+{{ $one := $img.Resize (printf "%dx webp q75" $w) }}
+{{ $two := $img }}
+{{ if gt $img.Width $w }}{{ $two = $img.Resize (printf "%dx webp q75" (int (math.Min $img.Width (mul $w 2)))) }}{{ end }}
+<a class="pl-cover{{ if eq .size "large" }} pl-cover--large{{ end }}" href="{{ $i.url }}" target="_blank" rel="noopener">
+  <img src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x"
+       width="{{ $one.Width }}" height="{{ $one.Height }}" loading="lazy"
+       alt="Proleko? {{ $i.label }}{{ with $i.title }}: {{ . }}{{ end }} (PDF)">
+  <span class="pl-cover-text" aria-hidden="true">
+    <span class="pl-cover-number">{{ $i.label }}</span>
+    {{ with $i.title }}<span class="pl-cover-title">{{ . }}</span>{{ end }}
+  </span>
+</a>

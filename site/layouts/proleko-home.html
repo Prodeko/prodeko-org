@@ -1,0 +1,48 @@
+{{/* The Proleko? front page, after the vision the magazine's editors drew
+   for it: the newest issue large, the eight before it as a grid under
+   "Tuoretta tuotantoa", and the archive as a column of years. Every cover
+   opens the issue's PDF. The page's own text, if it has any, sits under
+   the three columns. */}}
+{{ define "main" }}
+  {{ $isFi := eq .Language.Lang "fi" }}
+  {{ $issues := partial "proleko-issues.html" . }}
+  {{ $archive := .GetPage (cond $isFi "arkisto" "archive") }}
+  {{ $years := slice }}
+  {{ range $issues }}{{ if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}{{ end }}
+
+  {{ partial "proleko-masthead.html" . }}
+
+  <div class="pl-home">
+    <section class="pl-col pl-col--latest" aria-labelledby="pl-latest">
+      <h2 class="pl-band" id="pl-latest">{{ if $isFi }}Uusin julkaisu{{ else }}Latest issue{{ end }}</h2>
+      {{ with index $issues 0 }}
+        {{ partial "proleko-cover.html" (dict "issue" . "size" "large" "lang" $.Language.Lang) }}
+      {{ end }}
+    </section>
+
+    <section class="pl-col pl-col--recent" aria-labelledby="pl-recent">
+      <h2 class="pl-band" id="pl-recent">{{ if $isFi }}Tuoretta tuotantoa{{ else }}Recent issues{{ end }}</h2>
+      <div class="pl-grid">
+        {{ range after 1 (first 9 $issues) }}
+          {{ partial "proleko-cover.html" (dict "issue" . "lang" $.Language.Lang) }}
+        {{ end }}
+      </div>
+    </section>
+
+    <nav class="pl-col pl-col--years" aria-labelledby="pl-years">
+      <h2 class="pl-band" id="pl-years">{{ if $isFi }}Arkisto{{ else }}Archive{{ end }}</h2>
+      {{ with $archive }}
+        <ul class="pl-years">
+          {{ range first 11 $years }}
+            <li><a href="{{ $archive.RelPermalink }}#{{ . }}">{{ . }}</a></li>
+          {{ end }}
+          <li class="pl-years-all"><a href="{{ $archive.RelPermalink }}">{{ if $isFi }}Kaikki lehdet{{ else }}All issues{{ end }}</a></li>
+        </ul>
+      {{ end }}
+    </nav>
+  </div>
+
+  {{ with .Content }}
+    <div class="pl-intro prose">{{ . }}</div>
+  {{ end }}
+{{ end }}

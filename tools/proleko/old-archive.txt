@@ -1,0 +1,111 @@
+# The Proleko? archive as old.prodeko.org listed it on 2026-11-25, behind a
+# member login at /fi/palvelut/proleko/archives/. One issue per line:
+#
+#   year|number|title|pdf|cover
+#
+# pdf and cover are relative to
+# https://static.prodeko.org/media/proleko/archives/, where both are public.
+# A title equal to the number means the old site had no title for the issue.
+# Read by tools/import-proleko.py.
+2026|1/2026|TrippiProleko?|2026/Proleko_1_2026.pdf|2026/Proleko_1_2026_kansi.png
+2026|2/2026|KasvuProleko?|2026/Proleko_2_2026.pdf|2026/Proleko_2_2026_kansi.png
+2026|3/2026|Proleko? 60|2026/Proleko_60.pdf|2026/Proleko_60_sd0a0iK.JPG
+2025|1/2025|Ruoka&Viini-Proleko?|2025/Proleko_1_2025_final.pdf|2025/Nayttokuva_2025-03-19_kello_20.06.46.png
+2025|2/2025|CosmoProleko?|2025/Proleko_2_nettiversio_2.pdf|2025/Nayttokuva_2025-05-17_kello_15.24.49.png
+2025|3/2025|Prolematon|2025/Proleko_3.pdf|2025/Prolematon.png
+2025|4/2025|LahjaProleko?|2026/Proleko_04_25.pdf|2026/thumbnail_Proleko_04_25.png
+2024|1/2024|Hesari-Proleko?|2024/Proleko_1_2024_painoon.pdf|2024/Nayttokuva_2025-03-19_kello_20.01.26.png
+2024|2/2024|Proleko? Explorer|2024/proleko_2_2024.pdf|2024/Nayttokuva_2025-03-19_kello_20.04.09.png
+2024|3/2024|Proleko?|2024/PROLEKO_3_24_painoon.pdf|2024/Nayttokuva_2025-03-19_kello_20.04.33.png
+2024|4/2024|Proleko? Red|2024/Proleko_4_2024_printti.pdf|2024/Nayttokuva_2025-03-19_kello_20.04.55.png
+2023|1/2023|The Proleko?|2023/Proleko_1_2023_Final.pdf|2023/Nayttokuva_2025-03-09_kello_17.06.36.png
+2023|2/2023|Future Proleko?|2023/Proleko2_23.pdf|2023/Nayttokuva_2025-03-09_kello_17.08.12.png
+2023|3/2023|Maaseutu-Proleko?|2023/Proleko_3_23_B5_with_bleeds.pdf|2023/Nayttokuva_2025-03-09_kello_17.09.23.png
+2023|4/2023|Juoru-Proleko?|2023/Proleko_4_23_Final_Final.pdf|2023/Nayttokuva_2025-03-09_kello_17.10.33.png
+2022|1/2022|Boomer-Proleko?|2022/Proleko_1_22_2.0_Final_jne.pdf|2022/Nayttokuva_2025-03-29_kello_14.01.05.png
+2022|2/2022|Self help-proleko|2022/Proleko_2_2022.pdf|2022/Nayttokuva_2025-03-29_kello_13.58.27.png
+2022|3/2022|apuProleko?|2022/Proleko_3_22_Final.pdf|2022/Nayttokuva_2025-03-29_kello_14.03.07.png
+2022|4/2022|Joulu-Proleko?|2022/Proleko_4_22_Valmis.pdf|2022/Nayttokuva_2025-03-29_kello_14.04.48.png
+2021|1/2021|Muutos-Proleko? '21|2021/Proleko21_1.pdf|2021/proleko21_1_kansi.jpg
+2021|2/2021|Well-being in the Hybrid Way of Life|2021/Proleko21_2.pdf|2021/proleko21_2_kansi.jpg
+2021|3/2021|Eräily-Proleko?|2021/Proleko_3_21_2.pdf|2021/Proleko21_3_kansi.png
+2021|4/2021|Pikkujoulu-Proleko? '21|2021/Proleko_4_2021_finalfinal.pdf|2021/Proleko21_4_kansi.png
+2020|1/2020|Matkaopas-Proleko?|2020/Proleko_12020.pdf|2020/Screenshot_2020-04-13_at_2.16.06.png
+2020|3/2020|MediaProleko?|2020/Proleko_3-2020.pdf|2020/Screenshot_2020-11-03_at_20.27.49.png
+2020|4/2020|PikkujouluProleko? 2020|2020/Proleko-4-2020-spredi.pdf|2020/Screenshot_2020-12-16_at_16.32.45.png
+2019|1/2019|KohuProleko?|2019/Proleko-1-Final12.pdf|2019/Screenshot_2020-04-13_at_2.22.11.png
+2019|2/2019|Journalism with verbose|2019/Proleko-2-4.pdf|2019/Screenshot_2020-04-13_at_2.23.21.png
+2019|3/2019|IlmastoProleko?|2019/Proleko-3-printtiin1.pdf|2019/Screenshot_2020-04-13_at_2.24.28.png
+2019|4/2019|PikkujouluProleko?|2019/Proleko_4-2019.pdf|2019/Screenshot_2020-04-13_at_2.17.50.png
+2018|1/2018|Skandaali-Proleko? '18|2018/proleko18_1.pdf|2018/proleko18_1_kansi.jpg
+2018|2/2018|2/2018|2018/Proleko18_2.pdf|2018/proleko18_2_kansi.jpg
+2018|3/2018|Kukkako? '18|2018/Proleko18_3.pdf|2018/proleko18_3_kansi.jpg
+2018|4/2018|4/2018|2018/Proleko18_4.pdf|2018/proleko18_4_kansi.jpg
+2017|1/2017|1/2017|2017/Proleko17_1.pdf|2017/proleko17_1_kansi.jpg
+2017|2/2017|2/2017|2017/Proleko17_2.pdf|2017/proleko17_2_kansi.jpg
+2017|3/2017|3/2017|2017/Proleko17_3.pdf|2017/proleko17_3_kansi.jpg
+2017|4/2017|4/2017, kyllä, 4|2017/Proleko17_4.pdf|2017/proleko17_4_kansi.jpg
+2016|1/2016|1/2016|2016/Proleko16_1.pdf|2016/proleko16_1_kansi.jpg
+2016|2/2016|W-L-B-Proleko? '16|2016/Proleko16_2.pdf|2016/proleko16_2_kansi.jpg
+2016|3/2016|Vuju-Proleko? '16|2016/Proleko16_3.pdf|2016/proleko16_3_kansi.jpg
+2016|4/2016|Joulu-Proleko? '16|2016/Proleko16_4.pdf|2016/proleko16_4_kansi.jpg
+2015|1/2015|PP-Proleko? '15|2015/proleko15_1.pdf|2015/proleko15_1_kansi.jpg
+2015|2/2015|GP-Proleko? '15|2015/proleko15_2.pdf|2015/proleko15_2_kansi.jpg
+2015|3/2015|Disko-Proleko? '15|2015/Proleko15_3.pdf|2015/proleko15_3_kansi.jpg
+2015|4/2015|4/2015|2015/Proleko15_4.pdf|2015/proleko15_4_kansi.jpg
+2014|1/2014|1/2014|2014/Proleko14_1.pdf|2014/proleko14_1_kansi.jpg
+2014|2/2014|2/2014|2014/Proleko14_2.pdf|2014/proleko14_2_kansi.jpg
+2014|3/2014|3/2014|2014/Proleko14_3.pdf|2014/proleko14_3_kansi.jpg
+2014|4/2014|4/2014|2014/Proleko14_4.pdf|2014/proleko14_4_kansi.jpg
+2013|1/2013|Väri-Proleko? 2013|2013/proleko13_1.pdf|2013/proleko13_1_kansi.jpg
+2013|2/2013|Tutkivan journalismin teemanumero '13|2013/proleko13_2.pdf|2013/proleko13_2_kansi.jpg
+2013|3/2013|Säästämisen teemanumero '13|2013/proleko13_3.pdf|2013/proleko13_3_kansi.jpg
+2013|4/2013|4/2013|2013/proleko13_4.pdf|2013/proleko13_4_kansi.jpg
+2010|1/2010|1/2010|2010/proleko10_1.pdf|2010/proleko10_1_sisalto.jpg
+2010|3/2010|3/2010|2010/proleko10_3.pdf|2010/proleko10_3_ekasivu.jpg
+2010|4/2010|4/2010|2010/proleko10_4.pdf|2010/proleko10_4_ekasivu.jpg
+2009|1/2009|1/2009|2009/proleko09_1.pdf|2009/proleko09_1_kansi.jpg
+2009|2/2009|2/2009|2009/proleko09_2.pdf|2009/proleko09_2_kansi.jpg
+2009|3/2009|3/2009|2009/proleko09_3.pdf|2009/proleko09_3_kansi.jpg
+2009|4/2009|4/2009|2009/proleko09_4.pdf|2009/proleko09_4_kansi.jpg
+2008|1/2008|1/2008|2008/proleko08_1.pdf|2008/proleko08_1_kansi.jpg
+2008|2/2008|2/2008|2008/proleko08_2.pdf|2008/proleko08_2_kansi.jpg
+2008|3/2008|Grilli-ekstra|2008/proleko08_3.pdf|2008/proleko08_3_kansi.jpg
+2008|4/2008|4/2008|2008/proleko08_4.pdf|2008/proleko08_4_kansi.jpg
+2008|5/2008|PikkujouluProleko? 2008|2008/proleko08_5.pdf|2008/proleko08_5_kansi.jpg
+2007|1/2007|1/2007|2007/proleko07_1.pdf|2007/proleko07_1_kansi.jpg
+2007|2/2007|2/2007|2007/proleko07_2.pdf|2007/proleko07_2_kansi.jpg
+2007|3/2007|3/2007|2007/proleko07_3.pdf|2007/proleko07_3_kansi.jpg
+2007|4/2007|4/2007|2007/proleko07_4.pdf|2007/proleko07_4.jpg
+2006|1/2006|1/2006|2006/proleko06_1.pdf|2006/proleko06_1_kansi.jpg
+2006|2/2006|2/2006|2006/proleko06_2.pdf|2006/proleko06_2_kansi.jpg
+2006|3/2006|3/2006|2006/proleko06_3.pdf|2006/proleko06_3_kansi.jpg
+2006|4/2006|4/2006|2006/proleko06_4.pdf|2006/proleko06_4_kansi.jpg
+2005|1/2005|1/2005|2005/proleko05_1.pdf|2005/proleko05_1_kansi.jpg
+2005|2/2005|2/2005|2005/proleko05_2.pdf|2005/proleko05_2_kansi.jpg
+2005|3/2005|3/2005|2005/proleko05_3.pdf|2005/proleko05_3_kansi.jpg
+2005|4/2005|4/2005|2005/proleko05_4.pdf|2005/proleko05_4_kansi.jpg
+2004|1/2004|1/2004|2004/proleko04_1.pdf|2004/proleko04_1_kansi.jpg
+2004|2/2004|2/2004|2004/proleko04_2.pdf|2004/proleko04_2_kansi.jpg
+2004|3/2004|3/2004|2004/proleko04_3.pdf|2004/proleko04_3_kansi.jpg
+2004|4/2004|4/2004|2004/proleko04_4.pdf|2004/proleko04_4_kansi.jpg
+2002|1/2002|1/2002|2002/proleko02_1.pdf|2002/proleko02_1_kansi.jpg
+2002|2/2002|2/2002|2002/proleko02_2.pdf|2002/proleko02_2_kansi.jpg
+2002|3/2002|3/2002|2002/proleko02_3.pdf|2002/proleko02_3_kansi.jpg
+2002|5/2002|5/2002|2002/proleko02_5.pdf|2002/proleko02_5_kansi.jpg
+2001|1/2001|1/2001|2001/proleko01_1.pdf|2001/proleko01_1_kansi.jpg
+2001|2/2001|2/2001|2001/proleko01_2.pdf|2001/proleko01_2_kansi.jpg
+2001|3/2001|3/2001|2001/proleko01_3.pdf|2001/proleko01_3_kansi.jpg
+2001|4/2001|4/2001|2001/proleko01_4.pdf|2001/proleko01_4_kansi.jpg
+2001|5/2001|5/2001|2001/proleko01_5.pdf|2001/proleko01_5_kansi.jpg
+2000|1/2000|1/2000|2000/proleko00_1.pdf|2000/proleko00_1_kansi.jpg
+2000|2/2000|2/2000|2000/proleko00_2.pdf|2000/proleko00_2_kansi.jpg
+2000|3/2000|3/2000|2000/proleko00_3.pdf|2000/proleko00_3_kansi.jpg
+2000|4/2000|4/2000|2000/proleko00_4.pdf|2000/proleko00_4_kansi.jpg
+2000|5/2000|5/2000|2000/proleko00_5.pdf|2000/proleko00_5_kansi.jpg
+2000|6/2000|6/2000|2000/proleko00_6.pdf|2000/proleko00_6_kansi.jpg
+1999|1/1999|1/1999|1999/proleko1999_1.pdf|1999/proleko1_99_kansi_VCDCchv.jpg
+1999|2/1999|2/1999|1999/proleko1999_2.pdf|1999/proleko1999_2_kansi.jpg
+1999|3/1999|3/1999|1999/proleko1999_3.pdf|1999/proleko1999_3_kansi.jpg
+1999|4/1999|4/1999|1999/proleko99_4.pdf|1999/proleko99_4_kansi.jpg
+1999|5/1999|5/1999|1999/proleko99_5.pdf|1999/proleko99_5_kansi.jpg

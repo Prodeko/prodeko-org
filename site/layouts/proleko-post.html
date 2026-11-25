@@ -1,0 +1,21 @@
+{{/* One web article: its banner, title and byline, the ingress as the
+   lead, then the text. Set for every page under verkkojulkaisut/ by the
+   section's cascade. */}}
+{{ define "main" }}
+  {{ partial "proleko-masthead.html" . }}
+  <article class="pl-post">
+    {{ with .Params.photo }}{{ with resources.Get .src }}
+      {{ $img := .Resize "1500x webp q75" }}
+      <img class="pl-post-banner" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="">
+    {{ end }}{{ end }}
+    <header class="pl-post-head">
+      <h1>{{ .Title }}</h1>
+      <p class="pl-post-meta">{{ .Params.authors }} · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
+    </header>
+    <div class="prose">
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+      {{ .Content }}
+    </div>
+    {{ with .Parent }}<p class="pl-post-back"><a href="{{ .RelPermalink }}">← {{ .Title }}</a></p>{{ end }}
+  </article>
+{{ end }}

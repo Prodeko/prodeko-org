@@ -36,6 +36,16 @@ disableKinds = ["taxonomy", "term", "rss"]
   isPlainText = true
   notAlternative = true
 
+# Every Proleko? issue as JSON at /fi/palvelut/proleko/lehdet.json, from
+# data/proleko/. The editors' upload page (static/admin/proleko/) reads it to
+# say when a number is already in the archive. Turned on in the Finnish
+# magazine section's front matter only.
+[outputFormats.prolekoissues]
+  mediaType = "application/json"
+  baseName = "lehdet"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
   home = ["html", "infoscreen", "infoscreencountdowns"]
 
@@ -49,6 +59,11 @@ disableKinds = ["taxonomy", "term", "rss"]
   #
   # layouts/partials/analytics.html reads it and appends /count.js and /count.
   goatcounter = ""
+
+  # Where the Proleko? PDFs are served from. They are kept on the server's
+  # disk rather than in git (1.3 GB, some files over GitHub's limit); the data
+  # files in data/proleko/ name each PDF relative to this.
+  prolekoMedia = "/media/proleko/"
 
 # Deny by default. Hugo's own defaults let a template run a handful of
 # executables, read the environment and fetch any https URL; this site needs

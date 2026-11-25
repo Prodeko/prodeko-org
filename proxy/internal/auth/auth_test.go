@@ -809,3 +809,54 @@ func TestProviderIsEchoed(t *testing.T) {
 		t.Errorf("provider was not echoed back:\n%s", body)
 	}
 }
+
+// signInWithRoles runs a whole sign-in for an account holding roles and
+// returns the handshake's outcome.
+func signInWithRoles(t *testing.T, mutate func(*Config), roles []string) (string, map[string]string, *session.Store) {
+	t.Helper()
+	idp := newFakeIdP(t)
+	h, store := newTestHandler(t, idp, mutate)
+	q := startSignIn(t, h)
+	idp.setTokenResponse(func(url.Values) (int, map[string]any) {
+		return http.StatusOK, map[string]any{
+			"token_type":   "Bearer",
+			"access_token": idp.sign(accessTokenClaims(roles)),
+			"id_token":     idp.sign(idTokenClaims(q.Get("nonce"))),
+		}
+	})
+	status, payload := handshakeOutcome(t, callback(t, h, url.Values{"state": {q.Get("state")}, "code": {"abc"}}).Body.String())
+	return status, payload, store
+}
+
+// The Proleko? editor-in-chief holds PROLEKO_ROLES but not the editor roles,
+// and gets a session; the session carries their roles, which /github/*
+// refuses and the magazine upload accepts.
+func TestCallbackAdmitsProlekoRoles(t *testing.T) {
+	withProleko := func(c *Config) { c.ProlekoRoles = []string{"membership", "proleko-editor"} }
+
+	status, payload, store := signInWithRoles(t, withProleko, []string{"membership", "proleko-editor"})
+	if status != "success" {
+		t.Fatalf("status = %s, payload = %v", status, payload)
+	}
+	id, err := store.Verify(payload["token"])
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(id.MissingRoles(testEditorRoles)) == 0 {
+		t.Errorf("a Proleko-only session holds every editor role: %v", id.Roles)
+	}
+
+	// One of the two Proleko roles is not enough.
+	if status, _, _ := signInWithRoles(t, withProleko, []string{"proleko-editor"}); status == "success" {
+		t.Error("admitted with only part of PROLEKO_ROLES")
+	}
+	// Without PROLEKO_ROLES configured, the same account is refused.
+	if status, _, _ := signInWithRoles(t, nil, []string{"membership", "proleko-editor"}); status == "success" {
+		t.Error("admitted on Proleko roles with none configured")
+	}
+	// A list of blanks is no list: it must not turn into "no role required".
+	blanks := func(c *Config) { c.ProlekoRoles = []string{" ", ""} }
+	if status, _, _ := signInWithRoles(t, blanks, []string{"membership"}); status == "success" {
+		t.Error("blank PROLEKO_ROLES admitted a plain member")
+	}
+}

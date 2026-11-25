@@ -1,0 +1,30 @@
+{{/* Every Proleko? issue, newest first.
+
+     data/proleko/ holds one file per issue, named year-number, written by
+     tools/import-proleko.py for the old archive and by the editors' upload
+     page (proxy/internal/proleko) for every new one. Each file is
+
+       year: 2026
+       number: 3
+       title: "Proleko? 60"       # empty when the issue has no name
+       pdf: 2026/proleko-2026-3.pdf
+       cover: images/proleko/kannet/2026-3.webp
+
+     The PDFs are not in the repository: at 1.3 GB, some over GitHub's file
+     limit, they are served from the server's disk under params.prolekoMedia.
+     The covers are small and are in assets, so Hugo resizes them.
+
+     Returns a slice of maps with the file's fields plus slug, url (the PDF),
+     label ("3/2026") and name (the title, or the label for an untitled one). */}}
+{{ $media := site.Params.prolekoMedia | default "/media/proleko/" }}
+{{ $out := slice }}
+{{ range $slug, $i := hugo.Data.proleko }}
+  {{ $label := printf "%d/%d" (int $i.number) (int $i.year) }}
+  {{ $out = $out | append (merge $i (dict
+      "slug" $slug
+      "sortKey" (add (mul (int $i.year) 100) (int $i.number))
+      "url" (printf "%s%s" $media $i.pdf)
+      "label" $label
+      "name" (or $i.title $label))) }}
+{{ end }}
+{{ return sort $out "sortKey" "desc" }}

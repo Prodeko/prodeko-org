@@ -51,6 +51,14 @@ const (
 
 	EnvSessionKey = "SESSION_SECRET"
 	EnvSessionTTL = "SESSION_TTL"
+
+	// The Proleko? upload. PROLEKO_DIR is where the magazine's PDFs are
+	// written; unset, the upload is not mounted at all. PROLEKO_ROLES are the
+	// realm roles that admit someone to the upload and nothing else, so the
+	// magazine's editor-in-chief can publish issues without being able to edit
+	// the rest of the website.
+	EnvProlekoDir   = "PROLEKO_DIR"
+	EnvProlekoRoles = "PROLEKO_ROLES"
 )
 
 // Defaults applied when a variable is absent.
@@ -111,6 +119,7 @@ type Config struct {
 	Keycloak Keycloak
 	GitHub   GitHub
 	Session  Session
+	Proleko  Proleko
 
 	// Warnings are non-fatal observations worth logging at startup, such as a
 	// GITHUB_TOKEN that does not look like a GitHub token.
@@ -145,6 +154,23 @@ type Keycloak struct {
 	// verbatim on the Keycloak client.
 	RedirectURL string
 }
+
+// Proleko configures the magazine upload. It is optional: with no Dir the
+// /proleko endpoints are not mounted and the proxy is exactly what it was.
+type Proleko struct {
+	// Dir is the directory the PDFs are written to, from PROLEKO_DIR. The web
+	// server serves the same directory at /media/proleko/.
+	Dir string
+
+	// Roles, from PROLEKO_ROLES, admit a signed-in person to the upload alone.
+	// Every one of them is required, as with EditorRoles. Empty means only
+	// editors may upload. Holding these roles never admits anyone to
+	// /github/*, which still requires EditorRoles.
+	Roles []string
+}
+
+// Enabled reports whether the upload is mounted.
+func (p Proleko) Enabled() bool { return p.Dir != "" }
 
 // GitHub pins the one repository this proxy may write to, and holds the
 // credential for it: either Token, or AppID and AppKey. Exactly one is set.
@@ -207,6 +233,8 @@ func (c *Config) String() string {
 	line("github_branch", c.GitHub.Branch)
 	line("github_api_root", c.GitHub.APIRoot)
 	line("github_committer", c.GitHub.CommitterName+" <"+c.GitHub.CommitterEmail+">")
+	line("proleko_dir", c.Proleko.Dir)
+	line("proleko_roles", strings.Join(c.Proleko.Roles, ","))
 	if c.GitHub.UsesApp() {
 		line("github_app_id", c.GitHub.AppID)
 		line("github_app_private_key", redacted)
@@ -302,6 +330,8 @@ func LoadFrom(lookup func(string) (string, bool)) (*Config, error) {
 		TTL:    l.ttl(),
 	}
 
+	cfg.Proleko = l.proleko()
+
 	cfg.Warnings = l.warnings
 	if len(l.errs) > 0 {
 		return nil, l.errs
@@ -379,6 +409,45 @@ func (l *loader) editorRoles() []string {
 		return nil
 	}
 	return out
+}
+
+// proleko reads the optional magazine upload settings. PROLEKO_ROLES without
+// PROLEKO_DIR is a mistake worth stopping for: it reads as "the editor-in-chief
+// can upload" while nothing is mounted. The directory itself is checked when
+// the server starts, where a missing volume can be reported as such.
+func (l *loader) proleko() Proleko {
+	var p Proleko
+	if dir, ok := l.get(EnvProlekoDir); ok {
+		if !strings.HasPrefix(dir, "/") {
+			l.fail(EnvProlekoDir, fmt.Sprintf("must be an absolute path, got %q", dir))
+		} else {
+			p.Dir = strings.TrimRight(dir, "/")
+			if p.Dir == "" {
+				l.fail(EnvProlekoDir, "must not be the root directory")
+			}
+		}
+	}
+	raw, ok := l.get(EnvProlekoRoles)
+	if !ok {
+		return p
+	}
+	seen := map[string]bool{}
+	for _, part := range strings.Split(raw, ",") {
+		part = strings.TrimSpace(part)
+		if part == "" || seen[part] {
+			continue
+		}
+		seen[part] = true
+		p.Roles = append(p.Roles, part)
+	}
+	if len(p.Roles) == 0 {
+		l.fail(EnvProlekoRoles, fmt.Sprintf("is set but names no role (got %q); leave it unset to let only "+
+			"editors upload, or name the roles, e.g. membership,proleko-editor", raw))
+	}
+	if p.Dir == "" {
+		l.fail(EnvProlekoRoles, "is set but "+EnvProlekoDir+" is not, so there is no upload for these roles to use")
+	}
+	return p
 }
 
 // origin validates a bare origin: scheme://host[:port], nothing else.

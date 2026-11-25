@@ -44,6 +44,12 @@ type Config struct {
 	// every one of them; at least one must be configured.
 	EditorRoles []string
 
+	// ProlekoRoles, when set, admit someone who lacks EditorRoles but holds
+	// every one of these. Their session is accepted by the Proleko? upload
+	// alone: /github/* checks EditorRoles again on every call, so such a
+	// session cannot edit anything else. Empty admits editors only.
+	ProlekoRoles []string
+
 	// PublicURL is where this service is reachable. It must be a bare origin:
 	// scheme://host[:port], no path, no trailing slash. Decap compares the
 	// popup's window origin against base_url with ===, so anything else makes
@@ -290,7 +296,14 @@ func (h *Handler) Callback(w http.ResponseWriter, r *http.Request) {
 		Roles:    roles,
 	}
 
-	if missing := id.MissingRoles(h.cfg.EditorRoles); len(missing) > 0 {
+	missing := id.MissingRoles(h.cfg.EditorRoles)
+	if len(missing) > 0 && len(h.cfg.ProlekoRoles) > 0 && len(id.MissingRoles(h.cfg.ProlekoRoles)) == 0 {
+		// The magazine's editor: admitted, and the session carries the roles
+		// that the upload checks and /github/* refuses.
+		h.log.Info("signed in with the Proleko roles only", "sub", id.Subject, "user", id.Username)
+		missing = nil
+	}
+	if len(missing) > 0 {
 		h.log.Warn("sign-in refused: missing editor roles",
 			"sub", id.Subject, "user", id.Username,
 			"required", h.cfg.EditorRoles, "missing", missing)
@@ -420,6 +433,22 @@ func normalise(cfg Config) (Config, error) {
 			"without one any Prodeko member could edit the website")
 	}
 	cfg.EditorRoles = roles
+
+	// The same cleaning for ProlekoRoles. An entry that is only whitespace is
+	// dropped rather than kept as a role nobody holds; a list left empty
+	// admits editors only, never everyone, because Callback consults it only
+	// when it names at least one role.
+	var prolekoRoles []string
+	seenProleko := map[string]bool{}
+	for _, role := range cfg.ProlekoRoles {
+		role = strings.TrimSpace(role)
+		if role == "" || seenProleko[role] {
+			continue
+		}
+		seenProleko[role] = true
+		prolekoRoles = append(prolekoRoles, role)
+	}
+	cfg.ProlekoRoles = prolekoRoles
 
 	origin, err := parseOrigin(cfg.PublicURL)
 	if err != nil {

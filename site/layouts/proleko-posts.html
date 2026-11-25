@@ -1,0 +1,28 @@
+{{/* The web articles of spring 2020, published instead of a printed issue
+   while the guild was in quarantine. A card per article, oldest first, the
+   order they were published in. */}}
+{{ define "main" }}
+  {{ partial "proleko-masthead.html" . }}
+  <div class="pl-posts">
+    <header class="pl-posts-head">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+    </header>
+    <ul class="pl-post-list">
+      {{ range .Pages.ByDate }}
+        <li>
+          <a class="pl-post-card" href="{{ .RelPermalink }}">
+            {{ with .Params.photo }}{{ with resources.Get .src }}
+              {{ $img := .Fill "640x320 webp q75" }}
+              <img src="{{ $img.RelPermalink }}" width="640" height="320" alt="" loading="lazy">
+            {{ end }}{{ end }}
+            <span class="pl-post-card-text">
+              <span class="pl-post-title">{{ .Title }}</span>
+              <span class="pl-post-meta">{{ .Params.authors }} · {{ .Date | time.Format ":date_long" }}</span>
+            </span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

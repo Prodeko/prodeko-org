@@ -812,3 +812,37 @@ func TestCommitterDefaultsAndValidation(t *testing.T) {
 		t.Errorf("empty GITHUB_COMMITTER_EMAIL = %q, %v; want the default", cfg.GitHub.CommitterEmail, err)
 	}
 }
+
+func TestProleko(t *testing.T) {
+	cfg, err := loadWith(t, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if cfg.Proleko.Enabled() || cfg.Proleko.Roles != nil {
+		t.Errorf("Proleko on by default: %+v", cfg.Proleko)
+	}
+
+	cfg, err = loadWith(t, map[string]*string{
+		EnvProlekoDir:   set("/srv/proleko/"),
+		EnvProlekoRoles: set("membership, proleko-editor,membership"),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if cfg.Proleko.Dir != "/srv/proleko" || strings.Join(cfg.Proleko.Roles, ",") != "membership,proleko-editor" {
+		t.Errorf("Proleko = %+v", cfg.Proleko)
+	}
+
+	for name, env := range map[string]map[string]*string{
+		"relative dir":        {EnvProlekoDir: set("srv/proleko")},
+		"root dir":            {EnvProlekoDir: set("/")},
+		"roles without dir":   {EnvProlekoRoles: set("proleko-editor")},
+		"roles that are none": {EnvProlekoDir: set("/srv/proleko"), EnvProlekoRoles: set(" , ")},
+	} {
+		t.Run(name, func(t *testing.T) {
+			if _, err := loadWith(t, env); err == nil {
+				t.Error("accepted")
+			}
+		})
+	}
+}
