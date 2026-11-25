@@ -17,6 +17,13 @@
     </script>
     <script src="https://unpkg.com/decap-cms@3.16.2/dist/decap-cms.js"></script>
     <script src="/admin/embeds.js"></script>
+    <!-- The Proleko? PDF field renders the cover from the PDF's first page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <script src="/admin/proleko-pdf.js"></script>
     <script>
       // Decap ships no Finnish translation. The one string worth fixing is the
       // login button: the editor signs in with a Prodeko account through the

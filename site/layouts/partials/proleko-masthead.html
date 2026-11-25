@@ -1,0 +1,27 @@
+{{/* The Proleko? masthead every page of the magazine opens with: the
+     breadcrumb, the line "Tuotantotalouden killan kiltalehti", the name in
+     large serif capitals, and the magazine's own navigation.
+
+     The magazine's front page is the section page that uses the
+     proleko-home layout; the archive and the web articles are found below
+     it by name, so the navigation needs no configuration. */}}
+{{ $page := . }}
+{{ $isFi := eq .Language.Lang "fi" }}
+{{ $root := . }}
+{{ if ne .Layout "proleko-home" }}
+  {{ range .Ancestors }}{{ if eq .Layout "proleko-home" }}{{ $root = . }}{{ end }}{{ end }}
+{{ end }}
+{{ $archive := $root.GetPage (cond $isFi "arkisto" "archive") }}
+{{ $posts := $root.GetPage "verkkojulkaisut" }}
+<header class="pl-masthead">
+  <div class="pl-masthead-inner">
+    {{ partial "breadcrumbs.html" $page }}
+    <p class="pl-tagline">{{ if $isFi }}Tuotantotalouden killan kiltalehti{{ else }}The magazine of the Industrial Engineering and Management guild{{ end }}</p>
+    {{ if eq $page $root }}<h1 class="pl-name">Proleko?</h1>{{ else }}<p class="pl-name"><a href="{{ $root.RelPermalink }}">Proleko?</a></p>{{ end }}
+    <nav class="pl-nav" aria-label="Proleko?">
+      <a href="{{ $root.RelPermalink }}"{{ if eq $page $root }} aria-current="page"{{ end }}>{{ if $isFi }}etusivu{{ else }}home{{ end }}</a>
+      {{ with $archive }}<a href="{{ .RelPermalink }}"{{ if eq $page . }} aria-current="page"{{ end }}>{{ if $isFi }}arkisto{{ else }}archive{{ end }}</a>{{ end }}
+      {{ with $posts }}<a href="{{ .RelPermalink }}"{{ if or (eq $page .) (eq $page.Parent .) }} aria-current="page"{{ end }}>verkkojulkaisut</a>{{ end }}
+    </nav>
+  </div>
+</header>

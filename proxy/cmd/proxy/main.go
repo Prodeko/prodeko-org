@@ -31,6 +31,7 @@ import (
 	"github.com/prodeko/prodeko-org/proxy/internal/config"
 	"github.com/prodeko/prodeko-org/proxy/internal/forward"
 	"github.com/prodeko/prodeko-org/proxy/internal/ghauth"
+	"github.com/prodeko/prodeko-org/proxy/internal/proleko"
 	"github.com/prodeko/prodeko-org/proxy/internal/session"
 )
 
@@ -156,9 +157,19 @@ func run(cfg *config.Config, log *slog.Logger) error {
 		return err
 	}
 
+	// The Proleko? PDF upload, when PROLEKO_DIR is set.
+	var magazine http.Handler
+	if cfg.Proleko.Enabled() {
+		magazine, err = proleko.New(cfg.Proleko.Dir, log.With("component", "proleko"))
+		if err != nil {
+			return err
+		}
+		log.Info("Proleko? PDF upload enabled", "dir", cfg.Proleko.Dir)
+	}
+
 	srv := &http.Server{
 		Addr:              cfg.ListenAddr,
-		Handler:           routes(cfg, log, authHandler, sessions, github),
+		Handler:           routes(cfg, log, authHandler, sessions, github, magazine),
 		ReadHeaderTimeout: readHeaderTimeout,
 		ReadTimeout:       readTimeout,
 		WriteTimeout:      writeTimeout,
@@ -188,6 +199,7 @@ func routes(
 	signin registrar,
 	sessions session.Verifier,
 	github http.Handler,
+	magazine http.Handler,
 ) http.Handler {
 	mux := http.NewServeMux()
 	signin.Register(mux)
@@ -201,6 +213,15 @@ func routes(
 			session.RequireRoles(cfg.Keycloak.EditorRoles)(github)))
 	mux.Handle(githubPrefix+"/", editors)
 	mux.Handle(githubPrefix, editors)
+
+	// The Proleko? PDF upload, for the PDF field in Decap. The same chain as
+	// /github/*: whoever may edit the site may upload, and nobody else. Nil
+	// when PROLEKO_DIR is unset.
+	if magazine != nil {
+		mux.Handle(proleko.Path, cors(cfg.CMSOrigins, log,
+			session.Middleware(sessions)(
+				session.RequireRoles(cfg.Keycloak.EditorRoles)(magazine))))
+	}
 
 	// Liveness only: it says the process is listening, not that Keycloak or
 	// GitHub can be reached. It is deliberately unauthenticated and says

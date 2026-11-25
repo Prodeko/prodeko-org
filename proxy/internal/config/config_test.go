@@ -812,3 +812,29 @@ func TestCommitterDefaultsAndValidation(t *testing.T) {
 		t.Errorf("empty GITHUB_COMMITTER_EMAIL = %q, %v; want the default", cfg.GitHub.CommitterEmail, err)
 	}
 }
+
+func TestProleko(t *testing.T) {
+	cfg, err := loadWith(t, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if cfg.Proleko.Enabled() {
+		t.Errorf("Proleko on by default: %+v", cfg.Proleko)
+	}
+
+	cfg, err = loadWith(t, map[string]*string{EnvProlekoDir: set("/srv/proleko/")})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if cfg.Proleko.Dir != "/srv/proleko" {
+		t.Errorf("Proleko = %+v", cfg.Proleko)
+	}
+
+	for name, dir := range map[string]string{"relative": "srv/proleko", "root": "/"} {
+		t.Run(name, func(t *testing.T) {
+			if _, err := loadWith(t, map[string]*string{EnvProlekoDir: set(dir)}); err == nil {
+				t.Error("accepted")
+			}
+		})
+	}
+}

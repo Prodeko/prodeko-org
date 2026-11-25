@@ -483,6 +483,57 @@ collections:
                 time_format: "HH:mm"
                 hint: "Suomen aikaa."
 
+  # Proleko?, the guild magazine: one data file per issue in
+  # site/data/proleko/, named year-number, which the archive page renders.
+  # The PDF does not go through Decap's media library, which commits to git:
+  # the proleko-pdf field (proleko-pdf.js) uploads it to the proxy, which
+  # keeps it on the server at /media/proleko/. See docs/proleko.md.
+  - name: proleko
+    label: "Proleko?"
+    label_singular: "Proleko?-lehti"
+    description: >-
+      Proleko?-lehdet. Uusi lehti: täytä vuosi ja numero, valitse PDF ja
+      julkaise. Kansikuvaksi tulee PDF:n ensimmäinen sivu, ellei lisää omaa.
+    folder: site/data/proleko
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{fields.year}}-{{fields.number}}"
+    identifier_field: title
+    summary: "{{fields.number}}/{{fields.year}} {{fields.title}}"
+    sortable_fields: [year, number, title]
+    preview_path: "fi/jasenille/proleko/arkisto/"
+    fields:
+      - label: "Vuosi"
+        name: year
+        widget: number
+        value_type: int
+        min: 1990
+      - label: "Numero"
+        name: number
+        widget: number
+        value_type: int
+        min: 1
+        max: 20
+        hint: "3, kun lehti on 3/2026."
+      - label: "Nimi"
+        name: title
+        widget: string
+        required: false
+        hint: "Esimerkiksi Joulu-Proleko?. Voi jättää tyhjäksi."
+      - label: "PDF"
+        name: pdf
+        widget: proleko-pdf
+        upload_url: https://cms.prodeko.org/proleko/pdf
+        hint: "Lehden verkkoversio, enintään 200 Mt. Täytä vuosi ja numero ensin."
+      - label: "Oma kansikuva"
+        name: cover
+        widget: image
+        required: false
+        media_folder: /site/assets/images/proleko/kannet
+        public_folder: images/proleko/kannet
+        hint: "Vapaaehtoinen. Tyhjänä kansikuvana on PDF:n ensimmäinen sivu."
+
   - name: member_pages_en
     label: "VAIN JÄSENILLE – Sivut (englanniksi)"
     label_singular: "Jäsensivu"

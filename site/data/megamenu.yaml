@@ -99,9 +99,9 @@ fi:
         - label: Kiltiskamera
           url: https://kiltiskamera.prodeko.org/
           signedIn: true
-        # The magazine archive still lives on the old site, open to everyone.
-        - label: Proleko?-arkisto
-          url: https://old.prodeko.org/fi/palvelut/proleko/
+        - label: Proleko?
+          url: /fi/jasenille/proleko/
+          members: true
   events:
     - title: Tapahtumat
       links:
@@ -294,8 +294,9 @@ en:
         - label: Kiltiskamera
           url: https://kiltiskamera.prodeko.org/
           signedIn: true
-        - label: Proleko? archive
-          url: https://old.prodeko.org/en/services/proleko/
+        - label: Proleko?
+          url: /en/members/proleko/
+          members: true
   events:
     - title: Events
       links:

@@ -1,0 +1,8 @@
+{{/* A processed image moved under the member gate. Hugo publishes images
+     from assets/ at /images/..., which is outside the gated paths, so in the
+     member build they would answer 404: Caddy serves only /fi/jasenille/ and
+     /en/members/ from the member tree. Every Proleko? image is copied under
+     /fi/jasenille/proleko/kuvat/ instead, for the English pages too. The name
+     is the processed file's own, which carries a hash of the processing, so
+     two sizes of one cover never collide. */}}
+{{ return resources.Copy (printf "fi/jasenille/proleko/kuvat/%s" (path.Base .RelPermalink)) . }}

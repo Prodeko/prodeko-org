@@ -41,6 +41,11 @@ sequenceDiagram
   opener window with `postMessage`.
 - `ANY /github/*` forwards to the GitHub API. Everything under here requires a
   valid session.
+- `POST /proleko/pdf` stores one Proleko? PDF and its cover, when
+  `PROLEKO_DIR` is set, and answers with their paths. Decap's PDF field for
+  the magazine calls it, because Decap would commit the file to git. Behind
+  the same session and editor role check as `/github/*`. See
+  `internal/proleko` and `docs/proleko.md`.
 - `GET /healthz` says the process is listening. Unauthenticated, and it makes
   no claim about Keycloak or GitHub being reachable.
 
@@ -114,6 +119,7 @@ Optional:
 - `LISTEN_ADDR`, `LOG_LEVEL`, `SESSION_TTL`, `OAUTH_SCOPE`, `GITHUB_API_ROOT`
 - `GITHUB_COMMITTER_NAME`, `GITHUB_COMMITTER_EMAIL`, the bot identity recorded
   as the git committer. The author is the editor and is never configurable.
+- `PROLEKO_DIR`, the Proleko? PDF upload; see the endpoint above.
 - `KEYCLOAK_DISCOVERY_URL`, for split-horizon setups such as the dev compose
   stack, where the browser and the proxy reach Keycloak at different
   addresses. Discovery happens here; `iss` is still checked against

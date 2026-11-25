@@ -1,0 +1,52 @@
+{{/* Every Proleko? issue since 1999, a year at a time: the years down the
+   side, each year's covers in a grid. The web articles of spring 2020,
+   which were published instead of a printed issue, stand in that year's
+   grid as one more cover leading to their own list. */}}
+{{ define "main" }}
+  {{ $isFi := eq .Language.Lang "fi" }}
+  {{ $issues := partial "proleko-issues.html" . }}
+  {{ $years := slice }}
+  {{ range $issues }}{{ if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}{{ end }}
+
+  {{/* The articles are in Finnish only, so the English archive links to the
+       Finnish list. */}}
+  {{ $posts := "" }}
+  {{ range hugo.Sites }}
+    {{ if eq .Language.Lang "fi" }}{{ $posts = .GetPage "/jasenille/proleko/verkkojulkaisut" }}{{ end }}
+  {{ end }}
+
+  {{ partial "proleko-masthead.html" . }}
+
+  <div class="pl-archive">
+    <nav class="pl-archive-years" aria-label="{{ if $isFi }}Vuodet{{ else }}Years{{ end }}">
+      <ul class="pl-years">
+        {{ range $years }}<li><a href="#{{ . }}">{{ . }}</a></li>{{ end }}
+      </ul>
+    </nav>
+    <div class="pl-archive-main">
+      {{ with .Content }}<div class="prose pl-archive-intro">{{ . }}</div>{{ end }}
+      {{ range $years }}
+        {{ $year := . }}
+        <section class="pl-year" aria-labelledby="y{{ $year }}">
+          <h2 class="pl-band" id="{{ $year }}"><span id="y{{ $year }}">{{ $year }}</span></h2>
+          <div class="pl-grid">
+            {{ range where $issues "year" $year }}
+              {{ partial "proleko-cover.html" (dict "issue" . "lang" $.Language.Lang) }}
+            {{ end }}
+            {{ if and $posts (eq $year 2020) }}
+              {{ $banner := "" }}
+              {{ with resources.Get "images/proleko/verkkojulkaisut/Paakirjoitus_22020.webp" }}{{ $banner = (.Fill "300x424 webp q75").RelPermalink }}{{ end }}
+              <a class="pl-cover pl-cover--web" href="{{ $posts.RelPermalink }}">
+                {{ with $banner }}<img src="{{ . }}" width="300" height="424" loading="lazy" alt="">{{ end }}
+                <span class="pl-cover-text">
+                  <span class="pl-cover-number">{{ if $isFi }}Kevät 2020{{ else }}Spring 2020{{ end }}</span>
+                  <span class="pl-cover-title">{{ if $isFi }}Verkkojulkaisut{{ else }}Web articles (in Finnish){{ end }}</span>
+                </span>
+              </a>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

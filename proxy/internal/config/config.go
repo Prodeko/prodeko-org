@@ -51,6 +51,10 @@ const (
 
 	EnvSessionKey = "SESSION_SECRET"
 	EnvSessionTTL = "SESSION_TTL"
+
+	// The Proleko? PDF upload. PROLEKO_DIR is where the magazine's PDFs are
+	// written; unset, the upload is not mounted at all.
+	EnvProlekoDir = "PROLEKO_DIR"
 )
 
 // Defaults applied when a variable is absent.
@@ -111,6 +115,7 @@ type Config struct {
 	Keycloak Keycloak
 	GitHub   GitHub
 	Session  Session
+	Proleko  Proleko
 
 	// Warnings are non-fatal observations worth logging at startup, such as a
 	// GITHUB_TOKEN that does not look like a GitHub token.
@@ -145,6 +150,17 @@ type Keycloak struct {
 	// verbatim on the Keycloak client.
 	RedirectURL string
 }
+
+// Proleko configures the magazine's PDF upload. It is optional: with no Dir
+// the endpoint is not mounted and the proxy is exactly what it was.
+type Proleko struct {
+	// Dir is the directory the PDFs are written to, from PROLEKO_DIR. The web
+	// server serves the same directory at /media/proleko/.
+	Dir string
+}
+
+// Enabled reports whether the upload is mounted.
+func (p Proleko) Enabled() bool { return p.Dir != "" }
 
 // GitHub pins the one repository this proxy may write to, and holds the
 // credential for it: either Token, or AppID and AppKey. Exactly one is set.
@@ -207,6 +223,7 @@ func (c *Config) String() string {
 	line("github_branch", c.GitHub.Branch)
 	line("github_api_root", c.GitHub.APIRoot)
 	line("github_committer", c.GitHub.CommitterName+" <"+c.GitHub.CommitterEmail+">")
+	line("proleko_dir", c.Proleko.Dir)
 	if c.GitHub.UsesApp() {
 		line("github_app_id", c.GitHub.AppID)
 		line("github_app_private_key", redacted)
@@ -302,6 +319,8 @@ func LoadFrom(lookup func(string) (string, bool)) (*Config, error) {
 		TTL:    l.ttl(),
 	}
 
+	cfg.Proleko = l.proleko()
+
 	cfg.Warnings = l.warnings
 	if len(l.errs) > 0 {
 		return nil, l.errs
@@ -379,6 +398,26 @@ func (l *loader) editorRoles() []string {
 		return nil
 	}
 	return out
+}
+
+// proleko reads the optional PDF directory. Whether it exists and is
+// writable is checked when the server starts, where a missing volume can be
+// reported as such.
+func (l *loader) proleko() Proleko {
+	var p Proleko
+	dir, ok := l.get(EnvProlekoDir)
+	if !ok {
+		return p
+	}
+	if !strings.HasPrefix(dir, "/") {
+		l.fail(EnvProlekoDir, fmt.Sprintf("must be an absolute path, got %q", dir))
+		return p
+	}
+	p.Dir = strings.TrimRight(dir, "/")
+	if p.Dir == "" {
+		l.fail(EnvProlekoDir, "must not be the root directory")
+	}
+	return p
 }
 
 // origin validates a bare origin: scheme://host[:port], nothing else.
