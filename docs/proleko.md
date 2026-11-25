@@ -58,35 +58,33 @@ editing screen.
 
 ## Deployment checklist
 
-The site and proxy code are in this repository; the rest is infra-prodeko,
-Keycloak and the server.
+The host side is in Prodeko/infrastructure#39: the `cms_auth_proxy` role
+creates `/srv/proleko` (owned by the container's uid 65532), mounts it into
+the proxy and sets `PROLEKO_DIR`, and the Caddyfile serves it at
+`/media/proleko/`, redirects `/en/services/proleko/posts/*` to the Finnish
+aliases and points proleko.prodeko.org at the new archive.
 
-1. **PDF directory on prodeko-vm2**, outside the site's web root: the publish
-   step replaces the site tree, so anything inside it would be deleted on every
-   deploy. For example `/srv/proleko`, owned by the proxy container's user
-   (uid 65532 in the distroless image), and in the server backups.
-2. **Copy the old PDFs** into it. On a machine with the disk space, or on the
-   server itself:
+1. Merge that pull request and run
+   `ansible-playbook playbooks/prodeko_vm.yml --tags caddy,cms_auth_proxy`.
+2. Copy the old PDFs in once, on the server or anywhere with 1.3 GB free:
 
    ```
    python3 tools/import-proleko.py --pdf-dir /srv/proleko
+   sudo chown -R 65532:65532 /srv/proleko
    ```
 
-   This downloads the 102 PDFs from static.prodeko.org (1.3 GB) under the new
-   names. Existing files are skipped, so it can be rerun.
-3. **Caddy**: serve `/media/proleko/*` from that directory on prodeko.org,
-   with `Content-Type: application/pdf`. Add a redirect from
-   `/en/services/proleko/posts/*` to `/fi/palvelut/proleko/posts/*`. The
-   articles are Finnish only, and the Finnish aliases point on to the new
-   addresses.
-4. **Proxy container**: mount the directory and set `PROLEKO_DIR=/srv/proleko`.
-   The proxy refuses to start if the directory is missing or not writable.
-5. **Keycloak**: give the editor-in-chief the website editor roles.
-6. Keep static.prodeko.org's `media/proleko/` in place: the old PDF links
-   are in emails and chats.
+   This downloads the 102 PDFs from static.prodeko.org under the new names.
+   Existing files are skipped, so it can be rerun.
+3. **Keycloak**: give the editor-in-chief the website editor roles.
+4. Merge this. The proxy image deployed from `main` then serves the upload.
+5. Keep static.prodeko.org's `media/proleko/` in place: the old PDF links
+   are in emails and chats, and it is the only other copy of the old issues.
 
-Until steps 1–4 are done, the pages and old covers work but the PDF links
-answer 404 and the PDF field cannot upload, so deploy the infra before merging
+`/srv/proleko` is not backed up: the VM has no backup. An issue uploaded after
+the move exists only there, so the editor-in-chief should keep their own copy
+of each PDF until there is one.
+
+Until steps 1–2 are done the PDF links answer 404, so do them before merging
 this to `main`.
 
 ## Re-running the migration
