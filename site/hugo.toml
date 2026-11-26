@@ -54,10 +54,6 @@ disableKinds = ["taxonomy", "term", "rss"]
   # disk rather than in git (1.3 GB, some files over GitHub's limit); the data
   # files in data/proleko/ name each PDF relative to this.
   prolekoMedia = "/media/proleko/"
-  # TEMPORARY, until Prodeko/infrastructure#43 puts /media/proleko/ live: the
-  # old issues link their PDFs on static.prodeko.org (data/prolekostatic.yaml).
-  # Remove with that file once the server serves the PDFs.
-  prolekoStatic = "https://static.prodeko.org/media/proleko/archives/"
 
 # Deny by default. Hugo's own defaults let a template run a handful of
 # executables, read the environment and fetch any https URL; this site needs
