@@ -24,10 +24,17 @@
 {{ $out := slice }}
 {{ range $slug, $i := hugo.Data.proleko }}
   {{ $label := printf "%d/%d" (int $i.number) (int $i.year) }}
+  {{ $url := printf "%s%s" $media $i.pdf }}
+  {{/* TEMPORARY until Prodeko/infrastructure#43: an old issue links its PDF
+       where the old site kept it, because /media/proleko/ is not served yet.
+       An issue uploaded through Decap is not in the map and keeps $url. */}}
+  {{ with site.Params.prolekoStatic }}{{ with index hugo.Data.prolekostatic $slug }}
+    {{ $url = printf "%s%s" site.Params.prolekoStatic . }}
+  {{ end }}{{ end }}
   {{ $out = $out | append (merge $i (dict
       "slug" $slug
       "sortKey" (add (mul (int $i.year) 100) (int $i.number))
-      "url" (printf "%s%s" $media $i.pdf)
+      "url" $url
       "coverURL" (printf "%s%s.jpg" $media (strings.TrimSuffix ".pdf" $i.pdf))
       "label" $label
       "name" (or $i.title $label))) }}
